@@ -1,9 +1,7 @@
-<div class="card text-center shadow-2xl lg:card-side bg-accent text-accent-content">
-    <div class="card-body">
-        <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.</p>
-        <div class="justify-center card-actions">
-            <button class="btn btn-accent">Start now</button>
-            <button class="btn btn-accent">More info</button>
-        </div>
+<div class="shadow stats m-4">
+    <div class="stat bg-base-200">
+        <div class="stat-title">Your CA Code:</div>
+        <div class="stat-value">79725</div>
+        <div class="stat-desc" />
     </div>
 </div>

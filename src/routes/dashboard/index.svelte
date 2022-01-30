@@ -1,10 +1,10 @@
 <script>
-    //import CACode from '$lib/CACode.svelte'
-    import TasksListContainer from '$lib/TasksListContainer.svelte';
-    import StatsView from '$lib/StatsView.svelte';
+    import SimpleStat from '$lib/SimpleStats.svelte';
 </script>
 
-<div class="flex flex-wrap m-8 items-start">
-    <StatsView />
-    <TasksListContainer />
+<div class="flex flex-wrap container">
+    <SimpleStat />
+    <SimpleStat />
+    <SimpleStat />
+    <SimpleStat />
 </div>

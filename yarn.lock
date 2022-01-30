@@ -69,6 +69,11 @@
   resolved "https://registry.yarnpkg.com/@iconify-icons/ic/-/ic-1.1.19.tgz#7bd8c31ca6d9b142bbcebe88fa5989eebd63f365"
   integrity sha512-uyFfoTvOqSAgTJvGKWyef1s3ek+qR4r9SrEwCHxxrhY7aDKU884X6mIwOrB7nLHpZg/XHVUZzcptQvulcnT4Zw==
 
+"@iconify-icons/simple-icons@^1.1.61":
+  version "1.1.61"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/simple-icons/-/simple-icons-1.1.61.tgz#9e332d6c9689e126f9f6b7e6ac0ed09139efcd9f"
+  integrity sha512-vcuPSvAzN5kAUxCasNBDKZFPHeFGcraNEhX1+7HL+ek/NsS8RzZnrKeN6AfIWT969DaQboVS2aPL98XE/dyw+w==
+
 "@iconify/svelte@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@iconify/svelte/-/svelte-2.1.2.tgz#f6dbc807ea470be47d884d311ada74d73077889c"

@@ -1,6 +1,6 @@
 <script>
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
-    import outlineIosShare from '@iconify-icons/ic/outline-ios-share';
+    import outlineIosShare from '@iconify-icons/ic/outline-ios-share.js';
 </script>
 
 <div class="md:min-w-max md:inline-grid flex flex-wrap m-4 shadow stats">

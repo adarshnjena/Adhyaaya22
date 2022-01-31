@@ -5,7 +5,7 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-blueGray-700">Page visits</h3>
+                    <h3 class="font-semibold text-base text-blueGray-700">Tasks</h3>
                 </div>
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                     <button class="btn btn-secondary btn-sm text-xs px-3 py-0" type="button">
@@ -18,26 +18,26 @@
             <table class="table items-center w-full bg-opacity-[75%] border-collapse">
                 <thead>
                     <tr>
-                        <th class="bg-opacity-[75%]">Page name</th>
-                        <th class="bg-opacity-[75%]">Visitors</th>
-                        <th class="bg-opacity-[75%]">Unique users</th>
-                        <th class="bg-opacity-[75%]">Bounce rate</th>
+                        <th class="bg-opacity-[75%]">Task</th>
+                        <th class="bg-opacity-[75%]">Last Date</th>
+                        <th class="bg-opacity-[75%]">Completed ?</th>
+                        <th class="bg-opacity-[75%]">Open</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="hover text-xs">
-                        <th class="bg-opacity-[75%]">/argon/</th>
-                        <td class="bg-opacity-[75%]">4,569</td>
-                        <td class="bg-opacity-[75%]">340</td>
-                        <td class="bg-opacity-[75%]">46,53%</td>
+                        <th class="bg-opacity-[75%]">Setup Profile</th>
+                        <td class="bg-opacity-[75%]">ASAP</td>
+                        <td class="bg-opacity-[75%]">(BadgeHere)</td>
+                        <td class="bg-opacity-[75%]">(ButtonHere)</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th class="bg-opacity-[75%]">Page name</th>
-                        <th class="bg-opacity-[75%]">Visitors</th>
-                        <th class="bg-opacity-[75%]">Unique users</th>
-                        <th class="bg-opacity-[75%]">Bounce rate</th>
+                        <th class="bg-opacity-[75%]">Task</th>
+                        <th class="bg-opacity-[75%]">Last Date</th>
+                        <th class="bg-opacity-[75%]">Completed ?</th>
+                        <th class="bg-opacity-[75%]">Open</th>
                     </tr>
                 </tfoot>
             </table>

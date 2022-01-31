@@ -13,6 +13,24 @@
         country: 'Some Country',
         bio: 'I make a website! He did not. Great Success!',
     };
+    // Mobile Number needs validation, Email and Username are disabled from editing.
+    let mobile_error = ''
+    function mobile_on_blur(event) {
+        const valid_mobile_regex = /^(?!0+$)(\+\d{1,3}[- ]?)?(?!0+$)\d{10}$/
+        if (valid_mobile_regex.test(details.mobile_number)) {
+            mobile_error = ''
+        } else {
+            mobile_error = 'Invalid Mobile Number'
+        }
+    }
+
+    let is_updating = false;
+    function on_update_click(event) {
+        if (!(mobile_error)) {
+            is_updating = true;
+            // do update stuff here
+        }
+    }
 </script>
 
 <div class="w-full lg:w-8/12 px-4">
@@ -22,7 +40,7 @@
         <div class="rounded-t  mb-0 px-6 py-6">
             <div class="text-center flex justify-between">
                 <h6 class="text-blueGray-700 text-xl font-bold">Your Details</h6>
-                <button class="btn btn-info btn-sm " type="button">Update Info</button>
+                <button class="btn btn-info btn-sm {mobile_error ? 'btn-disabled':''} {is_updating ? 'loading btn-disabled':''}" disabled="{(!!is_updating || !!(mobile_error))}" on:click="{on_update_click}" type="button">Update Info</button>
             </div>
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
@@ -40,7 +58,8 @@
                             <input
                                 id="grid-username"
                                 type="text"
-                                class="input input-ghost w-full"
+                                disabled
+                                class="input-disabled input input-ghost w-full"
                                 bind:value={details.username}
                             />
                         </div>
@@ -53,7 +72,8 @@
                             <input
                                 id="grid-email"
                                 type="email"
-                                class="input input-ghost w-full"
+                                disabled
+                                class="input-disabled input input-ghost w-full"
                                 bind:value={details.email}
                             />
                         </div>
@@ -98,16 +118,17 @@
                     <div class="w-full lg:w-6/12 px-4">
                         <div class="relative w-full mb-3">
                             <label
-                                class="label text-sm"
+                                class="label text-sm {mobile_error ? 'text-error' : ''}"
                                 for="grid-first-name"
                             >
-                                Mobile Number
+                                {mobile_error ? mobile_error : 'Mobile Number'}
                             </label>
                             <input
                                 id="grid-first-name"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="input input-ghost w-full {mobile_error ? 'input-error' : ''}"
                                 bind:value={details.mobile_number}
+                                on:blur="{mobile_on_blur}"
                             />
                         </div>
                     </div>

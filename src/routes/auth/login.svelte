@@ -15,26 +15,46 @@
     }
 
     // function for username validation
-    let username_input = '';
-    let username_error = '';
+    let email_input = '';
+    let email_error = '';
+    function email_on_blur(event) {
+        if (dev) {
+            console.log('email_on_blur', event);
+        }
+        
+        const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        
+        if (email_input.length < 1) {
+            email_error = 'Please enter a email.';
+        } else if (!email_input.includes('@')) {
+            email_error = 'Please enter a valid email.';
+        } else if (!emailRegex.test(email_input)) {
+            email_error = 'Please enter a valid email.';
+        } else {
+            email_error = '';
+        }
+    }
+    
+    
+    
     function username_on_blur(event) {
         if (dev) {
             console.log('username_on_blur', event);
         }
         const special_chars = /[ `!#$%^&*()+=[\]{};':"\\|,.<>/?~]/;
 
-        if (username_input.length <= 5) {
-            username_error = 'Username must be at least 6 characters long';
-        } else if (username_input.length >= 20) {
-            username_error = 'Username must be less than 20 characters long';
-        } else if (special_chars.test(username_input)) {
-            username_error =
+        if (email_input.length <= 5) {
+            email_error = 'Username must be at least 6 characters long';
+        } else if (email_input.length >= 20) {
+            email_error = 'Username must be less than 20 characters long';
+        } else if (special_chars.test(email_input)) {
+            email_error =
                 "Username must not contain special characters except '-' or '_' or '@' ";
-        } else if (username_input.includes('@') && username_input.indexOf('@') != 0) {
-            username_error =
+        } else if (email_input.includes('@') && email_input.indexOf('@') != 0) {
+            email_error =
                 "If you want to use '@' in your username, please place it at the beginning";
         } else {
-            username_error = '';
+            email_error = '';
         }
     }
 
@@ -113,24 +133,24 @@
                                 <div class="my-4 bg-base-200">
                                     <div class="form-control">
                                         <label for="" class="label">
-                                            <span class="label-text">Username</span>
+                                            <span class="label-text">Email</span>
                                         </label>
                                         <input
-                                            on:blur={username_on_blur}
-                                            bind:value={username_input}
-                                            type="text"
-                                            placeholder="Username"
-                                            class="input tracking-widest font-mono {username_error
+                                            on:blur={email_on_blur}
+                                            bind:value={email_input}
+                                            type="email"
+                                            placeholder="email@domain.tld"
+                                            class="input tracking-widest font-mono {email_error
                                                 ? 'border border-error'
                                                 : ''}"
                                         />
                                         <label
                                             for=""
-                                            class="label {username_error ? '' : 'invisible'}"
+                                            class="label {email_error ? '' : 'invisible'}"
                                         >
                                             <span class="label-text-alt text-error"
-                                                >{username_error
-                                                    ? username_error
+                                                >{email_error
+                                                    ? email_error
                                                     : 'Example String'}</span
                                             >
                                         </label>
@@ -192,11 +212,11 @@
                                 <div class="text-center">
                                     <button
                                         on:click={on_signin}
-                                        class="btn btn-lg text-base bg-base-300 w-full {username_input
+                                        class="btn btn-lg text-base bg-base-300 w-full {email_input
                                             ? ''
                                             : 'btn-disabled'} {password_input
                                             ? ''
-                                            : 'btn-disabled'} {username_error
+                                            : 'btn-disabled'} {email_error
                                             ? 'btn-disabled'
                                             : ''} {password_error
                                             ? 'btn-disabled'

@@ -39,20 +39,39 @@
     }
 
     // function for name validation
-    let name_input = '';
-    let name_error = '';
+    let email_input = '';
+    let email_error = '';
+    function email_on_blur(event) {
+        if (dev) {
+            console.log('email_on_blur', event);
+        }
+        
+        const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        
+        if (email_input.length < 1) {
+            email_error = 'Please enter a email.';
+        } else if (!email_input.includes('@')) {
+            email_error = 'Please enter a valid email.';
+        } else if (!emailRegex.test(email_input)) {
+            email_error = 'Please enter a valid email.';
+        } else {
+            email_error = '';
+        }
+    }
+
+
     function name_on_blur(event) {
         if (dev) {
             console.log('name_on_blur', event);
         }
         const special_chars = /[!#$%^&*()+=[\]{};':"\\|_.<>/?~]/;
 
-        if (name_input.length <= 2) {
-            name_error = 'Name must be at least 3 characters long';
-        } else if (special_chars.test(name_input)) {
-            name_error = "Name must not contain special characters";
+        if (email_input.length <= 2) {
+            email_error = 'Name must be at least 3 characters long';
+        } else if (special_chars.test(email_input)) {
+            email_error = "Name must not contain special characters";
         } else {
-            name_error = '';
+            email_error = '';
         }
     }
     
@@ -144,7 +163,7 @@
                         </div>
                         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                             <div class="hidden text-blue-200 text-center mb-3 font-bold">
-                                <small>Or Sign In With</small>
+                                <small>Or Sign Up With</small>
                             </div>
                             <form>
                                 <div class="my-4 bg-base-200">
@@ -177,9 +196,9 @@
                                 <div class="relative w-full mb-1">
                                     <div class="form-control">
                                         <label for="" class="label">
-                                            <span class="label-text">Full Name</span>
+                                            <span class="label-text">Email</span>
                                             <span
-                                                data-tip="FirstName LastName"
+                                                data-tip="address@domain.tld"
                                                 class="cursor-pointer tooltip tooltip-info label-text-alt text-xs text-gray-400"
                                             >
                                                 Need help ?
@@ -189,21 +208,21 @@
                                             <!--Custom Hack to get reactive input type and the correct value in on_blur -->
 
                                             <input
-                                            on:blur={name_on_blur}
-                                            bind:value={name_input}
+                                            on:blur={email_on_blur}
+                                            bind:value={email_input}
                                             type="text"
-                                            placeholder="Username"
-                                            class="input w-full tracking-widest font-mono {name_error
+                                            placeholder="address@domain.tld"
+                                            class="input w-full tracking-widest font-mono {email_error
                                                 ? 'border border-error'
                                                 : ''}"
                                         />
                                         <label
                                             for=""
-                                            class="label {name_error ? '' : 'invisible'}"
+                                            class="label {email_error ? '' : 'invisible'}"
                                         >
                                             <span class="label-text-alt text-error"
-                                                >{name_error
-                                                    ? name_error
+                                                >{email_error
+                                                    ? email_error
                                                     : 'Example String'}</span
                                             >
                                         </label>

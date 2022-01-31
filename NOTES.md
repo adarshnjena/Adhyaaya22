@@ -15,3 +15,7 @@ Use as follows
 
 <Icon icon={icon_data} />
 ```
+
+- for cross use ic:round-close
+- for tick use ic:round-check
+- for info use ic:round-info

@@ -7,7 +7,7 @@
 </script>
 
 <nav
-    class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
+    class="top-0 bg-opacity-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
 >
     <div class="w-11/12 px-4 mx-auto flex flex-wrap items-center justify-between">
         <a class="btn btn-ghost mr-8" href="/">
@@ -36,8 +36,8 @@
                                 <a href="/faq" class="rounded-xl">Item 2</a>
                             </li>
                             <li>
-                                <button class="btn btn-error rounded-xl"
-                                    ><Icon class="mr-2" icon={outlineLogout} /> LOGOUT
+                                <button class="btn btn-error rounded-xl">
+                                    <Icon class="mr-2" icon={outlineLogout} /> LOGOUT
                                 </button>
                             </li>
                         </ul>
@@ -49,9 +49,11 @@
     </div>
 </nav>
 
-
-
-
-<div class="relative bg-base-300 h-full w-full py-32">
+<div
+    class="relative bg-base-300 h-full w-full py-32 "
+    style="background-image: url(&quot;/auth-bg.png&quot;);"
+>
     <slot />
 </div>
+
+

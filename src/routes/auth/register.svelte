@@ -38,6 +38,24 @@
         }
     }
 
+    // function for name validation
+    let name_input = '';
+    let name_error = '';
+    function name_on_blur(event) {
+        if (dev) {
+            console.log('name_on_blur', event);
+        }
+        const special_chars = /[!#$%^&*()+=[\]{};':"\\|_.<>/?~]/;
+
+        if (name_input.length <= 2) {
+            name_error = 'Name must be at least 3 characters long';
+        } else if (special_chars.test(name_input)) {
+            name_error = "Name must not contain special characters";
+        } else {
+            name_error = '';
+        }
+    }
+    
     // function for password validation
     let password_input = '';
     let password_error = '';
@@ -59,20 +77,39 @@
         password_error = '';
     }
 
-    let is_signin_loading = false;
+    let is_signup_loading = false;
     function on_signin(event) {
         if (dev) {
             console.log('on_signin', event);
         }
-        is_signin_loading = true;
+        is_signup_loading = true;
     }
 
+    // modal for errors and stuff;
+    let is_modal_shown = false;
+    let modal_message = '';
+    function modal_show(message) {
+        if (dev) {
+            console.log('modal_show', message);
+        }
+        modal_message = message;
+        is_modal_shown = true;
+    }
+    function modal_hide() {
+        if (dev) {
+            console.log('modal_hide');
+        }
+
+        modal_message = '';
+        is_modal_shown = false;
+    }
+    $: console.log(is_modal_shown)
     // firebase auth login
     let is_firebase_auth_in_progress = false;
 </script>
 
 <main>
-    <section class="relative w-full h-full py-40 min-h-screen">
+    <section class="relative w-full h-full py-32 min-h-screen">
         <div
             class="absolute top-0 w-full h-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
             style="background-image: url(&quot;/auth-bg.png&quot;);"
@@ -85,7 +122,7 @@
                     >
                         <div class="rounded-t mb-0 px-6 py-6">
                             <div class="text-center mb-3">
-                                <span class="text-blue-100 font-bold">Sign In</span>
+                                <span class=" text-blue-100 font-bold">Sign Up</span>
                             </div>
                             <div class="text-center">
                                 <button class="btn bg-base-300" type="button">
@@ -137,6 +174,43 @@
                                     </div>
                                 </div>
 
+                                <div class="relative w-full mb-1">
+                                    <div class="form-control">
+                                        <label for="" class="label">
+                                            <span class="label-text">Full Name</span>
+                                            <span
+                                                data-tip="FirstName LastName"
+                                                class="cursor-pointer tooltip tooltip-info label-text-alt text-xs text-gray-400"
+                                            >
+                                                Need help ?
+                                            </span>
+                                        </label>
+                                        <div class="relative">
+                                            <!--Custom Hack to get reactive input type and the correct value in on_blur -->
+
+                                            <input
+                                            on:blur={name_on_blur}
+                                            bind:value={name_input}
+                                            type="text"
+                                            placeholder="Username"
+                                            class="input w-full tracking-widest font-mono {name_error
+                                                ? 'border border-error'
+                                                : ''}"
+                                        />
+                                        <label
+                                            for=""
+                                            class="label {name_error ? '' : 'invisible'}"
+                                        >
+                                            <span class="label-text-alt text-error"
+                                                >{name_error
+                                                    ? name_error
+                                                    : 'Example String'}</span
+                                            >
+                                        </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="relative w-full mb-1">
                                     <div class="form-control">
                                         <label for="" class="label">
@@ -202,8 +276,8 @@
                                             ? 'btn-disabled'
                                             : ''} {is_firebase_auth_in_progress
                                             ? 'btn-disabled'
-                                            : ''} {is_signin_loading ? 'btn-disabled loading' : ''}"
-                                        type="button">Sign In</button
+                                            : ''} {is_signup_loading ? 'btn-disabled loading' : ''}"
+                                        type="button">Sign Up</button
                                     >
                                 </div>
                             </form>
@@ -223,3 +297,13 @@
     </section>
 </main>
 
+<button class="hidden btn btn-xl" on:click="{modal_show}" >MODAL</button>
+<input bind:checked="{is_modal_shown}" type="checkbox" id="my-modal-2" class="modal-toggle"> 
+<div class="modal">
+  <div class="modal-box">
+    <p>{modal_message}</p> 
+    <div class="modal-action">
+      <label for="my-modal-2" class="btn">Close</label>
+    </div>
+  </div>
+</div>

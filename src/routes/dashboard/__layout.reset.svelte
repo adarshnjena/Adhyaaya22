@@ -9,32 +9,20 @@
 <nav
     class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
 >
-    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-11/12 px-4 mx-auto flex flex-wrap items-center justify-between">
         <a class="btn btn-ghost mr-8" href="/">
             <figure>
                 <img class="h-10" src="/navbar-logo.png" alt="" />
             </figure>
         </a>
         <div
-            class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none rounded shadow-lg hidden"
+            class="flex flex-grow items-center bg-opacity-0 shadow-none rounded"
             id="example-navbar-warning"
         >
-            <ul class="flex flex-col lg:flex-row list-none mr-auto">
-                <li class="flex items-center">
-                    <a
-                        class="btn btn-ghost"
-                        href="/"
-                        ><i
-                            class="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
-                        />
-                        FAQs</a
-                    >
-                </li>
-            </ul>
-            <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <ul class="flex flex-row list-none ml-auto self-end">
                 <li class="flex items-center">
                     <div class="dropdown dropdown-end">
-                        <div tabindex="0" class="m-1 btn">
+                        <div tabindex="0" class="m-1 btn btn-ghost btn-outline">
                             <Icon class="h-10 w-10" icon={roundMenu} />
                         </div>
                         <ul
@@ -42,13 +30,13 @@
                             class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <span>Item 1</span>
+                                <a href="/" class="rounded-xl">Item 1</a>
                             </li>
                             <li>
-                                <span>Item 2</span>
+                                <a href="/faq" class="rounded-xl">Item 2</a>
                             </li>
                             <li>
-                                <button class="bg-error rounded-xl"
+                                <button class="btn btn-error rounded-xl"
                                     ><Icon class="mr-2" icon={outlineLogout} /> LOGOUT
                                 </button>
                             </li>
@@ -61,6 +49,9 @@
     </div>
 </nav>
 
-<PageTransition>
+
+
+
+<div class="relative bg-base-300 h-full w-full py-32">
     <slot />
-</PageTransition>
+</div>

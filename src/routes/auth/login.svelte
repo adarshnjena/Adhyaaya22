@@ -1,8 +1,8 @@
 <script lang="ts">
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
-    import GitHubIcon from '@iconify-icons/simple-icons/github';
-    import GoogleIcon from '@iconify-icons/simple-icons/google';
-    import Eye from '@iconify-icons/ic/outline-remove-red-eye';
+    import GitHubIcon from '@iconify-icons/simple-icons/github.js';
+    import GoogleIcon from '@iconify-icons/simple-icons/google.js';
+    import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import { dev } from '$app/env';
 
     // function for password show/hide

@@ -3,6 +3,7 @@
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
+    import backgroundImage from '$lib/assets/page-background.png';
     import { dev } from '$app/env';
 
     // function for password show/hide
@@ -45,9 +46,10 @@
         if (dev) {
             console.log('email_on_blur', event);
         }
-        
-        const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        
+
+        const emailRegex =
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
         if (email_input.length < 1) {
             email_error = 'Please enter a email.';
         } else if (!email_input.includes('@')) {
@@ -59,7 +61,6 @@
         }
     }
 
-
     function name_on_blur(event) {
         if (dev) {
             console.log('name_on_blur', event);
@@ -69,12 +70,12 @@
         if (email_input.length <= 2) {
             email_error = 'Name must be at least 3 characters long';
         } else if (special_chars.test(email_input)) {
-            email_error = "Name must not contain special characters";
+            email_error = 'Name must not contain special characters';
         } else {
             email_error = '';
         }
     }
-    
+
     // function for password validation
     let password_input = '';
     let password_error = '';
@@ -122,7 +123,7 @@
         modal_message = '';
         is_modal_shown = false;
     }
-    $: console.log(is_modal_shown)
+    $: console.log(is_modal_shown);
     // firebase auth login
     let is_firebase_auth_in_progress = false;
 </script>
@@ -131,7 +132,7 @@
     <section class="relative w-full h-full py-32 min-h-screen">
         <div
             class="absolute top-0 w-full h-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
-            style="background-image: url(&quot;/auth-bg.png&quot;);"
+            style="background-image: url({backgroundImage});"
         />
         <div class="container mx-auto px-4 h-full">
             <div class="flex content-center items-center justify-center h-full">
@@ -149,15 +150,15 @@
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GitHubIcon}
                                     />
-                                    Github</button
-                                >
+                                    Github
+                                </button>
                                 <button class="btn bg-base-300" type="button">
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GoogleIcon}
                                     />
-                                    Google</button
-                                >
+                                    Google
+                                </button>
                             </div>
                             <hr class="mt-6 border-b-1 border-primary" />
                         </div>
@@ -184,11 +185,9 @@
                                             for=""
                                             class="label {username_error ? '' : 'invisible'}"
                                         >
-                                            <span class="label-text-alt text-error"
-                                                >{username_error
-                                                    ? username_error
-                                                    : 'Example String'}</span
-                                            >
+                                            <span class="label-text-alt text-error">
+                                                {username_error ? username_error : 'Example String'}
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
@@ -208,28 +207,26 @@
                                             <!--Custom Hack to get reactive input type and the correct value in on_blur -->
 
                                             <input
-                                            on:blur={email_on_blur}
-                                            bind:value={email_input}
-                                            type="text"
-                                            placeholder="address@domain.tld"
-                                            class="input w-full tracking-widest font-mono {email_error
-                                                ? 'border border-error'
-                                                : ''}"
-                                        />
-                                        <label
-                                            for=""
-                                            class="label {email_error ? '' : 'invisible'}"
-                                        >
-                                            <span class="label-text-alt text-error"
-                                                >{email_error
-                                                    ? email_error
-                                                    : 'Example String'}</span
+                                                on:blur={email_on_blur}
+                                                bind:value={email_input}
+                                                type="text"
+                                                placeholder="address@domain.tld"
+                                                class="input w-full tracking-widest font-mono {email_error
+                                                    ? 'border border-error'
+                                                    : ''}"
+                                            />
+                                            <label
+                                                for=""
+                                                class="label {email_error ? '' : 'invisible'}"
                                             >
-                                        </label>
+                                                <span class="label-text-alt text-error">
+                                                    {email_error ? email_error : 'Example String'}
+                                                </span>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="relative w-full mb-1">
                                     <div class="form-control">
                                         <label for="" class="label">
@@ -258,17 +255,18 @@
                                                 class="absolute top-0 right-0 rounded-l-none btn  {is_password_shown
                                                     ? 'btn-info'
                                                     : 'btn-ghost'} text-xs"
-                                                ><Icon class="w-6 h-6" icon={Eye} /></button
                                             >
+                                                <Icon class="w-6 h-6" icon={Eye} />
+                                            </button>
                                             <label
                                                 for=""
                                                 class="label {password_error ? '' : 'invisible'}"
                                             >
-                                                <span class="label-text-alt text-error"
-                                                    >{password_error
+                                                <span class="label-text-alt text-error">
+                                                    {password_error
                                                         ? password_error
-                                                        : 'Example String'}</span
-                                                >
+                                                        : 'Example String'}
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -277,9 +275,9 @@
                                     <!-- Hidden Remember Me. We need people to login again and again. (inline-flex) -->
                                     <span class="hidden items-center cursor-pointer">
                                         <span class="ml-2 my-2 text-xs font-normal text-gray-400">
-                                            Forgot Password ?</span
-                                        ></span
-                                    >
+                                            Forgot Password ?
+                                        </span>
+                                    </span>
                                 </div>
 
                                 <div class="text-center">
@@ -296,8 +294,10 @@
                                             : ''} {is_firebase_auth_in_progress
                                             ? 'btn-disabled'
                                             : ''} {is_signup_loading ? 'btn-disabled loading' : ''}"
-                                        type="button">Sign Up</button
+                                        type="button"
                                     >
+                                        Sign Up
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -305,9 +305,9 @@
                     <div class="flex flex-wrap mt-6 relative">
                         <!-- Registration is closed except for special links. -->
                         <div class="w-1/2 text-right hidden">
-                            <a href="/auth/register" class="text-blue-200"
-                                ><small>Create new account</small></a
-                            >
+                            <a href="/auth/register" class="text-blue-200">
+                                <small>Create new account</small>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -316,13 +316,13 @@
     </section>
 </main>
 
-<button class="hidden btn btn-xl" on:click="{modal_show}" >MODAL</button>
-<input bind:checked="{is_modal_shown}" type="checkbox" id="my-modal-2" class="modal-toggle"> 
+<button class="hidden btn btn-xl" on:click={modal_show}>MODAL</button>
+<input bind:checked={is_modal_shown} type="checkbox" id="my-modal-2" class="modal-toggle" />
 <div class="modal">
-  <div class="modal-box">
-    <p>{modal_message}</p> 
-    <div class="modal-action">
-      <label for="my-modal-2" class="btn">Close</label>
+    <div class="modal-box">
+        <p>{modal_message}</p>
+        <div class="modal-action">
+            <label for="my-modal-2" class="btn">Close</label>
+        </div>
     </div>
-  </div>
 </div>

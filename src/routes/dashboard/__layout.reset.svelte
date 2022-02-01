@@ -4,15 +4,17 @@
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
     import PageTransition from '$lib/PageTransition.svelte';
+    import navbarLogo from '$lib/assets/navbar-logo.png';
+    import backgroundImage from '$lib/assets/page-background.png';
 </script>
 
 <nav
     class="top-0 bg-opacity-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
 >
     <div class="w-11/12 px-4 mx-auto flex flex-wrap items-center justify-between">
-        <a class="btn btn-ghost mr-8" href="/">
+        <a class="btn btn-ghost mr-8" href="/" aria-label="home-link">
             <figure>
-                <img class="h-10" src="/navbar-logo.png" alt="" />
+                <img aria-hidden="true" class="h-10" src={navbarLogo} alt="Adhyaaya Logo" />
             </figure>
         </a>
         <div
@@ -49,11 +51,11 @@
     </div>
 </nav>
 
-<div
-    class="relative bg-base-300 h-full w-full py-32 "
-    style="background-image: url(&quot;/auth-bg.png&quot;);"
->
-    <slot />
-</div>
-
-
+<PageTransition>
+    <div
+        class="relative bg-base-300 h-full w-full py-32 "
+        style="background-image: url({backgroundImage});"
+    >
+        <slot />
+    </div>
+</PageTransition>

@@ -3,7 +3,9 @@
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
+    import backgroundImage from '$lib/assets/page-background.png';
     import { dev } from '$app/env';
+    import { onMount } from 'svelte';
 
     // function for password show/hide
     let is_password_shown = false;
@@ -21,9 +23,10 @@
         if (dev) {
             console.log('email_on_blur', event);
         }
-        
-        const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        
+
+        const emailRegex =
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
         if (email_input.length < 1) {
             email_error = 'Please enter a email.';
         } else if (!email_input.includes('@')) {
@@ -34,9 +37,7 @@
             email_error = '';
         }
     }
-    
-    
-    
+
     function username_on_blur(event) {
         if (dev) {
             console.log('username_on_blur', event);
@@ -48,8 +49,7 @@
         } else if (email_input.length >= 20) {
             email_error = 'Username must be less than 20 characters long';
         } else if (special_chars.test(email_input)) {
-            email_error =
-                "Username must not contain special characters except '-' or '_' or '@' ";
+            email_error = "Username must not contain special characters except '-' or '_' or '@' ";
         } else if (email_input.includes('@') && email_input.indexOf('@') != 0) {
             email_error =
                 "If you want to use '@' in your username, please place it at the beginning";
@@ -89,13 +89,14 @@
 
     // firebase auth login
     let is_firebase_auth_in_progress = false;
+    // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
 </script>
 
 <main>
     <section class="relative w-full h-full py-40 min-h-screen">
         <div
             class="absolute top-0 w-full h-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
-            style="background-image: url(&quot;/auth-bg.png&quot;);"
+            style="background-image: url({backgroundImage});"
         />
         <div class="container mx-auto px-4 h-full">
             <div class="flex content-center items-center justify-center h-full">
@@ -113,15 +114,15 @@
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GitHubIcon}
                                     />
-                                    Github</button
-                                >
+                                    Github
+                                </button>
                                 <button class="btn bg-base-300" type="button">
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GoogleIcon}
                                     />
-                                    Google</button
-                                >
+                                    Google
+                                </button>
                             </div>
                             <hr class="mt-6 border-b-1 border-primary" />
                         </div>
@@ -148,11 +149,9 @@
                                             for=""
                                             class="label {email_error ? '' : 'invisible'}"
                                         >
-                                            <span class="label-text-alt text-error"
-                                                >{email_error
-                                                    ? email_error
-                                                    : 'Example String'}</span
-                                            >
+                                            <span class="label-text-alt text-error">
+                                                {email_error ? email_error : 'Example String'}
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
@@ -185,17 +184,18 @@
                                                 class="absolute top-0 right-0 rounded-l-none btn  {is_password_shown
                                                     ? 'btn-info'
                                                     : 'btn-ghost'} text-xs"
-                                                ><Icon class="w-6 h-6" icon={Eye} /></button
                                             >
+                                                <Icon class="w-6 h-6" icon={Eye} />
+                                            </button>
                                             <label
                                                 for=""
                                                 class="label {password_error ? '' : 'invisible'}"
                                             >
-                                                <span class="label-text-alt text-error"
-                                                    >{password_error
+                                                <span class="label-text-alt text-error">
+                                                    {password_error
                                                         ? password_error
-                                                        : 'Example String'}</span
-                                                >
+                                                        : 'Example String'}
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -204,9 +204,9 @@
                                     <!-- Hidden Remember Me. We need people to login again and again. (inline-flex) -->
                                     <span class="hidden items-center cursor-pointer">
                                         <span class="ml-2 my-2 text-xs font-normal text-gray-400">
-                                            Forgot Password ?</span
-                                        ></span
-                                    >
+                                            Forgot Password ?
+                                        </span>
+                                    </span>
                                 </div>
 
                                 <div class="text-center">
@@ -223,8 +223,10 @@
                                             : ''} {is_firebase_auth_in_progress
                                             ? 'btn-disabled'
                                             : ''} {is_signin_loading ? 'btn-disabled loading' : ''}"
-                                        type="button">Sign In</button
+                                        type="button"
                                     >
+                                        Sign In
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -232,9 +234,9 @@
                     <div class="flex flex-wrap mt-6 relative">
                         <!-- Registration is closed except for special links. -->
                         <div class="w-1/2 text-right hidden">
-                            <a href="/auth/register" class="text-blue-200"
-                                ><small>Create new account</small></a
-                            >
+                            <a href="/auth/register" class="text-blue-200">
+                                <small>Create new account</small>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -242,4 +244,3 @@
         </div>
     </section>
 </main>
-

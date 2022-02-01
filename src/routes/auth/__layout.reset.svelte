@@ -1,13 +1,11 @@
 <script>
-
-    import '../../app.scss'
+    import '../../app.scss';
     import PageTransition from '$lib/PageTransition.svelte';
     import Footer from '$lib/Footer.svelte';
 </script>
 
 <PageTransition>
-    <slot></slot>
+    <slot />
 </PageTransition>
-
 
 <Footer />

@@ -16,9 +16,9 @@ Use as follows
 <Icon icon={icon_data} />
 ```
 
-- for cross use ic:round-close
-- for tick use ic:round-check
-- for info use ic:round-info
+-   for cross use ic:round-close
+-   for tick use ic:round-check
+-   for info use ic:round-info
 
 ## Other Stuff
 
@@ -32,6 +32,24 @@ parseInt('A6HJ92B', 36); // 22160072099
 (22160072099).toString(36).toUpperCase(); // "A6HJ92B"
 ```
 
-## Authentication 
+## Authentication
 
-- `https://phptuts.github.io/svelte-docs/firebase-recipe-site/login/`
+-   `https://phptuts.github.io/svelte-docs/firebase-recipe-site/login/`
+-   convert displayName to a username, slugify then replace - with \_, Display the username in the navbar.
+
+## Learning Stuff
+
+```js
+// Try Catch with Await.(https://javascript.info/)
+async function f() {
+    try {
+        let response = await fetch('/no-user-here');
+        let user = await response.json();
+    } catch (err) {
+        // catches errors both in fetch and response.json
+        alert(err);
+    }
+}
+
+f();
+```

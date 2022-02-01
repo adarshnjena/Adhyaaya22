@@ -1,12 +1,13 @@
 <script lang="ts">
-    import type {contactDetails} from "$lib/types/contactDetails";
+    import type { contactDetails } from '$lib/types/contactDetails';
+    import profileImage from '$lib/assets/profile-image.jpg';
     export let contact: contactDetails = {
-        name: "Jenna Stones",
-        position: "Tech Lead, Adhyaaya",
-        email: "jenna.stones@adhyaaya.in",
-        phone: "+91 5298188818",
-        bio: "An artist of considerable range, Jenna the name taken by Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.",
-        contact: 'mailto:jenna.stones@adhyaaya.in'
+        name: 'Adarsh Jena',
+        position: 'Tech Lead, Adhyaaya',
+        email: 'ca_support@adhyaaya.in',
+        phone: '+91 5298188818',
+        bio: 'An artist of considerable range, Jenna the name taken by Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.',
+        contact: 'mailto:ca_support@adhyaaya.in',
     };
 </script>
 
@@ -20,21 +21,18 @@
                     <div class="mx-auto">
                         <img
                             alt="..."
-                            src="https://picsum.photos/id/1011/200"
-                            class="-mt-20 mask-circle"
+                            src={profileImage}
+                            class="-mt-20 mask w-[200px] mask-circle"
                         />
                     </div>
                 </div>
-                <div class="w-full px-4 text-center mt-20">
-                </div>
+                <div class="w-full px-4 text-center mt-20" />
             </div>
             <div class="text-center -m-4">
                 <h3 class="text-xl font-semibold leading-normal mb-2 text-gray-200">
                     {contact.name}
                 </h3>
-                <div
-                    class="text-sm leading-normal mt-0 mb-2 text-gray-400 font-bold uppercase"
-                >
+                <div class="text-sm leading-normal mt-0 mb-2 text-gray-400 font-bold uppercase">
                     <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-400" />
                     {contact.position}
                 </div>
@@ -53,7 +51,9 @@
                         <p class="mb-4 text-lg leading-relaxed text-gray-200">
                             {contact.bio}
                         </p>
-                        <a href="{contact.contact}" class="hidden font-normal link text-red-500">Contact</a>
+                        <a href={contact.contact} class="hidden font-normal link text-red-500">
+                            Contact
+                        </a>
                     </div>
                 </div>
             </div>

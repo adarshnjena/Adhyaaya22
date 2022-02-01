@@ -10,7 +10,11 @@
     // Logic here is to integrate firebase into the project.
 </script>
 
-<div class="h-full ">
+<svelte:head>
+    <title>Dashboard</title>
+</svelte:head>
+
+<div class="h-full">
     <div class="md:px-16 px-2 mx-auto md:w-5/6 w-full mt-18">
         <div class="w-full">
             <!--Stats Row-->

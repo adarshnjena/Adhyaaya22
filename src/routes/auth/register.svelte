@@ -2,6 +2,7 @@
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
+    import EmailIcon from '@iconify-icons/ic/email.js';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import backgroundImage from '$lib/assets/page-background.png';
     import { dev } from '$app/env';
@@ -158,6 +159,13 @@
                                         icon={GoogleIcon}
                                     />
                                     Google
+                                </button>
+                                <button class="btn bg-base-300" type="button">
+                                    <Icon
+                                        class="inline-block w-5 mr-2 stroke-current"
+                                        icon={EmailIcon}
+                                    />
+                                    Link
                                 </button>
                             </div>
                             <hr class="mt-6 border-b-1 border-primary" />

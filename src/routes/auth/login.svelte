@@ -2,10 +2,77 @@
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
+    import EmailIcon from '@iconify-icons/ic/email.js';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import backgroundImage from '$lib/assets/page-background.png';
     import { dev } from '$app/env';
     import { onMount } from 'svelte';
+    import { goto, prefetch } from '$app/navigation';
+
+    // Firebase Imports
+    import { getApp, initializeApp } from 'firebase/app';
+    import firebaseConfig from '$lib/firebase/firebaseConfig';
+    import {
+        getRedirectResult,
+        GoogleAuthProvider,
+        getAuth,
+        UserCredential,
+        useDeviceLanguage,
+        signInWithRedirect,
+        onAuthStateChanged,
+    } from 'firebase/auth';
+    import authStore from '$lib/auth/authStore';
+
+    let app;
+    let auth;
+    // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
+    onMount(async () => {
+        try {
+            app = getApp();
+        } catch (error) {
+            dev ? console.error(error) : '';
+
+            // This means the app is not yet intialized.
+            app = initializeApp(firebaseConfig);
+        }
+        // Now we for sure have an app.
+        if (dev) {
+            console.log(app);
+        }
+        // Redirect Handler, used when the user is authenticated.
+        auth = getAuth();
+        let result: UserCredential;
+        try {
+            prefetch('/dashboard');
+            dev ? console.log('Prefetching /dashboard') : '';
+            result = await getRedirectResult(auth);
+        } catch (error) {
+            dev ? console.error(error) : '';
+        }
+
+        if (result && result.user) {
+            // User is signed in.
+            if (dev) {
+                console.log(result.user);
+                goto('/dashboard');
+            }
+        } else {
+            // No user is signed in.
+            if (dev) {
+                console.log('No user is signed in.');
+            }
+        }
+        onAuthStateChanged(auth, (user) => {
+            if (dev) {
+                console.log(user);
+            }
+            authStore.set({
+                isLoggedIn: !!user,
+                user: user,
+                firebaseControlled: true,
+            });
+        });
+    });
 
     // function for password show/hide
     let is_password_shown = false;
@@ -89,7 +156,15 @@
 
     // firebase auth login
     let is_firebase_auth_in_progress = false;
-    // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
+    function on_google_auth(event) {
+        if (dev) {
+            console.log('on_firebase_auth', event);
+        }
+        is_firebase_auth_in_progress = true;
+        const provider = new GoogleAuthProvider();
+        useDeviceLanguage(auth);
+        signInWithRedirect(auth, provider);
+    }
 </script>
 
 <main>
@@ -109,19 +184,42 @@
                                 <span class="text-blue-100 font-bold">Sign In</span>
                             </div>
                             <div class="text-center">
-                                <button class="btn bg-base-300" type="button">
+                                <button
+                                    class="btn bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'loading btn-disabled'
+                                        : ''}"
+                                    type="button"
+                                >
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GitHubIcon}
                                     />
                                     Github
                                 </button>
-                                <button class="btn bg-base-300" type="button">
+                                <button
+                                    class="btn bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'loading btn-disabled'
+                                        : ''}"
+                                    on:click={on_google_auth}
+                                    type="button"
+                                >
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GoogleIcon}
                                     />
                                     Google
+                                </button>
+                                <button
+                                    class="btn bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'loading btn-disabled'
+                                        : ''}"
+                                    type="button"
+                                >
+                                    <Icon
+                                        class="inline-block w-5 mr-2 stroke-current"
+                                        icon={EmailIcon}
+                                    />
+                                    Link
                                 </button>
                             </div>
                             <hr class="mt-6 border-b-1 border-primary" />
@@ -140,6 +238,7 @@
                                             on:blur={email_on_blur}
                                             bind:value={email_input}
                                             type="email"
+                                            autocomplete="email"
                                             placeholder="email@domain.tld"
                                             class="input tracking-widest font-mono {email_error
                                                 ? 'border border-error'
@@ -175,6 +274,7 @@
                                                 on:input={password_on_input}
                                                 type={is_password_shown ? 'text' : 'password'}
                                                 placeholder="Password"
+                                                autocomplete="current-password"
                                                 class="tracking-widest font-mono w-full pr-16 input {password_error
                                                     ? 'border border-error'
                                                     : 'Example String'}"

@@ -1,8 +1,36 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 <script>
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import roundLogin from '@iconify-icons/ic/round-login.js';
     //import navbarLogo from '$lib/assets/navbar-logo.png';
-    import backgroundImage from '$lib/assets/hero-background.png';
+    import backgroundImageOne from '$lib/assets/hero-background.png';
+    import backgroundImageTwo from '$lib/assets/hero-background-alt.png';
+    import { onMount } from 'svelte';
+    import { dev } from '$app/env';
+    // Firebase Imports
+    import { getApp, initializeApp } from 'firebase/app';
+    import firebaseConfig from '$lib/firebase/firebaseConfig';
+
+    let app;
+    onMount(async () => {
+        try {
+            app = getApp();
+        } catch (error) {
+            dev ? console.error(error) : '';
+
+            // This means the app is not yet intialized.
+            app = initializeApp(firebaseConfig);
+        }
+        // Now we for sure have an app.
+        if (dev) {
+            console.log(app);
+        }
+
+        // We don't need further functions as of now.
+    });
 </script>
 
 <svelte:head>
@@ -10,13 +38,13 @@
 </svelte:head>
 
 <div
-    class="hero min-h-screen bg-no-repeat bg-contain bg-right"
-    style="background-image: url({backgroundImage});"
+    class="hero min-h-screen custom-background"
+    style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
     <div class="hero-overlay bg-opacity-60" />
     <div class="text-center hero-content text-neutral-content">
         <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+            <h1 class="mb-5 text-5xl font-bold">Hello There!</h1>
             <p class="mb-5">
                 This is a private portal for Adhyaaya '22 Campus Ambassadors. Please proceed to
                 login.
@@ -27,3 +55,12 @@
         </div>
     </div>
 </div>
+
+<style>
+    .custom-background {
+        background-image: var(--bga), var(--bgb);
+        background-position: right, left;
+        background-repeat: no-repeat, no-repeat;
+        background-size: contain, contain;
+    }
+</style>

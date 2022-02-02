@@ -462,8 +462,8 @@
                                         {email_input ? '' : ' btn-disabled '} 
                                         {password_input ? '' : ' btn-disabled '} 
                                         {is_username_required && username_input
-                                            ? ' btn-disabled '
-                                            : ''}
+                                            ? ''
+                                            : ' btn-disabled '}
                                         {email_error ? ' btn-disabled ' : ''} 
                                         {password_error ? ' btn-disabled ' : ''} 
                                         {username_error ? ' btn-disabled ' : ''} 

@@ -29,24 +29,11 @@
         linkWithCredential,
         createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
-updateCurrentUser,
-updateProfile,
+        updateCurrentUser,
+        updateProfile,
     } from 'firebase/auth';
     import authStore from '$lib/auth/authStore';
 
-    // Helper Functions for Linking if needed
-    function getProvider(providerId) {
-        switch (providerId) {
-            case GoogleAuthProvider.PROVIDER_ID:
-                return new GoogleAuthProvider();
-            case TwitterAuthProvider.PROVIDER_ID:
-                return new TwitterAuthProvider();
-            case GithubAuthProvider.PROVIDER_ID:
-                return new GithubAuthProvider();
-            default:
-                throw new Error(`No provider implemented for ${providerId}`);
-        }
-    }
     let app;
     let auth;
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
@@ -54,7 +41,7 @@ updateProfile,
         try {
             app = getApp();
         } catch (error) {
-            dev ? console.error(error) : '';
+            dev ? console.error('getApp: error', error) : '';
             // This means the app is not yet intialized.
             app = initializeApp(firebaseConfig);
         }
@@ -70,22 +57,10 @@ updateProfile,
         } catch (error) {
             dev ? console.log(error.code) : '';
             if (error.code == 'auth/account-exists-with-different-credential') {
-                // We now create a popup to login with the correct provider, link the accounts and then signin.
-                let _email = error.email || error.customData.email;
-                const providers = await fetchSignInMethodsForEmail(auth, _email);
-                dev ? console.log('providers for link', providers) : '';
-                let provider = getProvider(providers[0]);
-                provider.setCustomParameters({ login_hint: _email });
-                try {
-                    auth = getAuth();
-                    const result = await signInWithPopup(auth, provider);
-                    dev ? console.log(result) : '';
-                } catch (error) {
-                    dev ? console.log('Error: ', error) : '';
-                }
-
-                linkWithCredential(auth, error.credential);
-                goto('/dashboard');
+                // Ask user to signin using original method, then provide the linking functionality.
+                modal_show(
+                    'Please signin using the original method, you can link further accounts in the dashboard.',
+                );
             }
             is_firebase_auth_in_progress = false;
         }
@@ -105,7 +80,7 @@ updateProfile,
             goto('/dashboard');
         } else {
             // No user is signed in.
-            dev ? console.log('No Redirect Response Recieved.') : '';
+            dev ? console.log('User is not signed-in') : '';
             is_firebase_auth_in_progress = false;
         }
     });
@@ -183,7 +158,6 @@ updateProfile,
         }, 500);
     }
 
-
     // function for password validation
     let password_input = '';
     let password_error = '';
@@ -200,9 +174,18 @@ updateProfile,
 
     function password_on_keyup(event) {
         clearTimeout(password_typing_timeout);
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            return;
+        }
         password_typing_timeout = setTimeout(function () {
             password_on_blur(event);
         }, 500);
+    }
+    function password_on_enter(event: HTMLElementEventMap['keydown']) {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            event.preventDefault();
+            on_signin(event);
+        }
     }
 
     // password input hack
@@ -244,16 +227,17 @@ updateProfile,
             } catch (error) {
                 switch (error.code) {
                     case 'auth/wrong-password':
-                        password_error = 'Incorrect Password or Password is not set. Please use any other method to login.';
+                        password_error =
+                            'Incorrect Password or Password is not set. Please use any other method to login.';
                         is_signin_loading = false;
                         break;
                     case 'auth/user-disabled':
-                        email_error = 'Account Disabled';
+                        email_error = 'Account Disabled. Please contact your handler.';
                         //password_error = 'User is disabled'
                         is_signin_loading = false;
                         break;
                     default:
-                        dev ? console.log('error', error) : '';
+                        dev ? console.log('signInWithEmailAndPassword: error', error) : '';
                         is_signin_loading = false;
                         break;
                 }
@@ -289,20 +273,11 @@ updateProfile,
     let is_modal_shown = false;
     let modal_message = '';
     function modal_show(message) {
-        if (dev) {
-            console.log('modal_show', message);
-        }
+        dev ? console.log('modal_show', message) : '';
         modal_message = message;
         is_modal_shown = true;
     }
-    function modal_hide() {
-        if (dev) {
-            console.log('modal_hide');
-        }
 
-        modal_message = '';
-        is_modal_shown = false;
-    }
 </script>
 
 <main>
@@ -406,6 +381,7 @@ updateProfile,
                                         </label>
                                         <input
                                             on:blur={username_on_blur}
+                                            on:keyup={username_on_keyup}
                                             bind:value={username_input}
                                             type="text"
                                             placeholder="Username"
@@ -441,6 +417,7 @@ updateProfile,
                                                 on:blur={password_on_blur}
                                                 on:input={password_on_input}
                                                 on:keyup={password_on_keyup}
+                                                on:keydown="{password_on_enter}"
                                                 type={is_password_shown ? 'text' : 'password'}
                                                 placeholder="Password"
                                                 autocomplete="current-password"
@@ -519,7 +496,7 @@ updateProfile,
     <div class="modal-box">
         <p>{modal_message}</p>
         <div class="modal-action">
-            <label for="my-modal-2" class="btn">Close</label>
+            <label for="my-modal-2" class="btn">OK</label>
         </div>
     </div>
 </div>

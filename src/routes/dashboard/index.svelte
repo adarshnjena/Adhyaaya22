@@ -9,6 +9,7 @@
     import { onMount } from 'svelte';
     import authStore from '$lib/auth/authStore';
     import { goto } from '$app/navigation';
+import AccountLinking from '$lib/dashboard/AccountLinking.svelte';
 
     // Custom Logic to boot unauth users.
     authStore.subscribe(async ({ isLoggedIn, firebaseControlled }) => {
@@ -49,6 +50,7 @@
                 <DashboardProfile />
                 <DashboardContact />
             </div>
+            <AccountLinking />
         </div>
     </div>
     <Footer />

@@ -5,7 +5,8 @@
     import EmailIcon from '@iconify-icons/ic/email.js';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import backgroundImage from '$lib/assets/page-background.png';
-    import { dev } from '$app/env';
+    //import { dev } from '$app/env';
+    const dev = true;
     import { onMount } from 'svelte';
     import { goto, prefetch } from '$app/navigation';
 
@@ -48,6 +49,7 @@
             result = await getRedirectResult(auth);
         } catch (error) {
             dev ? console.error(error) : '';
+            is_firebase_auth_in_progress = false;
         }
 
         if (result && result.user) {
@@ -60,6 +62,7 @@
             // No user is signed in.
             if (dev) {
                 console.log('No user is signed in.');
+                is_firebase_auth_in_progress = false;
             }
         }
         onAuthStateChanged(auth, (user) => {
@@ -155,7 +158,7 @@
     }
 
     // firebase auth login
-    let is_firebase_auth_in_progress = false;
+    let is_firebase_auth_in_progress = true;
     function on_google_auth(event) {
         if (dev) {
             console.log('on_firebase_auth', event);

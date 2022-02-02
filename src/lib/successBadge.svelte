@@ -5,6 +5,6 @@
 </script>
 
 <div class="badge badge-success">
-    <Icon icon={roundTick} />
+    <Icon class="mr-1" icon={roundTick} />
     {text}
 </div>

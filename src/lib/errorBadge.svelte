@@ -5,6 +5,6 @@
 </script>
 
 <div class="badge badge-error">
-    <Icon icon={roundClose} />
+    <Icon class="mr-1" icon={roundClose} />
     {text}
 </div>

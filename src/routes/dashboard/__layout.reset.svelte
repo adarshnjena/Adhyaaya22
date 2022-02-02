@@ -38,9 +38,9 @@
                                 <a href="/faq" class="rounded-xl">Item 2</a>
                             </li>
                             <li>
-                                <button class="btn btn-error rounded-xl">
+                                <a href="/auth/logout" class="btn btn-error rounded-xl">
                                     <Icon class="mr-2" icon={outlineLogout} /> LOGOUT
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </div>

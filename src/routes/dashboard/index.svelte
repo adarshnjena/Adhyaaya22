@@ -6,8 +6,17 @@
     import shareIcon from '@iconify-icons/ic/share.js';
     import DashboardProfile from '$lib/dashboard/dashboardProfileSettings.svelte';
     import DashboardContact from '$lib/dashboard/dashboardContact.svelte';
+    import { onMount } from 'svelte';
+    import authStore from '$lib/auth/authStore';
+    import { goto } from '$app/navigation';
 
-    // Logic here is to integrate firebase into the project.
+    // Custom Logic to boot unauth users.
+    authStore.subscribe(async ({ isLoggedIn, firebaseControlled }) => {
+        if (!isLoggedIn && firebaseControlled) {
+            await goto('/auth/login');
+        }
+    });
+    
 </script>
 
 <svelte:head>

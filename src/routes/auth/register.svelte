@@ -146,21 +146,21 @@
                                 <span class=" text-blue-100 font-bold">Sign Up</span>
                             </div>
                             <div class="text-center">
-                                <button class="btn bg-base-300" type="button">
+                                <button class="btn bg-base-300 btn-block" type="button">
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GitHubIcon}
                                     />
                                     Github
                                 </button>
-                                <button class="btn bg-base-300" type="button">
+                                <button class="btn bg-base-300 btn-block mt-2" type="button">
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={GoogleIcon}
                                     />
                                     Google
                                 </button>
-                                <button class="btn bg-base-300" type="button">
+                                <button class="btn bg-base-300 btn-block mt-2" type="button">
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
                                         icon={EmailIcon}

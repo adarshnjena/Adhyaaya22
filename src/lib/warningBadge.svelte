@@ -4,7 +4,7 @@
     export let text = 'info';
 </script>
 
-<div class="badge badge-info">
+<div class="badge badge-warning">
     <Icon class="mr-1" icon={roundInfo} />
     {text}
 </div>

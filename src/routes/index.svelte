@@ -2,7 +2,7 @@
     export const prerender = true;
 </script>
 
-<script>
+<script lang="ts">
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import roundLogin from '@iconify-icons/ic/round-login.js';
     //import navbarLogo from '$lib/assets/navbar-logo.png';
@@ -10,9 +10,9 @@
     import backgroundImageTwo from '$lib/assets/hero-background-alt.png';
     import { onMount } from 'svelte';
     import { dev } from '$app/env';
-    // Firebase Imports
     import { getApp, initializeApp } from 'firebase/app';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
+    import { profileDetails } from '$lib/types/profileDetails';
 
     let app;
     onMount(async () => {
@@ -29,8 +29,30 @@
             console.log(app);
         }
 
-        // We don't need further functions as of now.
+        // We will check if a key exists in the database, This should have been done in initialization.
     });
+
+    // Stuff below is for external refernce to child components.
+    let details: profileDetails = {
+        username: '@username',
+        email: 'username@domain.tld',
+        first_name: 'FirstName',
+        last_name: 'LastName',
+        mobile_number: '+91 5542342345',
+        address: 'Some Place, Some City, Some Country',
+        locality: 'Some Locality',
+        city: 'Some City',
+        state: 'Some State',
+        country: 'Some Country',
+        bio: 'I make a website! He did not. Great Success!',
+    };
+    let contact = {
+        name: 'Contact Name',
+        email: '',
+        mobile_number: '+91 5542342345',
+        picture_url: '',
+        bio: ''
+    }
 </script>
 
 <svelte:head>

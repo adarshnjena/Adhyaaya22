@@ -1,5 +1,15 @@
 <script lang="ts">
+    import { dev } from '$app/env';
+    import { goto } from '$app/navigation';
+    import authStore from '$lib/auth/authStore';
     import type { profileDetails } from '$lib/types/profileDetails';
+    import type { FirebaseApp } from 'firebase/app';
+    import type { Auth } from 'firebase/auth';
+    import type { Database } from 'firebase/database';
+    import { onMount } from 'svelte';
+    export let app: FirebaseApp = null;
+    export let auth: Auth = null;
+    export let database: Database = null;
     export let details: profileDetails = {
         username: '@username',
         email: 'username@domain.tld',
@@ -13,7 +23,8 @@
         country: 'Some Country',
         bio: 'I make a website! He did not. Great Success!',
     };
-    // Mobile Number needs validation, Email and Username are disabled from editing.
+
+
     let mobile_error = '';
     function mobile_on_blur(event) {
         const valid_mobile_regex = /^(?!0+$)(\+\d{1,3}[- ]?)?(?!0+$)\d{10}$/;
@@ -24,11 +35,39 @@
         }
     }
 
+    let username_error = '';
+    let username_typing_timeout;
+    function username_on_blur(event) {
+        dev ? console.log('username_on_blur', event) : '';
+        const special_chars = /[ `!#$%^&*()+=[\]{};':"\\|,.<>/?~]/;
+
+        if (details.username.length <= 5) {
+            username_error = 'Username must be at least 6 characters long';
+        } else if (details.username.length >= 20) {
+            username_error = 'Username must be less than 20 characters long';
+        } else if (special_chars.test(details.username)) {
+            username_error =
+                "Username must not contain special characters except '-' or '_' or '@' ";
+        } else if (details.username.includes('@') && details.username.indexOf('@') != 0) {
+            username_error =
+                "If you want to use '@' in your username, please place it at the beginning";
+        } else {
+            username_error = '';
+        }
+    }
+
+    function username_on_keyup(event) {
+        clearTimeout(username_typing_timeout);
+        username_typing_timeout = setTimeout(function () {
+            username_on_blur(event);
+        }, 500);
+    }
+
     let is_updating = false;
     function on_update_click(event) {
         if (!mobile_error) {
             is_updating = true;
-            // do update stuff here
+            // TODO: Update profile
         }
     }
 </script>
@@ -41,10 +80,10 @@
             <div class="text-center flex justify-between">
                 <span class="text-blueGray-700 text-xl font-bold">Your Details</span>
                 <button
-                    class="btn btn-info btn-sm {mobile_error ? 'btn-disabled' : ''} {is_updating
-                        ? 'loading btn-disabled'
-                        : ''}"
-                    disabled={!!is_updating || !!mobile_error}
+                    class="btn btn-info btn-sm {username_error ? 'btn-disabled' : ''}
+                    {mobile_error ? 'btn-disabled' : ''} 
+                    {is_updating ? 'loading btn-disabled' : ''}"
+                    disabled={!!is_updating || !!mobile_error || !!username_error}
                     on:click={on_update_click}
                     type="button"
                 >
@@ -54,21 +93,28 @@
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
             <form>
-                <span
-                    class="text-sm pl-4 pt-3 pb-6 text-gray-400 bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
+                <h6
+                    class="w-full text-sm pl-4 pt-3 pb-6 text-gray-400 bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
                 >
                     User Information
-                </span>
+                </h6>
                 <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
                     <div class="w-full lg:w-6/12 px-4">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-username">Username</label>
+                            <label
+                                class="label text-sm {username_error ? 'text-error' : ''}"
+                                for="grid-username"
+                            >
+                                {username_error ? username_error : 'Username'}
+                            </label>
                             <input
                                 id="grid-username"
                                 type="text"
-                                disabled
-                                class="input-disabled input input-ghost w-full"
+                                class="input input-ghost w-full {username_error
+                                    ? 'input-error'
+                                    : ''}"
                                 bind:value={details.username}
+                                on:keyup={username_on_keyup}
                             />
                         </div>
                     </div>

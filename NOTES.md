@@ -53,3 +53,5 @@ async function f() {
 
 f();
 ```
+
+-   Use `fetchSignInMethodsForEmail()` for checking if a new account.

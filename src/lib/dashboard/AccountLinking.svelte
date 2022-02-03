@@ -14,7 +14,9 @@
             </div>
             <div class="p-4 flex-auto">
                 <div class="relative flex h-[350px]">
-                    <div class="bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg bg-opacity-[0.75]">
+                    <div
+                        class="bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg bg-opacity-[0.75]"
+                    >
                         I HAS TEXT
                     </div>
                 </div>

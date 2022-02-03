@@ -1,15 +1,12 @@
 <script lang="ts">
     import { dev } from '$app/env';
-    import { goto } from '$app/navigation';
-    import authStore from '$lib/auth/authStore';
     import type { profileDetails } from '$lib/types/profileDetails';
     import type { FirebaseApp } from 'firebase/app';
     import type { Auth } from 'firebase/auth';
     import type { Database } from 'firebase/database';
-    import { onMount } from 'svelte';
-    export let app: FirebaseApp = null;
-    export let auth: Auth = null;
-    export let database: Database = null;
+    export const app: FirebaseApp = null;
+    export const auth: Auth = null;
+    export const database: Database = null;
     export let details: profileDetails = {
         username: '@username',
         email: 'username@domain.tld',
@@ -23,7 +20,6 @@
         country: 'Some Country',
         bio: 'I make a website! He did not. Great Success!',
     };
-
 
     let mobile_error = '';
     function mobile_on_blur(event) {
@@ -83,8 +79,8 @@
                     class="btn btn-info btn-sm {username_error ? 'btn-disabled' : ''}
                     {mobile_error ? 'btn-disabled' : ''} 
                     {is_updating ? 'loading btn-disabled' : ''}"
-                    disabled={!!is_updating || !!mobile_error || !!username_error}
-                    on:click={on_update_click}
+                    disabled="{!!is_updating || !!mobile_error || !!username_error}"
+                    on:click="{on_update_click}"
                     type="button"
                 >
                     Update Info
@@ -113,8 +109,8 @@
                                 class="input input-ghost w-full {username_error
                                     ? 'input-error'
                                     : ''}"
-                                bind:value={details.username}
-                                on:keyup={username_on_keyup}
+                                bind:value="{details.username}"
+                                on:keyup="{username_on_keyup}"
                             />
                         </div>
                     </div>
@@ -126,7 +122,7 @@
                                 type="email"
                                 disabled
                                 class="input-disabled input input-ghost w-full"
-                                bind:value={details.email}
+                                bind:value="{details.email}"
                             />
                         </div>
                     </div>
@@ -137,7 +133,7 @@
                                 id="grid-first-name"
                                 type="text"
                                 class="input input-ghost w-full"
-                                bind:value={details.first_name}
+                                bind:value="{details.first_name}"
                             />
                         </div>
                     </div>
@@ -148,7 +144,7 @@
                                 id="grid-last-name"
                                 type="text"
                                 class="input input-ghost w-full"
-                                bind:value={details.last_name}
+                                bind:value="{details.last_name}"
                             />
                         </div>
                     </div>
@@ -172,8 +168,8 @@
                                 id="grid-mobile-number"
                                 type="text"
                                 class="input input-ghost w-full {mobile_error ? 'input-error' : ''}"
-                                bind:value={details.mobile_number}
-                                on:blur={mobile_on_blur}
+                                bind:value="{details.mobile_number}"
+                                on:blur="{mobile_on_blur}"
                             />
                         </div>
                     </div>
@@ -184,7 +180,7 @@
                                 id="grid-locality"
                                 type="text"
                                 class="input input-ghost w-full"
-                                bind:value={details.locality}
+                                bind:value="{details.locality}"
                             />
                         </div>
                     </div>
@@ -195,7 +191,7 @@
                                 id="grid-address"
                                 type="text"
                                 class="input input-ghost w-full"
-                                bind:value={details.address}
+                                bind:value="{details.address}"
                             />
                         </div>
                     </div>
@@ -206,7 +202,7 @@
                                 id="grid-city"
                                 type="email"
                                 class="input input-ghost w-full"
-                                bind:value={details.city}
+                                bind:value="{details.city}"
                             />
                         </div>
                     </div>
@@ -217,7 +213,7 @@
                                 id="grid-state"
                                 type="text"
                                 class="input input-ghost w-full"
-                                bind:value={details.state}
+                                bind:value="{details.state}"
                             />
                         </div>
                     </div>
@@ -228,7 +224,7 @@
                                 id="grid-country"
                                 type="text"
                                 class="input input-ghost w-full"
-                                bind:value={details.country}
+                                bind:value="{details.country}"
                             />
                         </div>
                     </div>
@@ -248,8 +244,8 @@
                                 type="text"
                                 class="textarea h-24 textarea-ghost"
                                 rows="4"
-                                bind:value={details.bio}
-                            />
+                                bind:value="{details.bio}"
+                            ></textarea>
                         </div>
                     </div>
                 </div>

@@ -1,38 +1,35 @@
 <script lang="ts">
-    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
+    import { dev } from '$app/env';
+    import { goto, prefetch } from '$app/navigation';
+    import backgroundImage from '$lib/assets/page-background.png';
+    import authStore from '$lib/auth/authStore';
+    import { init_all_data } from '$lib/dashboard/init_data_db';
+    import firebaseConfig from '$lib/firebase/firebaseConfig';
+    import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
     import TwitterIcon from '@iconify-icons/simple-icons/twitter.js';
-    import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
-    import backgroundImage from '$lib/assets/page-background.png';
-    import { dev } from '$app/env';
-    //const dev = true;
-    import { onMount } from 'svelte';
-    import { goto, prefetch } from '$app/navigation';
-
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     // Firebase Imports
     import { getApp, initializeApp } from 'firebase/app';
-    import firebaseConfig from '$lib/firebase/firebaseConfig';
     import {
-        getRedirectResult,
-        GoogleAuthProvider,
-        getAuth,
-        UserCredential,
-        useDeviceLanguage,
-        signInWithRedirect,
-        onAuthStateChanged,
-        fetchSignInMethodsForEmail,
-        GithubAuthProvider,
-        TwitterAuthProvider,
-        EmailAuthProvider,
-        signInWithPopup,
-        linkWithCredential,
         createUserWithEmailAndPassword,
+        fetchSignInMethodsForEmail,
+        getAuth,
+        getRedirectResult,
+        GithubAuthProvider,
+        GoogleAuthProvider,
+        onAuthStateChanged,
         signInWithEmailAndPassword,
-        updateCurrentUser,
+        signInWithRedirect,
+        TwitterAuthProvider,
         updateProfile,
+        useDeviceLanguage,
+        UserCredential,
     } from 'firebase/auth';
-    import authStore from '$lib/auth/authStore';
+    import { getDatabase } from 'firebase/database';
+    //const dev = true;
+    import { onMount } from 'svelte';
 
     let app;
     let auth;
@@ -65,6 +62,7 @@
             is_firebase_auth_in_progress = false;
         }
 
+        // This callback runs when the AuthState has change, aka a user is signed in, out etc.
         onAuthStateChanged(auth, (user) => {
             dev ? console.log('authState changed', user) : '';
             authStore.set({
@@ -72,12 +70,14 @@
                 user: user,
                 firebaseControlled: true,
             });
+            user ? init_all_data(app, auth, getDatabase(app)) : '';
             user ? goto('/dashboard') : '';
         });
         if (result && result.user) {
             // User is signed in.
             dev ? console.log(result.user) : '';
-            goto('/dashboard');
+            // removed this goto, the navigation should be handled by the onAuthStateChanged callback.
+            //goto('/dashboard');
         } else {
             // No user is signed in.
             dev ? console.log('User is not signed-in') : '';
@@ -92,7 +92,7 @@
         is_password_shown = !is_password_shown;
     }
 
-    // function for username validation
+    // function for email validation
     let email_input = '';
     let email_error = '';
     let email_typing_timeout = null;
@@ -126,6 +126,7 @@
         }, 500);
     }
 
+    /* Le Username Stuff */
     let username_input;
     let username_error = '';
     let is_username_required = false;
@@ -157,8 +158,8 @@
             username_on_blur(event);
         }, 500);
     }
-
-    // function for password validation
+    /* Fin Username Stuff */
+    /* Le Password Stuff */
     let password_input = '';
     let password_error = '';
     let password_typing_timeout = null;
@@ -193,6 +194,7 @@
         password_input = (<HTMLInputElement>event.target).value;
         password_error = '';
     }
+    /* Fin Password Stuff */
 
     let is_signin_loading = false;
     async function on_signin(event) {
@@ -277,7 +279,6 @@
         modal_message = message;
         is_modal_shown = true;
     }
-
 </script>
 
 <main>
@@ -285,7 +286,7 @@
         <div
             class="absolute top-0 w-full h-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
             style="background-image: url({backgroundImage});"
-        />
+        ></div>
         <div class="container mx-auto px-4 h-full">
             <div class="flex content-center items-center justify-center h-full">
                 <div class="w-full lg:max-w-md px-4">
@@ -294,19 +295,19 @@
                     >
                         <div class="rounded-t mb-0 px-6 py-6">
                             <div class="text-center mb-3">
-                                <span class="text-blue-100 font-bold">Sign In</span>
+                                <span class="text-blue-100 font-bold">Sign In / Register</span>
                             </div>
                             <div class="text-center">
                                 <button
                                     class="btn btn-block bg-base-300 {is_firebase_auth_in_progress
                                         ? 'loading btn-disabled'
                                         : ''}"
-                                    on:click={on_github_auth}
+                                    on:click="{on_github_auth}"
                                     type="button"
                                 >
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
-                                        icon={GitHubIcon}
+                                        icon="{GitHubIcon}"
                                     />
                                     Github
                                 </button>
@@ -314,12 +315,12 @@
                                     class="btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
                                         ? 'loading btn-disabled'
                                         : ''}"
-                                    on:click={on_google_auth}
+                                    on:click="{on_google_auth}"
                                     type="button"
                                 >
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
-                                        icon={GoogleIcon}
+                                        icon="{GoogleIcon}"
                                     />
                                     Google
                                 </button>
@@ -327,12 +328,12 @@
                                     class="btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
                                         ? 'loading btn-disabled'
                                         : ''}"
-                                    on:click={on_twitter_auth}
+                                    on:click="{on_twitter_auth}"
                                     type="button"
                                 >
                                     <Icon
                                         class="inline-block w-5 mr-2 stroke-current"
-                                        icon={TwitterIcon}
+                                        icon="{TwitterIcon}"
                                     />
                                     Twitter
                                 </button>
@@ -340,8 +341,10 @@
                             <hr class="mt-6 border-b-1 border-primary" />
                         </div>
                         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                            <div class="hidden text-blue-200 text-center mb-3 font-bold">
-                                <small>Or Sign In With</small>
+                            <div class="hidden text-blue-200 text-center text-xs mb-3 font-bold">
+                                <small>
+                                    Don't have an account ? Enter your email anyway, we'll handle it
+                                </small>
                             </div>
                             <form>
                                 <div class="my-4 bg-base-200">
@@ -350,9 +353,9 @@
                                             <span class="label-text">Email</span>
                                         </label>
                                         <input
-                                            on:blur={email_on_blur}
-                                            on:keyup={email_on_keyup}
-                                            bind:value={email_input}
+                                            on:blur="{email_on_blur}"
+                                            on:keyup="{email_on_keyup}"
+                                            bind:value="{email_input}"
                                             type="email"
                                             autocomplete="email"
                                             placeholder="email@domain.tld"
@@ -380,9 +383,9 @@
                                             </span>
                                         </label>
                                         <input
-                                            on:blur={username_on_blur}
-                                            on:keyup={username_on_keyup}
-                                            bind:value={username_input}
+                                            on:blur="{username_on_blur}"
+                                            on:keyup="{username_on_keyup}"
+                                            bind:value="{username_input}"
                                             type="text"
                                             placeholder="Username"
                                             class="input tracking-widest font-mono {username_error
@@ -404,21 +407,22 @@
                                         <label for="" class="label">
                                             <span class="label-text">Password</span>
                                             <a
-                                                href="/"
+                                                href="/auth/reset_pass_req"
                                                 class="label-text-alt text-xs text-gray-400"
+                                                sveltekit:prefetch
                                             >
-                                                Need help ?
+                                                Forgot Password ?
                                             </a>
                                         </label>
                                         <div class="relative">
                                             <!--Custom Hack to get reactive input type and the correct value in on_blur -->
 
                                             <input
-                                                on:blur={password_on_blur}
-                                                on:input={password_on_input}
-                                                on:keyup={password_on_keyup}
+                                                on:blur="{password_on_blur}"
+                                                on:input="{password_on_input}"
+                                                on:keyup="{password_on_keyup}"
                                                 on:keydown="{password_on_enter}"
-                                                type={is_password_shown ? 'text' : 'password'}
+                                                type="{is_password_shown ? 'text' : 'password'}"
                                                 placeholder="Password"
                                                 autocomplete="current-password"
                                                 class="tracking-widest font-mono w-full pr-16 input {password_error
@@ -426,12 +430,12 @@
                                                     : 'Example String'}"
                                             />
                                             <button
-                                                on:click|preventDefault={password_toggle}
+                                                on:click|preventDefault="{password_toggle}"
                                                 class="absolute top-0 right-0 rounded-l-none btn  {is_password_shown
-                                                    ? 'btn-info'
-                                                    : 'btn-ghost'} text-xs"
+                                                    ? 'btn-warning'
+                                                    : 'btn-info'} text-xs"
                                             >
-                                                <Icon class="w-6 h-6" icon={Eye} />
+                                                <Icon class="w-6 h-6" icon="{Eye}" />
                                             </button>
                                             <label
                                                 for=""
@@ -457,18 +461,15 @@
 
                                 <div class="text-center">
                                     <button
-                                        on:click={on_signin}
+                                        on:click="{on_signin}"
                                         class="btn btn-lg text-base bg-base-300 w-full 
-                                        {email_input ? '' : ' btn-disabled '} 
-                                        {password_input ? '' : ' btn-disabled '} 
-                                        {is_username_required && username_input
-                                            ? ''
-                                            : ' btn-disabled '}
-                                        {email_error ? ' btn-disabled ' : ''} 
-                                        {password_error ? ' btn-disabled ' : ''} 
-                                        {username_error ? ' btn-disabled ' : ''} 
-                                        {is_firebase_auth_in_progress ? ' btn-disabled ' : ''} 
-                                        {is_signin_loading ? ' btn-disabled loading ' : ''}"
+                                        {email_input ? '' : '1 btn-disabled '} 
+                                        {password_input ? '' : '2 btn-disabled '}
+                                        {email_error ? '4 btn-disabled ' : ''} 
+                                        {password_error ? '5 btn-disabled ' : ''} 
+                                        {username_error ? '6 btn-disabled ' : ''} 
+                                        {is_firebase_auth_in_progress ? '7 btn-disabled ' : ''} 
+                                        {is_signin_loading ? '8 btn-disabled loading ' : ''}"
                                         type="button"
                                     >
                                         Sign In
@@ -491,7 +492,7 @@
     </section>
 </main>
 
-<input bind:checked={is_modal_shown} type="checkbox" id="my-modal-2" class="modal-toggle" />
+<input bind:checked="{is_modal_shown}" type="checkbox" id="my-modal-2" class="modal-toggle" />
 <div class="modal">
     <div class="modal-box">
         <p>{modal_message}</p>

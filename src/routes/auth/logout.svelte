@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import { dev } from '$app/env';
-    import { getApp, initializeApp, FirebaseApp } from 'firebase/app';
-    import { getAuth, signOut, Auth, onAuthStateChanged } from 'firebase/auth';
-    import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { goto } from '$app/navigation';
     import authStore from '$lib/auth/authStore';
+    import firebaseConfig from '$lib/firebase/firebaseConfig';
+    import { FirebaseApp, getApp, initializeApp } from 'firebase/app';
+    import { Auth, getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+    import { onMount } from 'svelte';
     let app: FirebaseApp;
     let auth: Auth;
     onMount(async () => {

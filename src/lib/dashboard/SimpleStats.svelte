@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineCircle from '@iconify-icons/ic/outline-circle.js';
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     export let title: string = 'PERFORMANCE';
     export let value: string = '49,65%';
     export let subtitle: string = '+12% from last month';
@@ -22,12 +22,12 @@
                     <div
                         class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-emerald-500"
                     >
-                        <Icon class="w-12 h-12" {icon} />
+                        <Icon class="w-12 h-12" icon="{icon}" />
                     </div>
                 </div>
             </div>
             <p class="text-sm text-blueGray-400 mt-4">
-                <span class={positive ? 'text-success' : 'text-error'}>{subtitle}</span>
+                <span class="{positive ? 'text-success' : 'text-error'}">{subtitle}</span>
             </p>
         </div>
     </div>

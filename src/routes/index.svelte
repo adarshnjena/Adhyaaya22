@@ -3,16 +3,16 @@
 </script>
 
 <script lang="ts">
-    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
-    import roundLogin from '@iconify-icons/ic/round-login.js';
+    import { dev } from '$app/env';
+    import backgroundImageTwo from '$lib/assets/hero-background-alt.png';
     //import navbarLogo from '$lib/assets/navbar-logo.png';
     import backgroundImageOne from '$lib/assets/hero-background.png';
-    import backgroundImageTwo from '$lib/assets/hero-background-alt.png';
-    import { onMount } from 'svelte';
-    import { dev } from '$app/env';
-    import { getApp, initializeApp } from 'firebase/app';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { profileDetails } from '$lib/types/profileDetails';
+    import roundLogin from '@iconify-icons/ic/round-login.js';
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
+    import { getApp, initializeApp } from 'firebase/app';
+    import { onMount } from 'svelte';
 
     let app;
     onMount(async () => {
@@ -51,8 +51,8 @@
         email: '',
         mobile_number: '+91 5542342345',
         picture_url: '',
-        bio: ''
-    }
+        bio: '',
+    };
 </script>
 
 <svelte:head>
@@ -63,7 +63,7 @@
     class="hero min-h-screen custom-background"
     style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
-    <div class="hero-overlay bg-opacity-60" />
+    <div class="hero-overlay bg-opacity-60"></div>
     <div class="text-center hero-content text-neutral-content">
         <div class="max-w-md">
             <h1 class="mb-5 text-5xl font-bold">Hello There!</h1>
@@ -72,7 +72,7 @@
                 login.
             </p>
             <a href="/auth/login" sveltekit:prefetch class="btn btn-primary">
-                <Icon class="mr-2" icon={roundLogin} />Login
+                <Icon class="mr-2" icon="{roundLogin}" />Login
             </a>
         </div>
     </div>

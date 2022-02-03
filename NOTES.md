@@ -13,7 +13,7 @@ Use as follows
     import icon_data from '@iconify-icons/ic/round-login';
 </script>
 
-<Icon icon={icon_data} />
+<Icon icon="{icon_data}" />
 ```
 
 -   for cross use ic:round-close

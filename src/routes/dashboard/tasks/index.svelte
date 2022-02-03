@@ -1,10 +1,10 @@
 <script lang="ts">
-import { dev } from '$app/env';
+    import { dev } from '$app/env';
 
-    import CompactTaskItem from '$lib/taskview/CompactTaskItem.svelte'
+    import CompactTaskItem from '$lib/taskview/CompactTaskItem.svelte';
     import { taskDetails } from '$lib/types/taskDetails';
-    import taskData from '../../../tasks.json'
-    export let tasks: taskDetails[] = dev ? taskData : []
+    import taskData from '../../../tasks.json';
+    export let tasks: taskDetails[] = dev ? taskData : [];
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@ import { dev } from '$app/env';
     <table class="table table-compact  w-full">
         <thead>
             <tr>
-                <th />
+                <th></th>
                 <th>Name</th>
                 <th>Importance ?</th>
                 <th>Last Date</th>
@@ -25,12 +25,12 @@ import { dev } from '$app/env';
         </thead>
         <tbody>
             {#each tasks as task, i}
-                <CompactTaskItem counter={i} task={task} />
+                <CompactTaskItem counter="{i}" task="{task}" />
             {/each}
         </tbody>
         <tfoot>
             <tr>
-                <th />
+                <th></th>
                 <th>Name</th>
                 <th>Importance ?</th>
                 <th>Last Date</th>
@@ -40,4 +40,3 @@ import { dev } from '$app/env';
         </tfoot>
     </table>
 </div>
-

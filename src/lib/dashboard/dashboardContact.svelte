@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { contactDetails } from '$lib/types/contactDetails';
     import profileImage from '$lib/assets/profile-image.jpg';
+    import type { contactDetails } from '$lib/types/contactDetails';
     export let contact: contactDetails = {
         name: 'Adarsh Jena',
         position: 'Tech Lead, Adhyaaya',
@@ -21,27 +21,27 @@
                     <div class="mx-auto">
                         <img
                             alt="..."
-                            src={profileImage}
+                            src="{profileImage}"
                             class="-mt-20 mask w-[200px] mask-circle"
                         />
                     </div>
                 </div>
-                <div class="w-full px-4 text-center mt-20" />
+                <div class="w-full px-4 text-center mt-20"></div>
             </div>
             <div class="text-center -m-4">
                 <h3 class="text-xl font-semibold leading-normal mb-2 text-gray-200">
                     {contact.name}
                 </h3>
                 <div class="text-sm leading-normal mt-0 mb-2 text-gray-400 font-bold uppercase">
-                    <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-400" />
+                    <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-400"></i>
                     {contact.position}
                 </div>
                 <div class="mb-2 text-gray-300 mt-10">
-                    <i class="fas fa-briefcase mr-2 text-lg text-gray-400" />
+                    <i class="fas fa-briefcase mr-2 text-lg text-gray-400"></i>
                     Email: {contact.email}
                 </div>
                 <div class="mb-2 text-gray-300">
-                    <i class="fas fa-university mr-2 text-lg text-gray-400" />
+                    <i class="fas fa-university mr-2 text-lg text-gray-400"></i>
                     Mobile/WhatsApp: {contact.phone}
                 </div>
             </div>
@@ -51,7 +51,7 @@
                         <p class="mb-4 text-lg leading-relaxed text-gray-200">
                             {contact.bio}
                         </p>
-                        <a href={contact.contact} class="hidden font-normal link text-red-500">
+                        <a href="{contact.contact}" class="hidden font-normal link text-red-500">
                             Contact
                         </a>
                     </div>

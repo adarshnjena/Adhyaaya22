@@ -1,6 +1,5 @@
-import { writable } from 'svelte/store';
-
 import type { UserInfo } from 'firebase/auth';
+import { writable } from 'svelte/store';
 
 const authentication_store = writable<{
     isLoggedIn: boolean;

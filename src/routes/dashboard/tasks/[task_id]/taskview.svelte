@@ -1,7 +1,7 @@
 <script>
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import Footer from '$lib/Footer.svelte';
+    import { onMount } from 'svelte';
     onMount(() => {
         console.log($page.params);
     });
@@ -46,17 +46,17 @@
                         <input
                             id="file-input"
                             accept="image/avif,image/bmp,image/gif,image/jpeg,image/png,application/pdf,image/tiff,image/webp,image/heic,image/heif,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                            on:change={() => {
+                            on:change="{() => {
                                 is_uploading = false;
-                            }}
+                            }}"
                             bind:files
                             type="file"
                             class="hidden"
                         />
                     </label>
                     <button
-                        disabled={is_uploading}
-                        on:click={on_upload_click}
+                        disabled="{is_uploading}"
+                        on:click="{on_upload_click}"
                         class="btn btn-secondary {files && files[0] ? '' : 'hidden'} {is_uploading
                             ? 'loading btn-disabled'
                             : ''}"

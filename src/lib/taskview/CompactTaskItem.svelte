@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { taskDetails } from '$lib/types/taskDetails';
     import InfoBadge from '$lib/infoBadge.svelte';
     import SuccessBadge from '$lib/successBadge.svelte';
+    import { taskDetails } from '$lib/types/taskDetails';
     import WarningBadge from '$lib/warningBadge.svelte';
 
     export let task: taskDetails = {
@@ -22,15 +22,15 @@
     <th>{counter + 1}</th>
     <td>{task.task_name}</td>
     {#if task.is_important}
-        <td><WarningBadge text={`Important`} /></td>
+        <td><WarningBadge text="{`Important`}" /></td>
     {:else}
-        <td><InfoBadge text={`Side Task`} /></td>
+        <td><InfoBadge text="{`Side Task`}" /></td>
     {/if}
-    <td class={date < now ? 'text-info' : date < now + 84600 ? 'text-warn' : ''}>{date}</td>
+    <td class="{date < now ? 'text-info' : date < now + 84600 ? 'text-warn' : ''}">{date}</td>
     {#if task.requires_proof}
-        <td><SuccessBadge text={`Proof Required`} /></td>
+        <td><SuccessBadge text="{`Proof Required`}" /></td>
     {:else}
-        <td><InfoBadge text={`Proof Not Required`} /></td>
+        <td><InfoBadge text="{`Proof Not Required`}" /></td>
     {/if}
     <td><a href="/dashboard/tasks/{task.task_id}/taskview" class="btn btn-info btn-sm">VIEW</a></td>
 </tr>

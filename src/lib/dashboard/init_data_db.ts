@@ -14,7 +14,7 @@ const defaultProfileData = {
     city: '',
     state: '',
     country: '',
-    bio: '',
+    bio: '<!---->',
 };
 
 export async function init_profile_data(app: FirebaseApp, auth: Auth, db: Database) {

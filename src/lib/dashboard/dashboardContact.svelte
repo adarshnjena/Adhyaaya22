@@ -11,13 +11,13 @@
     };
 </script>
 
-<div class="w-full lg:w-4/12 px-4">
+<div class="w-full px-4 2xl:w-4/12">
     <div
         class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-xl rounded-lg mt-16"
     >
         <div class="px-6">
             <div class="flex flex-wrap justify-center">
-                <div class="w-full px-4 flex justify-center">
+                <div class="flex justify-center w-full px-4">
                     <div class="mx-auto">
                         <img
                             alt="..."
@@ -26,32 +26,32 @@
                         />
                     </div>
                 </div>
-                <div class="w-full px-4 text-center mt-20"></div>
+                <div class="w-full px-4 mt-20 text-center"></div>
             </div>
-            <div class="text-center -m-4">
-                <h3 class="text-xl font-semibold leading-normal mb-2 text-gray-200">
+            <div class="-m-4 text-center">
+                <h3 class="mb-2 text-xl font-semibold leading-normal text-gray-200">
                     {contact.name}
                 </h3>
-                <div class="text-sm leading-normal mt-0 mb-2 text-gray-400 font-bold uppercase">
-                    <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-400"></i>
+                <div class="mt-0 mb-2 text-sm font-bold leading-normal text-gray-400 uppercase">
+                    <i class="mr-2 text-lg text-gray-400 fas fa-map-marker-alt"></i>
                     {contact.position}
                 </div>
-                <div class="mb-2 text-gray-300 mt-10">
-                    <i class="fas fa-briefcase mr-2 text-lg text-gray-400"></i>
+                <div class="mt-10 mb-2 text-gray-300">
+                    <i class="mr-2 text-lg text-gray-400 fas fa-briefcase"></i>
                     Email: {contact.email}
                 </div>
                 <div class="mb-2 text-gray-300">
-                    <i class="fas fa-university mr-2 text-lg text-gray-400"></i>
+                    <i class="mr-2 text-lg text-gray-400 fas fa-university"></i>
                     Mobile/WhatsApp: {contact.phone}
                 </div>
             </div>
-            <div class="mt-10 py-10 border-t border-gray-200 text-center">
+            <div class="py-10 mt-10 text-center border-t border-gray-200">
                 <div class="flex flex-wrap justify-center">
-                    <div class="w-full lg:w-9/12 px-4">
+                    <div class="w-full px-4 lg:w-9/12">
                         <p class="mb-4 text-lg leading-relaxed text-gray-200">
                             {contact.bio}
                         </p>
-                        <a href="{contact.contact}" class="hidden font-normal link text-red-500">
+                        <a href="{contact.contact}" class="hidden font-normal text-red-500 link">
                             Contact
                         </a>
                     </div>

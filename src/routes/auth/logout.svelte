@@ -12,7 +12,7 @@
         try {
             app = getApp();
         } catch (error) {
-            dev ? console.error(error) : '';
+            dev ? console.log(error) : '';
             // This means the app is not yet intialized.
             app = initializeApp(firebaseConfig);
         }
@@ -26,7 +26,7 @@
             dev ? console.log(result) : '';
             goto('/');
         } catch (error) {
-            dev ? console.error(error) : '';
+            dev ? console.log(error) : '';
         }
         onAuthStateChanged(auth, (user) => {
             dev ? console.log('authState changed', user) : '';

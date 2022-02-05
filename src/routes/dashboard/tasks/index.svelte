@@ -1,5 +1,6 @@
 <script lang="ts">
     import { dev } from '$app/env';
+import Protected from '$lib/auth/Protected.svelte';
 
     import CompactTaskItem from '$lib/taskview/CompactTaskItem.svelte';
     import { taskDetails } from '$lib/types/taskDetails';
@@ -11,8 +12,9 @@
     <title>Task View</title>
 </svelte:head>
 
+<Protected />
 <div class="container text-center mx-auto overflow-x-auto bg-opacity-[75%]">
-    <table class="table table-compact  w-full">
+    <table class="table w-full table-compact">
         <thead>
             <tr>
                 <th></th>

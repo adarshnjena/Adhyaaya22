@@ -68,13 +68,13 @@
     }
 </script>
 
-<div class="w-full lg:w-8/12 px-4">
+<div class="w-full px-4 2xl:w-8/12">
     <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-opacity-[75%] bg-base-200 border-0"
     >
-        <div class="rounded-t  mb-0 px-6 py-6">
-            <div class="text-center flex justify-between">
-                <span class="text-blueGray-700 text-xl font-bold">Your Details</span>
+        <div class="px-6 py-6 mb-0 rounded-t">
+            <div class="flex justify-between text-center">
+                <span class="text-xl font-bold text-blueGray-700">Your Details</span>
                 <button
                     class="btn btn-info btn-sm {username_error ? 'btn-disabled' : ''}
                     {mobile_error ? 'btn-disabled' : ''} 
@@ -87,7 +87,7 @@
                 </button>
             </div>
         </div>
-        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+        <div class="flex-auto px-4 py-10 pt-0 lg:px-10">
             <form>
                 <h6
                     class="w-full text-sm pl-4 pt-3 pb-6 text-gray-400 bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
@@ -95,7 +95,7 @@
                     User Information
                 </h6>
                 <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
                             <label
                                 class="label text-sm {username_error ? 'text-error' : ''}"
@@ -114,36 +114,36 @@
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-email">Email address</label>
+                            <label class="text-sm label" for="grid-email">Email address</label>
                             <input
                                 id="grid-email"
                                 type="email"
                                 disabled
-                                class="input-disabled input input-ghost w-full"
+                                class="w-full input-disabled input input-ghost"
                                 bind:value="{details.email}"
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-first-name">First Name</label>
+                            <label class="text-sm label" for="grid-first-name">First Name</label>
                             <input
                                 id="grid-first-name"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.first_name}"
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-last-name">Last Name</label>
+                            <label class="text-sm label" for="grid-last-name">Last Name</label>
                             <input
                                 id="grid-last-name"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.last_name}"
                             />
                         </div>
@@ -156,7 +156,7 @@
                     Contact Information
                 </h6>
                 <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
                             <label
                                 class="label text-sm {mobile_error ? 'text-error' : ''}"
@@ -173,57 +173,57 @@
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-6/12 px-4">
+                    <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-locality">Area/Locality</label>
+                            <label class="text-sm label" for="grid-locality">Area/Locality</label>
                             <input
                                 id="grid-locality"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.locality}"
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-12/12 px-4">
+                    <div class="w-full px-4 lg:w-12/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-address">Address</label>
+                            <label class="text-sm label" for="grid-address">Address</label>
                             <input
                                 id="grid-address"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.address}"
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-4/12 px-4">
+                    <div class="w-full px-4 lg:w-4/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-city">City</label>
+                            <label class="text-sm label" for="grid-city">City</label>
                             <input
                                 id="grid-city"
                                 type="email"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.city}"
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-4/12 px-4">
+                    <div class="w-full px-4 lg:w-4/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-state">State</label>
+                            <label class="text-sm label" for="grid-state">State</label>
                             <input
                                 id="grid-state"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.state}"
                             />
                         </div>
                     </div>
-                    <div class="w-full lg:w-4/12 px-4">
+                    <div class="w-full px-4 lg:w-4/12">
                         <div class="relative w-full mb-3">
-                            <label class="label text-sm" for="grid-country">Country</label>
+                            <label class="text-sm label" for="grid-country">Country</label>
                             <input
                                 id="grid-country"
                                 type="text"
-                                class="input input-ghost w-full"
+                                class="w-full input input-ghost"
                                 bind:value="{details.country}"
                             />
                         </div>
@@ -236,13 +236,13 @@
                     About Me
                 </h6>
                 <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
-                    <div class="w-full lg:w-12/12 px-4">
-                        <div class="form-control relative w-full mb-3">
-                            <label class="label text-sm" for="grid-about-me">About me</label>
+                    <div class="w-full px-4 lg:w-12/12">
+                        <div class="relative w-full mb-3 form-control">
+                            <label class="text-sm label" for="grid-about-me">About me</label>
                             <textarea
                                 id="grid-about-me"
                                 type="text"
-                                class="textarea h-24 textarea-ghost"
+                                class="h-24 textarea textarea-ghost"
                                 rows="4"
                                 bind:value="{details.bio}"
                             ></textarea>

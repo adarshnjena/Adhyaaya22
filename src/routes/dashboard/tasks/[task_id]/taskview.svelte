@@ -1,5 +1,6 @@
 <script>
     import { page } from '$app/stores';
+    import Protected from '$lib/auth/Protected.svelte';
     import Footer from '$lib/Footer.svelte';
     import { onMount } from 'svelte';
     onMount(() => {
@@ -17,18 +18,19 @@
     <title>Task {$page.params['task_id']}</title>
 </svelte:head>
 
+<Protected />
 <div class="h-full">
     <div class="md:px-16 px-2 mx-auto md:w-5/6 w-full mt-[2.5rem]">
-        <div class="w-full container">
+        <div class="container w-full">
             <div
                 class="container card text-center card-bordered bg-base-100 bg-opacity-[75%] min-h-[calc(100vh-18.5rem)]"
             >
                 <div class="card-body">
                     <h2 class="card-title">
                         Task Name
-                        <div class="badge mx-2 badge-secondary">NEW</div>
+                        <div class="mx-2 badge badge-secondary">NEW</div>
                     </h2>
-                    <span class="text-justify mx-auto auto-format">
+                    <span class="mx-auto text-justify auto-format">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

@@ -1,11 +1,12 @@
 <script>
+    import { browser } from '$app/env';
+
     import { goto } from '$app/navigation';
+    import { onMount } from 'svelte';
     import authStore from './authStore';
 
-    // Custom Logic to boot unauth users.
-    authStore.subscribe(async ({ isLoggedIn, firebaseControlled }) => {
-        if (!isLoggedIn && firebaseControlled) {
-            await goto('/auth/login');
-        }
+    //$: $authStore.isLoggedIn ? '' : browser ? goto('/auth/login'): '';
+    onMount(() => {
+        $authStore.isLoggedIn ? '' : goto('/auth/login');
     });
 </script>

@@ -19,7 +19,7 @@
         try {
             app = getApp();
         } catch (error) {
-            dev ? console.error(error) : '';
+            dev ? console.log(error) : '';
 
             // This means the app is not yet intialized.
             app = initializeApp(firebaseConfig);
@@ -60,7 +60,7 @@
 </svelte:head>
 
 <div
-    class="hero min-h-screen custom-background"
+    class="min-h-screen hero custom-background"
     style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
     <div class="hero-overlay bg-opacity-60"></div>

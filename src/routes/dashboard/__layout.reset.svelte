@@ -10,23 +10,23 @@
 
 <PageTransition>
     <nav
-        class="top-0 bg-opacity-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
+        class="absolute top-0 z-50 flex flex-wrap items-center justify-between w-full px-2 py-3 bg-opacity-0 navbar-expand-lg"
     >
-        <div class="w-11/12 px-4 mx-auto flex flex-wrap items-center justify-between">
-            <a class="btn btn-ghost mr-8" href="/" aria-label="home-link">
+        <div class="flex flex-wrap items-center justify-between w-11/12 px-4 mx-auto">
+            <a class="mr-8 btn btn-ghost" href="/" aria-label="home-link">
                 <figure>
                     <img aria-hidden="true" class="h-10" src="{navbarLogo}" alt="Adhyaaya Logo" />
                 </figure>
             </a>
             <div
-                class="flex flex-grow items-center bg-opacity-0 shadow-none rounded"
+                class="flex items-center flex-grow bg-opacity-0 rounded shadow-none"
                 id="example-navbar-warning"
             >
-                <ul class="flex flex-row list-none ml-auto self-end">
+                <ul class="flex flex-row self-end ml-auto list-none">
                     <li class="flex items-center">
                         <div class="dropdown dropdown-end">
                             <div tabindex="0" class="m-1 btn btn-ghost btn-outline">
-                                <Icon class="h-10 w-10" icon="{roundMenu}" />
+                                <Icon class="w-10 h-10" icon="{roundMenu}" />
                             </div>
                             <ul
                                 tabindex="0"
@@ -53,7 +53,7 @@
     </nav>
 
     <div
-        class="relative bg-base-300 h-full w-full py-32 "
+        class="relative w-full h-full pt-32 xl:pb-32 bg-base-300 "
         style="background-image: url({backgroundImage});"
     >
         <slot />

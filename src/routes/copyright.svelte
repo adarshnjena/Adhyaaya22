@@ -8,16 +8,16 @@
 
 <div class="h-full">
     <div class="md:px-16 px-2 mx-auto md:w-5/6 w-full mt-[2.5rem]">
-        <div class="w-full container">
+        <div class="container w-full">
             <div
                 class="container card text-center card-bordered bg-base-100 bg-opacity-[75%] min-h-[calc(100vh-18.5rem)]"
             >
                 <div class="card-body">
                     <h2 class="card-title">
                         Copyright &copy; 2022 Devansh Parapalli
-                        <div class="badge mx-2 badge-secondary">MIT License</div>
+                        <div class="mx-2 badge badge-secondary">MIT License</div>
                     </h2>
-                    <span class="text-justify mx-auto auto-format">
+                    <span class="mx-auto text-justify auto-format">
                         Permission is hereby granted, free of charge, to any person obtaining a copy
                         of this software and associated documentation files (the "Software"), to
                         deal in the Software without restriction, including without limitation the

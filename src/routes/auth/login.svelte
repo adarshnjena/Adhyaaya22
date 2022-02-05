@@ -3,7 +3,7 @@
     import { goto, prefetch } from '$app/navigation';
     import backgroundImage from '$lib/assets/page-background.png';
     import authStore from '$lib/auth/authStore';
-    import { init_all_data } from '$lib/dashboard/init_data_db';
+    import { init_profile_data } from '$lib/dashboard/init_data_db';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
@@ -20,6 +20,7 @@
         GithubAuthProvider,
         GoogleAuthProvider,
         onAuthStateChanged,
+        sendEmailVerification,
         signInWithEmailAndPassword,
         signInWithRedirect,
         TwitterAuthProvider,
@@ -38,7 +39,7 @@
         try {
             app = getApp();
         } catch (error) {
-            dev ? console.error('getApp: error', error) : '';
+            dev ? console.log('getApp: error', error) : '';
             // This means the app is not yet intialized.
             app = initializeApp(firebaseConfig);
         }
@@ -70,7 +71,9 @@
                 user: user,
                 firebaseControlled: true,
             });
-            user ? init_all_data(app, auth, getDatabase(app)) : '';
+            !(user.emailVerified) ?  sendEmailVerification(user) : '' ;
+            // we wait for the dashboard to check and then init the data.
+            //user ? init_profile_data(app, auth, getDatabase(app)) : '';
             user ? goto('/dashboard') : '';
         });
         if (result && result.user) {
@@ -282,20 +285,20 @@
 </script>
 
 <main>
-    <section class="relative w-full h-full pt-28 pb-40 min-h-screen overflow-y-clip">
+    <section class="relative w-full h-full min-h-screen pb-40 pt-28 overflow-y-clip">
         <div
-            class="absolute top-0 w-full h-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
+            class="absolute top-0 w-full h-full bg-no-repeat bg-base-300 motion-safe:animate-pulse"
             style="background-image: url({backgroundImage});"
         ></div>
-        <div class="container mx-auto px-4 h-full">
-            <div class="flex content-center items-center justify-center h-full">
-                <div class="w-full lg:max-w-md px-4">
+        <div class="container h-full px-4 mx-auto">
+            <div class="flex items-center content-center justify-center h-full">
+                <div class="w-full px-4 lg:max-w-md">
                     <div
-                        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-base-200 border-0"
+                        class="relative flex flex-col w-full min-w-0 mb-6 break-words border-0 rounded-lg shadow-lg bg-base-200"
                     >
-                        <div class="rounded-t mb-0 px-6 py-6">
-                            <div class="text-center mb-3">
-                                <span class="text-blue-100 font-bold">Sign In / Register</span>
+                        <div class="px-6 py-6 mb-0 rounded-t">
+                            <div class="mb-3 text-center">
+                                <span class="font-bold text-blue-100">Sign In / Register</span>
                             </div>
                             <div class="text-center">
                                 <button
@@ -325,10 +328,11 @@
                                     Google
                                 </button>
                                 <button
-                                    class="btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
+                                    class="hidden btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
                                         ? 'loading btn-disabled'
                                         : ''}"
                                     on:click="{on_twitter_auth}"
+                                    disabled
                                     type="button"
                                 >
                                     <Icon
@@ -340,8 +344,8 @@
                             </div>
                             <hr class="mt-6 border-b-1 border-primary" />
                         </div>
-                        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                            <div class="hidden text-blue-200 text-center text-xs mb-3 font-bold">
+                        <div class="flex-auto px-4 py-10 pt-0 lg:px-10">
+                            <div class="hidden mb-3 text-xs font-bold text-center text-blue-200">
                                 <small>
                                     Don't have an account ? Enter your email anyway, we'll handle it
                                 </small>
@@ -408,7 +412,7 @@
                                             <span class="label-text">Password</span>
                                             <a
                                                 href="/auth/reset_pass_req"
-                                                class="label-text-alt text-xs text-gray-400"
+                                                class="text-xs text-gray-400 label-text-alt"
                                                 sveltekit:prefetch
                                             >
                                                 Forgot Password ?
@@ -452,8 +456,8 @@
                                 </div>
                                 <div>
                                     <!-- Hidden Remember Me. We need people to login again and again. (inline-flex) -->
-                                    <span class="hidden items-center cursor-pointer">
-                                        <span class="ml-2 my-2 text-xs font-normal text-gray-400">
+                                    <span class="items-center hidden cursor-pointer">
+                                        <span class="my-2 ml-2 text-xs font-normal text-gray-400">
                                             Forgot Password ?
                                         </span>
                                     </span>
@@ -478,9 +482,9 @@
                             </form>
                         </div>
                     </div>
-                    <div class="flex flex-wrap mt-6 relative">
+                    <div class="relative flex flex-wrap mt-6">
                         <!-- Registration is closed except for special links. -->
-                        <div class="w-1/2 text-right hidden">
+                        <div class="hidden w-1/2 text-right">
                             <a href="/auth/register" class="text-blue-200">
                                 <small>Create new account</small>
                             </a>

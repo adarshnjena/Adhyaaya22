@@ -1,16 +1,16 @@
-<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+<div class="w-full px-4 mb-12 2xl:w-8/12 xl:mb-0">
     <div
         class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-lg rounded"
     >
-        <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="px-4 py-3 mb-0 border-0 rounded-t">
             <div class="flex flex-wrap items-center">
-                <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-gray-400">Tasks</h3>
+                <div class="relative flex-1 flex-grow w-full max-w-full px-4">
+                    <h3 class="text-base font-semibold text-gray-400">Tasks</h3>
                 </div>
-                <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                <div class="relative flex-1 flex-grow w-full max-w-full px-4 text-right">
                     <a
                         href="/dashboard/tasks"
-                        class="btn btn-secondary btn-sm text-xs px-3 py-0"
+                        class="px-3 py-0 text-xs btn btn-secondary btn-sm"
                         type="button"
                     >
                         See all
@@ -29,7 +29,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="hover text-xs">
+                    <tr class="text-xs hover">
                         <th class="bg-opacity-[75%]">Setup Profile</th>
                         <td class="bg-opacity-[75%]">ASAP</td>
                         <td class="bg-opacity-[75%]">(BadgeHere)</td>

@@ -4,10 +4,10 @@
     import { getApp, initializeApp } from 'firebase/app';
     import { fetchSignInMethodsForEmail, getAuth } from 'firebase/auth';
     import { onMount } from 'svelte';
-    import GoogleIcon from '@iconify/icons-logos/google-icon';
-    import GitHubIcon from '@iconify/icons-logos/github-icon';
-    import TwitterIcon from '@iconify/icons-logos/twitter';
-    import EmailIcon from '@iconify-icons/ic/email';
+    import GoogleIcon from '@iconify/icons-logos/google-icon.js';
+    import GitHubIcon from '@iconify/icons-logos/github-icon.js';
+    import TwitterIcon from '@iconify/icons-logos/twitter.js';
+    import EmailIcon from '@iconify-icons/ic/email.js';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import authStore from '$lib/auth/authStore';
     

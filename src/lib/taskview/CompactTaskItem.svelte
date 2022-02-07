@@ -10,12 +10,14 @@
         task_details:
             'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
         is_important: true,
-        end_date: '2021-03-29T16:52:50Z',
+        end_date: 1644336165,
         requires_proof: true,
     };
     export let counter: number = 0;
-    let date = Date.parse(task.end_date);
-    let now = Date.now();
+    let date = task.end_date
+    let now = Date.now() / 1000;
+    let _date = new Date(date * 1000);
+    let printable_date = _date.toLocaleDateString('en-IN', {year: 'numeric', month: '2-digit', day: '2-digit'}) + ' ' + _date.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false });
 </script>
 
 <tr class="hover">
@@ -26,7 +28,7 @@
     {:else}
         <td><InfoBadge text="{`Side Task`}" /></td>
     {/if}
-    <td class="{date < now ? 'text-info' : date < now + 84600 ? 'text-warn' : ''}">{date}</td>
+    <td class="font-mono {date < now ? 'text-info' : date < now + 2*84600 ? 'text-warn' : ''}">{printable_date}</td>
     {#if task.requires_proof}
         <td><SuccessBadge text="{`Proof Required`}" /></td>
     {:else}

@@ -1,8 +1,8 @@
 export interface contactDetails {
     name: string;
     position: string;
-    phone: string;
+    mobile_number: string;
+    picture_url: string;
     email: string;
     bio: string;
-    contact: string;
 }

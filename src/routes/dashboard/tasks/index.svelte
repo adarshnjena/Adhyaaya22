@@ -1,11 +1,10 @@
 <script lang="ts">
     import { dev } from '$app/env';
-import Protected from '$lib/auth/Protected.svelte';
+    import Protected from '$lib/auth/Protected.svelte';
 
     import CompactTaskItem from '$lib/taskview/CompactTaskItem.svelte';
     import { taskDetails } from '$lib/types/taskDetails';
-    import taskData from '../../../tasks.json';
-    export let tasks: taskDetails[] = dev ? taskData : [];
+    export let tasks: taskDetails[] = [];
 </script>
 
 <svelte:head>

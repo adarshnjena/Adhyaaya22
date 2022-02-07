@@ -3,6 +3,6 @@ export interface taskDetails {
     task_name: string;
     task_details: string;
     is_important: boolean;
-    end_date: string;
+    end_date: number;
     requires_proof: boolean;
 }

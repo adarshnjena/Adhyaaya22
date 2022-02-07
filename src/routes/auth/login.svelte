@@ -3,7 +3,6 @@
     import { goto, prefetch } from '$app/navigation';
     import backgroundImage from '$lib/assets/page-background.png';
     import authStore from '$lib/auth/authStore';
-    import { init_profile_data } from '$lib/dashboard/init_data_db';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
@@ -28,8 +27,6 @@
         useDeviceLanguage,
         UserCredential,
     } from 'firebase/auth';
-    import { getDatabase } from 'firebase/database';
-    //const dev = true;
     import { onMount } from 'svelte';
 
     let app;

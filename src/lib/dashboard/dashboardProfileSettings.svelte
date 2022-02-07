@@ -2,11 +2,15 @@
     import { dev } from '$app/env';
     import type { profileDetails } from '$lib/types/profileDetails';
     import type { FirebaseApp } from 'firebase/app';
-    import type { Auth } from 'firebase/auth';
-    import type { Database } from 'firebase/database';
-    export const app: FirebaseApp = null;
-    export const auth: Auth = null;
-    export const database: Database = null;
+    //import type { Auth } from 'firebase/auth';
+    import type { Firestore } from 'firebase/firestore/lite';
+    import { update_user_details } from '$lib/firebase/userDetails';
+    import authStore from '$lib/auth/authStore';
+
+    export let app: FirebaseApp = null;
+    //export let auth: Auth = null;
+    export let database: Firestore = null;
+    
     export let details: profileDetails = {
         username: '@username',
         email: 'username@domain.tld',
@@ -58,13 +62,26 @@
             username_on_blur(event);
         }, 500);
     }
-
     let is_updating = false;
-    function on_update_click(event) {
+    export let handle_update_click;
+    async function on_update_click(event) {
+        console.log('on_update_click', event);
         if (!mobile_error) {
             is_updating = true;
-            // TODO: Update profile
+            button_text = 'Updating...';
+            await update_user_details(app, $authStore.user, database, details);
+            is_updating = false;
+            button_text = '✓ Info Updated';
+            button_status = 'btn-success';
+            await handle_update_click(event);
+            setTimeout(return_to_init_1, 3000);
         }
+    }
+    let button_text = 'Update Info';
+    let button_status = 'btn-info'
+    function return_to_init_1() {
+        button_text = 'Update Info';
+        button_status = 'btn-info';
     }
 </script>
 
@@ -76,14 +93,14 @@
             <div class="flex justify-between text-center">
                 <span class="text-xl font-bold text-blueGray-700">Your Details</span>
                 <button
-                    class="btn btn-info btn-sm {username_error ? 'btn-disabled' : ''}
+                    class="btn {button_status} btn-sm {username_error ? 'btn-disabled' : ''}
                     {mobile_error ? 'btn-disabled' : ''} 
                     {is_updating ? 'loading btn-disabled' : ''}"
                     disabled="{!!is_updating || !!mobile_error || !!username_error}"
                     on:click="{on_update_click}"
                     type="button"
                 >
-                    Update Info
+                    {button_text}
                 </button>
             </div>
         </div>

@@ -1,17 +1,16 @@
 <script lang="ts">
-    import profileImage from '$lib/assets/profile-image.jpg';
     import type { contactDetails } from '$lib/types/contactDetails';
     export let contact: contactDetails = {
         name: 'Adarsh Jena',
         position: 'Tech Lead, Adhyaaya',
         email: 'ca_support@adhyaaya.in',
-        phone: '+91 5298188818',
+        picture_url: "https://picsum.photos/200", // TODO: Hook this up with the actual profile image, Ideally using Firestore.
+        mobile_number: '+91 5298188818',
         bio: 'An artist of considerable range, Jenna the name taken by Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.',
-        contact: 'mailto:ca_support@adhyaaya.in',
     };
 </script>
 
-<div class="w-full px-4 2xl:w-4/12">
+<div class="text-justify w-full px-4 2xl:w-4/12">
     <div
         class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-xl rounded-lg mt-16"
     >
@@ -21,7 +20,7 @@
                     <div class="mx-auto">
                         <img
                             alt="..."
-                            src="{profileImage}"
+                            src="{contact.picture_url}"
                             class="-mt-20 mask w-[200px] mask-circle"
                         />
                     </div>
@@ -42,18 +41,18 @@
                 </div>
                 <div class="mb-2 text-gray-300">
                     <i class="mr-2 text-lg text-gray-400 fas fa-university"></i>
-                    Mobile/WhatsApp: {contact.phone}
+                    Mobile/WhatsApp: {contact.mobile_number}
                 </div>
             </div>
             <div class="py-10 mt-10 text-center border-t border-gray-200">
                 <div class="flex flex-wrap justify-center">
                     <div class="w-full px-4 lg:w-9/12">
-                        <p class="mb-4 text-lg leading-relaxed text-gray-200">
+                        <p class="mb-4 text-lg text-justify leading-relaxed text-gray-200">
                             {contact.bio}
                         </p>
-                        <a href="{contact.contact}" class="hidden font-normal text-red-500 link">
+                        <span class="hidden font-normal text-red-500 link">
                             Contact
-                        </a>
+                        </span>
                     </div>
                 </div>
             </div>

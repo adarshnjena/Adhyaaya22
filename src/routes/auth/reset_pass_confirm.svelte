@@ -52,7 +52,6 @@
     async function password_on_enter(event: HTMLElementEventMap['keydown']) {
         if (event.key === 'Enter' || event.keyCode === 13) {
             event.preventDefault();
-            // @ts-ignore
         }
     }
 

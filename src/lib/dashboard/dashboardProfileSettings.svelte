@@ -10,7 +10,7 @@
     export let app: FirebaseApp = null;
     //export let auth: Auth = null;
     export let database: Firestore = null;
-    
+
     export let details: profileDetails = {
         username: '@username',
         email: 'username@domain.tld',
@@ -78,7 +78,7 @@
         }
     }
     let button_text = 'Update Info';
-    let button_status = 'btn-info'
+    let button_status = 'btn-info';
     function return_to_init_1() {
         button_text = 'Update Info';
         button_status = 'btn-info';

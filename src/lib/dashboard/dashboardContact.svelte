@@ -4,13 +4,14 @@
         name: 'Adarsh Jena',
         position: 'Tech Lead, Adhyaaya',
         email: 'ca_support@adhyaaya.in',
-        picture_url: "https://picsum.photos/200", // TODO: Hook this up with the actual profile image, Ideally using Firestore.
+        picture_url:
+            'https://firebasestorage.googleapis.com/v0/b/adhyaaya-staging-dev.appspot.com/o/default_profile.jpg?alt=media&token=349c0982-c15e-4936-b249-e01935bbe4d7',
         mobile_number: '+91 5298188818',
         bio: 'An artist of considerable range, Jenna the name taken by Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.',
     };
 </script>
 
-<div class="text-justify w-full px-4 2xl:w-4/12">
+<div class="text-justify w-full px-4 2xl:w-4/12 2xl:-my-60">
     <div
         class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-xl rounded-lg mt-16"
     >
@@ -50,9 +51,7 @@
                         <p class="mb-4 text-lg text-justify leading-relaxed text-gray-200">
                             {contact.bio}
                         </p>
-                        <span class="hidden font-normal text-red-500 link">
-                            Contact
-                        </span>
+                        <span class="hidden font-normal text-red-500 link">Contact</span>
                     </div>
                 </div>
             </div>

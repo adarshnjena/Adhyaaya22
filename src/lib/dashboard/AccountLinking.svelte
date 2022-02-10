@@ -10,10 +10,10 @@
     import EmailIcon from '@iconify-icons/ic/email.js';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import authStore from '$lib/auth/authStore';
-    
+
     let auth;
     let app;
-    let methods: string[] = []
+    let methods: string[] = [];
     let is_google = false;
     let is_github = false;
     let is_twitter = false;
@@ -30,7 +30,7 @@
         dev ? console.log(app) : '';
         // Redirect Handler, used when the user is authenticated.
         auth = getAuth();
-        methods = await fetchSignInMethodsForEmail(auth, $authStore.user.email)
+        methods = await fetchSignInMethodsForEmail(auth, $authStore.user.email);
         dev ? console.log('login methods', methods) : '';
         is_google = methods.includes('google.com');
         is_github = methods.includes('github.com');
@@ -48,7 +48,9 @@
             <div class="px-4 py-3 mb-0 bg-transparent rounded-t">
                 <div class="flex flex-wrap items-center">
                     <div class="relative flex-1 flex-grow w-full max-w-full">
-                        <h6 class="mt-4 mb-1 ml-2 text-xl font-semibold uppercase text-blueGray-400">
+                        <h6
+                            class="mt-4 mb-1 ml-2 text-xl font-semibold uppercase text-blueGray-400"
+                        >
                             Link Accounts
                         </h6>
                     </div>
@@ -61,8 +63,14 @@
                     >
                         <Icon class="ml-4 mr-2" icon="{GoogleIcon}" />
                         <span class="flex-grow-[4] text-lg">Google</span>
-                        <a sveltekit:prefetch href="/auth/link?provider=google.com" class="btn btn-ghost btn-xs mr-4 {is_google ? 'btn-disabled bg-success text-black':''}">
-                            {is_google ? 'Linked':'Link'}
+                        <a
+                            sveltekit:prefetch
+                            href="/auth/link?provider=google.com"
+                            class="btn btn-ghost btn-xs mr-4 {is_google
+                                ? 'btn-disabled bg-success text-black'
+                                : ''}"
+                        >
+                            {is_google ? 'Linked' : 'Link'}
                         </a>
                     </div>
                     <div
@@ -70,8 +78,13 @@
                     >
                         <Icon class="ml-4 mr-2 invert" icon="{GitHubIcon}" />
                         <span class="flex-grow-[4] text-lg">GitHub</span>
-                        <a href="/auth/link?provider=github.com" class="mr-4 btn btn-ghost btn-xs {is_github ? 'btn-disabled bg-success text-black':''}">
-                            {is_github ? 'Linked':'Link'}
+                        <a
+                            href="/auth/link?provider=github.com"
+                            class="mr-4 btn btn-ghost btn-xs {is_github
+                                ? 'btn-disabled bg-success text-black'
+                                : ''}"
+                        >
+                            {is_github ? 'Linked' : 'Link'}
                         </a>
                     </div>
                     <!-- Removed Twitter, I don't know how to fix it for ze moment. (flex) -->
@@ -80,8 +93,13 @@
                     >
                         <Icon class="ml-4 mr-2" icon="{TwitterIcon}" />
                         <span class="flex-grow-[4] text-lg">Twitter</span>
-                        <a href="/auth/link?provider=twitter.com" class="mr-4 btn btn-ghost btn-xs {is_twitter ? 'btn-disabled bg-success text-black':''}">
-                            {is_twitter ? 'Linked':'Link'}
+                        <a
+                            href="/auth/link?provider=twitter.com"
+                            class="mr-4 btn btn-ghost btn-xs {is_twitter
+                                ? 'btn-disabled bg-success text-black'
+                                : ''}"
+                        >
+                            {is_twitter ? 'Linked' : 'Link'}
                         </a>
                     </div>
                     <div
@@ -90,7 +108,7 @@
                         <Icon class="ml-4 mr-2" icon="{EmailIcon}" />
                         <span class="flex-grow-[4] text-lg">Email / Password</span>
                         <a href="/auth/reset_pass_req" class="mr-4 btn btn-ghost btn-xs">
-                            {is_email ? 'Reset Password':'Set Password'}
+                            {is_email ? 'Reset Password' : 'Set Password'}
                         </a>
                     </div>
                 </div>

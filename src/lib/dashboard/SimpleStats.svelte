@@ -8,7 +8,7 @@
     export let positive: boolean = true;
 </script>
 
-<div class="w-full px-4 lg:w-6/12 xl:w-3/12">
+<div class="w-full px-4 mt-4 2xl:mt-0 2xl:w-4/12">
     <div
         class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-100 rounded-lg mb-6 xl:mb-0 shadow-lg"
     >
@@ -20,7 +20,9 @@
                 </div>
                 <div class="relative flex-initial w-auto pl-4">
                     <div
-                        class="inline-flex items-center justify-center w-12 h-12 p-3 text-center rounded-full shadow-lg bg-base-100 {positive ? 'text-success' : 'text-error'}"
+                        class="inline-flex items-center justify-center w-12 h-12 p-3 text-center rounded-full shadow-lg bg-base-100 {positive
+                            ? 'text-success'
+                            : 'text-error'}"
                     >
                         <Icon class="w-12 h-12" icon="{icon}" />
                     </div>

@@ -33,10 +33,12 @@
                                 class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
                             >
                                 <li>
-                                    <a href="/" class="rounded-xl">Item 1</a>
+                                    <a sveltekit:prefetch href="/dashboard" class="rounded-xl">
+                                        Dashboard
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="/faq" class="rounded-xl">Item 2</a>
+                                    <a href="/dashboard/tasks" class="rounded-xl">View All Tasks</a>
                                 </li>
                                 <li>
                                     <a href="/auth/logout" class="btn btn-error rounded-xl">

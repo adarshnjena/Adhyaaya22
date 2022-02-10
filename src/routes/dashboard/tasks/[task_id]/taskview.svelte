@@ -20,7 +20,6 @@
         is_important: false,
         end_date: 0,
         requires_proof: false,
-
     };
     let task_id = $page.params['task_id'];
     let app;
@@ -52,7 +51,7 @@
 
     let files;
     let is_uploading = false;
-    let button_text = task.requires_proof ? 'Upload': 'MARK AS DONE';
+    let button_text = task.requires_proof ? 'Upload' : 'MARK AS DONE';
     let button_class = 'btn-secondary';
     async function on_upload_click() {
         is_uploading = true;
@@ -70,8 +69,8 @@
         is_uploading = false;
         button_text = 'Upload';
         button_class = 'btn-secondary';
-        await sleep(500);
-        await goto('/dashboard');
+        //await sleep(500);
+        window.history.back();
     }
 </script>
 
@@ -83,9 +82,7 @@
 <div class="hero">
     <div class="md:px-16 px-2 mx-auto lg:w-3/6 md:w-4/6 w-full mt-[2.5rem]">
         <div class="container w-full">
-            <div
-                class="container card text-center card-bordered bg-base-100 bg-opacity-[75%]"
-            >
+            <div class="container card text-center card-bordered bg-base-100 bg-opacity-[75%]">
                 <div class="card-body">
                     <h2 class="card-title">
                         {task.task_name}
@@ -103,7 +100,10 @@
                     <div class="mx-auto mb-16 card-actions">
                         <label
                             for="file-input"
-                            class="btn btn-wide {task.requires_proof ? '': 'hidden'} {files && files[0] ? 'btn-ghost' : ''}"
+                            class="btn btn-wide {task.requires_proof ? '' : 'hidden'} {files &&
+                            files[0]
+                                ? 'btn-ghost'
+                                : ''}"
                         >
                             {files && files[0] ? files[0].name : 'SELECT A FILE'}
                             <input
@@ -120,9 +120,11 @@
                         <button
                             disabled="{is_uploading}"
                             on:click="{on_upload_click}"
-                            class="btn uppercase { task.requires_proof ? files && files[0] ? '': 'hidden' : ''} {is_uploading
-                                ? 'loading btn-disabled'
-                                : ''} {button_class}"
+                            class="btn uppercase {task.requires_proof
+                                ? files && files[0]
+                                    ? ''
+                                    : 'hidden'
+                                : ''} {is_uploading ? 'loading btn-disabled' : ''} {button_class}"
                         >
                             {button_text}
                         </button>
@@ -131,6 +133,5 @@
             </div>
         </div>
     </div>
-    
 </div>
 <Footer />

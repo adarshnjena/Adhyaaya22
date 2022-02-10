@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { taskDetails } from "$lib/types/taskDetails";
-    import DashboardTaskItem from "$lib/taskview/DashboardTaskItem.svelte";
-    export let tasks:{[key:string]:taskDetails} = {};
+    import type { taskDetails } from '$lib/types/taskDetails';
+    import DashboardTaskItem from '$lib/taskview/DashboardTaskItem.svelte';
+    export let tasks: { [key: string]: taskDetails } = {};
     export let profile_tasks;
 </script>
 
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     {#each Object.entries(tasks) as [task_id, task]}
-                         <DashboardTaskItem task={task} completed={task_id in profile_tasks} />
+                        <DashboardTaskItem task="{task}" completed="{task_id in profile_tasks}" />
                     {/each}
                 </tbody>
                 <tfoot>

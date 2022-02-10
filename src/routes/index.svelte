@@ -20,7 +20,6 @@
             app = getApp();
         } catch (error) {
             dev ? console.log(error) : '';
-
             // This means the app is not yet intialized.
             app = initializeApp(firebaseConfig);
         }

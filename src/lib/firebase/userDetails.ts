@@ -16,11 +16,7 @@ export const defaultProfileData = {
     bio: '<!---->',
 };
 
-export async function get_user_details(
-    app: FirebaseApp,
-    user: UserInfo,
-    db: Firestore,
-) {
+export async function get_user_details(app: FirebaseApp, user: UserInfo, db: Firestore) {
     const users_ref = doc(db, `users/${user.uid}`);
     const data_ref = await getDoc(users_ref);
     if (data_ref.exists()) {
@@ -39,28 +35,42 @@ export async function set_initial_user_details(
     _data['username'] = user.displayName.toLowerCase().replaceAll(' ', '_');
     _data['email'] = user.email;
     const data = {
-        'profile': _data,
-        'tasks': {},
-    }
+        profile: _data,
+        tasks: {},
+    };
     const users_ref = doc(db, `/users/${user.uid}`);
     await setDoc(users_ref, data);
     return;
-}   
+}
 
-export async function update_user_details(app: FirebaseApp, user: UserInfo, db: Firestore, data): Promise<void> {
-    console.log(db)
+export async function update_user_details(
+    app: FirebaseApp,
+    user: UserInfo,
+    db: Firestore,
+    data,
+): Promise<void> {
+    console.log(db);
     const profile_ref = doc(db, `/users/${user.uid}`);
     const _data = {
-        'profile': data,
-    }
+        profile: data,
+    };
     await updateDoc(profile_ref, _data);
 }
 
-export async function update_user_task_details(app: FirebaseApp, user: UserInfo, db: Firestore, task_id: string): Promise<void> {
+export async function update_user_task_details(
+    app: FirebaseApp,
+    user: UserInfo,
+    db: Firestore,
+    task_id: string,
+): Promise<void> {
+    // We have to get the old data first, otherwise it overwrites the old data, Ideally firestore should allow us to update a specific field.
+    const data = await get_user_details(app, user, db);
     const tasks_ref = doc(db, `/users/${user.uid}`);
-    const data = {
-        'tasks': {}
-    };
-    data['tasks'][task_id] = true
-    await updateDoc(tasks_ref, data);
+    data['tasks'][task_id] = true;
+    await updateDoc(tasks_ref, data as uploadTasks);
+}
+
+interface uploadTasks extends profileDetails {
+    // Extend the uploaded data to correspond to the AddPrefixToKeys type for updateDoc.
+    [key: `${string}.${string}`]: string;
 }

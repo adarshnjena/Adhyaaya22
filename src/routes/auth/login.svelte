@@ -68,7 +68,7 @@
                 user: user,
                 firebaseControlled: true,
             });
-            !(user.emailVerified) ?  sendEmailVerification(user) : '' ;
+            !user.emailVerified ? sendEmailVerification(user) : '';
             // we wait for the dashboard to check and then init the data.
             //user ? init_profile_data(app, auth, getDatabase(app)) : '';
             user ? goto('/dashboard') : '';

@@ -85,9 +85,9 @@
     }
 </script>
 
-<div class="w-full px-4 2xl:w-8/12">
+<div class="w-full px-4 2xl:w-8/12 ">
     <div
-        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-opacity-[75%] bg-base-200 border-0"
+        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg backdrop-blur bg-opacity-[75%] bg-base-200 border-0"
     >
         <div class="px-6 py-6 mb-0 rounded-t">
             <div class="flex justify-between text-center">
@@ -107,11 +107,11 @@
         <div class="flex-auto px-4 py-10 pt-0 lg:px-10">
             <form>
                 <h6
-                    class="w-full text-sm pl-4 pt-3 pb-6 text-gray-400 bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
+                    class="w-full text-sm pl-4 pt-3 pb-6 text-gray-400 backdrop-blur bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
                 >
                     User Information
                 </h6>
-                <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
+                <div class="flex flex-wrap backdrop-blur bg-opacity-[75%] bg-base-300 rounded-b-lg">
                     <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
                             <label
@@ -168,11 +168,11 @@
                 </div>
 
                 <h6
-                    class=" text-sm mt-4 pl-4 pt-3 pb-6 text-gray-400 bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
+                    class=" text-sm mt-4 pl-4 pt-3 pb-6 text-gray-400 backdrop-blur bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
                 >
                     Contact Information
                 </h6>
-                <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
+                <div class="flex flex-wrap backdrop-blur bg-opacity-[75%] bg-base-300 rounded-b-lg">
                     <div class="w-full px-4 lg:w-6/12">
                         <div class="relative w-full mb-3">
                             <label
@@ -248,11 +248,11 @@
                 </div>
 
                 <h6
-                    class=" text-sm mt-4 pl-4 pt-3 pb-6 text-gray-400 bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
+                    class=" text-sm mt-4 pl-4 pt-3 pb-6 text-gray-400 backdrop-blur bg-opacity-[75%] bg-base-300 rounded-t-lg font-bold uppercase"
                 >
                     About Me
                 </h6>
-                <div class="flex flex-wrap bg-opacity-[75%] bg-base-300 rounded-b-lg">
+                <div class="flex flex-wrap backdrop-blur bg-opacity-[75%] bg-base-300 rounded-b-lg">
                     <div class="w-full px-4 lg:w-12/12">
                         <div class="relative w-full mb-3 form-control">
                             <label class="text-sm label" for="grid-about-me">About me</label>

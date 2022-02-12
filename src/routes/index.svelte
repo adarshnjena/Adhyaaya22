@@ -1,5 +1,6 @@
 <script context="module">
     export const prerender = true;
+    //TODO: Make this into a landing page.
 </script>
 
 <script lang="ts">
@@ -40,7 +41,7 @@
     class="min-h-screen hero custom-background"
     style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
-    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-overlay backdrop-blur bg-opacity-60"></div>
     <div class="text-center hero-content text-neutral-content">
         <div class="max-w-md">
             <h1 class="mb-5 text-5xl font-bold">Hello There!</h1>

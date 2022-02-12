@@ -3,10 +3,10 @@
 </script>
 
 <div class="min-h-screen hero bg-base-300 " style="background-image: url({backgroundImage});">
-    <div class="bg-opacity-75 hero-overlay bg-base-300 motion-safe:animate-pulse"></div>
+    <div class="backdrop-blur bg-opacity-75 hero-overlay bg-base-300 motion-safe:animate-pulse"></div>
     <div class="text-center hero-content text-neutral-content">
         <form class="max-w-md">
-            <div class="flex-shrink-0 bg-opacity-75 shadow-2xl card w-96 bg-base-200">
+            <div class="flex-shrink-0 backdrop-blur bg-opacity-75 shadow-2xl card w-96 bg-base-200">
                 <div class="card-body">
                     <h1 class="my-4 text-xl text-left">Forgot Password ?</h1>
                     <span class="my-2 text-sm text-left">

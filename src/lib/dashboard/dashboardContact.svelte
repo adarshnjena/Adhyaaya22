@@ -11,9 +11,9 @@
     };
 </script>
 
-<div class="text-justify w-full px-4 2xl:w-4/12 2xl:-my-60">
+<div class="text-justify w-full px-4 2xl:w-4/12 2xl:-my-60 ">
     <div
-        class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-xl rounded-lg mt-16"
+        class="relative flex flex-col min-w-0 break-words backdrop-blur bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-xl rounded-lg mt-16"
     >
         <div class="px-6">
             <div class="flex flex-wrap justify-center">

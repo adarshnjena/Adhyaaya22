@@ -17,7 +17,7 @@
 
 <tr>
     <th
-        class="p-4 px-6 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap"
+        class="p-4 px-6 text-xs text-left align-middle border-t-0 border-l-0 border-r-0 whitespace-nowrap " 
     >
         {event.name}
     </th>

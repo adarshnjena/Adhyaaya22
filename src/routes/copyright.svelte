@@ -10,7 +10,7 @@
     <div class="md:px-16 px-2 mx-auto md:w-5/6 w-full mt-[2.5rem]">
         <div class="container w-full">
             <div
-                class="container card text-center card-bordered bg-base-100 bg-opacity-[75%] min-h-[calc(100vh-18.5rem)]"
+                class="container card text-center card-bordered bg-base-100 backdrop-blur bg-opacity-[75%] min-h-[calc(100vh-18.5rem)]"
             >
                 <div class="card-body">
                     <h2 class="card-title">

@@ -8,9 +8,9 @@
     export let positive: boolean = true;
 </script>
 
-<div class="w-full px-4 mt-4 2xl:mt-0 2xl:w-4/12">
+<div class="w-full px-4 mt-4 2xl:mt-0 2xl:w-4/12 ">
     <div
-        class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-100 rounded-lg mb-6 xl:mb-0 shadow-lg"
+        class="relative flex flex-col min-w-0 break-words backdrop-blur bg-opacity-[75%] bg-base-100 rounded-lg mb-6 xl:mb-0 shadow-lg"
     >
         <div class="flex-auto p-4">
             <div class="flex flex-wrap">

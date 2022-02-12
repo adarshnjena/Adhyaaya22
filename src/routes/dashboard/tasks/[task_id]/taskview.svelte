@@ -79,14 +79,14 @@
 </svelte:head>
 
 <Protected />
-<div class="hero">
+<div class="flex justify-center min-h-screen">
     <div class="md:px-16 px-2 mx-auto lg:w-3/6 md:w-4/6 w-full mt-[2.5rem]">
         <div class="container w-full">
-            <div class="container card text-center card-bordered bg-base-100 bg-opacity-[75%]">
+            <div class="container card text-center card-bordered bg-base-100 backdrop-blur bg-opacity-[75%]">
                 <div class="card-body">
                     <h2 class="card-title">
                         {task.task_name}
-                        <div class="mx-2 badge badge-secondary">NEW</div>
+                        <div class="hidden mx-2 badge badge-secondary">NEW</div>
                     </h2>
                     <span class="mx-auto text-justify">
                         {task.task_details}
@@ -133,5 +133,6 @@
             </div>
         </div>
     </div>
+    <Footer />
 </div>
-<Footer />
+

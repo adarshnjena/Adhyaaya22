@@ -8,9 +8,9 @@
     export let events: eventSet = {};
 </script>
 
-<div class="w-full px-4 2xl:w-4/12">
+<div class="w-full px-4 2xl:w-4/12 ">
     <div
-        class="relative flex flex-col min-w-0 break-words bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-lg rounded"
+        class="relative flex flex-col min-w-0 break-words backdrop-blur bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-lg rounded"
     >
         <div class="px-4 py-3 mb-0 border-0 rounded-t">
             <div class="flex flex-wrap items-center">

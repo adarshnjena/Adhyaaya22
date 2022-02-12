@@ -14,16 +14,16 @@
 </script>
 
 <tr class="text-xs hover">
-    <th class="bg-opacity-[75%]">{task.task_name}</th>
-    <td class="bg-opacity-[75%]">{printable_date}</td>
+    <th class="backdrop-blur bg-opacity-[75%]">{task.task_name}</th>
+    <td class="backdrop-blur bg-opacity-[75%]">{printable_date}</td>
     {#if completed}
-        <td class="bg-opacity-[75%]"><InfoBadge text="{'Completed'}" /></td>
-        <td class="bg-opacity-[75%]">
+        <td class="backdrop-blur bg-opacity-[75%]"><InfoBadge text="{'Completed'}" /></td>
+        <td class="backdrop-blur bg-opacity-[75%]">
             <button disabled href="/dashboard/tasks/{task.task_id}/taskview">DONE</button>
         </td>
     {:else}
-        <td class="bg-opacity-[75%]"><WarningBadge text="{'Not Completed'}" /></td>
-        <td class="bg-opacity-[75%]">
+        <td class="backdrop-blur bg-opacity-[75%]"><WarningBadge text="{'Not Completed'}" /></td>
+        <td class="backdrop-blur bg-opacity-[75%]">
             <a class="btn btn-info btn-sm" href="/dashboard/tasks/{task.task_id}/taskview">VIEW</a>
         </td>
     {/if}

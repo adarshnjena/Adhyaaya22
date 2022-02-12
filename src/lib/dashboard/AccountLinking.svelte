@@ -41,9 +41,9 @@
 </script>
 
 <div class="flex flex-wrap mt-4">
-    <div class="w-full px-4 mb-12 2xl:w-8/12 xl:mb-0">
+    <div class="w-full px-4 mb-12 2xl:w-8/12 xl:mb-0 ">
         <div
-            class="relative rounded-lg flex flex-col min-w-0 break-words bg-base-200 bg-opacity-[0.75] w-full mb-6 shadow-lg"
+            class="relative rounded-lg flex flex-col min-w-0 break-words bg-base-200 backdrop-blur bg-opacity-[0.75] w-full mb-6 shadow-lg"
         >
             <div class="px-4 py-3 mb-0 bg-transparent rounded-t">
                 <div class="flex flex-wrap items-center">
@@ -59,7 +59,7 @@
             <div class="flex-auto p-4">
                 <div class="relative flex flex-col h-max">
                     <div
-                        class="flex flex-row items-center bg-base-300 w-full h-min py-4 my-2 px-2 rounded-lg bg-opacity-[0.75]"
+                        class="flex flex-row items-center bg-base-300 w-full h-min py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
                     >
                         <Icon class="ml-4 mr-2" icon="{GoogleIcon}" />
                         <span class="flex-grow-[4] text-lg">Google</span>
@@ -74,7 +74,7 @@
                         </a>
                     </div>
                     <div
-                        class="flex flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg bg-opacity-[0.75]"
+                        class="flex flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
                     >
                         <Icon class="ml-4 mr-2 invert" icon="{GitHubIcon}" />
                         <span class="flex-grow-[4] text-lg">GitHub</span>
@@ -89,7 +89,7 @@
                     </div>
                     <!-- Removed Twitter, I don't know how to fix it for ze moment. (flex) -->
                     <div
-                        class="hidden flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg bg-opacity-[0.75]"
+                        class="hidden flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
                     >
                         <Icon class="ml-4 mr-2" icon="{TwitterIcon}" />
                         <span class="flex-grow-[4] text-lg">Twitter</span>
@@ -103,7 +103,7 @@
                         </a>
                     </div>
                     <div
-                        class="flex flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg bg-opacity-[0.75]"
+                        class="flex flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
                     >
                         <Icon class="ml-4 mr-2" icon="{EmailIcon}" />
                         <span class="flex-grow-[4] text-lg">Email / Password</span>

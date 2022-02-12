@@ -33,7 +33,7 @@
             <p>WebM Video</p>
             <video muted preload="">
                 <source
-                    src="/intro_video.mp4"
+                    src="https://firebasestorage.googleapis.com/v0/b/adhyaaya-staging-dev.appspot.com/o/Intro%20Video-1.mp4?alt=media&token=b141ed41-bbd1-4e5c-ae56-1b8ef93bc6f5"
                     type="video/mp4"
                 />
                 <p>Your user agent does not support the HTML5 Video element.</p>
@@ -43,13 +43,13 @@
     <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
         <span class="text-white">CONTENT 1</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
+    <div class="not-scroll-bound snap-start snap-always bg-base-100 flex justify-center">
         <span class="text-white">CONTENT 2</span>
     </div>
     <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
         <span class="text-white">CONTENT 3</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
+    <div class="not-scroll-bound snap-start snap-always bg-base-100 flex justify-center">
         <span class="text-white">CONTENT 4</span>
     </div>
 </div>

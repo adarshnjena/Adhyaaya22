@@ -126,6 +126,7 @@
     .scroll-bound {
         // Change this height to modify the speed of the scroll.
         // 200vh corresponds to 10 ticks of the scroll wheel
+        //TODO Make this work with images.
         height: 500vh;
 
         .content {

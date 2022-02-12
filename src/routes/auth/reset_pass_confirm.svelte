@@ -79,16 +79,18 @@
     }
 </script>
 
-<div class="min-h-screen hero bg-base-300 " style="background-image: url({backgroundImage});">
-    <div class="backdrop-blur bg-opacity-75 hero-overlay bg-base-300 motion-safe:animate-pulse"></div>
-    <div class="text-center hero-content text-neutral-content">
+<div class="hero min-h-screen bg-base-300 " style="background-image: url({backgroundImage});">
+    <div
+        class="hero-overlay bg-base-300 bg-opacity-75 backdrop-blur motion-safe:animate-pulse"
+    ></div>
+    <div class="hero-content text-center text-neutral-content">
         <form class="max-w-md">
-            <div class="flex-shrink-0 backdrop-blur bg-opacity-75 shadow-2xl card w-96 bg-base-200">
+            <div class="card w-96 flex-shrink-0 bg-base-200 bg-opacity-75 shadow-2xl backdrop-blur">
                 <div class="card-body">
-                    <h1 class="my-4 text-xl text-left">Recover Password</h1>
-                    <span class="my-2 text-sm text-left">Enter a new password</span>
+                    <h1 class="my-4 text-left text-xl">Recover Password</h1>
+                    <span class="my-2 text-left text-sm">Enter a new password</span>
                     <hr class="my-4 border-b border-gray-600" />
-                    <div class="hidden form-control">
+                    <div class="form-control hidden">
                         <label for="email" class="label">
                             <span class="label-text">Recovery Code</span>
                         </label>
@@ -96,10 +98,10 @@
                             id="email"
                             type="email"
                             placeholder="email@domain.tld"
-                            class="input input-bordered"
+                            class="input-bordered input"
                         />
                     </div>
-                    <div class="relative form-control">
+                    <div class="form-control relative">
                         <input
                             on:blur="{password_on_blur}"
                             on:input="{password_on_input}"
@@ -108,17 +110,17 @@
                             type="{is_password_shown ? 'text' : 'password'}"
                             placeholder="Password"
                             autocomplete="current-password"
-                            class="tracking-widest font-mono w-full pr-16 input {password_error
+                            class="input w-full pr-16 font-mono tracking-widest {password_error
                                 ? 'border border-error'
                                 : 'Example String'}"
                         />
                         <button
                             on:click|preventDefault="{password_toggle}"
-                            class="absolute top-0 right-0 rounded-l-none btn  {is_password_shown
+                            class="btn absolute top-0 right-0 rounded-l-none  {is_password_shown
                                 ? 'btn-warning'
                                 : 'btn-info'} text-xs"
                         >
-                            <Icon class="w-6 h-6" icon="{Eye}" />
+                            <Icon class="h-6 w-6" icon="{Eye}" />
                         </button>
                         <label for="" class="label {password_error ? '' : 'invisible'}">
                             <span class="label-text-alt text-error">
@@ -126,7 +128,7 @@
                             </span>
                         </label>
                     </div>
-                    <div class="mt-6 form-control">
+                    <div class="form-control mt-6">
                         <input
                             type="button"
                             value="Reset Password"

@@ -6,5 +6,6 @@
     "printWidth": 100,
     "htmlWhitespaceSensitivity": "ignore",
     "endOfLine": "crlf",
-    "svelteStrictMode": true
+    "svelteStrictMode": true,
+    "tailwindConfig": "./tailwind.config.cjs"
 }

@@ -22,24 +22,28 @@
     let src;
 
     // CONFIG OPTIONS
-    const numberOfImages = 52 // 1 indexed
-    
+    const numberOfImages = 52; // 1 indexed
+
     let image_index = 1;
     $: {
         if (browser) {
-            const containerHeight = (container?.getBoundingClientRect().bottom - container?.getBoundingClientRect().top) || 0;
+            const containerHeight =
+                container?.getBoundingClientRect().bottom -
+                    container?.getBoundingClientRect().top || 0;
             const pixelsPerImage = containerHeight / numberOfImages;
-            image_index = Math.ceil(scrollY/pixelsPerImage)
+            image_index = Math.ceil(scrollY / pixelsPerImage);
             if (image_index >= numberOfImages) {
                 // Limit the image index to the number of images
-                image_index = numberOfImages
+                image_index = numberOfImages;
             }
             if (image_index <= 0) {
                 // Limit the image index to the number of images
-                image_index = 1
+                image_index = 1;
             }
             // Change Path here
-            src = `/intro_frames/battery_example/battery${((image_index).toString().padStart(3, "0"))}.png`
+            src = `/intro_frames/battery_example/battery${image_index
+                .toString()
+                .padStart(3, '0')}.png`;
         }
     }
     onMount(async () => {
@@ -56,14 +60,19 @@
         }
         // We will check if a key exists in the database, This should have been done in initialization.
     });
-
 </script>
 
 <svelte:head>
     <title>Adhyaaya'22</title>
     <!--Change Path here-->
     {#each [...Array(numberOfImages).keys()] as img_index}
-         <link rel="preload" as="image" href="{`/intro_frames/battery_example/battery${((img_index+1).toString().padStart(3, "0"))}.png`}" />
+        <link
+            rel="preload"
+            as="image"
+            href="{`/intro_frames/battery_example/battery${(img_index + 1)
+                .toString()
+                .padStart(3, '0')}.png`}"
+        />
     {/each}
 </svelte:head>
 
@@ -71,32 +80,32 @@
 
 <div class="app bg-base-100">
     <!--Adding a bg to this would make it the background for the slideshow thingy-->
-    <div id="bound-one" bind:this={container} class="scroll-bound snap-none">
+    <div id="bound-one" bind:this="{container}" class="scroll-bound snap-none">
         <div class="content">
             <p class="hidden">This site is best experienced on a 16:9 Monitor.</p>
-            <img src={src} alt="Showcase" class="min-h-screen w-full" />
+            <img src="{src}" alt="Showcase" class="min-h-screen w-full" />
         </div>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-300">
         <span class="text-white">CONTENT 1</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-100 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-100">
         <span class="text-white">CONTENT 2</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-300">
         <span class="text-white">CONTENT 3</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-100 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-100">
         <span class="text-white">CONTENT 4</span>
     </div>
 </div>
 
 <div
-    class="min-h-screen hero custom-background"
+    class="custom-background hero min-h-screen"
     style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
-    <div class="hero-overlay backdrop-blur bg-opacity-60"></div>
-    <div class="text-center hero-content text-neutral-content">
+    <div class="hero-overlay bg-opacity-60 backdrop-blur"></div>
+    <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
             <h1 class="mb-5 text-5xl font-bold">Hello There!</h1>
             <p class="mb-5">

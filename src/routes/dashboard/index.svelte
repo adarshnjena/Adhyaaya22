@@ -93,10 +93,10 @@
 
 <Protected />
 <div class="h-full">
-    <div class="w-full px-2 mx-auto md:px-16 md:w-5/6 mt-18">
+    <div class="mt-18 mx-auto w-full px-2 md:w-5/6 md:px-16">
         <div class="w-full">
             <!--Stats Row-->
-            <div class="flex flex-wrap mt-4 justify-between">
+            <div class="mt-4 flex flex-wrap justify-between">
                 <SimpleStat
                     title="CA Code"
                     value="{$authStore.user?.uid.substring(0, 7)}"
@@ -130,11 +130,11 @@
             </div>
             <!-- Level 0 -->
             <!-- Level 1 -->
-            <div class="flex flex-wrap mt-4">
+            <div class="mt-4 flex flex-wrap">
                 <TaskSummaryTable tasks="{tasks}" profile_tasks="{profile_tasks}" />
                 <InfoTable events="{events}" />
             </div>
-            <div class="flex flex-wrap mt-4">
+            <div class="mt-4 flex flex-wrap">
                 <DashboardProfile
                     app="{app}"
                     database="{db}"

@@ -40,16 +40,16 @@
     });
 </script>
 
-<div class="flex flex-wrap mt-4">
-    <div class="w-full px-4 mb-12 2xl:w-8/12 xl:mb-0 ">
+<div class="mt-4 flex flex-wrap">
+    <div class="mb-12 w-full px-4 xl:mb-0 2xl:w-8/12 ">
         <div
-            class="relative rounded-lg flex flex-col min-w-0 break-words bg-base-200 backdrop-blur bg-opacity-[0.75] w-full mb-6 shadow-lg"
+            class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-base-200 bg-opacity-[0.75] shadow-lg backdrop-blur"
         >
-            <div class="px-4 py-3 mb-0 bg-transparent rounded-t">
+            <div class="mb-0 rounded-t bg-transparent px-4 py-3">
                 <div class="flex flex-wrap items-center">
-                    <div class="relative flex-1 flex-grow w-full max-w-full">
+                    <div class="relative w-full max-w-full flex-1 flex-grow">
                         <h6
-                            class="mt-4 mb-1 ml-2 text-xl font-semibold uppercase text-blueGray-400"
+                            class="text-blueGray-400 mt-4 mb-1 ml-2 text-xl font-semibold uppercase"
                         >
                             Link Accounts
                         </h6>
@@ -57,9 +57,9 @@
                 </div>
             </div>
             <div class="flex-auto p-4">
-                <div class="relative flex flex-col h-max">
+                <div class="relative flex h-max flex-col">
                     <div
-                        class="flex flex-row items-center bg-base-300 w-full h-min py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
+                        class="my-2 flex h-min w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
                     >
                         <Icon class="ml-4 mr-2" icon="{GoogleIcon}" />
                         <span class="flex-grow-[4] text-lg">Google</span>
@@ -74,13 +74,13 @@
                         </a>
                     </div>
                     <div
-                        class="flex flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
+                        class="my-2 flex h-max w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
                     >
                         <Icon class="ml-4 mr-2 invert" icon="{GitHubIcon}" />
                         <span class="flex-grow-[4] text-lg">GitHub</span>
                         <a
                             href="/auth/link?provider=github.com"
-                            class="mr-4 btn btn-ghost btn-xs {is_github
+                            class="btn btn-ghost btn-xs mr-4 {is_github
                                 ? 'btn-disabled bg-success text-black'
                                 : ''}"
                         >
@@ -89,13 +89,13 @@
                     </div>
                     <!-- Removed Twitter, I don't know how to fix it for ze moment. (flex) -->
                     <div
-                        class="hidden flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
+                        class="my-2 hidden h-max w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
                     >
                         <Icon class="ml-4 mr-2" icon="{TwitterIcon}" />
                         <span class="flex-grow-[4] text-lg">Twitter</span>
                         <a
                             href="/auth/link?provider=twitter.com"
-                            class="mr-4 btn btn-ghost btn-xs {is_twitter
+                            class="btn btn-ghost btn-xs mr-4 {is_twitter
                                 ? 'btn-disabled bg-success text-black'
                                 : ''}"
                         >
@@ -103,11 +103,11 @@
                         </a>
                     </div>
                     <div
-                        class="flex flex-row items-center bg-base-300 w-full h-max py-4 my-2 px-2 rounded-lg backdrop-blur bg-opacity-[0.75]"
+                        class="my-2 flex h-max w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
                     >
                         <Icon class="ml-4 mr-2" icon="{EmailIcon}" />
                         <span class="flex-grow-[4] text-lg">Email / Password</span>
-                        <a href="/auth/reset_pass_req" class="mr-4 btn btn-ghost btn-xs">
+                        <a href="/auth/reset_pass_req" class="btn btn-ghost btn-xs mr-4">
                             {is_email ? 'Reset Password' : 'Set Password'}
                         </a>
                     </div>

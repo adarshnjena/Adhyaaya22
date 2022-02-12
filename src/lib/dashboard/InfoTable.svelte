@@ -10,16 +10,16 @@
 
 <div class="w-full px-4 2xl:w-4/12 ">
     <div
-        class="relative flex flex-col min-w-0 break-words backdrop-blur bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-lg rounded"
+        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded bg-base-200 bg-opacity-[75%] shadow-lg backdrop-blur"
     >
-        <div class="px-4 py-3 mb-0 border-0 rounded-t">
+        <div class="mb-0 rounded-t border-0 px-4 py-3">
             <div class="flex flex-wrap items-center">
-                <div class="relative flex-1 flex-grow w-full max-w-full px-4">
+                <div class="relative w-full max-w-full flex-1 flex-grow px-4">
                     <h3 class="ml-2 text-base font-semibold text-gray-400">Recent Events</h3>
                 </div>
-                <div class="relative flex-1 flex-grow w-full max-w-full px-4 text-right ">
+                <div class="relative w-full max-w-full flex-1 flex-grow px-4 text-right ">
                     <button
-                        class=" hidden px-3 py-0 text-xs btn btn-secondary btn-sm"
+                        class=" btn btn-secondary btn-sm hidden px-3 py-0 text-xs"
                         type="button"
                     >
                         See all
@@ -28,21 +28,21 @@
             </div>
         </div>
         <div class="block w-full overflow-x-auto">
-            <table class="items-center w-full bg-transparent border-collapse">
+            <table class="w-full border-collapse items-center bg-transparent">
                 <thead class="thead-light">
                     <tr>
                         <th
-                            class="px-6 py-3 text-xs font-semibold text-left uppercase align-middle whitespace-nowrap"
+                            class="whitespace-nowrap px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
                         >
                             Event
                         </th>
                         <th
-                            class="px-6 py-3 text-xs font-semibold text-left uppercase align-middle whitespace-nowrap"
+                            class="whitespace-nowrap px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
                         >
                             Date
                         </th>
                         <th
-                            class="px-6 py-3 text-xs font-semibold text-left uppercase align-middle  whitespace-nowrap min-w-[140px]"
+                            class="min-w-[140px] whitespace-nowrap px-6 py-3 text-left align-middle text-xs  font-semibold uppercase"
                         >
                             Type
                         </th>

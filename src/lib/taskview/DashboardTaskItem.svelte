@@ -13,12 +13,12 @@
     console.log('completed', completed);
 </script>
 
-<tr class="text-xs hover">
-    <th class="backdrop-blur bg-opacity-[75%]">{task.task_name}</th>
-    <td class="backdrop-blur bg-opacity-[75%]">{printable_date}</td>
+<tr class="hover text-xs">
+    <th class="bg-opacity-[75%] backdrop-blur">{task.task_name}</th>
+    <td class="bg-opacity-[75%] backdrop-blur">{printable_date}</td>
     {#if completed}
-        <td class="backdrop-blur bg-opacity-[75%]"><InfoBadge text="{'Completed'}" /></td>
-        <td class="backdrop-blur bg-opacity-[75%]">
+        <td class="bg-opacity-[75%] backdrop-blur"><InfoBadge text="{'Completed'}" /></td>
+        <td class="bg-opacity-[75%] backdrop-blur">
             <button disabled href="/dashboard/tasks/{task.task_id}/taskview">DONE</button>
         </td>
     {:else}

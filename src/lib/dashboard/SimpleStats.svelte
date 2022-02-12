@@ -8,23 +8,23 @@
     export let positive: boolean = true;
 </script>
 
-<div class="w-full px-4 mt-4 2xl:mt-0 2xl:w-4/12 ">
+<div class="mt-4 w-full px-4 2xl:mt-0 2xl:w-4/12 ">
     <div
-        class="relative flex flex-col min-w-0 break-words backdrop-blur bg-opacity-[75%] bg-base-100 rounded-lg mb-6 xl:mb-0 shadow-lg"
+        class="relative mb-6 flex min-w-0 flex-col break-words rounded-lg bg-base-100 bg-opacity-[75%] shadow-lg backdrop-blur xl:mb-0"
     >
         <div class="flex-auto p-4">
             <div class="flex flex-wrap">
-                <div class="relative flex-1 flex-grow w-full max-w-full pr-4">
+                <div class="relative w-full max-w-full flex-1 flex-grow pr-4">
                     <h5 class="text-xs font-bold uppercase ">{title}</h5>
                     <span class="text-xl font-semibold">{value}</span>
                 </div>
-                <div class="relative flex-initial w-auto pl-4">
+                <div class="relative w-auto flex-initial pl-4">
                     <div
-                        class="inline-flex items-center justify-center w-12 h-12 p-3 text-center rounded-full shadow-lg bg-base-100 {positive
+                        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-base-100 p-3 text-center shadow-lg {positive
                             ? 'text-success'
                             : 'text-error'}"
                     >
-                        <Icon class="w-12 h-12" icon="{icon}" />
+                        <Icon class="h-12 w-12" icon="{icon}" />
                     </div>
                 </div>
             </div>

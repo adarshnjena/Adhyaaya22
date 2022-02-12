@@ -24,8 +24,7 @@
         muted
         src="https://static01.nyt.com/newsgraphics/2019/10/23/turkey-syria-video-upload/71ab097907156ca46fb7ffd4d21dfbd119fb47e8/syria-turkey-reconstruct-7-800.mp4"
         type="video/mp4"
-    />
-
+    ></video>
 </div>
 <div id="scroll-container">
     <div class="str bg-base-300">
@@ -67,12 +66,12 @@
         align-items: center;
     }
     .str {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    left: 50%;
-    transform: translate(-50%, 0);
-    line-height: 1.5;
-    opacity: 0.8;
-  }
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        left: 50%;
+        transform: translate(-50%, 0);
+        line-height: 1.5;
+        opacity: 0.8;
+    }
 </style>

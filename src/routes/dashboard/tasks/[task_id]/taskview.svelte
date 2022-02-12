@@ -79,21 +79,23 @@
 </svelte:head>
 
 <Protected />
-<div class="flex justify-center min-h-screen">
-    <div class="md:px-16 px-2 mx-auto lg:w-3/6 md:w-4/6 w-full mt-[2.5rem]">
+<div class="flex min-h-screen justify-center">
+    <div class="mx-auto mt-[2.5rem] w-full px-2 md:w-4/6 md:px-16 lg:w-3/6">
         <div class="container w-full">
-            <div class="container card text-center card-bordered bg-base-100 backdrop-blur bg-opacity-[75%]">
+            <div
+                class="container card-bordered card bg-base-100 bg-opacity-[75%] text-center backdrop-blur"
+            >
                 <div class="card-body">
                     <h2 class="card-title">
                         {task.task_name}
-                        <div class="hidden mx-2 badge badge-secondary">NEW</div>
+                        <div class="badge badge-secondary mx-2 hidden">NEW</div>
                     </h2>
                     <span class="mx-auto text-justify">
                         {task.task_details}
                     </span>
                 </div>
                 {#if is_completed}
-                    <button class="btn btn-disabled uppercase btn-xl">
+                    <button class="btn-disabled btn-xl btn uppercase">
                         YOU HAVE COMPLETED THIS TASK
                     </button>
                 {:else}
@@ -135,4 +137,3 @@
     </div>
     <CAFooter />
 </div>
-

@@ -34,7 +34,7 @@
             const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
             currentTime = duration * percentScrolled;
             //console.log(time, percentScrolled);
-            requestAnimationFrame(() => {})
+            requestAnimationFrame(() => {});
         }
     }
     async function preloadVideo(src) {
@@ -54,7 +54,7 @@
         if (dev) {
             console.log(app);
         }
-        src = await preloadVideo('/test_1.webm')
+        src = await preloadVideo('/test_1.webm');
         // We will check if a key exists in the database, This should have been done in initialization.
     });
 
@@ -89,26 +89,26 @@
             </video>
         </div>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-300">
         <span class="text-white">CONTENT 1</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-100 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-100">
         <span class="text-white">CONTENT 2</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-300 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-300">
         <span class="text-white">CONTENT 3</span>
     </div>
-    <div class="not-scroll-bound snap-start snap-always bg-base-100 flex justify-center">
+    <div class="not-scroll-bound flex snap-start snap-always justify-center bg-base-100">
         <span class="text-white">CONTENT 4</span>
     </div>
 </div>
 
 <div
-    class="min-h-screen hero custom-background"
+    class="custom-background hero min-h-screen"
     style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
-    <div class="hero-overlay backdrop-blur bg-opacity-60"></div>
-    <div class="text-center hero-content text-neutral-content">
+    <div class="hero-overlay bg-opacity-60 backdrop-blur"></div>
+    <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
             <h1 class="mb-5 text-5xl font-bold">Hello There!</h1>
             <p class="mb-5">

@@ -41,8 +41,8 @@
 </svelte:head>
 
 <Protected />
-<div class="container text-center mx-auto overflow-x-auto backdrop-blur bg-opacity-[75%]">
-    <table class="table w-full table-compact">
+<div class="container mx-auto overflow-x-auto bg-opacity-[75%] text-center backdrop-blur">
+    <table class="table-compact table w-full">
         <thead>
             <tr>
                 <th></th>

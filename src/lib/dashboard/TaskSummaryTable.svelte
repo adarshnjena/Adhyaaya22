@@ -5,19 +5,19 @@
     export let profile_tasks;
 </script>
 
-<div class="w-full px-4 mb-12 2xl:w-8/12 xl:mb-0 ">
+<div class="mb-12 w-full px-4 xl:mb-0 2xl:w-8/12 ">
     <div
-        class="relative flex flex-col min-w-0 break-words backdrop-blur bg-opacity-[75%] bg-base-200 w-full mb-6 shadow-lg rounded"
+        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded bg-base-200 bg-opacity-[75%] shadow-lg backdrop-blur"
     >
-        <div class="px-4 py-3 mb-0 border-0 rounded-t">
+        <div class="mb-0 rounded-t border-0 px-4 py-3">
             <div class="flex flex-wrap items-center">
-                <div class="relative flex-1 flex-grow w-full max-w-full px-4">
+                <div class="relative w-full max-w-full flex-1 flex-grow px-4">
                     <h3 class="text-base font-semibold text-gray-400">Tasks</h3>
                 </div>
-                <div class="relative flex-1 flex-grow w-full max-w-full px-4 text-right">
+                <div class="relative w-full max-w-full flex-1 flex-grow px-4 text-right">
                     <a
                         href="/dashboard/tasks"
-                        class="px-3 py-0 text-xs btn btn-secondary btn-sm"
+                        class="btn btn-secondary btn-sm px-3 py-0 text-xs"
                         type="button"
                     >
                         See all
@@ -26,13 +26,13 @@
             </div>
         </div>
         <div class="block w-full overflow-x-auto ">
-            <table class="items-center table w-full bg-transparent border-collapse">
+            <table class="table w-full border-collapse items-center bg-transparent">
                 <thead>
                     <tr>
-                        <th class="backdrop-blur bg-opacity-[75%]">Task</th>
-                        <th class="backdrop-blur bg-opacity-[75%]">Last Date</th>
-                        <th class="backdrop-blur bg-opacity-[75%]">Completed ?</th>
-                        <th class="backdrop-blur bg-opacity-[75%] min-w-[140px]">Open</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Task</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Last Date</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Completed ?</th>
+                        <th class="min-w-[140px] bg-opacity-[75%] backdrop-blur">Open</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,10 +42,10 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th class="backdrop-blur bg-opacity-[75%]">Task</th>
-                        <th class="backdrop-blur bg-opacity-[75%]">Last Date</th>
-                        <th class="backdrop-blur bg-opacity-[75%]">Completed ?</th>
-                        <th class="backdrop-blur bg-opacity-[75%]">Open</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Task</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Last Date</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Completed ?</th>
+                        <th class="bg-opacity-[75%] backdrop-blur">Open</th>
                     </tr>
                 </tfoot>
             </table>

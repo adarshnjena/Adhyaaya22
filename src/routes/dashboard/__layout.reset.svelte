@@ -10,27 +10,27 @@
 
 <PageTransition>
     <nav
-        class="absolute top-0 z-50 flex flex-wrap items-center justify-between w-full px-2 py-3 bg-opacity-0 navbar-expand-lg"
+        class="navbar-expand-lg absolute top-0 z-50 flex w-full flex-wrap items-center justify-between bg-opacity-0 px-2 py-3"
     >
-        <div class="flex flex-wrap items-center justify-between w-11/12 px-4 mx-auto">
-            <a class="mr-8 btn btn-ghost" href="/" aria-label="home-link">
+        <div class="mx-auto flex w-11/12 flex-wrap items-center justify-between px-4">
+            <a class="btn btn-ghost mr-8" href="/" aria-label="home-link">
                 <figure>
                     <img aria-hidden="true" class="h-10" src="{navbarLogo}" alt="Adhyaaya Logo" />
                 </figure>
             </a>
             <div
-                class="flex items-center flex-grow bg-opacity-0 rounded shadow-none"
+                class="flex flex-grow items-center rounded bg-opacity-0 shadow-none"
                 id="example-navbar-warning"
             >
-                <ul class="flex flex-row self-end ml-auto list-none">
+                <ul class="ml-auto flex list-none flex-row self-end">
                     <li class="flex items-center">
-                        <div class="dropdown dropdown-end">
-                            <div tabindex="0" class="m-1 btn btn-ghost btn-outline">
-                                <Icon class="w-10 h-10" icon="{roundMenu}" />
+                        <div class="dropdown-end dropdown">
+                            <div tabindex="0" class="btn-outline btn btn-ghost m-1">
+                                <Icon class="h-10 w-10" icon="{roundMenu}" />
                             </div>
                             <ul
                                 tabindex="0"
-                                class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
+                                class="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
                             >
                                 <li>
                                     <a sveltekit:prefetch href="/dashboard" class="rounded-xl">
@@ -55,7 +55,7 @@
     </nav>
 
     <div
-        class="relative w-full h-full pt-32 xl:pb-32 bg-base-300 "
+        class="relative h-full w-full bg-base-300 pt-32 xl:pb-32 "
         style="background-image: url({backgroundImage});"
     >
         <slot />

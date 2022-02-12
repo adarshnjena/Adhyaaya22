@@ -282,67 +282,67 @@
 </script>
 
 <main>
-    <section class="relative w-full h-full min-h-screen pb-40 pt-28 overflow-y-clip">
+    <section class="relative h-full min-h-screen w-full overflow-y-clip pb-40 pt-28">
         <div
-            class="absolute top-0 w-full h-full bg-no-repeat bg-base-300 motion-safe:animate-pulse"
+            class="absolute top-0 h-full w-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
             style="background-image: url({backgroundImage});"
         ></div>
-        <div class="container h-full px-4 mx-auto">
-            <div class="flex items-center content-center justify-center h-full">
+        <div class="container mx-auto h-full px-4">
+            <div class="flex h-full content-center items-center justify-center">
                 <div class="w-full px-4 lg:max-w-md">
                     <div
-                        class="relative flex flex-col w-full min-w-0 mb-6 break-words border-0 rounded-lg shadow-lg bg-base-200"
+                        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 bg-base-200 shadow-lg"
                     >
-                        <div class="px-6 py-6 mb-0 rounded-t">
+                        <div class="mb-0 rounded-t px-6 py-6">
                             <div class="mb-3 text-center">
                                 <span class="font-bold text-blue-100">Sign In / Register</span>
                             </div>
                             <div class="text-center">
                                 <button
                                     class="btn btn-block bg-base-300 {is_firebase_auth_in_progress
-                                        ? 'loading btn-disabled'
+                                        ? 'btn-disabled loading'
                                         : ''}"
                                     on:click="{on_github_auth}"
                                     type="button"
                                 >
                                     <Icon
-                                        class="inline-block w-5 mr-2 stroke-current"
+                                        class="mr-2 inline-block w-5 stroke-current"
                                         icon="{GitHubIcon}"
                                     />
                                     Github
                                 </button>
                                 <button
                                     class="btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
-                                        ? 'loading btn-disabled'
+                                        ? 'btn-disabled loading'
                                         : ''}"
                                     on:click="{on_google_auth}"
                                     type="button"
                                 >
                                     <Icon
-                                        class="inline-block w-5 mr-2 stroke-current"
+                                        class="mr-2 inline-block w-5 stroke-current"
                                         icon="{GoogleIcon}"
                                     />
                                     Google
                                 </button>
                                 <button
-                                    class="hidden btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
-                                        ? 'loading btn-disabled'
+                                    class="btn btn-block mt-2 hidden bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'btn-disabled loading'
                                         : ''}"
                                     on:click="{on_twitter_auth}"
                                     disabled
                                     type="button"
                                 >
                                     <Icon
-                                        class="inline-block w-5 mr-2 stroke-current"
+                                        class="mr-2 inline-block w-5 stroke-current"
                                         icon="{TwitterIcon}"
                                     />
                                     Twitter
                                 </button>
                             </div>
-                            <hr class="mt-6 border-b-1 border-primary" />
+                            <hr class="border-b-1 mt-6 border-primary" />
                         </div>
                         <div class="flex-auto px-4 py-10 pt-0 lg:px-10">
-                            <div class="hidden mb-3 text-xs font-bold text-center text-blue-200">
+                            <div class="mb-3 hidden text-center text-xs font-bold text-blue-200">
                                 <small>
                                     Don't have an account ? Enter your email anyway, we'll handle it
                                 </small>
@@ -360,7 +360,7 @@
                                             type="email"
                                             autocomplete="email"
                                             placeholder="email@domain.tld"
-                                            class="input tracking-widest font-mono {email_error
+                                            class="input font-mono tracking-widest {email_error
                                                 ? 'border border-error'
                                                 : ''}"
                                         />
@@ -389,7 +389,7 @@
                                             bind:value="{username_input}"
                                             type="text"
                                             placeholder="Username"
-                                            class="input tracking-widest font-mono {username_error
+                                            class="input font-mono tracking-widest {username_error
                                                 ? 'border border-error'
                                                 : ''}"
                                         />
@@ -403,13 +403,13 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="relative w-full mb-1">
+                                <div class="relative mb-1 w-full">
                                     <div class="form-control">
                                         <label for="" class="label">
                                             <span class="label-text">Password</span>
                                             <a
                                                 href="/auth/reset_pass_req"
-                                                class="text-xs text-gray-400 label-text-alt"
+                                                class="label-text-alt text-xs text-gray-400"
                                                 sveltekit:prefetch
                                             >
                                                 Forgot Password ?
@@ -426,17 +426,17 @@
                                                 type="{is_password_shown ? 'text' : 'password'}"
                                                 placeholder="Password"
                                                 autocomplete="current-password"
-                                                class="tracking-widest font-mono w-full pr-16 input {password_error
+                                                class="input w-full pr-16 font-mono tracking-widest {password_error
                                                     ? 'border border-error'
                                                     : 'Example String'}"
                                             />
                                             <button
                                                 on:click|preventDefault="{password_toggle}"
-                                                class="absolute top-0 right-0 rounded-l-none btn  {is_password_shown
+                                                class="btn absolute top-0 right-0 rounded-l-none  {is_password_shown
                                                     ? 'btn-warning'
                                                     : 'btn-info'} text-xs"
                                             >
-                                                <Icon class="w-6 h-6" icon="{Eye}" />
+                                                <Icon class="h-6 w-6" icon="{Eye}" />
                                             </button>
                                             <label
                                                 for=""
@@ -453,7 +453,7 @@
                                 </div>
                                 <div>
                                     <!-- Hidden Remember Me. We need people to login again and again. (inline-flex) -->
-                                    <span class="items-center hidden cursor-pointer">
+                                    <span class="hidden cursor-pointer items-center">
                                         <span class="my-2 ml-2 text-xs font-normal text-gray-400">
                                             Forgot Password ?
                                         </span>
@@ -463,7 +463,7 @@
                                 <div class="text-center">
                                     <button
                                         on:click="{on_signin}"
-                                        class="btn btn-lg text-base bg-base-300 w-full 
+                                        class="btn btn-lg w-full bg-base-300 text-base 
                                         {email_input ? '' : '1 btn-disabled '} 
                                         {password_input ? '' : '2 btn-disabled '}
                                         {email_error ? '4 btn-disabled ' : ''} 
@@ -479,7 +479,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="relative flex flex-wrap mt-6">
+                    <div class="relative mt-6 flex flex-wrap">
                         <!-- Registration is closed except for special links. -->
                         <div class="hidden w-1/2 text-right">
                             <a href="/auth/register" class="text-blue-200">

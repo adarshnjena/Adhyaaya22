@@ -1,5 +1,5 @@
 <script>
-    import Footer from '$lib/Footer.svelte';
+    import CAFooter from '$lib/CAFooter.svelte';
 </script>
 
 <svelte:head>
@@ -40,5 +40,5 @@
             </div>
         </div>
     </div>
-    <Footer />
+    <CAFooter />
 </div>

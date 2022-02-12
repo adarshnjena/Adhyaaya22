@@ -1,5 +1,5 @@
 <script>
-    import Footer from '$lib/Footer.svelte';
+    import CAFooter from '$lib/CAFooter.svelte';
     import PageTransition from '$lib/PageTransition.svelte';
     import '../../app.scss';
 </script>
@@ -8,4 +8,4 @@
     <slot />
 </PageTransition>
 
-<Footer />
+<CAFooter />

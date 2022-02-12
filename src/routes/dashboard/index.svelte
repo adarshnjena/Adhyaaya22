@@ -9,7 +9,7 @@
     import SimpleStat from '$lib/dashboard/SimpleStats.svelte';
     import TaskSummaryTable from '$lib/dashboard/TaskSummaryTable.svelte';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
-    import Footer from '$lib/Footer.svelte';
+    import CAFooter from '$lib/CAFooter.svelte';
     import shareIcon from '@iconify-icons/ic/baseline-share.js';
     import verifiedIcon from '@iconify-icons/ic/baseline-verified-user.js';
     import tasksCompletedIcon from '@iconify-icons/ic/outline-check-box.js';
@@ -146,5 +146,5 @@
             <AccountLinking />
         </div>
     </div>
-    <Footer />
+    <CAFooter />
 </div>

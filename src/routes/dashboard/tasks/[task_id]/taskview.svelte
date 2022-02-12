@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from '$app/stores';
     import Protected from '$lib/auth/Protected.svelte';
-    import Footer from '$lib/Footer.svelte';
+    import CAFooter from '$lib/CAFooter.svelte';
     import type { taskDetails } from '$lib/types/taskDetails';
     import { get_task_details } from '$lib/firebase/taskDetails';
     import { get_user_details, update_user_task_details } from '$lib/firebase/userDetails';
@@ -133,6 +133,6 @@
             </div>
         </div>
     </div>
-    <Footer />
+    <CAFooter />
 </div>
 

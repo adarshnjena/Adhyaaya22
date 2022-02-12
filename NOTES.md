@@ -55,3 +55,4 @@ f();
 ```
 
 -   Use `fetchSignInMethodsForEmail()` for checking if a new account.
+-   Check this `https://svelte.dev/repl/850d34e7f22b4a13935a078b62c2e19a?version=3.29.7`

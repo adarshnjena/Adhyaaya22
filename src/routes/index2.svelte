@@ -33,7 +33,7 @@
             <p>WebM Video</p>
             <video muted preload="">
                 <source
-                    src="https://firebasestorage.googleapis.com/v0/b/adhyaaya-staging-dev.appspot.com/o/Intro%20Video-1.mp4?alt=media&token=b141ed41-bbd1-4e5c-ae56-1b8ef93bc6f5"
+                    src="/intro_video_2.mp4"
                     type="video/mp4"
                 />
                 <p>Your user agent does not support the HTML5 Video element.</p>

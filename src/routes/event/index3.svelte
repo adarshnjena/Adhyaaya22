@@ -38,7 +38,8 @@
                 // Limit the image index to the number of images
                 image_index = 1
             }
-            src = `/intro_frames/battery_example/battery${(image_index.toString().padStart(3, "0"))}.png`
+            // Change Path here
+            src = `/intro_frames/battery_example/battery${((image_index).toString().padStart(3, "0"))}.png`
         }
     }
     onMount(async () => {
@@ -60,11 +61,16 @@
 
 <svelte:head>
     <title>Adhyaaya'22</title>
+    <!--Change Path here-->
+    {#each [...Array(numberOfImages).keys()] as img_index}
+         <link rel="preload" as="image" href="{`/intro_frames/battery_example/battery${((img_index+1).toString().padStart(3, "0"))}.png`}" />
+    {/each}
 </svelte:head>
 
 <svelte:window bind:scrollY bind:innerHeight />
 
 <div class="app bg-base-100">
+    <!--Adding a bg to this would make it the background for the slideshow thingy-->
     <div id="bound-one" bind:this={container} class="scroll-bound snap-none">
         <div class="content">
             <p class="hidden">This site is best experienced on a 16:9 Monitor.</p>
@@ -122,7 +128,7 @@
             align-items: center;
         }
 
-        video {
+        img {
             width: 100%;
             transform: translate3d(0, 0, 0);
         }

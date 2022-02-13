@@ -26,7 +26,12 @@
     import { eventDetails } from '$lib/types/eventDetails';
     import { get_n_event_details } from '$lib/firebase/eventDetails';
     import _contact from '../../contact.json';
+    import { get_random_loading_message } from '$lib/loading';
 
+    let dataPromiseResolve;
+    const dataPromise = new Promise((resolve, reject) => {
+        dataPromiseResolve = resolve;
+    });
     let app;
     let auth;
     let db;
@@ -62,22 +67,25 @@
         auth = getAuth();
         db = getFirestore();
         // Get the user's profile details.
+
         let _details = await get_user_details(app, $authStore.user, db);
-        details = _details['profile'];
-        dev ? console.log('details', _details) : '';
-        // If the user has no profile details, then set them up.
         if (!_details) {
-            await set_initial_user_details(app, $authStore.user, db);
+            await set_initial_user_details(app, $authStore.user, db, auth.currentUser.displayName);
             _details = await get_user_details(app, $authStore.user, db);
             details = _details['profile'];
             dev ? console.log('!details', details) : '';
+        } else {
+            details = _details['profile'];
+            dev ? console.log('details', _details) : '';
         }
+        // If the user has no profile details, then set them up.
         // Get the current contact details.
         // TODO: Finish the contact details
         // Get 5 important, future tasks.
         profile_tasks = _details['tasks'];
         tasks = await get_n_task_details(app, db, 5);
         events = await get_n_event_details(app, db, 5);
+        dataPromiseResolve();
     });
     async function handle_update_click(event) {
         let _details = await get_user_details(app, $authStore.user, db);
@@ -130,19 +138,32 @@
             </div>
             <!-- Level 0 -->
             <!-- Level 1 -->
-            <div class="mt-4 flex flex-wrap">
-                <TaskSummaryTable tasks="{tasks}" profile_tasks="{profile_tasks}" />
-                <InfoTable events="{events}" />
-            </div>
-            <div class="mt-4 flex flex-wrap">
-                <DashboardProfile
-                    app="{app}"
-                    database="{db}"
-                    details="{details}"
-                    handle_update_click="{handle_update_click}"
-                />
-                <DashboardContact contact="{contact}" />
-            </div>
+            {#await dataPromise}
+                <div class="mt-4 flex flex-wrap">
+                    <SimpleStat
+                        title="{get_random_loading_message()}"
+                        value="LOADING"
+                        positive="{false}"
+                        subtitle="Please wait..."
+                        icon="{tasksNotCompletedIcon}"
+                    />
+                </div>
+            {:then value}
+                <div class="mt-4 flex flex-wrap">
+                    <TaskSummaryTable tasks="{tasks}" profile_tasks="{profile_tasks}" />
+                    <InfoTable events="{events}" />
+                </div>
+                <div class="mt-4 flex flex-wrap">
+                    <DashboardProfile
+                        app="{app}"
+                        database="{db}"
+                        details="{details}"
+                        handle_update_click="{handle_update_click}"
+                    />
+                    <DashboardContact contact="{contact}" />
+                </div>
+            {/await}
+
             <AccountLinking />
         </div>
     </div>

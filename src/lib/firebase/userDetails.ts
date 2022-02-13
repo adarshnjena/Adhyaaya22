@@ -30,9 +30,10 @@ export async function set_initial_user_details(
     app: FirebaseApp,
     user: UserInfo,
     db: Firestore,
+    fallback_username: string,
 ): Promise<void> {
     const _data = defaultProfileData;
-    _data['username'] = user.displayName.toLowerCase().replaceAll(' ', '_');
+    _data['username'] = user.displayName?.toLowerCase().replaceAll(' ', '_') || fallback_username;
     _data['email'] = user.email;
     const data = {
         profile: _data,

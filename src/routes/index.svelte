@@ -17,6 +17,7 @@
     import {frame_data} from'./index_data'
     import Content_2_BG_PC from '$lib/assets/content-2-bg-pc.jpg';
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
+import MainNavbar from '$lib/MainNavbar.svelte';
 
     let app;
     let innerHeight: number;
@@ -79,12 +80,15 @@
 
 <svelte:window bind:scrollY bind:innerHeight bind:innerWidth />
 
+
+<MainNavbar />
+
 <div class="app bg-base-100">
     <!--Adding a bg to this would make it the background for the slideshow thingy-->
     <div id="bound-one" bind:this="{container}" class="scroll-bound snap-none">
         <div class="content">
             <p class="hidden">This site is best experienced on a 16:9 Monitor.</p>
-            <img src="{src}" alt="Showcase" class="min-h-screen w-full" />
+            <img src="{src}" alt="Showcase" class="min-h-[calc(100vh-3.75rem)] w-full" />
             <div class="text-container">
                 <div class="subtitle {frame_data[image_index]?.line_1[1] || 'invisible'}">{frame_data[image_index]?.line_1[0]}</div>
                 <div class="title {frame_data[image_index]?.line_2[1]|| 'invisible'}">{frame_data[image_index]?.line_2[0]}</div>
@@ -102,7 +106,7 @@
     <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-300">
         <span class="text-white">CONTENT 3</span>
     </div>
-    <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-100">
+    <div class="min-h-screen sticky  top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-100">
         <span class="text-white">CONTENT 4</span>
     </div>
 </div>

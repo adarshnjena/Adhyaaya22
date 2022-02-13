@@ -9,18 +9,23 @@
     //import navbarLogo from '$lib/assets/navbar-logo.png';
     import backgroundImageOne from '$lib/assets/hero-background.png';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
-    import { profileDetails } from '$lib/types/profileDetails';
+    //import { profileDetails } from '$lib/types/profileDetails';
     import roundLogin from '@iconify-icons/ic/round-login.js';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import { getApp, initializeApp } from 'firebase/app';
     import { onMount } from 'svelte';
     import {frame_data} from'./index_data'
+    import Content_2_BG_PC from '$lib/assets/content-2-bg-pc.jpg';
+    import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
+
     let app;
     let innerHeight: number;
     let scrollY: number; // Number of Pixels scrolled
     let container: HTMLDivElement;
     let src;
 
+    let innerWidth: number;
+    $: isMobile = innerWidth < 1280;
     // CONFIG OPTIONS
     const numberOfImages = 52; // 1 indexed
 
@@ -39,7 +44,7 @@
             // Change Path here
             src = `/intro_frames/battery_example/battery${image_index
                 .toString()
-                .padStart(3, '0')}.png`;
+                .padStart(3, '0') + ((isMobile) ? '-portrait':'')}.png`;
         }
     }
     onMount(async () => {
@@ -67,12 +72,12 @@
             as="image"
             href="{`/intro_frames/battery_example/battery${(img_index + 1)
                 .toString()
-                .padStart(3, '0')}.png`}"
+                .padStart(3, '0') + ((isMobile) ? '-portrait':'')}.png`}"
         />
     {/each}
 </svelte:head>
 
-<svelte:window bind:scrollY bind:innerHeight />
+<svelte:window bind:scrollY bind:innerHeight bind:innerWidth />
 
 <div class="app bg-base-100">
     <!--Adding a bg to this would make it the background for the slideshow thingy-->
@@ -91,7 +96,7 @@
     <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-300">
         <span class="text-white">CONTENT 1</span>
     </div>
-    <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-100">
+    <div style="--bg2: url('{isMobile ? Content_2_BG_MOBILE:Content_2_BG_PC}')" class="content-2-bg bg-base-100 bg-opacity-50 min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always ">
         <span class="text-white">CONTENT 2</span>
     </div>
     <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-300">
@@ -171,5 +176,13 @@
         background-attachment: fixed, fixed;
         background-repeat: no-repeat, no-repeat;
         background-size: contain, contain;
+    }
+
+    .content-2-bg {
+        background-image: var(--bg2);
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>

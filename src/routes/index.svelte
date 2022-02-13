@@ -103,7 +103,7 @@
 </div>
 
 <div
-    class="custom-background hero min-h-screen"
+    class="hidden custom-background hero min-h-screen"
     style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
 >
     <div class="hero-overlay bg-opacity-60 backdrop-blur"></div>

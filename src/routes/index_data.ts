@@ -19,100 +19,34 @@ const right = ' xl:ml-[50vw] '
     make sure to update the images properly
 */
 export const frame_data = {
-    23: {
-        line_1: ['TEXT', invisible],
-        line_2: ['TEXT', invisible],
-        line_3: ['TEXT', invisible],
-        line_4: ['TEXT', invisible]
+    100: {
+        line_1: [' ', invisible],
+        line_3: ['Meet ASU-77', visible_1],
+        line_2: [' ', invisible],
+        line_4: ['Guide You, It will', visible_1],
     },
-    24: {
-        line_1: ['TEXT', visible_1],
-        line_2: ['TEXT', invisible],
-        line_3: ['TEXT', invisible],
-        line_4: ['TEXT', invisible]
+    102: {
+        line_1: [' ', invisible],
+        line_3: ['Meet ASU-77', visible_2],
+        line_2: [' ', invisible],
+        line_4: ['Guide You, It will', visible_2],
     },
-    25: {
-        line_1: ['TEXT', visible_2],
-        line_2: ['TEXT', visible_1],
-        line_3: ['TEXT', invisible],
-        line_4: ['TEXT', invisible]
+    103: {
+        line_1: [' ', invisible],
+        line_3: ['Meet ASU-77', visible_3],
+        line_2: [' ', invisible],
+        line_4: ['Guide You, It will', visible_3],
     },
-    26: {
-        line_1: ['TEXT', visible_3],
-        line_2: ['TEXT', visible_2],
-        line_3: ['TEXT', visible_1],
-        line_4: ['TEXT', invisible]
+    104: {
+        line_1: [' ', invisible],
+        line_3: ['Meet ASU-77', visible_4],
+        line_2: [' ', invisible],
+        line_4: ['Guide You, It will', visible_4],
     },
-    27: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_3],
-        line_3: ['TEXT', visible_2],
-        line_4: ['TEXT', visible_1]
+    105: {
+        line_1: [' ', invisible],
+        line_3: ['Meet ASU-77', visible_4],
+        line_2: [' ', invisible],
+        line_4: ['Guide You, It will', visible_4],
     },
-    28: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_3],
-        line_4: ['TEXT', visible_2]
-    },
-    29: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_4 + left],
-        line_4: ['TEXT', visible_3]
-    },
-    30: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_4 + left],
-        line_4: ['TEXT', visible_4 + left]
-    },
-    31: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_4 + left],
-        line_4: ['TEXT', visible_4 + left]
-    },
-    32: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_4 + left],
-        line_4: ['TEXT', visible_4 + left]
-    },
-    33: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_4 + left],
-        line_4: ['TEXT', visible_4 + left]
-    },
-    34: {
-        line_1: ['TEXT', visible_4 + left],
-        line_2: ['TEXT', visible_4 + left],
-        line_3: ['TEXT', visible_4 + left],
-        line_4: ['TEXT', visible_4 + left]
-    },
-    35: {
-        line_1: ['TEXT', visible_5],
-        line_2: ['TEXT', visible_5],
-        line_3: ['TEXT', visible_5],
-        line_4: ['TEXT', visible_5]
-    },
-    36: {
-        line_1: ['TEXT', visible_6],
-        line_2: ['TEXT', visible_6],
-        line_3: ['TEXT', visible_6],
-        line_4: ['TEXT', visible_6]
-    },
-    37: {
-        line_1: ['TEXT', visible_7],
-        line_2: ['TEXT', visible_7],
-        line_3: ['TEXT', visible_7],
-        line_4: ['TEXT', visible_7]
-    },
-    38: {
-        line_1: ['TEXT', invisible],
-        line_2: ['TEXT', invisible],
-        line_3: ['TEXT', invisible],
-        line_4: ['TEXT', invisible]
-    }
 }

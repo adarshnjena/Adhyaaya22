@@ -14,10 +14,10 @@
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import { getApp, initializeApp } from 'firebase/app';
     import { onMount } from 'svelte';
-    import {frame_data} from'./index_data'
+    import { frame_data } from './index_data';
     import Content_2_BG_PC from '$lib/assets/content-2-bg-pc.jpg';
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
-import MainNavbar from '$lib/MainNavbar.svelte';
+    import MainNavbar from '$lib/MainNavbar.svelte';
 
     let app;
     let innerHeight: number;
@@ -28,7 +28,7 @@ import MainNavbar from '$lib/MainNavbar.svelte';
     let innerWidth: number;
     $: isMobile = innerWidth < 1280;
     // CONFIG OPTIONS
-    const numberOfImages = 52; // 1 indexed
+    const numberOfImages = 386; // 1 indexed
 
     let image_index = 1;
     $: {
@@ -43,9 +43,9 @@ import MainNavbar from '$lib/MainNavbar.svelte';
                 image_index = 1;
             }
             // Change Path here
-            src = `/intro_frames/battery_example/battery${image_index
-                .toString()
-                .padStart(3, '0') + ((isMobile) ? '-portrait':'')}.png`;
+            src = `/intro_frames/intro/intro${
+                image_index.toString().padStart(3, '0') + (isMobile ? '-portrait' : '')
+            }.png`;
         }
     }
     onMount(async () => {
@@ -71,71 +71,76 @@ import MainNavbar from '$lib/MainNavbar.svelte';
         <link
             rel="preload"
             as="image"
-            href="{`/intro_frames/battery_example/battery${(img_index + 1)
-                .toString()
-                .padStart(3, '0') + ((isMobile) ? '-portrait':'')}.png`}"
+            href="{`/intro_frames/intro/intro${
+                (img_index + 1).toString().padStart(3, '0') + (isMobile ? '-portrait' : '')
+            }.png`}"
         />
     {/each}
 </svelte:head>
 
 <svelte:window bind:scrollY bind:innerHeight bind:innerWidth />
 
-
 <MainNavbar />
 
-<div class="app bg-base-100">
+<div class="app snap-y snap-mandatory bg-base-100">
     <!--Adding a bg to this would make it the background for the slideshow thingy-->
     <div id="bound-one" bind:this="{container}" class="scroll-bound snap-none">
         <div class="content">
             <p class="hidden">This site is best experienced on a 16:9 Monitor.</p>
             <img src="{src}" alt="Showcase" class="min-h-[calc(100vh-3.75rem)] w-full" />
             <div class="text-container">
-                <div class="subtitle {frame_data[image_index]?.line_1[1] || 'invisible'}">{frame_data[image_index]?.line_1[0]}</div>
-                <div class="title {frame_data[image_index]?.line_2[1]|| 'invisible'}">{frame_data[image_index]?.line_2[0]}</div>
-                <div class="title {frame_data[image_index]?.line_3[1]|| 'invisible'}">{frame_data[image_index]?.line_3[0]}</div>
-                <div class="subtitle {frame_data[image_index]?.line_4[1]|| 'invisible'}">{frame_data[image_index]?.line_4[0]}</div>
+                <div class="subtitle {frame_data[image_index]?.line_1[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_1[0]}
+                </div>
+                <div class="title {frame_data[image_index]?.line_2[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_2[0]}
+                </div>
+                <div class="title {frame_data[image_index]?.line_3[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_3[0]}
+                </div>
+                <div class="subtitle {frame_data[image_index]?.line_4[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_4[0]}
+                </div>
             </div>
         </div>
     </div>
-    <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-300">
+    <div
+        class="sticky top-0 flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-300"
+    >
         <span class="text-white">CONTENT 1</span>
     </div>
-    <div style="--bg2: url('{isMobile ? Content_2_BG_MOBILE:Content_2_BG_PC}')" class="content-2-bg bg-base-100 bg-opacity-50 min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always ">
-        <span class="text-white">CONTENT 2</span>
+    <div
+        style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
+        class="content-2-bg sticky top-0 flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-100 bg-opacity-50 "
+    >
+        <!-- svelte-ignore a11y-media-has-caption (This video does not require captions)-->
+        <video
+            src="/city-bg.mp4"
+            autoplay
+            muted
+            loop
+            class="h-screen w-screen object-cover"
+        ></video>
     </div>
-    <div class="min-h-screen sticky top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-300">
+    <div
+        class="sticky top-0 flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-300"
+    >
         <span class="text-white">CONTENT 3</span>
     </div>
-    <div class="min-h-screen sticky  top-0 flex-col justify-center items-center flex snap-start snap-always bg-base-100">
+    <div
+        class="sticky top-0  flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-100"
+    >
         <span class="text-white">CONTENT 4</span>
     </div>
 </div>
 
-<div
-    class="hidden custom-background hero min-h-screen"
-    style="--bga: url('{backgroundImageOne}'); --bgb: url('{backgroundImageTwo}');"
->
-    <div class="hero-overlay bg-opacity-60 backdrop-blur"></div>
-    <div class="hero-content text-center text-neutral-content">
-        <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello There!</h1>
-            <p class="mb-5">
-                This is a private portal for Adhyaaya '22 Campus Ambassadors. Please proceed to
-                login.
-            </p>
-            <a href="/auth/login" sveltekit:prefetch class="btn btn-primary">
-                <Icon class="mr-2" icon="{roundLogin}" />Login
-            </a>
-        </div>
-    </div>
-</div>
 
 <style lang="scss">
     .scroll-bound {
         // Change this height to modify the speed of the scroll.
         // 200vh corresponds to 10 ticks of the scroll wheel
         //TODO Make this work with images.
-        height: 500vh;
+        height: 600vh;
 
         .content {
             height: 100vh;
@@ -189,4 +194,5 @@ import MainNavbar from '$lib/MainNavbar.svelte';
         background-repeat: no-repeat;
         background-size: cover;
     }
+
 </style>

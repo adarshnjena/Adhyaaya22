@@ -89,7 +89,7 @@ body {
 
 * {
     box-sizing: border-box;
-    @apply scrollbar-hide;
+    @apply scrollbar-hide scroll-smooth;
 }
 
 #svelte {

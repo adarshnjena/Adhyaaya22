@@ -1,6 +1,6 @@
 <script>
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
-    import roundMenu from '@iconify-icons/ic/round-menu';
+    import roundMenu from '@iconify-icons/ic/round-menu.js';
 </script>
 
 <nav class="sticky top-0 z-10 w-full rounded border-gray-200 bg-transparent px-2 py-2.5 sm:px-4">

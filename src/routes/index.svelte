@@ -82,7 +82,7 @@
 
 <MainNavbar />
 
-<div class="app snap-y snap-mandatory bg-base-100">
+<div class="app snap-y snap-mandatory bg-black">
     <!--Adding a bg to this would make it the background for the slideshow thingy-->
     <div id="bound-one" bind:this="{container}" class="scroll-bound snap-none">
         <div class="content">

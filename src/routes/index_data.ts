@@ -19,5 +19,184 @@ const right = ' xl:ml-[50vw] '
     make sure to update the images properly
 */
 export const frame_data = {
-    
+    215: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    216: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    217: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    218: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    219: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    220: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    221: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    222: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    223: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    224: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+
+    225: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    226: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    227: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    228: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    229: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+
+    230: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    231: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    232: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    233: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    234: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    235: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    236: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+
+    237: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+
+    238: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    239: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    240: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+
+    241: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    242: {
+        line_1 : ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
+    243: {
+        line_1 : ['TOP TEXT', visible_4],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    },
 }
+

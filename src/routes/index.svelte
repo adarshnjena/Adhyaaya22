@@ -46,6 +46,8 @@
             src = `/intro_frames/intro/intro${
                 image_index.toString().padStart(3, '0') + (isMobile ? '-portrait' : '')
             }.png`;
+            // read the data of this frame if it exists into the last_frame variable
+            last_frame = frame_data[image_index] || last_frame
         }
     }
     onMount(async () => {
@@ -62,6 +64,25 @@
         }
         // We will check if a key exists in the database, This should have been done in initialization.
     });
+
+    const invisible = 'invisible';
+    const visible_1 = 'opacity-25 -translate-y-4';
+    const visible_2 = 'opacity-50 -translate-y-2';
+    const visible_3 = 'opacity-75 -translate-y-1';
+    const visible_4 = 'opacity-100 transform-none';
+    const visible_5 = 'opacity-75 translate-y-1';
+    const visible_6 = 'opacity-50 translate-y-2';
+    const visible_7 = 'opacity-25 translate-y-4';
+    // const invisible = ...
+    const left = ' xl:mr-[50vw] ';
+    const right = ' xl:ml-[50vw] ';
+
+    let last_frame = {
+        line_1: ['', invisible],
+        line_2: ['', invisible],
+        line_3: ['', invisible],
+        line_4: ['', invisible]
+    };
 </script>
 
 <svelte:head>
@@ -89,17 +110,17 @@
             <p class="hidden">This site is best experienced on a 16:9 Monitor.</p>
             <img src="{src}" alt="Showcase" class="min-h-[calc(100vh-3.75rem)] w-full" />
             <div class="text-container">
-                <div class="subtitle {frame_data[image_index]?.line_1[1] || 'invisible'}">
-                    {frame_data[image_index]?.line_1[0]}
+                <div class="subtitle {frame_data[image_index]?.line_1[1] || last_frame.line_1[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_1[0] || last_frame.line_1[0] || ''}
                 </div>
-                <div class="title {frame_data[image_index]?.line_2[1] || 'invisible'}">
-                    {frame_data[image_index]?.line_2[0]}
+                <div class="title {frame_data[image_index]?.line_2[1] || last_frame.line_2[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_2[0] || last_frame.line_2[0] || ''}
                 </div>
-                <div class="title {frame_data[image_index]?.line_3[1] || 'invisible'}">
-                    {frame_data[image_index]?.line_3[0]}
+                <div class="title {frame_data[image_index]?.line_3[1] || last_frame.line_3[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_3[0] || last_frame.line_3[0] || ''}
                 </div>
-                <div class="subtitle {frame_data[image_index]?.line_4[1] || 'invisible'}">
-                    {frame_data[image_index]?.line_4[0]}
+                <div class="subtitle {frame_data[image_index]?.line_4[1] || last_frame.line_4[1] || 'invisible'}">
+                    {frame_data[image_index]?.line_4[0] || last_frame.line_4[0] || ''}
                 </div>
             </div>
         </div>
@@ -133,7 +154,6 @@
         <span class="text-white">CONTENT 4</span>
     </div>
 </div>
-
 
 <style lang="scss">
     .scroll-bound {
@@ -194,5 +214,4 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-
 </style>

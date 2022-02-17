@@ -10,6 +10,9 @@ const visible_7 = 'opacity-25 translate-y-4';
 const left = ' xl:mr-[50vw] '
 const right = ' xl:ml-[50vw] '
 
+const top = ' mb-[50vh] '
+const bottom = ' mt-[50vh] '
+
 /* 
     +right to shift the text to the right, 
     +left to shift the text to the left

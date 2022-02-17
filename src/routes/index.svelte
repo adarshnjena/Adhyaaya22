@@ -18,6 +18,7 @@
     import Content_2_BG_PC from '$lib/assets/content-2-bg-pc.jpg';
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
     import MainNavbar from '$lib/MainNavbar.svelte';
+    import MainFooter from '$lib/MainFooter.svelte';
 
     let app;
     let innerHeight: number;
@@ -148,11 +149,9 @@
     >
         <span class="text-white">CONTENT 3</span>
     </div>
-    <div
-        class="sticky top-0  flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-100"
-    >
-        <span class="text-white">CONTENT 4</span>
-    </div>
+
+        <MainFooter />
+    
 </div>
 
 <style lang="scss">

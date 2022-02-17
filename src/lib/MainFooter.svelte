@@ -18,7 +18,7 @@
 </script>
 
 
-  <div class="trailer-footer min-h-screen sticky ">
+  <div class="trailer-footer min-h-screen sticky z-20">
 
     <div class="adh-trailer">
       <div class="adh-trailer-heading "> 
@@ -42,21 +42,21 @@
             
             <!-- Icons part 2  -->  
             
-            <div class="footer-contact-two w-full" id="icons-two">
-                <div class="mail-two"> 
-                    <a href="mailto:adhyaaya.gcoen@gmail.com"><Icon icon='{emailOutline}' /> <p>Have a question ? </p></a>
+            <div class="footer-contact-two w-screen" id="icons-two">
+                <div class="mail-two w-full"> 
+                    <a class='inline-flex' href="mailto:adhyaaya.gcoen@gmail.com"><Icon class='m-1 w-6 h-6' icon='{emailOutline}' /> <p>Have a question ? </p></a>
                   </div>   
                   <div class="yt-two">
-                    <a href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon icon='{youtubeOutline}' /> <p>Watch on YouTube</p></a>
+                    <a class='inline-flex' href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon class='m-1 w-6 h-6' icon='{youtubeOutline}' /> <p>Watch us on YouTube</p></a>
                 </div> 
                 <div class="twitter-two">
-                    <a href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon icon='{twitterOutline}' /> <p>Follow us on Twitter</p></a>
+                    <a class='inline-flex' href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{twitterOutline}' /> <p>Follow us on Twitter</p></a>
                 </div>
                 <div class="linkedin-two">
-                    <a href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon icon='{linkedinOutline}' /> <p>Join us on LinkedIn</p></a>
+                    <a class='inline-flex' href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon class='m-1 w-6 h-6' icon='{linkedinOutline}' /> <p>Join us on LinkedIn</p></a>
                 </div>
                 <div class="insta-two">
-                    <a href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon icon='{instagramOutline}' /> <p>Follow us on Instagram</p></a> 
+                    <a class='inline-flex' href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{instagramOutline}' /> <p>Follow us on Instagram</p></a> 
                 </div> 
             </div>
 
@@ -112,21 +112,21 @@
 
                     <!-- Stay Connected -->
 
-                    <div class="footer-contact" id="icons">
+                    <div class="footer-contact text-sm" id="icons">
                         <div class="mail" id="transform-icon">
-                            <a href="mailto:adhyaaya.gcoen@gmail.com"><i class="fa" target="_blank">&#xf0e0;</i> Enquire here</a>
+                            <a class='inline-flex' href="mailto:adhyaaya.gcoen@gmail.com"><Icon class='m-1 w-6 h-6' icon='{emailOutline}' /> Have a question ?</a>
                         </div>   
                         <div class="yt" id="transform-icon">
-                            <a href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><i class="fa">&#xf16a;</i> Subscribe us</a>
+                            <a class='inline-flex' href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon class='m-1 w-6 h-6' icon='{youtubeOutline}' /> Watch us on YouTube</a>
                         </div> 
                         <div class="twitter" id="transform-icon">
-                            <a href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <i class="fa">&#xf099;</i> Follow us on twitter</a>
+                            <a class='inline-flex' href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{twitterOutline}' /> Follow us on Twitter</a>
                         </div>
                         <div class="linkedin" id="transform-icon">
-                            <a href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><i class="fa">&#xf08c;</i> Connect us on LinkedIn</a>
+                            <a class='inline-flex' href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon class='m-1 w-6 h-6' icon='{linkedinOutline}' /> Join us on LinkedIn</a>
                         </div>
                         <div class="insta" id="transform-icon">
-                            <a href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <i class="fa">&#xf16d;</i> Follow us on Instagram</a>
+                            <a class='inline-flex' href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{instagramOutline}' /> Follow us on Instagram</a>
                         </div> 
                     </div>
 

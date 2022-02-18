@@ -10,52 +10,52 @@
 
 <PageTransition>
     <nav
-        class="navbar-expand-lg absolute top-0 z-50 flex w-full flex-wrap items-center justify-between bg-opacity-0 px-2 py-3"
+        class="tw-navbar-expand-lg tw-absolute tw-top-0 tw-z-50 tw-flex tw-w-full tw-flex-wrap tw-items-center tw-justify-between tw-bg-opacity-0 tw-px-2 tw-py-3"
     >
-        <div class="mx-auto flex w-11/12 flex-wrap items-center justify-between px-4">
-            <a class="btn btn-ghost mr-8" href="/" aria-label="home-link">
+        <div class="tw-mx-auto tw-flex tw-w-11/12 tw-flex-wrap tw-items-center tw-justify-between tw-px-4">
+            <a class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
                 <figure>
-                    <img aria-hidden="true" class="h-10" src="{navbarLogo}" alt="Adhyaaya Logo" />
+                    <img aria-hidden="true" class="tw-h-10" src="{navbarLogo}" alt="Adhyaaya Logo" />
                 </figure>
             </a>
             <div
-                class="flex flex-grow items-center rounded bg-opacity-0 shadow-none"
+                class="tw-flex tw-flex-grow tw-items-center tw-rounded tw-bg-opacity-0 tw-shadow-none"
                 id="example-navbar-warning"
             >
-                <ul class="ml-auto flex list-none flex-row self-end">
-                    <li class="flex items-center">
-                        <div class="dropdown-end dropdown">
-                            <div tabindex="0" class="btn-outline btn btn-ghost m-1">
-                                <Icon class="h-10 w-10" icon="{roundMenu}" />
+                <ul class="tw-ml-auto tw-flex tw-list-none tw-flex-row tw-self-end">
+                    <li class="tw-flex tw-items-center">
+                        <div class="tw-dropdown-end tw-dropdown">
+                            <div tabindex="0" class="tw-btn-outline tw-btn tw-btn-ghost tw-m-1">
+                                <Icon class="tw-h-10 tw-w-10" icon="{roundMenu}" />
                             </div>
                             <ul
                                 tabindex="0"
-                                class="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
+                                class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                             >
                                 <li>
-                                    <a sveltekit:prefetch href="/dashboard" class="rounded-xl">
+                                    <a sveltekit:prefetch href="/dashboard" class="tw-rounded-xl">
                                         Dashboard
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/dashboard/tasks" class="rounded-xl">View All Tasks</a>
+                                    <a href="/dashboard/tasks" class="tw-rounded-xl">View All Tasks</a>
                                 </li>
                                 <li>
-                                    <a href="/auth/logout" class="btn btn-error rounded-xl">
-                                        <Icon class="mr-2" icon="{outlineLogout}" /> LOGOUT
+                                    <a href="/auth/logout" class="tw-btn tw-btn-error tw-rounded-xl">
+                                        <Icon class="tw-mr-2" icon="{outlineLogout}" /> LOGOUT
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li class="flex items-center"></li>
+                    <li class="tw-flex tw-items-center"></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div
-        class="relative h-full w-full bg-base-300 pt-32 xl:pb-32 "
+        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 xl:tw-pb-32 "
         style="background-image: url({backgroundImage});"
     >
         <slot />

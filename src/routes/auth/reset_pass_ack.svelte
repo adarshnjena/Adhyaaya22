@@ -2,22 +2,22 @@
     import backgroundImage from '$lib/assets/page-background.png';
 </script>
 
-<div class="hero min-h-screen bg-base-300 " style="background-image: url({backgroundImage});">
+<div class="tw-hero tw-min-h-screen tw-bg-base-300 " style="background-image: url({backgroundImage});">
     <div
-        class="hero-overlay bg-base-300 bg-opacity-75 backdrop-blur motion-safe:animate-pulse"
+        class="tw-hero-overlay tw-bg-base-300 tw-bg-opacity-75 tw-backdrop-blur motion-safe:tw-animate-pulse"
     ></div>
-    <div class="hero-content text-center text-neutral-content">
-        <form class="max-w-md">
-            <div class="card w-96 flex-shrink-0 bg-base-200 bg-opacity-75 shadow-2xl backdrop-blur">
-                <div class="card-body">
-                    <h1 class="my-4 text-left text-xl">Forgot Password ?</h1>
-                    <span class="my-2 text-left text-sm">
+    <div class="tw-hero-content tw-text-center tw-text-neutral-content">
+        <form class="tw-max-w-md">
+            <div class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-200 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur">
+                <div class="tw-card-body">
+                    <h1 class="tw-my-4 tw-text-left tw-text-xl">Forgot Password ?</h1>
+                    <span class="tw-my-2 tw-text-left tw-text-sm">
                         Don't worry, happens to the best of us.
                     </span>
-                    <hr class="my-2 border-b border-gray-600" />
-                    <h2 class="text-left">
+                    <hr class="tw-my-2 tw-border-b tw-border-gray-600" />
+                    <h2 class="tw-text-left">
                         Please check your email for the link to reset your password. You may close
-                        this tab / window.
+                        this.
                     </h2>
                 </div>
             </div>

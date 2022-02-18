@@ -159,7 +159,7 @@
   <div class="contact-content">
     
     <div class="contact-info-img">
-                    <img src="contact info.png" alt="">
+                    <img src="/contact info.png" alt="">
                 </div> 
                 
                 <div class="contact-info-content">
@@ -209,7 +209,7 @@
           <div class="container113" style="text-align: center">
             <div class="row">
               <img
-              src="gcoen_logo.png"
+              src="/favicon.png"
                 style="
                   width: 30%;
                   height: 30%;

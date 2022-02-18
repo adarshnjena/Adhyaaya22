@@ -100,11 +100,11 @@
 </svelte:head>
 
 <Protected />
-<div class="h-full">
-    <div class="mt-18 mx-auto w-full px-2 md:w-5/6 md:px-16">
-        <div class="w-full">
+<div class="tw-h-full">
+    <div class="tw-mt-18 tw-mx-auto tw-w-full tw-px-2 md:tw-w-5/6 md:tw-px-16">
+        <div class="tw-w-full">
             <!--Stats Row-->
-            <div class="mt-4 flex flex-wrap justify-between">
+            <div class="tw-mt-4 tw-flex tw-flex-wrap tw-justify-between">
                 <SimpleStat
                     title="CA Code"
                     value="{$authStore.user?.uid.substring(0, 7)}"
@@ -139,7 +139,7 @@
             <!-- Level 0 -->
             <!-- Level 1 -->
             {#await dataPromise}
-                <div class="mt-4 flex flex-wrap">
+                <div class="tw-mt-4 tw-flex tw-flex-wrap">
                     <SimpleStat
                         title="{get_random_loading_message()}"
                         value="LOADING"
@@ -149,11 +149,11 @@
                     />
                 </div>
             {:then value}
-                <div class="mt-4 flex flex-wrap">
+                <div class="tw-mt-4 tw-flex tw-flex-wrap">
                     <TaskSummaryTable tasks="{tasks}" profile_tasks="{profile_tasks}" />
                     <InfoTable events="{events}" />
                 </div>
-                <div class="mt-4 flex flex-wrap">
+                <div class="tw-mt-4 tw-flex tw-flex-wrap">
                     <DashboardProfile
                         app="{app}"
                         database="{db}"

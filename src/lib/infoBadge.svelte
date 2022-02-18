@@ -4,7 +4,7 @@
     export let text = 'info';
 </script>
 
-<div class="badge badge-info">
-    <Icon class="mr-1" icon="{roundInfo}" />
+<div class="tw-badge tw-badge-info">
+    <Icon class="tw-mr-1" icon="{roundInfo}" />
     {text}
 </div>

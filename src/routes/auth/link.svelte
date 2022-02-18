@@ -65,18 +65,18 @@
     });
 </script>
 
-<div class="hero min-h-screen bg-base-300 " style="background-image: url({backgroundImage});">
+<div class="tw-hero tw-min-h-screen tw-bg-base-300 " style="background-image: url({backgroundImage});">
     <div
-        class="hero-overlay bg-base-300 bg-opacity-75 backdrop-blur motion-safe:animate-pulse"
+        class="tw-hero-overlay tw-bg-base-300 tw-bg-opacity-75 tw-backdrop-blur motion-safe:tw-animate-pulse"
     ></div>
-    <div class="hero-content text-center text-neutral-content">
-        <form class="max-w-md">
-            <div class="card w-96 flex-shrink-0 bg-base-200 bg-opacity-75 shadow-2xl backdrop-blur">
-                <div class="card-body">
-                    <h1 class="my-4 text-left text-xl">Link Accounts</h1>
-                    <span class="my-2 text-left text-sm">Please wait...</span>
-                    <hr class="my-2 border-b border-gray-600" />
-                    <button class="btn btn-block">Click here to continue...</button>
+    <div class="tw-hero-content tw-text-center tw-text-neutral-content">
+        <form class="tw-max-w-md">
+            <div class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-200 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur">
+                <div class="tw-card-body">
+                    <h1 class="tw-my-4 tw-text-left tw-text-xl">Link Accounts</h1>
+                    <span class="tw-my-2 tw-text-left tw-text-sm">Please wait...</span>
+                    <hr class="tw-my-2 tw-border-b tw-border-gray-600" />
+                    <button class="tw-btn tw-btn-block">Click here to continue...</button>
                 </div>
             </div>
         </form>

@@ -4,7 +4,7 @@
     export let text = 'error';
 </script>
 
-<div class="badge badge-error">
-    <Icon class="mr-1" icon="{roundClose}" />
+<div class="tw-badge tw-badge-error">
+    <Icon class="tw-mr-1" icon="{roundClose}" />
     {text}
 </div>

@@ -40,48 +40,48 @@
     });
 </script>
 
-<div class="mt-4 flex flex-wrap">
-    <div class="mb-12 w-full px-4 xl:mb-0 2xl:w-8/12 ">
+<div class="tw-mt-4 tw-flex tw-flex-wrap">
+    <div class="tw-mb-12 tw-w-full tw-px-4 xl:tw-mb-0 2xl:tw-w-8/12 ">
         <div
-            class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg bg-base-200 bg-opacity-[0.75] shadow-lg backdrop-blur"
+            class="tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded-lg tw-bg-base-200 tw-bg-opacity-[0.75] tw-shadow-lg tw-backdrop-blur"
         >
-            <div class="mb-0 rounded-t bg-transparent px-4 py-3">
-                <div class="flex flex-wrap items-center">
-                    <div class="relative w-full max-w-full flex-1 flex-grow">
+            <div class="tw-mb-0 tw-rounded-t tw-bg-transparent tw-px-4 tw-py-3">
+                <div class="tw-flex tw-flex-wrap tw-items-center">
+                    <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow">
                         <h6
-                            class="text-blueGray-400 mt-4 mb-1 ml-2 text-xl font-semibold uppercase"
+                            class="tw-text-gray-400 tw-mt-4 tw-mb-1 tw-ml-2 tw-text-xl tw-font-semibold tw-uppercase"
                         >
                             Link Accounts
                         </h6>
                     </div>
                 </div>
             </div>
-            <div class="flex-auto p-4">
-                <div class="relative flex h-max flex-col">
+            <div class="tw-flex-auto tw-p-4">
+                <div class="tw-relative tw-flex tw-h-max tw-flex-col">
                     <div
-                        class="my-2 flex h-min w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
+                        class="tw-my-2 tw-flex tw-h-min tw-w-full tw-flex-row tw-items-center tw-rounded-lg tw-bg-base-300 tw-bg-opacity-[0.75] tw-py-4 tw-px-2 tw-backdrop-blur"
                     >
-                        <Icon class="ml-4 mr-2" icon="{GoogleIcon}" />
-                        <span class="flex-grow-[4] text-lg">Google</span>
+                        <Icon class="tw-ml-4 tw-mr-2" icon="{GoogleIcon}" />
+                        <span class="tw-flex-grow-[4] tw-text-lg">Google</span>
                         <a
                             sveltekit:prefetch
                             href="/auth/link?provider=google.com"
-                            class="btn btn-ghost btn-xs mr-4 {is_google
-                                ? 'btn-disabled bg-success text-black'
+                            class="tw-btn tw-btn-ghost tw-btn-xs tw-mr-4 {is_google
+                                ? 'tw-btn-disabled tw-bg-success tw-text-black'
                                 : ''}"
                         >
                             {is_google ? 'Linked' : 'Link'}
                         </a>
                     </div>
                     <div
-                        class="my-2 flex h-max w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
+                        class="tw-my-2 tw-flex tw-h-max tw-w-full tw-flex-row tw-items-center tw-rounded-lg tw-bg-base-300 tw-bg-opacity-[0.75] tw-py-4 tw-px-2 tw-backdrop-blur"
                     >
-                        <Icon class="ml-4 mr-2 invert" icon="{GitHubIcon}" />
-                        <span class="flex-grow-[4] text-lg">GitHub</span>
+                        <Icon class="tw-ml-4 tw-mr-2 tw-invert" icon="{GitHubIcon}" />
+                        <span class="tw-flex-grow-[4] tw-text-lg">GitHub</span>
                         <a
                             href="/auth/link?provider=github.com"
-                            class="btn btn-ghost btn-xs mr-4 {is_github
-                                ? 'btn-disabled bg-success text-black'
+                            class="tw-btn tw-btn-ghost tw-btn-xs tw-mr-4 {is_github
+                                ? 'tw-btn-disabled tw-bg-success tw-text-black'
                                 : ''}"
                         >
                             {is_github ? 'Linked' : 'Link'}
@@ -89,25 +89,25 @@
                     </div>
                     <!-- Removed Twitter, I don't know how to fix it for ze moment. (flex) -->
                     <div
-                        class="my-2 hidden h-max w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
+                        class="tw-my-2 tw-hidden tw-h-max tw-w-full tw-flex-row tw-items-center tw-rounded-lg tw-bg-base-300 tw-bg-opacity-[0.75] tw-py-4 tw-px-2 tw-backdrop-blur"
                     >
-                        <Icon class="ml-4 mr-2" icon="{TwitterIcon}" />
-                        <span class="flex-grow-[4] text-lg">Twitter</span>
+                        <Icon class="tw-ml-4 tw-mr-2" icon="{TwitterIcon}" />
+                        <span class="tw-flex-grow-[4] tw-text-lg">Twitter</span>
                         <a
                             href="/auth/link?provider=twitter.com"
-                            class="btn btn-ghost btn-xs mr-4 {is_twitter
-                                ? 'btn-disabled bg-success text-black'
+                            class="tw-btn tw-btn-ghost tw-btn-xs tw-mr-4 {is_twitter
+                                ? 'tw-btn-disabled tw-bg-success tw-text-black'
                                 : ''}"
                         >
                             {is_twitter ? 'Linked' : 'Link'}
                         </a>
                     </div>
                     <div
-                        class="my-2 flex h-max w-full flex-row items-center rounded-lg bg-base-300 bg-opacity-[0.75] py-4 px-2 backdrop-blur"
+                        class="tw-my-2 tw-flex tw-h-max tw-w-full tw-flex-row tw-items-center tw-rounded-lg tw-bg-base-300 tw-bg-opacity-[0.75] tw-py-4 tw-px-2 tw-backdrop-blur"
                     >
-                        <Icon class="ml-4 mr-2" icon="{EmailIcon}" />
-                        <span class="flex-grow-[4] text-lg">Email / Password</span>
-                        <a href="/auth/reset_pass_req" class="btn btn-ghost btn-xs mr-4">
+                        <Icon class="tw-ml-4 tw-mr-2" icon="{EmailIcon}" />
+                        <span class="tw-flex-grow-[4] tw-text-lg">Email / Password</span>
+                        <a href="/auth/reset_pass_req" class="tw-btn tw-btn-ghost tw-btn-xs tw-mr-4">
                             {is_email ? 'Reset Password' : 'Set Password'}
                         </a>
                     </div>

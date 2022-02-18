@@ -14,7 +14,7 @@
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import { getApp, initializeApp } from 'firebase/app';
     import { onMount } from 'svelte';
-    import { frame_data } from './index_data';
+    import { landscape_frame_data,  portrait_frame_data} from './index_data';
     import Content_2_BG_PC from '$lib/assets/content-2-bg-pc.jpg';
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
     import MainNavbar from '$lib/MainNavbar.svelte';
@@ -28,6 +28,7 @@
 
     let innerWidth: number;
     $: isMobile = innerWidth < 1280;
+    $: frame_data = isMobile ? portrait_frame_data : landscape_frame_data;
     // CONFIG OPTIONS
     const numberOfImages = 386; // 1 indexed
 
@@ -66,17 +67,7 @@
         // We will check if a key exists in the database, This should have been done in initialization.
     });
 
-    const invisible = 'invisible';
-    const visible_1 = 'opacity-25 -translate-y-4';
-    const visible_2 = 'opacity-50 -translate-y-2';
-    const visible_3 = 'opacity-75 -translate-y-1';
-    const visible_4 = 'opacity-100 transform-none';
-    const visible_5 = 'opacity-75 translate-y-1';
-    const visible_6 = 'opacity-50 translate-y-2';
-    const visible_7 = 'opacity-25 translate-y-4';
-    // const invisible = ...
-    const left = ' xl:mr-[50vw] ';
-    const right = ' xl:ml-[50vw] ';
+    const invisible = 'tw-invisible';
 
     let last_frame = {
         line_1: ['', invisible],

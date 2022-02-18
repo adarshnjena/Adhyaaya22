@@ -70,22 +70,22 @@
     }
 </script>
 
-<div class="hero min-h-screen bg-base-300 " style="background-image: url({backgroundImage});">
+<div class="tw-hero tw-min-h-screen tw-bg-base-300 " style="background-image: url({backgroundImage});">
     <div
-        class="hero-overlay bg-base-300 bg-opacity-75 backdrop-blur motion-safe:animate-pulse"
+        class="tw-hero-overlay tw-bg-base-300 tw-bg-opacity-75 tw-backdrop-blur motion-safe:tw-animate-pulse"
     ></div>
-    <div class="hero-content text-center text-neutral-content">
-        <form class="max-w-md">
-            <div class="card w-96 flex-shrink-0 bg-base-200 bg-opacity-75 shadow-2xl backdrop-blur">
-                <div class="card-body">
-                    <h1 class="my-4 text-left text-xl">Forgot Password ?</h1>
-                    <span class="my-2 text-left text-sm">
+    <div class="tw-hero-content tw-text-center tw-text-neutral-content">
+        <form class="tw-max-w-md">
+            <div class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-200 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur">
+                <div class="tw-card-body">
+                    <h1 class="tw-my-4 tw-text-left tw-text-xl">Forgot Password ?</h1>
+                    <span class="tw-my-2 tw-text-left tw-text-sm">
                         Don't worry, happens to the best of us.
                     </span>
-                    <hr class="my-2 border-b border-gray-600" />
+                    <hr class="tw-my-2 tw-border-b tw-border-gray-600" />
                     <div class="form-control">
                         <label for="email" class="label">
-                            <span class="label-text">Your Email</span>
+                            <span class="tw-label-text">Your Email</span>
                         </label>
                         <input
                             on:blur="{email_on_blur}"
@@ -94,23 +94,23 @@
                             type="email"
                             autocomplete="email"
                             placeholder="email@domain.tld"
-                            class="input font-mono tracking-widest {email_error
-                                ? 'border border-error'
+                            class="tw-input tw-font-mono tw-tracking-widest {email_error
+                                ? 'tw-border tw-border-error'
                                 : ''}"
                         />
-                        <label for="" class="label {email_error ? '' : 'invisible'}">
-                            <span class="label-text-alt text-error">
+                        <label for="" class="tw-label {email_error ? '' : 'tw-invisible'}">
+                            <span class="tw-label-text-alt tw-text-error">
                                 {email_error ? email_error : 'Example String'}
                             </span>
                         </label>
                     </div>
-                    <div class="form-control mt-6">
+                    <div class="tw-form-control tw-mt-6">
                         <input
                             type="button"
                             on:click|preventDefault="{on_submit}"
                             value="Email me a recovery link"
-                            class="btn-outline btn btn-primary {is_loading
-                                ? 'btn-disabled loading'
+                            class="tw-btn-outline tw-btn tw-btn-primary {is_loading
+                                ? 'tw-btn-disabled tw-loading'
                                 : ''}"
                         />
                     </div>

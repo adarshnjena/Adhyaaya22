@@ -282,76 +282,76 @@
 </script>
 
 <main>
-    <section class="relative h-full min-h-screen w-full overflow-y-clip pb-40 pt-28">
+    <section class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pb-40 tw-pt-28">
         <div
-            class="absolute top-0 h-full w-full bg-base-300 bg-no-repeat motion-safe:animate-pulse"
+            class="tw-absolute tw-top-0 tw-h-full tw-w-full tw-bg-base-300 tw-bg-no-repeat motion-safe:tw-animate-pulse"
             style="background-image: url({backgroundImage});"
         ></div>
-        <div class="container mx-auto h-full px-4">
-            <div class="flex h-full content-center items-center justify-center">
-                <div class="w-full px-4 lg:max-w-md">
+        <div class="tw-container tw-mx-auto tw-h-full tw-px-4">
+            <div class="tw-flex tw-h-full tw-content-center tw-items-center tw-justify-center">
+                <div class="tw-w-full tw-px-4 lg:tw-max-w-md">
                     <div
-                        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 bg-base-200 shadow-lg"
+                        class="tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded-lg tw-border-0 tw-bg-base-200 tw-shadow-lg"
                     >
-                        <div class="mb-0 rounded-t px-6 py-6">
-                            <div class="mb-3 text-center">
-                                <span class="font-bold text-blue-100">Sign In / Register</span>
+                        <div class="tw-mb-0 tw-rounded-t tw-px-6 tw-py-6">
+                            <div class="tw-mb-3 tw-text-center">
+                                <span class="tw-font-bold tw-text-blue-100">Sign In / Register</span>
                             </div>
-                            <div class="text-center">
+                            <div class="tw-text-center">
                                 <button
-                                    class="btn btn-block bg-base-300 {is_firebase_auth_in_progress
-                                        ? 'btn-disabled loading'
+                                    class="tw-btn tw-btn-block tw-bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'tw-btn-disabled tw-loading'
                                         : ''}"
                                     on:click="{on_github_auth}"
                                     type="button"
                                 >
                                     <Icon
-                                        class="mr-2 inline-block w-5 stroke-current"
+                                        class="tw-mr-2 tw-inline-block tw-w-5 tw-stroke-current"
                                         icon="{GitHubIcon}"
                                     />
                                     Github
                                 </button>
                                 <button
-                                    class="btn btn-block mt-2 bg-base-300 {is_firebase_auth_in_progress
-                                        ? 'btn-disabled loading'
+                                    class="tw-btn tw-btn-block tw-mt-2 tw-bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'tw-btn-disabled tw-loading'
                                         : ''}"
                                     on:click="{on_google_auth}"
                                     type="button"
                                 >
                                     <Icon
-                                        class="mr-2 inline-block w-5 stroke-current"
+                                        class="tw-mr-2 tw-inline-block tw-w-5 tw-stroke-current"
                                         icon="{GoogleIcon}"
                                     />
                                     Google
                                 </button>
                                 <button
-                                    class="btn btn-block mt-2 hidden bg-base-300 {is_firebase_auth_in_progress
-                                        ? 'btn-disabled loading'
+                                    class="tw-btn tw-btn-block tw-mt-2 tw-hidden tw-bg-base-300 {is_firebase_auth_in_progress
+                                        ? 'tw-btn-disabled tw-loading'
                                         : ''}"
                                     on:click="{on_twitter_auth}"
                                     disabled
                                     type="button"
                                 >
                                     <Icon
-                                        class="mr-2 inline-block w-5 stroke-current"
+                                        class="tw-mr-2 tw-inline-block tw-w-5 tw-stroke-current"
                                         icon="{TwitterIcon}"
                                     />
                                     Twitter
                                 </button>
                             </div>
-                            <hr class="border-b-1 mt-6 border-primary" />
+                            <hr class="tw-border-b-1 tw-mt-6 tw-border-primary" />
                         </div>
-                        <div class="flex-auto px-4 py-10 pt-0 lg:px-10">
-                            <div class="mb-3 hidden text-center text-xs font-bold text-blue-200">
+                        <div class="tw-flex-auto tw-px-4 tw-py-10 tw-pt-0 lg:tw-px-10">
+                            <div class="tw-mb-3 tw-hidden tw-text-center tw-text-xs tw-font-bold tw-text-blue-200">
                                 <small>
                                     Don't have an account ? Enter your email anyway, we'll handle it
                                 </small>
                             </div>
                             <form>
-                                <div class="my-4 bg-base-200">
-                                    <div class="form-control">
-                                        <label for="" class="label">
-                                            <span class="label-text">Email</span>
+                                <div class="tw-my-4 tw-bg-base-200">
+                                    <div class="tw-form-control">
+                                        <label for="" class="tw-label">
+                                            <span class="tw-label-text">Email</span>
                                         </label>
                                         <input
                                             on:blur="{email_on_blur}"
@@ -360,26 +360,26 @@
                                             type="email"
                                             autocomplete="email"
                                             placeholder="email@domain.tld"
-                                            class="input font-mono tracking-widest {email_error
-                                                ? 'border border-error'
+                                            class="tw-input tw-font-mono tw-tracking-widest {email_error
+                                                ? 'tw-border tw-border-error'
                                                 : ''}"
                                         />
                                         <label
                                             for=""
-                                            class="label {email_error ? '' : 'invisible'}"
+                                            class="tw-label {email_error ? '' : 'tw-invisible'}"
                                         >
-                                            <span class="label-text-alt text-error">
+                                            <span class="tw-label-text-alt tw-text-error">
                                                 {email_error ? email_error : 'Example String'}
                                             </span>
                                         </label>
                                     </div>
                                 </div>
                                 <div
-                                    class="my-4 bg-base-200 {is_username_required ? '' : 'hidden'}"
+                                    class="tw-my-4 tw-bg-base-200 {is_username_required ? '' : 'tw-hidden'}"
                                 >
-                                    <div class="form-control">
-                                        <label for="" class="label">
-                                            <span class="label-text">
+                                    <div class="tw-form-control">
+                                        <label for="" class="tw-label">
+                                            <span class="tw-label-text">
                                                 Please enter a username below.
                                             </span>
                                         </label>
@@ -389,33 +389,33 @@
                                             bind:value="{username_input}"
                                             type="text"
                                             placeholder="Username"
-                                            class="input font-mono tracking-widest {username_error
-                                                ? 'border border-error'
+                                            class="tw-input tw-font-mono tw-tracking-widest {username_error
+                                                ? 'tw-border tw-border-error'
                                                 : ''}"
                                         />
                                         <label
                                             for=""
-                                            class="label {username_error ? '' : 'invisible'}"
+                                            class="tw-label {username_error ? '' : 'tw-invisible'}"
                                         >
-                                            <span class="label-text-alt text-error">
+                                            <span class="tw-label-text-alt tw-text-error">
                                                 {username_error ? username_error : 'Example String'}
                                             </span>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="relative mb-1 w-full">
-                                    <div class="form-control">
-                                        <label for="" class="label">
-                                            <span class="label-text">Password</span>
+                                <div class="tw-relative tw-mb-1 tw-w-full">
+                                    <div class="tw-form-control">
+                                        <label for="" class="tw-label">
+                                            <span class="tw-label-text">Password</span>
                                             <a
                                                 href="/auth/reset_pass_req"
-                                                class="label-text-alt text-xs text-gray-400"
+                                                class="tw-label-text-alt tw-text-xs tw-text-gray-400"
                                                 sveltekit:prefetch
                                             >
                                                 Forgot Password ?
                                             </a>
                                         </label>
-                                        <div class="relative">
+                                        <div class="tw-relative">
                                             <!--Custom Hack to get reactive input type and the correct value in on_blur -->
 
                                             <input
@@ -426,23 +426,23 @@
                                                 type="{is_password_shown ? 'text' : 'password'}"
                                                 placeholder="Password"
                                                 autocomplete="current-password"
-                                                class="input w-full pr-16 font-mono tracking-widest {password_error
-                                                    ? 'border border-error'
+                                                class="tw-input tw-w-full tw-pr-16 tw-font-mono tw-tracking-widest {password_error
+                                                    ? 'tw-border tw-border-error'
                                                     : 'Example String'}"
                                             />
                                             <button
                                                 on:click|preventDefault="{password_toggle}"
-                                                class="btn absolute top-0 right-0 rounded-l-none  {is_password_shown
-                                                    ? 'btn-warning'
-                                                    : 'btn-info'} text-xs"
+                                                class="tw-btn tw-absolute tw-top-0 tw-right-0 tw-rounded-l-none  {is_password_shown
+                                                    ? 'tw-btn-warning'
+                                                    : 'tw-btn-info'} tw-text-xs"
                                             >
-                                                <Icon class="h-6 w-6" icon="{Eye}" />
+                                                <Icon class="tw-h-6 tw-w-6" icon="{Eye}" />
                                             </button>
                                             <label
                                                 for=""
-                                                class="label {password_error ? '' : 'invisible'}"
+                                                class="tw-label {password_error ? '' : 'tw-invisible'}"
                                             >
-                                                <span class="label-text-alt text-error">
+                                                <span class="tw-label-text-alt tw-text-error">
                                                     {password_error
                                                         ? password_error
                                                         : 'Example String'}
@@ -453,8 +453,8 @@
                                 </div>
                                 <div>
                                     <!-- Hidden Remember Me. We need people to login again and again. (inline-flex) -->
-                                    <span class="hidden cursor-pointer items-center">
-                                        <span class="my-2 ml-2 text-xs font-normal text-gray-400">
+                                    <span class="tw-hidden tw-cursor-pointer tw-items-center">
+                                        <span class="tw-my-2 tw-ml-2 tw-text-xs tw-font-normal tw-text-gray-400">
                                             Forgot Password ?
                                         </span>
                                     </span>
@@ -463,14 +463,14 @@
                                 <div class="text-center">
                                     <button
                                         on:click="{on_signin}"
-                                        class="btn btn-lg w-full bg-base-300 text-base 
-                                        {email_input ? '' : '1 btn-disabled '} 
-                                        {password_input ? '' : '2 btn-disabled '}
-                                        {email_error ? '4 btn-disabled ' : ''} 
-                                        {password_error ? '5 btn-disabled ' : ''} 
-                                        {username_error ? '6 btn-disabled ' : ''} 
-                                        {is_firebase_auth_in_progress ? '7 btn-disabled ' : ''} 
-                                        {is_signin_loading ? '8 btn-disabled loading ' : ''}"
+                                        class="tw-btn tw-btn-lg tw-w-full tw-bg-base-300 tw-text-base 
+                                        {email_input ? '' : '1 tw-btn-disabled '} 
+                                        {password_input ? '' : '2 tw-btn-disabled '}
+                                        {email_error ? '4 tw-btn-disabled ' : ''} 
+                                        {password_error ? '5 tw-btn-disabled ' : ''} 
+                                        {username_error ? '6 tw-btn-disabled ' : ''} 
+                                        {is_firebase_auth_in_progress ? '7 tw-btn-disabled ' : ''} 
+                                        {is_signin_loading ? '8 tw-btn-disabled tw-loading ' : ''}"
                                         type="button"
                                     >
                                         Sign In
@@ -479,10 +479,10 @@
                             </form>
                         </div>
                     </div>
-                    <div class="relative mt-6 flex flex-wrap">
+                    <div class="tw-relative tw-mt-6 tw-flex tw-flex-wrap">
                         <!-- Registration is closed except for special links. -->
-                        <div class="hidden w-1/2 text-right">
-                            <a href="/auth/register" class="text-blue-200">
+                        <div class="tw-hidden tw-w-1/2 tw-text-right">
+                            <a href="/auth/register" class="tw-text-blue-200">
                                 <small>Create new account</small>
                             </a>
                         </div>
@@ -493,12 +493,12 @@
     </section>
 </main>
 
-<input bind:checked="{is_modal_shown}" type="checkbox" id="my-modal-2" class="modal-toggle" />
-<div class="modal">
-    <div class="modal-box">
+<input bind:checked="{is_modal_shown}" type="checkbox" id="my-modal-2" class="tw-modal-toggle" />
+<div class="tw-modal">
+    <div class="tw-modal-box">
         <p>{modal_message}</p>
-        <div class="modal-action">
-            <label for="my-modal-2" class="btn">OK</label>
+        <div class="tw-modal-action">
+            <label for="my-modal-2" class="tw-btn">OK</label>
         </div>
     </div>
 </div>

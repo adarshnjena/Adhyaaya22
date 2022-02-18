@@ -4,7 +4,7 @@
     export let text = 'success';
 </script>
 
-<div class="badge badge-success">
-    <Icon class="mr-1" icon="{roundTick}" />
+<div class="tw-badge tw-badge-success">
+    <Icon class="tw-mr-1" icon="{roundTick}" />
     {text}
 </div>

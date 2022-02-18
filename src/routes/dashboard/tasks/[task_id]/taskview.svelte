@@ -79,32 +79,32 @@
 </svelte:head>
 
 <Protected />
-<div class="flex min-h-screen justify-center">
-    <div class="mx-auto mt-[2.5rem] w-full px-2 md:w-4/6 md:px-16 lg:w-3/6">
-        <div class="container w-full">
+<div class="tw-flex tw-min-h-screen tw-justify-center">
+    <div class="tw-mx-auto tw-mt-[2.5rem] tw-w-full tw-px-2 md:tw-w-4/6 md:tw-px-16 lg:tw-w-3/6">
+        <div class="tw-container tw-w-full">
             <div
-                class="container card-bordered card bg-base-100 bg-opacity-[75%] text-center backdrop-blur"
+                class="tw-container tw-card-bordered tw-card tw-bg-base-100 tw-bg-opacity-[75%] tw-text-center tw-backdrop-blur"
             >
-                <div class="card-body">
-                    <h2 class="card-title">
+                <div class="tw-card-body">
+                    <h2 class="tw-card-title">
                         {task.task_name}
-                        <div class="badge badge-secondary mx-2 hidden">NEW</div>
+                        <div class="tw-badge tw-badge-secondary tw-mx-2 tw-hidden">NEW</div>
                     </h2>
-                    <span class="mx-auto text-justify">
+                    <span class="tw-mx-auto tw-text-justify">
                         {task.task_details}
                     </span>
                 </div>
                 {#if is_completed}
-                    <button class="btn-disabled btn-xl btn uppercase">
+                    <button class="tw-btn-disabled tw-btn-xl tw-btn tw-uppercase">
                         YOU HAVE COMPLETED THIS TASK
                     </button>
                 {:else}
-                    <div class="mx-auto mb-16 card-actions">
+                    <div class="tw-mx-auto tw-mb-16 tw-card-actions">
                         <label
                             for="file-input"
-                            class="btn btn-wide {task.requires_proof ? '' : 'hidden'} {files &&
+                            class="tw-btn tw-btn-wide {task.requires_proof ? '' : 'tw-hidden'} {files &&
                             files[0]
-                                ? 'btn-ghost'
+                                ? 'tw-btn-ghost'
                                 : ''}"
                         >
                             {files && files[0] ? files[0].name : 'SELECT A FILE'}
@@ -122,11 +122,11 @@
                         <button
                             disabled="{is_uploading}"
                             on:click="{on_upload_click}"
-                            class="btn uppercase {task.requires_proof
+                            class="tw-btn tw-uppercase {task.requires_proof
                                 ? files && files[0]
                                     ? ''
-                                    : 'hidden'
-                                : ''} {is_uploading ? 'loading btn-disabled' : ''} {button_class}"
+                                    : 'tw-hidden'
+                                : ''} {is_uploading ? 'tw-loading tw-btn-disabled' : ''} {button_class}"
                         >
                             {button_text}
                         </button>

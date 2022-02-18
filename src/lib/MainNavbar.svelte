@@ -3,20 +3,20 @@
     import roundMenu from '@iconify-icons/ic/round-menu.js';
 </script>
 
-<nav class="sticky top-0 z-10 w-full rounded border-gray-200 bg-transparent px-2 py-2.5 sm:px-4">
-    <div class="container mx-auto flex flex-wrap items-center justify-between">
-        <a href="/" class="flex rounded-2xl border ml-1 btn btn-ghost btn-lg">
-            <img src="/favicon.png" class="m-2 w-20" alt="adhyaaya-logo" />
+<nav class="tw-sticky tw-top-0 tw-z-10 tw-w-full tw-rounded tw-border-gray-200 tw-bg-transparent tw-px-2 tw-py-2.5 sm:tw-px-4">
+    <div class="tw-container tw-mx-auto tw-flex tw-flex-wrap tw-items-center tw-justify-between">
+        <a href="/" class="tw-flex tw-rounded-2xl tw-border tw-ml-1 tw-btn tw-btn-ghost tw-btn-lg">
+            <img src="/favicon.png" class="tw-m-2 tw-w-20" alt="adhyaaya-logo" />
         </a>
-        <div class="flex items-center md:order-2">
+        <div class="tw-flex tw-items-center md:tw-order-2">
             <!-- Dropdown menu -->
-            <div class="dropdown-end dropdown visible md:invisible">
-                <div tabindex="0" class="btn btn-ghost m-1">
-                    <Icon class="{`h-8 w-8`}" icon="{roundMenu}" />
+            <div class="tw-dropdown-end tw-dropdown tw-visible md:tw-invisible">
+                <div tabindex="0" class="tw-btn tw-btn-ghost tw-m-1">
+                    <Icon class="{`tw-h-8 tw-w-8`}" icon="{roundMenu}" />
                 </div>
                 <ul
                     tabindex="0"
-                    class="dropdown-content menu rounded-box w-52 bg-base-300 p-2 shadow"
+                    class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-300 tw-p-2 tw-shadow"
                 >
                     <li>
                         <a href="/">Home</a>
@@ -38,16 +38,16 @@
             </div>
         </div>
         <div
-            class="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
+            class="tw-hidden tw-w-full tw-items-center tw-justify-between md:tw-order-1 md:tw-flex md:tw-w-auto"
             id="mobile-menu-2"
         >
             <ul
-                class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+                class="tw-mt-4 tw-flex tw-flex-col md:tw-mt-0 md:tw-flex-row md:tw-space-x-8 md:tw-text-sm md:tw-font-medium"
             >
                 <li>
                     <a
                         href="/"
-                        class="block bg-transparent py-2 pr-4 pl-3 text-gray-400 transition-colors duration-150 hover:text-white"
+                        class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                         aria-current="page"
                     >
                         Home
@@ -56,7 +56,7 @@
                 <li>
                     <a
                         href="/event/events"
-                        class="block bg-transparent py-2 pr-4 pl-3 text-gray-400 transition-colors duration-150 hover:text-white"
+                        class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Events
                     </a>
@@ -64,7 +64,7 @@
                 <li>
                     <a
                         href="/event/sponsors"
-                        class="block bg-transparent py-2 pr-4 pl-3 text-gray-400 transition-colors duration-150 hover:text-white"
+                        class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Sponsors
                     </a>
@@ -72,7 +72,7 @@
                 <li>
                     <a
                         href="/event/gallery"
-                        class="block bg-transparent py-2 pr-4 pl-3 text-gray-400 transition-colors duration-150 hover:text-white"
+                        class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Gallery
                     </a>
@@ -80,7 +80,7 @@
                 <li>
                     <a
                         href="/event/register"
-                        class="block bg-transparent py-2 pr-4 pl-3 text-gray-400 transition-colors duration-150 hover:text-white"
+                        class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Register
                     </a>

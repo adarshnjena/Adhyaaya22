@@ -104,12 +104,12 @@
 
 <MainNavbar />
 
-<div class="app snap-y snap-mandatory bg-black">
+<div class="app tw-snap-y tw-snap-mandatory tw-bg-black">
     <!--Adding a bg to this would make it the background for the slideshow thingy-->
-    <div id="bound-one" bind:this="{container}" class="scroll-bound snap-none">
+    <div id="bound-one" bind:this="{container}" class="scroll-bound tw-snap-none">
         <div class="content">
-            <p class="hidden">This site is best experienced on a 16:9 Monitor.</p>
-            <img src="{src}" alt="Showcase" class="min-h-[calc(100vh-3.75rem)] w-full" />
+            <p class="tw-hidden">This site is best experienced on a 16:9 Monitor.</p>
+            <img src="{src}" alt="Showcase" class="tw-min-h-[calc(100vh-3.75rem)] tw-w-full" />
             <div class="text-container">
                 <div class="subtitle {frame_data[image_index]?.line_1[1] || last_frame.line_1[1] || 'invisible'}">
                     {frame_data[image_index]?.line_1[0] || last_frame.line_1[0] || ''}
@@ -127,13 +127,13 @@
         </div>
     </div>
     <div
-        class="sticky top-0 flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-300"
+        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
-        <span class="text-white">CONTENT 1</span>
+        <span class="tw-text-white">CONTENT 1</span>
     </div>
     <div
         style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
-        class="content-2-bg sticky top-0 flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-100 bg-opacity-50 "
+        class="content-2-bg tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 "
     >
         <!-- svelte-ignore a11y-media-has-caption (This video does not require captions)-->
         <video
@@ -141,13 +141,13 @@
             autoplay
             muted
             loop
-            class="h-screen w-screen object-cover"
+            class="tw-h-screen tw-w-screen tw-object-cover"
         ></video>
     </div>
     <div
-        class="sticky top-0 flex min-h-screen snap-start snap-always flex-col items-center justify-center bg-base-300"
+        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
-        <span class="text-white">CONTENT 3</span>
+        <span class="tw-text-white">CONTENT 3</span>
     </div>
 
         <MainFooter />

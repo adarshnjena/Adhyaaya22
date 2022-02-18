@@ -84,10 +84,10 @@ body {
 }
 
 :root {
-    @apply bg-base-300;
+    @apply tw-bg-base-300;
 }
 
 * {
     box-sizing: border-box;
-    @apply scrollbar-hide scroll-smooth antialiased;
+    @apply tw-scrollbar-hide tw-scroll-smooth tw-antialiased;
 }

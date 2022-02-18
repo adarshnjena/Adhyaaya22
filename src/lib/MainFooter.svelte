@@ -18,14 +18,14 @@
 </script>
 
 
-  <div class="trailer-footer min-h-screen sticky z-20">
+  <div class="trailer-footer tw-min-h-screen tw-bg-base-300 tw-sticky tw-z-20">
 
     <div class="adh-trailer">
       <div class="adh-trailer-heading "> 
             <h1>Do watch our ADHYAAYA'22 Trailer!</h1>
         </div>
-        <div class="adh-video w-full text-center flex items-center justify-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/PFq4GTEGl_8" title="Adhyaaya'22 Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="adh-video tw-w-full tw-text-center tw-flex tw-items-center tw-justify-center">
+          <iframe class="se" width="560" height="315" src="https://www.youtube.com/embed/PFq4GTEGl_8" title="Adhyaaya'22 Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
            
         </div>
     </div>    
@@ -36,38 +36,38 @@
  
         <!-- Adhyaaya main logo -->    
         
-            <div class="logo w-full text-center flex items-center justify-center">
+            <div class="logo tw-w-full tw-text-center tw-flex tw-items-center tw-justify-center">
               <img src="https://ca.adhyaaya.org/assets/img/adhyaaya_logo.png" alt="Logo">
             </div>
             
             <!-- Icons part 2  -->  
             
             <div class="footer-contact-two w-screen" id="icons-two">
-                <div class="mail-two w-full"> 
-                    <a class='inline-flex' href="mailto:adhyaaya.gcoen@gmail.com"><Icon class='m-1 w-6 h-6' icon='{emailOutline}' /> <p>Have a question ? </p></a>
+                <div class="mail-two"> 
+                    <a class='tw-inline-flex' href="mailto:adhyaaya.gcoen@gmail.com"><Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{emailOutline}' /> <p>Have a question ? </p></a>
                   </div>   
                   <div class="yt-two">
-                    <a class='inline-flex' href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon class='m-1 w-6 h-6' icon='{youtubeOutline}' /> <p>Watch us on YouTube</p></a>
+                    <a class='tw-inline-flex' href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon class='mr-3 w-6 h-6' icon='{youtubeOutline}' /> <p>Watch us on YouTube</p></a>
                 </div> 
                 <div class="twitter-two">
-                    <a class='inline-flex' href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{twitterOutline}' /> <p>Follow us on Twitter</p></a>
+                    <a class='tw-inline-flex' href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{twitterOutline}' /> <p>Follow us on Twitter</p></a>
                 </div>
                 <div class="linkedin-two">
-                    <a class='inline-flex' href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon class='m-1 w-6 h-6' icon='{linkedinOutline}' /> <p>Join us on LinkedIn</p></a>
+                    <a class='tw-inline-flex' href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{linkedinOutline}' /> <p>Join us on LinkedIn</p></a>
                 </div>
                 <div class="insta-two">
-                    <a class='inline-flex' href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{instagramOutline}' /> <p>Follow us on Instagram</p></a> 
+                    <a class='tw-inline-flex' href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{instagramOutline}' /> <p>Follow us on Instagram</p></a> 
                 </div> 
             </div>
 
             <!-- Adhyaaya contains -->
             
-            <div class="footer-grid w-full">
-                <div class="footer-contents w-full">
+            <div class="footer-grid ">
+                <div class="footer-contents ">
 
                     <!-- Map yaha -->
 
-                    <div class="footer-map w-full">
+                    <div class="footer-map">
                         <iframe title='map-iframe' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.5210865220415!2d79.05773931443623!3d21.051840192366956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4be5e617378eb%3A0x682e0bc768d22adb!2sGovernment%20College%20of%20Engineering%20Nagpur!5e0!3m2!1sen!2sin!4v1617731462335!5m2!1sen!2sin" frameborder="0"></iframe>
                     </div>
                     
@@ -114,19 +114,19 @@
 
                     <div class="footer-contact text-sm" id="icons">
                         <div class="mail" id="transform-icon">
-                            <a class='inline-flex' href="mailto:adhyaaya.gcoen@gmail.com"><Icon class='m-1 w-6 h-6' icon='{emailOutline}' /> Have a question ?</a>
+                            <a class='tw-inline-flex' href="mailto:adhyaaya.gcoen@gmail.com"><Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{emailOutline}' /> Have a question ?</a>
                         </div>   
                         <div class="yt" id="transform-icon">
-                            <a class='inline-flex' href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon class='m-1 w-6 h-6' icon='{youtubeOutline}' /> Watch us on YouTube</a>
+                            <a class='tw-inline-flex' href="https://www.youtube.com/channel/UCQgGGoNJaQRxs5myAZTcbsQ" target="_blank"><Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{youtubeOutline}' /> Watch us on YouTube</a>
                         </div> 
                         <div class="twitter" id="transform-icon">
-                            <a class='inline-flex' href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{twitterOutline}' /> Follow us on Twitter</a>
+                            <a class='tw-inline-flex' href="https://twitter.com/Adhyaaya_GCOEN" target="_blank"> <Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{twitterOutline}' /> Follow us on Twitter</a>
                         </div>
                         <div class="linkedin" id="transform-icon">
-                            <a class='inline-flex' href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon class='m-1 w-6 h-6' icon='{linkedinOutline}' /> Join us on LinkedIn</a>
+                            <a class='tw-inline-flex' href="https://www.linkedin.com/company/adhyaaya/"  target="_blank"><Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{linkedinOutline}' /> Join us on LinkedIn</a>
                         </div>
                         <div class="insta" id="transform-icon">
-                            <a class='inline-flex' href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon class='m-1 w-6 h-6' icon='{instagramOutline}' /> Follow us on Instagram</a>
+                            <a class='tw-inline-flex' href="https://www.instagram.com/adhyaaya.gcoen/" target="_blank"> <Icon class='tw-mr-3 tw-w-5 tw-h-5 tw-my-auto' icon='{instagramOutline}' /> Follow us on Instagram</a>
                         </div> 
                     </div>
 
@@ -137,7 +137,7 @@
     
     <footer class="footer-bottom">
         <div class="copyright">
-            <p> &copy; ADHYAAYA'22 | GCOEN | ALL RIGHTS RESERVED</p>
+            <p class="tw-text-sm tw-text-gray-400"> &copy; ADHYAAYA'22 | GCOEN | ALL RIGHTS RESERVED</p>
         </div>
     </footer>  
     
@@ -261,7 +261,7 @@
   
       <!-- Terms and Conditions   -->
       <div class="termspop" id="termspop">
-        <div class="termspop_content">
+        <div class="termspop_content tw-text-black">
           <h1>Terms and Conditions</h1>
           <ol type="A" style="text-align: left" class="t1111">
             <br /><br />
@@ -305,7 +305,7 @@
   
       <!-- Privacy Policy -->
       <div class="termspop" id="termspop2">
-        <div class="termspop_content">
+        <div class="termspop_content tw-text-black">
           <h1>PRIVACY POLICY</h1>
           <ol type="A" style="text-align: left" class="t1111">
             <br /><br />
@@ -367,7 +367,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body{
-    background-color: #0f0c29;
+    //background-color: #0f0c29;
 }
 li{  
     list-style: none;
@@ -375,7 +375,7 @@ li{
 
 .footer{
     padding: 5px 10px;
-    background-color: #080c2b;
+    //background-color: #080c2b;
 }
 .footer-sections{
     padding: 20px;
@@ -912,7 +912,7 @@ ul{
 .adh-trailer{
     padding: 0;
     margin: 0;  
-    background-color: #0f0c29;
+    //background-color: #0f0c29;
     color: white;
     /* height: 100vh; */
 }
@@ -933,5 +933,10 @@ ul{
 }
 .trailer-footer{
     height: 100vh;
+}
+
+/*Injected Styles*/
+h1 { 
+  @apply tw-text-3xl
 }
 </style>

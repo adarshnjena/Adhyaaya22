@@ -3,12 +3,16 @@
     import {MotionPathPlugin} from 'gsap/dist/MotionPathPlugin.js';
     //import {fullpage} from 'fullpage.js'
     import { onMount } from 'svelte';
+    console.log(gsap, MotionPathPlugin)
     onMount(() => {
         //Page Scroll
-        
+        try{
         new fullpage('#fullpage', {
             sectionsColor: ['#000', '#000'],
         });
+    }catch(e){
+        location.reload();
+    }
         gsap.registerPlugin(MotionPathPlugin);
         //GSAP Code
         window.onresize = window.onload = function () {

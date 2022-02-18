@@ -14,7 +14,7 @@
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import { getApp, initializeApp } from 'firebase/app';
     import { onMount } from 'svelte';
-    import { landscape_frame_data,  portrait_frame_data} from './index_data';
+    import { landscape_frame_data, portrait_frame_data } from './index_data';
     import Content_2_BG_PC from '$lib/assets/content-2-bg-pc.jpg';
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
     import MainNavbar from '$lib/MainNavbar.svelte';
@@ -30,26 +30,24 @@
     $: isMobile = innerWidth < 1280;
     $: frame_data = isMobile ? portrait_frame_data : landscape_frame_data;
     // CONFIG OPTIONS
-    const numberOfImages = 386; // 1 indexed
+    const numberOfImages = 550; // 1 indexed
 
     let image_index = 1;
     $: {
         if (browser) {
-            const containerHeight =
-                container?.getBoundingClientRect().bottom -
-                    container?.getBoundingClientRect().top || 0;
-            const pixelsPerImage = containerHeight / numberOfImages;
-            image_index = Math.min(Math.floor(scrollY / pixelsPerImage), numberOfImages);
-            if (image_index <= 0) {
-                // Limit the image index to the number of images
-                image_index = 1;
-            }
+            // <!-- New Algorithm, finishes all frames before the container end. -->
+            const distanceFromTop = scrollY + container?.getBoundingClientRect().top;
+            const rawPercentScrolled =
+                (scrollY - distanceFromTop) / (container?.scrollHeight - innerHeight);
+            image_index = Math.floor(rawPercentScrolled * numberOfImages);
+            image_index = Math.min(image_index, numberOfImages);
+            image_index = Math.max(image_index, 1);
             // Change Path here
             src = `/intro_frames/intro/intro${
                 image_index.toString().padStart(3, '0') + (isMobile ? '-portrait' : '')
             }.png`;
             // read the data of this frame if it exists into the last_frame variable
-            last_frame = frame_data[image_index] || last_frame
+            last_frame = frame_data[image_index] || last_frame;
         }
     }
     onMount(async () => {
@@ -64,7 +62,6 @@
         if (dev) {
             console.log(app);
         }
-        // We will check if a key exists in the database, This should have been done in initialization.
     });
 
     const invisible = 'tw-invisible';
@@ -73,7 +70,7 @@
         line_1: ['', invisible],
         line_2: ['', invisible],
         line_3: ['', invisible],
-        line_4: ['', invisible]
+        line_4: ['', invisible],
     };
 </script>
 
@@ -100,18 +97,34 @@
     <div id="bound-one" bind:this="{container}" class="scroll-bound tw-snap-none">
         <div class="content">
             <p class="tw-hidden">This site is best experienced on a 16:9 Monitor.</p>
-            <img src="{src}" alt="Showcase" class="tw-min-h-[calc(100vh-3.75rem)] tw-w-full" />
+            <img src="{src}" alt="Showcase" class="tw-min-h-screen tw-w-full" />
             <div class="text-container">
-                <div class="subtitle {frame_data[image_index]?.line_1[1] || last_frame.line_1[1] || 'invisible'}">
+                <div
+                    class="subtitle {frame_data[image_index]?.line_1[1] ||
+                        last_frame.line_1[1] ||
+                        'invisible'}"
+                >
                     {frame_data[image_index]?.line_1[0] || last_frame.line_1[0] || ''}
                 </div>
-                <div class="title {frame_data[image_index]?.line_2[1] || last_frame.line_2[1] || 'invisible'}">
+                <div
+                    class="title {frame_data[image_index]?.line_2[1] ||
+                        last_frame.line_2[1] ||
+                        'invisible'}"
+                >
                     {frame_data[image_index]?.line_2[0] || last_frame.line_2[0] || ''}
                 </div>
-                <div class="title {frame_data[image_index]?.line_3[1] || last_frame.line_3[1] || 'invisible'}">
+                <div
+                    class="title {frame_data[image_index]?.line_3[1] ||
+                        last_frame.line_3[1] ||
+                        'invisible'}"
+                >
                     {frame_data[image_index]?.line_3[0] || last_frame.line_3[0] || ''}
                 </div>
-                <div class="subtitle {frame_data[image_index]?.line_4[1] || last_frame.line_4[1] || 'invisible'}">
+                <div
+                    class="subtitle {frame_data[image_index]?.line_4[1] ||
+                        last_frame.line_4[1] ||
+                        'invisible'}"
+                >
                     {frame_data[image_index]?.line_4[0] || last_frame.line_4[0] || ''}
                 </div>
             </div>
@@ -141,8 +154,7 @@
         <span class="tw-text-white">CONTENT 3</span>
     </div>
 
-        <MainFooter />
-    
+    <MainFooter />
 </div>
 
 <style lang="scss">
@@ -150,7 +162,7 @@
         // Change this height to modify the speed of the scroll.
         // 200vh corresponds to 10 ticks of the scroll wheel
         //TODO Make this work with images.
-        height: 600vh;
+        height: 800vh;
 
         .content {
             height: 100vh;

@@ -83,8 +83,8 @@
                         Don't worry, happens to the best of us.
                     </span>
                     <hr class="tw-my-2 tw-border-b tw-border-gray-600" />
-                    <div class="form-control">
-                        <label for="email" class="label">
+                    <div class="tw-form-control">
+                        <label for="email" class="tw-label">
                             <span class="tw-label-text">Your Email</span>
                         </label>
                         <input

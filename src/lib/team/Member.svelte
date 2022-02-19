@@ -4,7 +4,7 @@
     import LinkedinIcon from '@iconify-icons/simple-icons/linkedin.js'
     import TwitterIcon from '@iconify-icons/simple-icons/twitter.js'
     import InstagramIcon from '@iconify-icons/simple-icons/instagram.js'
-    import Icon from '@iconify/svelte/offline/dist/Icon.svelte'
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
     function get_icon(name: string) {
         switch (name) {
             case 'github':
@@ -23,14 +23,14 @@
     }
     
     export let details = {
-        name: '',
-        position: '',
-        bio: '',
-        image_url: '',
+        name: 'DEFAULT',
+        position: 'VOLUNTEER',
+        bio: 'I am Default, Destroyer of Worlds',
+        image_url: 'https://dummyimage.com/200x200',
         socials: [
             {
-                name: '',
-                url: '',
+                name: 'github',
+                url: 'https://github.com/DevParapalli',
             },
             {
                 name: '',
@@ -40,24 +40,24 @@
     }
 </script>
 
-<div class="p-4 lg:w-1/2">
+<div class="tw-p-4 lg:tw-w-1/2">
     <div
-        class="flex h-full flex-col items-center justify-center text-center sm:flex-row sm:justify-start sm:text-left"
+        class="tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-center tw-text-center sm:tw-flex-row sm:tw-justify-start sm:tw-text-left"
     >
         <img
             alt="team"
-            class="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
+            class="tw-mb-4 tw-h-48 tw-w-48 tw-flex-shrink-0 tw-rounded-lg tw-object-cover tw-object-center sm:tw-mb-0"
             src="{details.image_url}"
         />
-        <div class="flex-grow sm:pl-8">
-            <h2 class="title-font text-lg font-medium text-white">{details.name}</h2>
-            <h3 class="mb-3 text-gray-500">{details.position}</h3>
-            <p class="mb-4">
+        <div class="tw-flex-grow sm:tw-pl-8">
+            <h2 class="tw-title-font tw-text-lg tw-font-medium tw-text-white">{details.name}</h2>
+            <h3 class="tw-mb-3 tw-text-gray-500">{details.position}</h3>
+            <p class="tw-mb-4">
                 {details.bio}
             </p>
-            <span class="inline-flex">
+            <span class="tw-inline-flex">
                 {#each details.socials as social}
-                <a href="{social.url}" class="ml-2 text-gray-500">
+                <a href="{social.url}" class="tw-ml-2 tw-h-6 tw-w-6 tw-text-gray-500 hover:tw-text-white tw-transition-colors tw-duration-200">
                     <Icon icon={get_icon(social.name)} />
                 </a>
                 {/each}

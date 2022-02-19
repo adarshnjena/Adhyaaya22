@@ -78,7 +78,7 @@
                             <!-- <div class="ani"></div> -->
                         </h1> 
                         <ul> 
-                            <li><a  href="#" class="button" on:click={termspop4}>Contact info</a></li>
+                            <li><a  href="#" class="button" on:click|preventDefault={termspop4}>Contact info</a></li>
                             <li><a href="#">Teams </a></li>
                         </ul>
                       </div>
@@ -91,7 +91,7 @@
                         <!-- <div class="ani"></div> -->
                         
                         <ul>
-                            <li><a href="#" class="button" id="myBtn"  on:click="{termspop3}">About Us</a></li>
+                            <li><a href="#" class="button" id="myBtn"  on:click|preventDefault="{termspop3}">About Us</a></li>
                             <li><a href="https://www.gcoen.ac.in/" target="_blank">GCOEN</a></li>
                         </ul>
 
@@ -105,8 +105,8 @@
                         <!-- <div class="ani"></div> -->
                         
                         <ul>
-                            <li><a href="#" class="button"  on:click="{termspop}">Terms & Conditions</a></li>
-                            <li><a href="#" class="button"  on:click="{termspop2}">Privacy Policy</a></li>
+                            <li><a href="#" class="button"  on:click|preventDefault="{termspop}">Terms & Conditions</a></li>
+                            <li><a href="#" class="button"  on:click|preventDefault="{termspop2}">Privacy Policy</a></li>
                         </ul>
                     </div>
 
@@ -194,7 +194,7 @@
         <button
           value="close"
           class="close"
-          on:click="{_termspop4}"
+          on:click|preventDefault="{_termspop4}"
           >
           Close
         </button>
@@ -251,7 +251,7 @@
             <button
             value="close"
               class="close"
-              on:click="{_termspop3}"
+              on:click|preventDefault="{_termspop3}"
             >
               Close
             </button>
@@ -296,7 +296,7 @@
           <button
           value="close"
             class="close"
-            on:click="{_termspop}"
+            on:click|preventDefault="{_termspop}"
           >
           Close
           </button>
@@ -349,7 +349,7 @@
           <button
           value="close"
           class="close"
-            on:click="{_termspop2}"
+            on:click|preventDefault="{_termspop2}"
           >
             Close
           </button>

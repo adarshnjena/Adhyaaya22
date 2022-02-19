@@ -8,18 +8,18 @@
     export let events: eventSet = {};
 </script>
 
-<div class="w-full px-4 2xl:w-4/12 ">
+<div class="tw-w-full tw-px-4 2xl:tw-w-4/12 ">
     <div
-        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded bg-base-200 bg-opacity-[75%] shadow-lg backdrop-blur"
+        class="tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded tw-bg-base-200 tw-bg-opacity-[75%] tw-shadow-lg tw-backdrop-blur"
     >
-        <div class="mb-0 rounded-t border-0 px-4 py-3">
-            <div class="flex flex-wrap items-center">
-                <div class="relative w-full max-w-full flex-1 flex-grow px-4">
-                    <h3 class="ml-2 text-base font-semibold text-gray-400">Recent Events</h3>
+        <div class="tw-mb-0 tw-rounded-t tw-border-0 tw-px-4 tw-py-3">
+            <div class="tw-flex tw-flex-wrap tw-items-center">
+                <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4">
+                    <h3 class="tw-ml-2 tw-text-base tw-font-semibold tw-text-gray-400">Recent Events</h3>
                 </div>
-                <div class="relative w-full max-w-full flex-1 flex-grow px-4 text-right ">
+                <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right ">
                     <button
-                        class=" btn btn-secondary btn-sm hidden px-3 py-0 text-xs"
+                        class=" tw-btn tw-btn-secondary tw-btn-sm tw-hidden tw-px-3 tw-py-0 tw-text-xs"
                         type="button"
                     >
                         See all
@@ -27,22 +27,22 @@
                 </div>
             </div>
         </div>
-        <div class="block w-full overflow-x-auto">
-            <table class="w-full border-collapse items-center bg-transparent">
-                <thead class="thead-light">
+        <div class="tw-block tw-w-full tw-overflow-x-auto">
+            <table class="tw-w-full tw-border-collapse tw-items-center tw-bg-transparent">
+                <thead class="tw-thead-light">
                     <tr>
                         <th
-                            class="whitespace-nowrap px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
+                            class="tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
                         >
                             Event
                         </th>
                         <th
-                            class="whitespace-nowrap px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
+                            class="tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
                         >
                             Date
                         </th>
                         <th
-                            class="min-w-[140px] whitespace-nowrap px-6 py-3 text-left align-middle text-xs  font-semibold uppercase"
+                            class="tw-min-w-[140px] tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs  tw-font-semibold tw-uppercase"
                         >
                             Type
                         </th>

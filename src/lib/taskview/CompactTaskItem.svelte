@@ -31,7 +31,7 @@
     {:else}
         <td><InfoBadge text="{`Side Task`}" /></td>
     {/if}
-    <td class="font-mono {date < now ? 'text-info' : date < now + 2 * 84600 ? 'text-warn' : ''}">
+    <td class="tw-font-mono {date < now ? 'tw-text-info' : date < now + 2 * 84600 ? 'tw-text-warn' : ''}">
         {printable_date}
     </td>
     {#if task.requires_proof}
@@ -42,7 +42,7 @@
     <td>
         <a
             href="/dashboard/tasks/{task.task_id}/taskview"
-            class="btn {is_complete ? 'btn-success' : 'btn-info'} btn-sm"
+            class="tw-btn {is_complete ? 'tw-btn-success' : 'tw-btn-info'} tw-btn-sm"
         >
             {is_complete ? 'DONE' : 'VIEW'}
         </a>

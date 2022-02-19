@@ -72,30 +72,30 @@
             await update_user_details(app, $authStore.user, database, details);
             is_updating = false;
             button_text = '✓ Info Updated';
-            button_status = 'btn-success';
+            button_status = 'tw-btn-success';
             await handle_update_click(event);
             setTimeout(return_to_init_1, 3000);
         }
     }
     let button_text = 'Update Info';
-    let button_status = 'btn-info';
+    let button_status = 'tw-btn-info';
     function return_to_init_1() {
         button_text = 'Update Info';
-        button_status = 'btn-info';
+        button_status = 'tw-btn-info';
     }
 </script>
 
-<div class="w-full px-4 2xl:w-8/12 ">
+<div class="tw-w-full px-4 2xl:tw-w-8/12 ">
     <div
-        class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 bg-base-200 bg-opacity-[75%] shadow-lg backdrop-blur"
+        class="tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded-lg tw-border-0 tw-bg-base-200 tw-bg-opacity-[75%] tw-shadow-lg tw-backdrop-blur"
     >
-        <div class="mb-0 rounded-t px-6 py-6">
-            <div class="flex justify-between text-center">
-                <span class="text-blueGray-700 text-xl font-bold">Your Details</span>
+        <div class="tw-mb-0 tw-rounded-t tw-px-6 tw-py-6">
+            <div class="tw-flex tw-justify-between tw-text-center">
+                <span class="tw-text-gray-400 tw-text-xl tw-font-bold">Your Details</span>
                 <button
-                    class="btn {button_status} btn-sm {username_error ? 'btn-disabled' : ''}
-                    {mobile_error ? 'btn-disabled' : ''} 
-                    {is_updating ? 'btn-disabled loading' : ''}"
+                    class="tw-btn {button_status} tw-btn-sm {username_error ? 'tw-btn-disabled' : ''}
+                    {mobile_error ? 'tw-btn-disabled' : ''} 
+                    {is_updating ? 'tw-btn-disabled tw-loading' : ''}"
                     disabled="{!!is_updating || !!mobile_error || !!username_error}"
                     on:click="{on_update_click}"
                     type="button"
@@ -104,18 +104,18 @@
                 </button>
             </div>
         </div>
-        <div class="flex-auto px-4 py-10 pt-0 lg:px-10">
+        <div class="tw-flex-auto tw-px-4 tw-py-10 tw-pt-0 lg:tw-px-10">
             <form>
                 <h6
-                    class="w-full rounded-t-lg bg-base-300 bg-opacity-[75%] pl-4 pt-3 pb-6 text-sm font-bold uppercase text-gray-400 backdrop-blur"
+                    class="tw-w-full tw-rounded-t-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-pl-4 tw-pt-3 tw-pb-6 tw-text-sm tw-font-bold tw-uppercase tw-text-gray-400 tw-backdrop-blur"
                 >
                     User Information
                 </h6>
-                <div class="flex flex-wrap rounded-b-lg bg-base-300 bg-opacity-[75%] backdrop-blur">
-                    <div class="w-full px-4 lg:w-6/12">
-                        <div class="relative mb-3 w-full">
+                <div class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur">
+                    <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
                             <label
-                                class="label text-sm {username_error ? 'text-error' : ''}"
+                                class="tw-label tw-text-sm {username_error ? 'tw-text-error' : ''}"
                                 for="grid-username"
                             >
                                 {username_error ? username_error : 'Username'}
@@ -123,44 +123,44 @@
                             <input
                                 id="grid-username"
                                 type="text"
-                                class="input-ghost input w-full {username_error
-                                    ? 'input-error'
+                                class="tw-input-ghost tw-input tw-w-full {username_error
+                                    ? 'tw-input-error'
                                     : ''}"
                                 bind:value="{details.username}"
                                 on:keyup="{username_on_keyup}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-6/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-email">Email address</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-email">Email address</label>
                             <input
                                 id="grid-email"
                                 type="email"
                                 disabled
-                                class="input-ghost input-disabled input w-full"
+                                class="tw-input-ghost tw-input-disabled tw-input tw-w-full"
                                 bind:value="{details.email}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-6/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-first-name">First Name</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-first-name">First Name</label>
                             <input
                                 id="grid-first-name"
                                 type="text"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.first_name}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-6/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-last-name">Last Name</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-last-name">Last Name</label>
                             <input
                                 id="grid-last-name"
                                 type="text"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.last_name}"
                             />
                         </div>
@@ -168,15 +168,15 @@
                 </div>
 
                 <h6
-                    class=" mt-4 rounded-t-lg bg-base-300 bg-opacity-[75%] pl-4 pt-3 pb-6 text-sm font-bold uppercase text-gray-400 backdrop-blur"
+                    class=" tw-mt-4 tw-rounded-t-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-pl-4 tw-pt-3 tw-pb-6 tw-text-sm tw-font-bold tw-uppercase tw-text-gray-400 tw-backdrop-blur"
                 >
                     Contact Information
                 </h6>
-                <div class="flex flex-wrap rounded-b-lg bg-base-300 bg-opacity-[75%] backdrop-blur">
-                    <div class="w-full px-4 lg:w-6/12">
-                        <div class="relative mb-3 w-full">
+                <div class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur">
+                    <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
                             <label
-                                class="label text-sm {mobile_error ? 'text-error' : ''}"
+                                class="tw-label tw-text-sm {mobile_error ? 'tw-text-error' : ''}"
                                 for="grid-mobile-number"
                             >
                                 {mobile_error ? mobile_error : 'Mobile Number'}
@@ -184,63 +184,63 @@
                             <input
                                 id="grid-mobile-number"
                                 type="text"
-                                class="input-ghost input w-full {mobile_error ? 'input-error' : ''}"
+                                class="tw-input-ghost tw-input tw-w-full {mobile_error ? 'tw-input-error' : ''}"
                                 bind:value="{details.mobile_number}"
                                 on:blur="{mobile_on_blur}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-6/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-locality">Area/Locality</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-locality">Area/Locality</label>
                             <input
                                 id="grid-locality"
                                 type="text"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.locality}"
                             />
                         </div>
                     </div>
-                    <div class="lg:w-12/12 w-full px-4">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-address">Address</label>
+                    <div class="lg:tw-w-12/12 tw-w-full tw-px-4">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-address">Address</label>
                             <input
                                 id="grid-address"
                                 type="text"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.address}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-4/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-city">City</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-4/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-city">City</label>
                             <input
                                 id="grid-city"
                                 type="email"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.city}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-4/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-state">State</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-4/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-state">State</label>
                             <input
                                 id="grid-state"
                                 type="text"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.state}"
                             />
                         </div>
                     </div>
-                    <div class="w-full px-4 lg:w-4/12">
-                        <div class="relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-country">Country</label>
+                    <div class="tw-w-full tw-px-4 lg:tw-w-4/12">
+                        <div class="tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-country">Country</label>
                             <input
                                 id="grid-country"
                                 type="text"
-                                class="input-ghost input w-full"
+                                class="tw-input-ghost tw-input tw-w-full"
                                 bind:value="{details.country}"
                             />
                         </div>
@@ -248,18 +248,18 @@
                 </div>
 
                 <h6
-                    class=" mt-4 rounded-t-lg bg-base-300 bg-opacity-[75%] pl-4 pt-3 pb-6 text-sm font-bold uppercase text-gray-400 backdrop-blur"
+                    class=" tw-mt-4 tw-rounded-t-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-pl-4 tw-pt-3 tw-pb-6 tw-text-sm tw-font-bold tw-uppercase tw-text-gray-400 tw-backdrop-blur"
                 >
                     About Me
                 </h6>
-                <div class="flex flex-wrap rounded-b-lg bg-base-300 bg-opacity-[75%] backdrop-blur">
-                    <div class="lg:w-12/12 w-full px-4">
-                        <div class="form-control relative mb-3 w-full">
-                            <label class="label text-sm" for="grid-about-me">About me</label>
+                <div class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur">
+                    <div class="lg:tw-w-12/12 tw-w-full tw-px-4">
+                        <div class="tw-form-control tw-relative tw-mb-3 tw-w-full">
+                            <label class="tw-label tw-text-sm" for="grid-about-me">About me</label>
                             <textarea
                                 id="grid-about-me"
                                 type="text"
-                                class="textarea-ghost textarea h-24"
+                                class="tw-textarea-ghost tw-textarea tw-h-24"
                                 rows="4"
                                 bind:value="{details.bio}"
                             ></textarea>

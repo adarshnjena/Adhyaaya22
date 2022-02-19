@@ -13,18 +13,18 @@
     console.log('completed', completed);
 </script>
 
-<tr class="hover text-xs">
-    <th class="bg-opacity-[75%] backdrop-blur">{task.task_name}</th>
-    <td class="bg-opacity-[75%] backdrop-blur">{printable_date}</td>
+<tr class="tw-hover tw-text-xs">
+    <th class="tw-bg-opacity-[75%] tw-backdrop-blur">{task.task_name}</th>
+    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">{printable_date}</td>
     {#if completed}
-        <td class="bg-opacity-[75%] backdrop-blur"><InfoBadge text="{'Completed'}" /></td>
-        <td class="bg-opacity-[75%] backdrop-blur">
+        <td class="tw-bg-opacity-[75%] tw-backdrop-blur"><InfoBadge text="{'Completed'}" /></td>
+        <td class="tw-bg-opacity-[75%] tw-backdrop-blur">
             <button disabled href="/dashboard/tasks/{task.task_id}/taskview">DONE</button>
         </td>
     {:else}
-        <td class="backdrop-blur bg-opacity-[75%]"><WarningBadge text="{'Not Completed'}" /></td>
-        <td class="backdrop-blur bg-opacity-[75%]">
-            <a class="btn btn-info btn-sm" href="/dashboard/tasks/{task.task_id}/taskview">VIEW</a>
+        <td class="tw-backdrop-blur tw-bg-opacity-[75%]"><WarningBadge text="{'Not Completed'}" /></td>
+        <td class="tw-backdrop-blur tw-bg-opacity-[75%]">
+            <a class="tw-btn tw-btn-info tw-btn-sm" href="/dashboard/tasks/{task.task_id}/taskview">VIEW</a>
         </td>
     {/if}
 </tr>

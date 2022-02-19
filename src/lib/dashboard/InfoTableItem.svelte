@@ -17,16 +17,16 @@
 
 <tr>
     <th
-        class="whitespace-nowrap border-t-0 border-l-0 border-r-0 p-4 px-6 text-left align-middle text-xs "
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-text-left tw-align-middle tw-text-xs "
     >
         {event.name}
     </th>
-    <td class="whitespace-nowrap border-t-0 border-l-0 border-r-0 p-4 px-6 align-middle text-xs">
+    <td class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs">
         {printable_date}
     </td>
-    <td class="whitespace-nowrap border-t-0 border-l-0 border-r-0 p-4 px-6 align-middle text-xs">
-        <div class="flex items-center">
-            <span class="mr-2">
+    <td class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs">
+        <div class="tw-flex tw-items-center">
+            <span class="tw-mr-2">
                 <InfoBadge text="{event.is_physical ? 'Physical' : 'Virtual'}" />
             </span>
         </div>

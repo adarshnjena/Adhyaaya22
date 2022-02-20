@@ -80,7 +80,8 @@
 /* Revamped Regular Font */
 @font-face {
     font-family: 'revampedregular';
-    src: url('/fonts/revamped-webfont.woff2') format('woff2'), url('/fonts/revamped-webfont.woff') format('woff');
+    src: url('/fonts/revamped-webfont.woff2') format('woff2'),
+        url('/fonts/revamped-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

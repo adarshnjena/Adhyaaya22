@@ -4,7 +4,7 @@
     export let tasks: { [key: string]: taskDetails } = {};
     export let profile_tasks;
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
-    import iconNew from '@iconify-icons/ic/baseline-new-label.js'
+    import iconNew from '@iconify-icons/ic/baseline-new-label.js';
 </script>
 
 <div class="tw-mb-12 tw-w-full tw-px-4 ">
@@ -16,14 +16,16 @@
                 <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4">
                     <h3 class="tw-text-base tw-font-semibold tw-text-gray-400">Registrations</h3>
                 </div>
-                <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right">
-                    <a  
-                    sveltekit:prefetch
+                <div
+                    class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right"
+                >
+                    <a
+                        sveltekit:prefetch
                         href="/dashboard/registration/new"
                         class="tw-btn tw-btn-secondary tw-btn-sm tw-px-3 tw-py-0 tw-text-xs"
                         type="button"
-                    >   
-                    <Icon icon={iconNew} />
+                    >
+                        <Icon icon="{iconNew}" />
                         NEW Registration
                     </a>
                 </div>

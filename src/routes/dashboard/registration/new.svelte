@@ -2,7 +2,7 @@
     import { dev } from '$app/env';
     import { goto, prefetch } from '$app/navigation';
     import authStore from '$lib/auth/authStore';
-    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import baselinePerson from '@iconify-icons/ic/baseline-person.js';
     import baselineSchool from '@iconify-icons/ic/baseline-school.js';
     import baselineAltEmail from '@iconify-icons/ic/baseline-alternate-email.js';
@@ -59,32 +59,72 @@
                     </div>
                     <div class="info">
                         <div class="input tw-inline-flex ">
-                            <Icon class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]" height="" width="" icon="{baselinePerson}"/>
-                            <input class="fname tw-w-full" type="text" name="name" placeholder="Full name" />
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselinePerson}"
+                            />
+                            <input
+                                class="fname tw-w-full"
+                                type="text"
+                                name="name"
+                                placeholder="Full name"
+                            />
                         </div>
 
                         <div class="input tw-inline-flex ">
-                            <Icon class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]" height="" width="" icon="{baselineAltEmail}"/>
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselineAltEmail}"
+                            />
                             <input type="email" placeholder="Email" class="tw-w-full" />
                         </div>
 
                         <div class="input tw-inline-flex ">
-                            <Icon class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]" height="" width="" icon="{baselinePhone}"/>
-                            <input type="tel" maxlength="10" placeholder="Phone number" class="tw-w-full" />
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselinePhone}"
+                            />
+                            <input
+                                type="tel"
+                                maxlength="10"
+                                placeholder="Phone number"
+                                class="tw-w-full"
+                            />
                         </div>
 
                         <div class="input tw-inline-flex ">
-                            <Icon class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]" height="" width="" icon="{baselineSchool}"/>
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselineSchool}"
+                            />
                             <input type="text" placeholder="Collage name" class="tw-w-full" />
                         </div>
 
                         <div class="input tw-inline-flex ">
-                            <Icon class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]" height="" width="" icon="{baselineCode}"/>
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselineCode}"
+                            />
                             <input type="text" placeholder="Referal Code" class="tw-w-full" />
                         </div>
 
                         <div class="input tw-inline-flex ">
-                            <Icon class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]" height="" width="" icon="{baselineCalendarViewDay}"/>
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselineCalendarViewDay}"
+                            />
                             <input type="text" placeholder="Year of Study" class="tw-w-full" />
                         </div>
 
@@ -236,7 +276,6 @@
         color: aqua;
     }
     select {
-
         border-bottom: 1px solid aquamarine;
         margin-bottom: 45px;
         //width: 31rem;
@@ -298,7 +337,7 @@
 
     @media (max-width: 1000px) {
         .main-block {
-            background: url('images/adhyaya\ bg.png') no-repeat center;
+            background: url('') no-repeat center;
             background-size: cover;
             background-position: center;
             height: 100%;

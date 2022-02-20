@@ -79,13 +79,18 @@
     }
 </script>
 
-<div class="tw-hero tw-min-h-screen tw-bg-base-300 " style="background-image: url({backgroundImage});">
+<div
+    class="tw-hero tw-min-h-screen tw-bg-base-300 "
+    style="background-image: url({backgroundImage});"
+>
     <div
         class="tw-hero-overlay tw-bg-base-300 tw-bg-opacity-75 tw-backdrop-blur motion-safe:tw-animate-pulse"
     ></div>
     <div class="tw-hero-content tw-text-center tw-text-neutral-content">
         <form class="tw-max-w-md">
-            <div class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-200 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur">
+            <div
+                class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-200 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur"
+            >
                 <div class="tw-card-body">
                     <h1 class="tw-my-4 tw-text-left tw-text-xl">Recover Password</h1>
                     <span class="tw-my-2 tw-text-left tw-text-sm">Enter a new password</span>
@@ -116,7 +121,7 @@
                         />
                         <button
                             on:click|preventDefault="{password_toggle}"
-                            class="btn absolute top-0 right-0 rounded-l-none  {is_password_shown
+                            class="absolute top-0 right-0 rounded-l-none btn  {is_password_shown
                                 ? 'btn-warning'
                                 : 'btn-info'} text-xs"
                         >
@@ -133,7 +138,7 @@
                             type="button"
                             value="Reset Password"
                             on:click="{on_submit}"
-                            class="btn btn-primary {is_loading ? 'btn-disabled loading' : ''}"
+                            class="btn-primary btn {is_loading ? 'loading btn-disabled' : ''}"
                         />
                     </div>
                 </div>

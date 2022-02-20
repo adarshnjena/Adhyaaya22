@@ -14,7 +14,9 @@
                 <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4">
                     <h3 class="tw-text-base tw-font-semibold tw-text-gray-400">Tasks</h3>
                 </div>
-                <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right">
+                <div
+                    class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right"
+                >
                     <a
                         href="/dashboard/tasks"
                         class="tw-btn tw-btn-secondary tw-btn-sm tw-px-3 tw-py-0 tw-text-xs"

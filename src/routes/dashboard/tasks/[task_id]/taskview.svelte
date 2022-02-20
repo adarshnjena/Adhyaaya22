@@ -102,10 +102,9 @@
                     <div class="tw-mx-auto tw-mb-16 tw-card-actions">
                         <label
                             for="file-input"
-                            class="tw-btn tw-btn-wide {task.requires_proof ? '' : 'tw-hidden'} {files &&
-                            files[0]
-                                ? 'tw-btn-ghost'
-                                : ''}"
+                            class="tw-btn tw-btn-wide {task.requires_proof
+                                ? ''
+                                : 'tw-hidden'} {files && files[0] ? 'tw-btn-ghost' : ''}"
                         >
                             {files && files[0] ? files[0].name : 'SELECT A FILE'}
                             <input
@@ -126,7 +125,9 @@
                                 ? files && files[0]
                                     ? ''
                                     : 'tw-hidden'
-                                : ''} {is_uploading ? 'tw-loading tw-btn-disabled' : ''} {button_class}"
+                                : ''} {is_uploading
+                                ? 'tw-loading tw-btn-disabled'
+                                : ''} {button_class}"
                         >
                             {button_text}
                         </button>

@@ -1,27 +1,27 @@
 <script lang="ts">
-    import GithubIcon from '@iconify-icons/simple-icons/github.js'
-    import EmailIcon from '@iconify-icons/ic/email.js'
-    import LinkedinIcon from '@iconify-icons/simple-icons/linkedin.js'
-    import TwitterIcon from '@iconify-icons/simple-icons/twitter.js'
-    import InstagramIcon from '@iconify-icons/simple-icons/instagram.js'
-    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte'
+    import GithubIcon from '@iconify-icons/simple-icons/github.js';
+    import EmailIcon from '@iconify-icons/ic/email.js';
+    import LinkedinIcon from '@iconify-icons/simple-icons/linkedin.js';
+    import TwitterIcon from '@iconify-icons/simple-icons/twitter.js';
+    import InstagramIcon from '@iconify-icons/simple-icons/instagram.js';
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     function get_icon(name: string) {
         switch (name) {
             case 'github':
-                return GithubIcon
+                return GithubIcon;
             case 'email':
-                return EmailIcon
+                return EmailIcon;
             case 'instagram':
-                return InstagramIcon
+                return InstagramIcon;
             case 'linkedin':
-                return LinkedinIcon
+                return LinkedinIcon;
             case 'twitter':
-                return TwitterIcon
+                return TwitterIcon;
             default:
-                return null
+                return null;
         }
     }
-    
+
     export let details = {
         name: 'DEFAULT',
         position: 'VOLUNTEER',
@@ -35,9 +35,9 @@
             {
                 name: '',
                 url: '',
-            }
-        ]
-    }
+            },
+        ],
+    };
 </script>
 
 <div class="tw-p-4 lg:tw-w-1/2">
@@ -57,9 +57,12 @@
             </p>
             <span class="tw-inline-flex">
                 {#each details.socials as social}
-                <a href="{social.url}" class="tw-ml-2 tw-h-6 tw-w-6 tw-text-gray-500 hover:tw-text-white tw-transition-colors tw-duration-200">
-                    <Icon icon={get_icon(social.name)} />
-                </a>
+                    <a
+                        href="{social.url}"
+                        class="tw-ml-2 tw-h-6 tw-w-6 tw-text-gray-500 tw-transition-colors tw-duration-200 hover:tw-text-white"
+                    >
+                        <Icon icon="{get_icon(social.name)}" />
+                    </a>
                 {/each}
             </span>
         </div>

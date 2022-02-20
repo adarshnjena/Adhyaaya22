@@ -15,9 +15,13 @@
         <div class="tw-mb-0 tw-rounded-t tw-border-0 tw-px-4 tw-py-3">
             <div class="tw-flex tw-flex-wrap tw-items-center">
                 <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4">
-                    <h3 class="tw-ml-2 tw-text-base tw-font-semibold tw-text-gray-400">Recent Events</h3>
+                    <h3 class="tw-ml-2 tw-text-base tw-font-semibold tw-text-gray-400">
+                        Recent Events
+                    </h3>
                 </div>
-                <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right ">
+                <div
+                    class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow tw-px-4 tw-text-right "
+                >
                     <button
                         class=" tw-btn tw-btn-secondary tw-btn-sm tw-hidden tw-px-3 tw-py-0 tw-text-xs"
                         type="button"

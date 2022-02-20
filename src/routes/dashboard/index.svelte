@@ -116,7 +116,9 @@
                     title="Account Status"
                     value="{auth?.currentUser?.emailVerified ? 'Verified' : 'Not Verified'}"
                     positive="{auth?.currentUser?.emailVerified}"
-                    subtitle="{auth?.currentUser?.emailVerified ? '' : 'Please check your email for instructions'}"
+                    subtitle="{auth?.currentUser?.emailVerified
+                        ? ''
+                        : 'Please check your email for instructions'}"
                     icon="{verifiedIcon}"
                 />
                 <!--

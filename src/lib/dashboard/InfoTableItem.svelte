@@ -21,10 +21,14 @@
     >
         {event.name}
     </th>
-    <td class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs">
+    <td
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
+    >
         {printable_date}
     </td>
-    <td class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs">
+    <td
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
+    >
         <div class="tw-flex tw-items-center">
             <span class="tw-mr-2">
                 <InfoBadge text="{event.is_physical ? 'Physical' : 'Virtual'}" />

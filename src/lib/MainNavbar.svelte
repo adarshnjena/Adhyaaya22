@@ -3,9 +3,11 @@
     import roundMenu from '@iconify-icons/ic/round-menu.js';
 </script>
 
-<nav class="tw-sticky tw-top-0 tw-z-10 tw-w-full tw-rounded tw-border-gray-200 tw-bg-transparent tw-px-2 tw-py-2.5 sm:tw-px-4">
+<nav
+    class="tw-sticky tw-top-0 tw-z-10 tw-w-full tw-rounded tw-border-gray-200 tw-bg-transparent tw-px-2 tw-py-2.5 sm:tw-px-4"
+>
     <div class="tw-container tw-mx-auto tw-flex tw-flex-wrap tw-items-center tw-justify-between">
-        <a href="/" class="tw-flex tw-rounded-2xl tw-border tw-ml-1 tw-btn tw-btn-ghost tw-btn-lg">
+        <a href="/" class="tw-btn tw-btn-ghost tw-btn-lg tw-ml-1 tw-flex tw-rounded-2xl tw-border">
             <img src="/favicon.png" class="tw-m-2 tw-w-20" alt="adhyaaya-logo" />
         </a>
         <div class="tw-flex tw-items-center md:tw-order-2">

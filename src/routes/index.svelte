@@ -62,9 +62,8 @@
             app = initializeApp(firebaseConfig);
         }
         // Now we for sure have an app.
-        
-        dev ? console.log(app): '';
-        
+
+        dev ? console.log(app) : '';
     });
 
     const invisible = 'tw-invisible';

@@ -1,7 +1,7 @@
 const config = {
     content: ['./src/**/*.{html,js,svelte,ts}'],
     corePlugins: {
-        preflight: true
+        preflight: true,
     },
     theme: {
         extend: {},

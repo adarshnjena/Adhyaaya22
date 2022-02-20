@@ -4,7 +4,7 @@
     import backgroundImage from '$lib/assets/page-background.png';
     import authStore from '$lib/auth/authStore';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
-import { authentication_message } from '$lib/messageStore';
+    import { authentication_message } from '$lib/messageStore';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
@@ -54,7 +54,7 @@ import { authentication_message } from '$lib/messageStore';
             dev ? console.log(error) : '';
             if (error.code == 'auth/account-exists-with-different-credential') {
                 // Ask user to signin using original method, then provide the linking functionality.
-                const methods = await fetchSignInMethodsForEmail(auth, error.customData.email)
+                const methods = await fetchSignInMethodsForEmail(auth, error.customData.email);
                 const method = get_readable_provider_name(methods[0]);
                 modal_show(
                     `Please signin using ${method} , you can link further accounts in the dashboard.`,
@@ -297,7 +297,9 @@ import { authentication_message } from '$lib/messageStore';
 </script>
 
 <main>
-    <section class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pb-40 tw-pt-28">
+    <section
+        class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pb-40 tw-pt-28"
+    >
         <div
             class="tw-absolute tw-top-0 tw-h-full tw-w-full tw-bg-base-300 tw-bg-no-repeat motion-safe:tw-animate-pulse"
             style="background-image: url({backgroundImage});"
@@ -310,7 +312,9 @@ import { authentication_message } from '$lib/messageStore';
                     >
                         <div class="tw-mb-0 tw-rounded-t tw-px-6 tw-py-6">
                             <div class="tw-mb-3 tw-text-center">
-                                <span class="tw-font-bold tw-text-blue-100">{$authentication_message || 'Sign In / Register'}</span>
+                                <span class="tw-font-bold tw-text-blue-100">
+                                    {$authentication_message || 'Sign In / Register'}
+                                </span>
                             </div>
                             <div class="tw-text-center">
                                 <button
@@ -357,7 +361,9 @@ import { authentication_message } from '$lib/messageStore';
                             <hr class="tw-border-b-1 tw-mt-6 tw-border-primary" />
                         </div>
                         <div class="tw-flex-auto tw-px-4 tw-py-10 tw-pt-0 lg:tw-px-10">
-                            <div class="tw-mb-3 tw-hidden tw-text-center tw-text-xs tw-font-bold tw-text-blue-200">
+                            <div
+                                class="tw-mb-3 tw-hidden tw-text-center tw-text-xs tw-font-bold tw-text-blue-200"
+                            >
                                 <small>
                                     Don't have an account ? Enter your email anyway, we'll handle it
                                 </small>
@@ -390,7 +396,9 @@ import { authentication_message } from '$lib/messageStore';
                                     </div>
                                 </div>
                                 <div
-                                    class="tw-my-4 tw-bg-base-200 {is_username_required ? '' : 'tw-hidden'}"
+                                    class="tw-my-4 tw-bg-base-200 {is_username_required
+                                        ? ''
+                                        : 'tw-hidden'}"
                                 >
                                     <div class="tw-form-control">
                                         <label for="" class="tw-label">
@@ -455,7 +463,9 @@ import { authentication_message } from '$lib/messageStore';
                                             </button>
                                             <label
                                                 for=""
-                                                class="tw-label {password_error ? '' : 'tw-invisible'}"
+                                                class="tw-label {password_error
+                                                    ? ''
+                                                    : 'tw-invisible'}"
                                             >
                                                 <span class="tw-label-text-alt tw-text-error">
                                                     {password_error
@@ -469,7 +479,9 @@ import { authentication_message } from '$lib/messageStore';
                                 <div>
                                     <!-- Hidden Remember Me. We need people to login again and again. (inline-flex) -->
                                     <span class="tw-hidden tw-cursor-pointer tw-items-center">
-                                        <span class="tw-my-2 tw-ml-2 tw-text-xs tw-font-normal tw-text-gray-400">
+                                        <span
+                                            class="tw-my-2 tw-ml-2 tw-text-xs tw-font-normal tw-text-gray-400"
+                                        >
                                             Forgot Password ?
                                         </span>
                                     </span>

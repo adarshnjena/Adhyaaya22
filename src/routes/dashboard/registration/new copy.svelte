@@ -40,9 +40,7 @@
 
 <Protected />
 <main>
-    <section
-        class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pt-28"
-    >
+    <section class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pt-28">
         <div class="tw-container tw-mx-auto tw-h-full tw-min-h-screen tw-px-4">
             <div class="tw-flex tw-h-full tw-content-center tw-items-center tw-justify-center">
                 <div class="tw-w-full tw-px-4 lg:tw-max-w-md">
@@ -67,4 +65,3 @@
         </div>
     </div>
 </div>
-

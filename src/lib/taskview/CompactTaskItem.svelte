@@ -31,7 +31,13 @@
     {:else}
         <td><InfoBadge text="{`Side Task`}" /></td>
     {/if}
-    <td class="tw-font-mono {date < now ? 'tw-text-info' : date < now + 2 * 84600 ? 'tw-text-warn' : ''}">
+    <td
+        class="tw-font-mono {date < now
+            ? 'tw-text-info'
+            : date < now + 2 * 84600
+            ? 'tw-text-warn'
+            : ''}"
+    >
         {printable_date}
     </td>
     {#if task.requires_proof}

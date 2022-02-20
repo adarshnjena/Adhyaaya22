@@ -49,7 +49,7 @@
                 <div class="tw-flex tw-flex-wrap tw-items-center">
                     <div class="tw-relative tw-w-full tw-max-w-full tw-flex-1 tw-flex-grow">
                         <h6
-                            class="tw-text-gray-400 tw-mt-4 tw-mb-1 tw-ml-2 tw-text-xl tw-font-semibold tw-uppercase"
+                            class="tw-mt-4 tw-mb-1 tw-ml-2 tw-text-xl tw-font-semibold tw-uppercase tw-text-gray-400"
                         >
                             Link Accounts
                         </h6>
@@ -107,7 +107,10 @@
                     >
                         <Icon class="tw-ml-4 tw-mr-2" icon="{EmailIcon}" />
                         <span class="tw-flex-grow-[4] tw-text-lg">Email / Password</span>
-                        <a href="/auth/reset_pass_req" class="tw-btn tw-btn-ghost tw-btn-xs tw-mr-4">
+                        <a
+                            href="/auth/reset_pass_req"
+                            class="tw-btn tw-btn-ghost tw-btn-xs tw-mr-4"
+                        >
                             {is_email ? 'Reset Password' : 'Set Password'}
                         </a>
                     </div>

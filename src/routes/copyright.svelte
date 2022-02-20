@@ -10,12 +10,12 @@
     <div class="mx-auto mt-[2.5rem] w-full px-2 md:w-5/6 md:px-16">
         <div class="container w-full">
             <div
-                class="container card-bordered card min-h-[calc(100vh-18.5rem)] bg-base-100 bg-opacity-[75%] text-center backdrop-blur"
+                class="container card-bordered min-h-[calc(100vh-18.5rem)] bg-base-100 bg-opacity-[75%] text-center backdrop-blur card"
             >
                 <div class="card-body">
                     <h2 class="card-title">
                         Copyright &copy; 2022 Devansh Parapalli
-                        <div class="badge badge-secondary mx-2">MIT License</div>
+                        <div class="badge-secondary mx-2 badge">MIT License</div>
                     </h2>
                     <span class="auto-format mx-auto text-justify">
                         Permission is hereby granted, free of charge, to any person obtaining a copy

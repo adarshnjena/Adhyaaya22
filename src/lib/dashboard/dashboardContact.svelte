@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { contactDetails } from '$lib/types/contactDetails';
-import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
+    import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import baselinePlus from '@iconify-icons/ic/baseline-plus.js';
     export let contact: contactDetails = {
         name: 'Adarsh Jena',
@@ -34,8 +34,10 @@ import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
                 <h3 class="tw-mb-2 tw-text-xl tw-font-semibold tw-leading-normal tw-text-gray-200">
                     {contact.name}
                 </h3>
-                <div class="tw-mt-0 tw-mb-2 tw-text-sm tw-font-bold tw-uppercase tw-leading-normal tw-text-gray-400">
-                    <Icon class="tw-text-gray-50" icon={baselinePlus} />
+                <div
+                    class="tw-mt-0 tw-mb-2 tw-text-sm tw-font-bold tw-uppercase tw-leading-normal tw-text-gray-400"
+                >
+                    <Icon class="tw-text-gray-50" icon="{baselinePlus}" />
                     {contact.position}
                 </div>
                 <div class="tw-mt-10 tw-mb-2 tw-text-gray-300">
@@ -50,10 +52,14 @@ import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
             <div class="tw-mt-10 tw-border-t tw-border-gray-200 tw-py-10 tw-text-center">
                 <div class="tw-flex tw-flex-wrap tw-justify-center">
                     <div class="tw-w-full tw-px-4 lg:tw-w-9/12">
-                        <p class="tw-mb-4 tw-text-justify tw-text-lg tw-leading-relaxed tw-text-gray-200">
+                        <p
+                            class="tw-mb-4 tw-text-justify tw-text-lg tw-leading-relaxed tw-text-gray-200"
+                        >
                             {contact.bio}
                         </p>
-                        <span class="tw-link tw-hidden tw-font-normal tw-text-red-500">Contact</span>
+                        <span class="tw-link tw-hidden tw-font-normal tw-text-red-500">
+                            Contact
+                        </span>
                     </div>
                 </div>
             </div>

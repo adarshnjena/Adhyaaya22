@@ -85,15 +85,17 @@
     }
 </script>
 
-<div class="tw-w-full px-4">
+<div class="px-4 tw-w-full">
     <div
         class="tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded-lg tw-border-0 tw-bg-base-200 tw-bg-opacity-[75%] tw-shadow-lg tw-backdrop-blur"
     >
         <div class="tw-mb-0 tw-rounded-t tw-px-6 tw-py-6">
             <div class="tw-flex tw-justify-between tw-text-center">
-                <span class="tw-text-gray-400 tw-text-xl tw-font-bold">Your Details</span>
+                <span class="tw-text-xl tw-font-bold tw-text-gray-400">Your Details</span>
                 <button
-                    class="tw-btn {button_status} tw-btn-sm {username_error ? 'tw-btn-disabled' : ''}
+                    class="tw-btn {button_status} tw-btn-sm {username_error
+                        ? 'tw-btn-disabled'
+                        : ''}
                     {mobile_error ? 'tw-btn-disabled' : ''} 
                     {is_updating ? 'tw-btn-disabled tw-loading' : ''}"
                     disabled="{!!is_updating || !!mobile_error || !!username_error}"
@@ -111,7 +113,9 @@
                 >
                     User Information
                 </h6>
-                <div class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur">
+                <div
+                    class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur"
+                >
                     <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
                         <div class="tw-relative tw-mb-3 tw-w-full">
                             <label
@@ -133,7 +137,9 @@
                     </div>
                     <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
                         <div class="tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-email">Email address</label>
+                            <label class="tw-label tw-text-sm" for="grid-email">
+                                Email address
+                            </label>
                             <input
                                 id="grid-email"
                                 type="email"
@@ -145,7 +151,9 @@
                     </div>
                     <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
                         <div class="tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-first-name">First Name</label>
+                            <label class="tw-label tw-text-sm" for="grid-first-name">
+                                First Name
+                            </label>
                             <input
                                 id="grid-first-name"
                                 type="text"
@@ -156,7 +164,9 @@
                     </div>
                     <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
                         <div class="tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-last-name">Last Name</label>
+                            <label class="tw-label tw-text-sm" for="grid-last-name">
+                                Last Name
+                            </label>
                             <input
                                 id="grid-last-name"
                                 type="text"
@@ -172,7 +182,9 @@
                 >
                     Contact Information
                 </h6>
-                <div class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur">
+                <div
+                    class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur"
+                >
                     <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
                         <div class="tw-relative tw-mb-3 tw-w-full">
                             <label
@@ -184,7 +196,9 @@
                             <input
                                 id="grid-mobile-number"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full {mobile_error ? 'tw-input-error' : ''}"
+                                class="tw-input-ghost tw-input tw-w-full {mobile_error
+                                    ? 'tw-input-error'
+                                    : ''}"
                                 bind:value="{details.mobile_number}"
                                 on:blur="{mobile_on_blur}"
                             />
@@ -192,7 +206,9 @@
                     </div>
                     <div class="tw-w-full tw-px-4 lg:tw-w-6/12">
                         <div class="tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-locality">Area/Locality</label>
+                            <label class="tw-label tw-text-sm" for="grid-locality">
+                                Area/Locality
+                            </label>
                             <input
                                 id="grid-locality"
                                 type="text"
@@ -252,7 +268,9 @@
                 >
                     About Me
                 </h6>
-                <div class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur">
+                <div
+                    class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur"
+                >
                     <div class="lg:tw-w-12/12 tw-w-full tw-px-4">
                         <div class="tw-form-control tw-relative tw-mb-3 tw-w-full">
                             <label class="tw-label tw-text-sm" for="grid-about-me">About me</label>

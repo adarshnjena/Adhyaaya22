@@ -12,17 +12,23 @@
     <nav
         class="tw-navbar-expand-lg tw-absolute tw-top-0 tw-z-50 tw-flex tw-w-full tw-flex-wrap tw-items-center tw-justify-between tw-bg-opacity-0 tw-px-2 tw-py-3"
     >
-        <div class="tw-mx-auto tw-flex tw-w-11/12 tw-flex-wrap tw-items-center tw-justify-between tw-px-4">
+        <div
+            class="tw-mx-auto tw-flex tw-w-11/12 tw-flex-wrap tw-items-center tw-justify-between tw-px-4"
+        >
             <a class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
                 <figure>
-                    <img aria-hidden="true" class="tw-h-10" src="{navbarLogo}" alt="Adhyaaya Logo" />
+                    <img
+                        aria-hidden="true"
+                        class="tw-h-10"
+                        src="{navbarLogo}"
+                        alt="Adhyaaya Logo"
+                    />
                 </figure>
             </a>
             <div
                 class="tw-flex tw-flex-grow tw-items-center tw-rounded tw-bg-opacity-0 tw-shadow-none"
                 id="example-navbar-warning"
-            >   
-                
+            >
                 <ul class="tw-ml-auto tw-flex tw-list-none tw-flex-row tw-self-end">
                     <li class="tw-flex tw-items-center">
                         <div class="tw-dropdown-end tw-dropdown">
@@ -39,10 +45,15 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/dashboard/tasks" class="tw-rounded-xl">View All Tasks</a>
+                                    <a href="/dashboard/tasks" class="tw-rounded-xl">
+                                        View All Tasks
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="/auth/logout" class="tw-btn tw-btn-error tw-rounded-xl">
+                                    <a
+                                        href="/auth/logout"
+                                        class="tw-btn tw-btn-error tw-rounded-xl"
+                                    >
                                         <Icon class="tw-mr-2" icon="{outlineLogout}" /> LOGOUT
                                     </a>
                                 </li>

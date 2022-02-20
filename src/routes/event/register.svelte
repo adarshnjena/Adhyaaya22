@@ -4,7 +4,7 @@
     import { getApp, initializeApp } from 'firebase/app';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { goto } from '$app/navigation';
-    import {authentication_message} from '$lib/messageStore';
+    import { authentication_message } from '$lib/messageStore';
     let app;
     // Init firebase and generate the required app.
     onMount(() => {
@@ -20,36 +20,38 @@
         dev ? console.log(app) : '';
     });
 </script>
+
 <div class="parent-container">
-<div class="container">
-    <h1>only one step away!</h1>
-    <p>
-        Click the button below to login/register and associate yourself with the 4th edition of
-        Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
-    </p>
+    <div class="container">
+        <h1>only one step away!</h1>
+        <p>
+            Click the button below to login/register and associate yourself with the 4th edition of
+            Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
+        </p>
 
-    <button
-        on:click="{() => {
-            $authentication_message = 'Plese register below'
-            goto('/auth/login');
-        }}"
-    >
-        Register
-    </button>
+        <button
+            on:click="{() => {
+                $authentication_message = 'Plese register below';
+                goto('/auth/login');
+            }}"
+        >
+            Register
+        </button>
 
-    <p>Sign in with UserID and Name</p>
+        <p>Sign in with UserID and Name</p>
 
-    <form action="">
-        <div class="input">
-            <input type="text" placeholder="UserId" />
-        </div>
-        <div class="input">
-            <input type="password" name="" id="" placeholder="Password" />
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+        <form action="">
+            <div class="input">
+                <input type="text" placeholder="UserId" />
+            </div>
+            <div class="input">
+                <input type="password" name="" id="" placeholder="Password" />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
-</div>
+
 <style lang="scss">
     //body,
     * {

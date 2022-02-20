@@ -21,8 +21,7 @@
             <div
                 class="tw-flex tw-flex-grow tw-items-center tw-rounded tw-bg-opacity-0 tw-shadow-none"
                 id="example-navbar-warning"
-            >   
-                
+            >
                 <ul class="tw-ml-auto tw-flex tw-list-none tw-flex-row tw-self-end">
                     <li class="tw-flex tw-items-center">
                         <div class="tw-dropdown-end tw-dropdown">

@@ -1,5 +1,5 @@
 <script>
-    import '../../app.scss';
+    import '../../../app.scss';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
@@ -56,7 +56,7 @@
     </nav>
 
     <div
-        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 xl:tw-pb-32 "
+        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 "
         style="background-image: url({backgroundImage});"
     >
         <slot />

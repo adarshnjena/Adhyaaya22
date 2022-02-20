@@ -79,7 +79,7 @@
                         </h1> 
                         <ul> 
                             <li><a  href="#" class="button" on:click|preventDefault={termspop4}>Contact info</a></li>
-                            <li><a href="#">Teams </a></li>
+                            <li><a href="/event/team">Teams </a></li>
                         </ul>
                       </div>
 

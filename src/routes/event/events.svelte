@@ -1,20 +1,21 @@
 <script context="module">
 </script>
 
-<script>
-    import {gsap} from 'gsap';
-    import {MotionPathPlugin} from 'gsap/dist/MotionPathPlugin.js';
+<script lang="ts">
+    import { gsap } from 'gsap';
+    import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin.js';
     //import {fullpage} from 'fullpage.js'
-    import { onMount } from 'svelte';
+    import { onDestroy, onMount } from 'svelte';
     //console.log(gsap, MotionPathPlugin)
-    
+
     onMount(() => {
         //Page Scroll
-        
-        new fullpage('#fullpage', {
+
+        // @ts-ignore Defined using script tag
+        let _fullpage = new fullpage('#fullpage', {
             sectionsColor: ['#000', '#000'],
         });
-    
+
         //GSAP Code
         gsap.registerPlugin(MotionPathPlugin);
         let a = function () {
@@ -39,33 +40,35 @@
 
             .add('orbs', 1.2)
             .add(function () {
-                document.querySelector(".main1").addEventListener('mousemove', function (e) {
-                    gsap.to('.m1_cGroup', {
-                        duration: 1,
-                        x: function (i) {
-                            return (e.clientX / window.innerWidth / (i + 1)) * 150;
-                        },
-                        y: function (i) {
-                            return i * -20 * (e.clientY / window.innerHeight);
-                        },
-                        rotation: Math.random() * 0.1,
-                        overwrite: 'auto',
+                document
+                    .querySelector('.main1')
+                    .addEventListener('mousemove', function (e: MouseEvent) {
+                        gsap.to('.m1_cGroup', {
+                            duration: 1,
+                            x: function (i) {
+                                return (e.clientX / window.innerWidth / (i + 1)) * 150;
+                            },
+                            y: function (i) {
+                                return i * -20 * (e.clientY / window.innerHeight);
+                            },
+                            rotation: Math.random() * 0.1,
+                            overwrite: 'auto',
+                        });
+                        gsap.to('.c1_solid, .c1_line', {
+                            duration: 1,
+                            attr: { opacity: 1.1 - 0.75 * (e.clientY / window.innerHeight) },
+                        });
+                        gsap.to('.m1OrbBlank', {
+                            duration: 1,
+                            opacity: 0.2 + 0.55 * (e.clientY / window.innerHeight),
+                        });
+                        gsap.to('.m1OrbBlank11', {
+                            duration: 1,
+                            opacity: 0.2 + 0.55 * (e.clientY / window.innerHeight),
+                        });
                     });
-                    gsap.to('.c1_solid, .c1_line', {
-                        duration: 1,
-                        attr: { opacity: 1.1 - 0.75 * (e.clientY / window.innerHeight) },
-                    });
-                    gsap.to('.m1OrbBlank', {
-                        duration: 1,
-                        opacity: 0.2 + 0.55 * (e.clientY / window.innerHeight),
-                    });
-                    gsap.to('.m1OrbBlank11', {
-                        duration: 1,
-                        opacity: 0.2 + 0.55 * (e.clientY / window.innerHeight),
-                    });
-                });
 
-                document.querySelector(".main1").addEventListener('click', function (e) {
+                document.querySelector('.main1').addEventListener('click', function (e) {
                     if (gsap.getProperty('.m1_cGroup', 'scale') != 1) return; //prevent overlapping bouncy tweens
                     for (var i = 0; i < document.querySelectorAll('.m1_cGroup').length; i++) {
                         gsap.fromTo(
@@ -356,15 +359,23 @@
                 { rotation: '+= 75', yoyo: true, repeat: -1 },
                 'orbs',
             );
+        return () => {
+            // @ts-ignore Defined using script tag.
+            fullpage_api.destroy('all');
+        };
+    });
+    onDestroy(() => {
+        // @ts-ignore Defined using script tag.
+        fullpage_api.destroy('all');
     });
 </script>
 
 <svelte:head>
     <title>Event Page</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-        <script
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"></script>
-        <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+    <script
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"></script>
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
 </svelte:head>
 
 <div id="fullpage">

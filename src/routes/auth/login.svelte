@@ -4,6 +4,7 @@
     import backgroundImage from '$lib/assets/page-background.png';
     import authStore from '$lib/auth/authStore';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
+import { authentication_message } from '$lib/messageStore';
     import Eye from '@iconify-icons/ic/outline-remove-red-eye.js';
     import GitHubIcon from '@iconify-icons/simple-icons/github.js';
     import GoogleIcon from '@iconify-icons/simple-icons/google.js';
@@ -50,16 +51,30 @@
             dev ? console.log('Prefetching /dashboard') : '';
             result = await getRedirectResult(auth);
         } catch (error) {
-            dev ? console.log(error.code) : '';
+            dev ? console.log(error) : '';
             if (error.code == 'auth/account-exists-with-different-credential') {
                 // Ask user to signin using original method, then provide the linking functionality.
+                const methods = await fetchSignInMethodsForEmail(auth, error.customData.email)
+                const method = get_readable_provider_name(methods[0]);
                 modal_show(
-                    'Please signin using the original method, you can link further accounts in the dashboard.',
+                    `Please signin using ${method} , you can link further accounts in the dashboard.`,
                 );
             }
             is_firebase_auth_in_progress = false;
         }
 
+        function get_readable_provider_name(key: string) {
+            switch (key) {
+                case 'github.com':
+                    return 'Github';
+                case 'google.com':
+                    return 'Google';
+                case 'twitter.com':
+                    return 'Twitter';
+                default:
+                    return key;
+            }
+        }
         // This callback runs when the AuthState has change, aka a user is signed in, out etc.
         onAuthStateChanged(auth, (user) => {
             dev ? console.log('authState changed', user) : '';
@@ -295,7 +310,7 @@
                     >
                         <div class="tw-mb-0 tw-rounded-t tw-px-6 tw-py-6">
                             <div class="tw-mb-3 tw-text-center">
-                                <span class="tw-font-bold tw-text-blue-100">Sign In / Register</span>
+                                <span class="tw-font-bold tw-text-blue-100">{$authentication_message || 'Sign In / Register'}</span>
                             </div>
                             <div class="tw-text-center">
                                 <button

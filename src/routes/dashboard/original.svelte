@@ -2,12 +2,12 @@
     import { dev } from '$app/env';
     import authStore from '$lib/auth/authStore';
     import Protected from '$lib/auth/Protected.svelte';
-    import AccountLinking from '$lib/dashboard/landingAccountLinking.svelte';
-    //import DashboardContact from '$lib/dashboard/dashboardContact.svelte';
-    import DashboardProfile from '$lib/dashboard/landingDashboardProfileSettings.svelte';
-    //import InfoTable from '$lib/dashboard/InfoTable.svelte';
-    import SimpleStat from '$lib/dashboard/landingSimpleStats.svelte';
-    import TaskSummaryTable from '$lib/dashboard/landingTaskSummaryTable.svelte';
+    import AccountLinking from '$lib/dashboard/AccountLinking.svelte';
+    import DashboardContact from '$lib/dashboard/dashboardContact.svelte';
+    import DashboardProfile from '$lib/dashboard/dashboardProfileSettings.svelte';
+    import InfoTable from '$lib/dashboard/InfoTable.svelte';
+    import SimpleStat from '$lib/dashboard/SimpleStats.svelte';
+    import TaskSummaryTable from '$lib/dashboard/TaskSummaryTable.svelte';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import CAFooter from '$lib/CAFooter.svelte';
     import shareIcon from '@iconify-icons/ic/baseline-share.js';
@@ -106,7 +106,7 @@
             <!--Stats Row-->
             <div class="tw-mt-4 tw-flex tw-flex-wrap tw-justify-between">
                 <SimpleStat
-                    title="Refferal Code"
+                    title="CA Code"
                     value="{$authStore.user?.uid.substring(0, 7)}"
                     positive="{true}"
                     subtitle=""
@@ -116,7 +116,7 @@
                     title="Account Status"
                     value="{auth?.currentUser?.emailVerified ? 'Verified' : 'Not Verified'}"
                     positive="{auth?.currentUser?.emailVerified}"
-                    subtitle="{auth?.currentUser?.emailVerified ? '' : 'Please check your email for instructions'}"
+                    subtitle=""
                     icon="{verifiedIcon}"
                 />
                 <!--
@@ -151,6 +151,7 @@
             {:then value}
                 <div class="tw-mt-4 tw-flex tw-flex-wrap">
                     <TaskSummaryTable tasks="{tasks}" profile_tasks="{profile_tasks}" />
+                    <InfoTable events="{events}" />
                 </div>
                 <div class="tw-mt-4 tw-flex tw-flex-wrap">
                     <DashboardProfile
@@ -159,6 +160,7 @@
                         details="{details}"
                         handle_update_click="{handle_update_click}"
                     />
+                    <DashboardContact contact="{contact}" />
                 </div>
             {/await}
 

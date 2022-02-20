@@ -51,6 +51,9 @@
         }
     }
     onMount(async () => {
+        //@ts-ignore
+        fullpage_api.destroy('all');
+        scrollY = 0;
         try {
             app = getApp();
         } catch (error) {
@@ -59,9 +62,9 @@
             app = initializeApp(firebaseConfig);
         }
         // Now we for sure have an app.
-        if (dev) {
-            console.log(app);
-        }
+        
+        dev ? console.log(app): '';
+        
     });
 
     const invisible = 'tw-invisible';

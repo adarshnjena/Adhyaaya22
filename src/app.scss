@@ -77,6 +77,14 @@
         url('/fonts/nunito-v20-latin-900.woff') format('woff');
 }
 
+/* Revamped Regular Font */
+@font-face {
+    font-family: 'revampedregular';
+    src: url('/fonts/revamped-webfont.woff2') format('woff2'), url('/fonts/revamped-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global Styles */
 body {
     font-family: 'Nunito', sans-serif;
@@ -89,5 +97,5 @@ body {
 
 * {
     box-sizing: border-box;
-    @apply tw-scrollbar-hide tw-scroll-smooth tw-antialiased;
+    @apply tw-scroll-smooth tw-antialiased tw-scrollbar-hide;
 }

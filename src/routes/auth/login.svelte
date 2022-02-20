@@ -63,18 +63,6 @@
             is_firebase_auth_in_progress = false;
         }
 
-        function get_readable_provider_name(key: string) {
-            switch (key) {
-                case 'github.com':
-                    return 'Github';
-                case 'google.com':
-                    return 'Google';
-                case 'twitter.com':
-                    return 'Twitter';
-                default:
-                    return key;
-            }
-        }
         // This callback runs when the AuthState has change, aka a user is signed in, out etc.
         onAuthStateChanged(auth, (user) => {
             dev ? console.log('authState changed', user) : '';
@@ -100,6 +88,19 @@
         }
     });
 
+    //  User readable names
+    function get_readable_provider_name(key: string) {
+        switch (key) {
+                case 'github.com':
+                    return 'Github';
+                case 'google.com':
+                    return 'Google';
+                case 'twitter.com':
+                    return 'Twitter';
+                default:
+                    return key;
+            }
+        }
     // function for password show/hide
     let is_password_shown = false;
     function password_toggle(event) {

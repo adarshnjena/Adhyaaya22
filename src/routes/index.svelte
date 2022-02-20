@@ -7,6 +7,7 @@
     import { browser, dev } from '$app/env';
     import backgroundImageTwo from '$lib/assets/hero-background-alt.png';
     //import navbarLogo from '$lib/assets/navbar-logo.png';
+    import authStore from '$lib/auth/authStore';
     import backgroundImageOne from '$lib/assets/hero-background.png';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     //import { profileDetails } from '$lib/types/profileDetails';
@@ -19,8 +20,11 @@
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
     import MainNavbar from '$lib/MainNavbar.svelte';
     import MainFooter from '$lib/MainFooter.svelte';
+import { getAuth, onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
+import { goto } from '$app/navigation';
 
     let app;
+    let auth;
     let innerHeight: number;
     let scrollY: number; // Number of Pixels scrolled
     let container: HTMLDivElement;
@@ -62,8 +66,20 @@
             app = initializeApp(firebaseConfig);
         }
         // Now we for sure have an app.
-
+        auth = getAuth();
         dev ? console.log(app) : '';
+        onAuthStateChanged(auth, (user) => {
+            dev ? console.log('authState changed', user) : '';
+            authStore.set({
+                isLoggedIn: !!user,
+                user: user,
+                firebaseControlled: true,
+            });
+            !user.emailVerified ? sendEmailVerification(user) : '';
+            // we wait for the dashboard to check and then init the data.
+            //user ? init_profile_data(app, auth, getDatabase(app)) : '';
+            //user ? goto('/dashboard') : '';
+        });
     });
 
     const invisible = 'tw-invisible';

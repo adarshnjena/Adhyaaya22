@@ -163,7 +163,7 @@
                         </select>
                     </div>
 
-                    <button class="submit" type="submit" href="/">Submit</button>
+                    <button class="submit" on:click|preventDefault="{() => {console.log('FormSubmitEvent')}}" type="submit" href="/">Submit</button>
                 </form>
                 <div class="note">
                     <p>* For faster and safer transactions, prefer UPI.</p>

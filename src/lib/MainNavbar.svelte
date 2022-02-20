@@ -1,6 +1,9 @@
 <script>
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
+    import authStore from './auth/authStore';
+    let auth_link = ['Register' , '/event/register']
+    $: $authStore.isLoggedIn ? auth_link = ['Dashboard' , '/dashboard'] : auth_link = ['Register' , '/event/register']
 </script>
 
 <nav
@@ -34,7 +37,7 @@
                     </li>
 
                     <li>
-                        <a href="/event/register">Register</a>
+                        <a href="{auth_link[1]}">{auth_link[0]}</a>
                     </li>
                 </ul>
             </div>
@@ -81,10 +84,10 @@
                 </li>
                 <li>
                     <a
-                        href="/event/register"
+                        href="{auth_link[1]}"
                         class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
-                        Register
+                        {auth_link[0]}
                     </a>
                 </li>
             </ul>

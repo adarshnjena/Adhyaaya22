@@ -56,8 +56,9 @@ import { goto } from '$app/navigation';
     }
     onMount(async () => {
         //@ts-ignore
-        fullpage_api.destroy('all');
-        scrollY = 0;
+        //fullpage_api.destroy('all');
+        // Sets up the scroll to the top of the page.
+        scrollY = 100;
         try {
             app = getApp();
         } catch (error) {

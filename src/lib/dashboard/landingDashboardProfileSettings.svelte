@@ -127,7 +127,7 @@
                             <input
                                 id="grid-username"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full {username_error
+                                class=" tw-input tw-w-full {username_error
                                     ? 'tw-input-error'
                                     : ''}"
                                 bind:value="{details.username}"
@@ -144,7 +144,7 @@
                                 id="grid-email"
                                 type="email"
                                 disabled
-                                class="tw-input-ghost tw-input-disabled tw-input tw-w-full"
+                                class=" tw-input-disabled tw-input tw-w-full"
                                 bind:value="{details.email}"
                             />
                         </div>
@@ -157,7 +157,7 @@
                             <input
                                 id="grid-first-name"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.first_name}"
                             />
                         </div>
@@ -170,7 +170,7 @@
                             <input
                                 id="grid-last-name"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.last_name}"
                             />
                         </div>
@@ -196,7 +196,7 @@
                             <input
                                 id="grid-mobile-number"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full {mobile_error
+                                class=" tw-input tw-w-full {mobile_error
                                     ? 'tw-input-error'
                                     : ''}"
                                 bind:value="{details.mobile_number}"
@@ -212,7 +212,7 @@
                             <input
                                 id="grid-locality"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.locality}"
                             />
                         </div>
@@ -223,7 +223,7 @@
                             <input
                                 id="grid-address"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.address}"
                             />
                         </div>
@@ -234,7 +234,7 @@
                             <input
                                 id="grid-city"
                                 type="email"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.city}"
                             />
                         </div>
@@ -245,7 +245,7 @@
                             <input
                                 id="grid-state"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.state}"
                             />
                         </div>
@@ -256,7 +256,7 @@
                             <input
                                 id="grid-country"
                                 type="text"
-                                class="tw-input-ghost tw-input tw-w-full"
+                                class=" tw-input tw-w-full"
                                 bind:value="{details.country}"
                             />
                         </div>

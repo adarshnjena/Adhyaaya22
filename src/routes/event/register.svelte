@@ -37,7 +37,7 @@
         >
             Register
         </button>
-
+        <!--
         <p>Sign in with UserID and Name</p>
 
         <form action="">
@@ -49,6 +49,7 @@
             </div>
             <button type="submit">Submit</button>
         </form>
+        -->
     </div>
 </div>
 

@@ -70,7 +70,7 @@
     </nav>
 
     <div
-        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 xl:tw-pb-32 "
+        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 "
         style="background-image: url({backgroundImage});"
     >
         <slot />

@@ -1,5 +1,5 @@
 <script>
-    import '../../../app.scss';
+    import '../../app.scss';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
@@ -40,15 +40,18 @@
                                 class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                             >
                                 <li>
-                                    <a sveltekit:prefetch href="/dashboard" class="tw-rounded-xl">
-                                        Dashboard
-                                    </a>
+                                    <a  href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="/dashboard/tasks" class="tw-rounded-xl">
-                                        View All Tasks
-                                    </a>
+                                    <a  href="/event/events">Events</a>
                                 </li>
+                                <li>
+                                    <a  href="/event/sponsors">Sponsors</a>
+                                </li>
+                                <li>
+                                    <a  href="/event/gallery">Gallery</a>
+                                </li>
+
                                 <li>
                                     <a
                                         href="/auth/logout"

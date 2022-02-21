@@ -13,6 +13,15 @@ const right = ' xl:ml-[50vw] ';
 const top = ' mb-[50vh] ';
 const bottom = ' mt-[50vh] ';
 
+
+// Text for the scrolly bits
+const _intro_to_asu = ""
+const intro_to_asu = "This is ASU-77, our very own mascot.";
+const events = "Taking inspiration from the extraordinary response from budding technocrats all over the country in Adhyaaya last year, we are back this year, even bigger and better with a new enthusiasm and an extravaganza of events, just for you. We have got a splendid lineup including technical events, non-technical events and workshops. We are extremely excited to bring you a plethora of events ranging from competitive coding, designing workshop, elocution, Model United Nations, e-sports and a lot more. Providing you the perfect platform to prove and even develop yourselves in this wide array of domains.We are working with an aim to provide you a ‘Fun-n-Learn’ experience like no other. So are you ready? Because we sure are!";
+const events_button = '<button class="tw-btn tw-btn-primary tw-btn-wide">Events  →</button>';
+const theme = "Revamping and upgrading Adhyaaya to a new level this year, we’ve made sure we stick to the roots as well. Presenting the official theme of Adhyaaya ‘22 ‘Cyber-neon Vista’. Between the binary digits and neon lights, there lies our world packed with technology and top notch innovation. The neon lights symbolize our optimism and how we are striving hard everyday to facilitate the light to prevail over darkness. Those are the lights, which are guiding us on the path of innovation and exploration. The blocks of binary digits depict the impact of technology in our lives and how enthusiastic and meticulous we are, in terms of technology. Now it’s time for us to set our foot in the technocity of Adhyaaya, with loads of excitement and optimism allied with what's to come!";
+
+
 /* 
     +right to shift the text to the right, 
     +left to shift the text to the left

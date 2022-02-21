@@ -1,4 +1,4 @@
-<footer class="tw-bottom-0 tw-w-full tw-bg-base-300 tw-bg-opacity-40 tw-pb-6 xl:tw-absolute">
+<footer class="tw-bottom-0 tw-w-full tw-bg-base-300 tw-bg-opacity-40 tw-pb-6">
     <div class="tw-container tw-mx-auto tw-px-4 ">
         <hr class="tw-border-b-1 tw-mb-6 tw-border-base-200" />
         <div

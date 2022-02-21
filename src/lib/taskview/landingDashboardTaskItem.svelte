@@ -18,7 +18,7 @@
     <td class="tw-bg-opacity-[75%] tw-backdrop-blur">{printable_date}</td>
     <td class="tw-bg-opacity-[75%] tw-backdrop-blur"><WarningBadge text="{'Not Completed'}" /></td>
     <td class="tw-bg-opacity-[75%] tw-backdrop-blur">
-        <a class="tw-btn tw-btn-info tw-btn-sm" href="/dashboard/tasks/{task.task_id}/taskview">
+        <a class="tw-btn tw-btn-info tw-btn-sm" href="/dashboard/registration/{task.task_id}/view">
             VIEW
         </a>
     </td>

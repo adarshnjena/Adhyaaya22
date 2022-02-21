@@ -1,5 +1,6 @@
 
 # pip install firebase_admin
+from firebase_admin import firestore
 import json
 from dateutil.parser import parse
 import firebase_admin
@@ -10,25 +11,31 @@ this_folder = pathlib.Path(__file__).parent.absolute()
 cred = credentials.Certificate(this_folder / 'serviceAccountKey.json')
 app = firebase_admin.initialize_app(cred)
 
-from firebase_admin import firestore
 
 parent_folder = this_folder.parent
 
 client = firestore.client()
 
 
+#k = []
+# with open(parent_folder / 'src' / 'tasks.json', 'r') as f:
+#    data = json.load(f)
+#    for item in data:
+#        item['end_date'] = int(parse(item['end_date']).timestamp())
+#        k.append(item)
+#ref = client.document('tasks', item['task_id'])
+# print(ref.set(item))
 
-k = []
-with open(parent_folder / 'src' / 'tasks.json', 'r') as f:
-    data = json.load(f)
-    for item in data:
-        item['end_date'] = int(parse(item['end_date']).timestamp())
-        k.append(item)
-        #ref = client.document('tasks', item['task_id'])
-        #print(ref.set(item))
-
-with open(parent_folder / 'src' / 'tasks2.json', 'w') as f:
-    f.write(json.dumps(k))
+k = {}
+with open(parent_folder / 'src' / 'users.json', 'w') as f:
+    snapshots = list(client.collection('users').get())
+    print(snapshots[0])
+    for snapshot in snapshots:
+        print(snapshot.id)
+        k[snapshot.id] = snapshot.to_dict()
+        
+    f.write(json.dumps(k, indent=4))
+    # f.write(json.dumps(k))
 
 """
 

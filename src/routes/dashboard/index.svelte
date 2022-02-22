@@ -27,6 +27,8 @@
     import { get_n_event_details } from '$lib/firebase/eventDetails';
     import _contact from '../../contact.json';
     import { get_random_loading_message } from '$lib/loading';
+    import { registrationDetails } from '$lib/types/registrationDetails';
+import { get_user_registrations } from '$lib/firebase/registrationDetails';
 
     let dataPromiseResolve;
     const dataPromise = new Promise((resolve, reject) => {
@@ -49,10 +51,10 @@
         country: 'Some Country',
         bio: 'I make a website! He did not. Great Success!',
     };
-    let contact: contactDetails = _contact;
-    let events: { [key: string]: eventDetails };
-    let tasks: { [key: string]: taskDetails };
-    let profile_tasks: { [key: string]: boolean } = {};
+    //let contact: contactDetails = _contact;
+    //let events: { [key: string]: eventDetails };
+    let registrations: { [key: string]: registrationDetails };
+    //let profile_tasks: { [key: string]: boolean } = {};
     onMount(async () => {
         try {
             app = getApp();
@@ -82,21 +84,22 @@
         // Get the current contact details.
         // TODO: Finish the contact details
         // Get 5 important, future tasks.
-        profile_tasks = _details['tasks'];
-        tasks = await get_n_task_details(app, db, 5);
-        events = await get_n_event_details(app, db, 5);
+        //profile_tasks = _details['tasks'];
+        //tasks = await get_n_task_details(app, db, 5);
+        //events = await get_n_event_details(app, db, 5);
+        registrations = await get_user_registrations(app, auth, db)
         dataPromiseResolve();
     });
     async function handle_update_click(event) {
         let _details = await get_user_details(app, $authStore.user, db);
         details = _details['profile'];
-        profile_tasks = _details['tasks'];
+        //profile_tasks = _details['tasks'];
         dev ? console.log('updated_details', details) : '';
     }
 </script>
 
 <svelte:head>
-    <title>Dashboard</title>
+    <title>Registration Dashboard</title>
 </svelte:head>
 
 <Protected />
@@ -105,22 +108,6 @@
         <div class="tw-w-full">
             <!--Stats Row-->
             <div class="tw-mt-4 tw-flex tw-flex-wrap tw-justify-between">
-                <SimpleStat
-                    title="Refferal Code"
-                    value="{$authStore.user?.uid.substring(0, 7)}"
-                    positive="{true}"
-                    subtitle=""
-                    icon="{shareIcon}"
-                />
-                <SimpleStat
-                    title="Account Status"
-                    value="{auth?.currentUser?.emailVerified ? 'Verified' : 'Not Verified'}"
-                    positive="{auth?.currentUser?.emailVerified}"
-                    subtitle="{auth?.currentUser?.emailVerified
-                        ? ''
-                        : 'Please check your email for instructions'}"
-                    icon="{verifiedIcon}"
-                />
                 <!--
                 <SimpleStat
                     title="Tasks Completed"
@@ -152,7 +139,7 @@
                 </div>
             {:then value}
                 <div class="tw-mt-4 tw-flex tw-flex-wrap">
-                    <TaskSummaryTable tasks="{tasks}" profile_tasks="{profile_tasks}" />
+                    <TaskSummaryTable registrations="{registrations}" />
                 </div>
                 <div class="tw-mt-4 tw-flex tw-flex-wrap">
                     <DashboardProfile
@@ -162,9 +149,8 @@
                         handle_update_click="{handle_update_click}"
                     />
                 </div>
+                <AccountLinking />
             {/await}
-
-            <AccountLinking />
         </div>
     </div>
     <CAFooter />

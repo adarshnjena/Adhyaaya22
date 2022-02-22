@@ -219,7 +219,7 @@
                     </div>
                     <div class="lg:tw-w-12/12 tw-w-full tw-px-4">
                         <div class="tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-address">Address</label>
+                            <label class="tw-label tw-text-sm" for="grid-address">College Name</label>
                             <input
                                 id="grid-address"
                                 type="text"

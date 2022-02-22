@@ -47,8 +47,9 @@ export async function add_new_user_registration(
     const user_id = user.uid;
     const ref = doc(db, `registrations/${user_id}`);
     const user_doc = await getDoc(ref);
-    const _data = user_doc.data();
+    const _data = user_doc.exists() ? user_doc.data() : {};
     _data[event_code] = registration;
+    debugger;
     await setDoc(ref, _data);
 }
 
@@ -58,12 +59,23 @@ export async function verify_transaction(
     transaction_id: string,
 ) {
     // transaction_id is made up of user_id and event_code
-    const _throw = transaction_id.split('-')
-    const user_id = _throw[0];
-    const event_code = _throw[1];
+    const [user_id, event_code, _] = transaction_id.split('-')
+    //const user_id = _[0];
+    //const event_code = _[1];
     const ref = doc(db, `registrations/${user_id}`);
     const user_doc = await getDoc(ref);
     const _data = user_doc.data();
-    _data[event_code].transaction_status = 'successful';
+    _data[event_code].transaction_status = 'PAID';
     await setDoc(ref, _data);
+    const trans_ref = doc(db, `transactions/${user_id}-${event_code}`)
+    const __data = _data[event_code];
+    await setDoc(trans_ref, __data)
+}
+
+export function get_event_date(event_code) {
+    return '2022-04-02'
+}
+
+export function get_event_cost(event_code) {
+    return 150;
 }

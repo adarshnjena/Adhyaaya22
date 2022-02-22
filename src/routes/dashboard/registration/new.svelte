@@ -20,6 +20,12 @@
 
     // Cashfree Imports
     import { cashfreeSandbox } from 'cashfree-dropjs';
+    import { registrationDetails } from '$lib/types/registrationDetails';
+    import { sample_make_order } from '$lib/cashfree/sample';
+    import { get_user_details } from '$lib/firebase/userDetails';
+    import { getFirestore } from 'firebase/firestore/lite';
+    import { add_new_user_registration, get_event_cost } from '$lib/firebase/registrationDetails';
+import { get_order_id } from '$lib/cashfree/helpers';
     //use import { cashfreeProd } from 'cashfree-dropjs';
 
     let testCashfree = new cashfreeSandbox.Cashfree();
@@ -27,20 +33,8 @@
 
     let app;
     let auth;
-
-    const dropConfig = {
-        components: ['order-details', 'card', 'netbanking', 'app', 'upi'],
-        orderToken: 'your-order-token',
-        onSuccess: function (data) {
-            //on payment flow complete
-        },
-        onFailure: function (data) {
-            //on failure during payment initiation
-        },
-        style: {
-            theme: 'dark', //(or light)
-        },
-    };
+    let db;
+    let details
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
     onMount(async () => {
         try {
@@ -54,16 +48,102 @@
         dev ? console.log(app) : '';
         // Redirect Handler, used when the user is authenticated.
         auth = getAuth();
+        db = getFirestore();
+        is_payment_gateway_shown = false;
+        details = await get_user_details(app, $authStore.user, db);
+        dev ? console.log('Registration: details', details) : '';
+        input_registration_details['name'] =
+            details['profile']['first_name'] + ' ' + details['profile']['last_name'];
+        input_registration_details['email'] = details['profile']['email'];
+        input_registration_details['phone'] = details['profile']['mobile_number'];
+        input_registration_details['college'] =
+            details['profile']['address'] +
+            '|' +
+            details['profile']['locality'] +
+            '|' +
+            details['profile']['city'] +
+            '|' +
+            details['profile']['state'] +
+            '|' +
+            details['profile']['country'];
     });
 
-    function on_submit(event) {
-        console.log('Submit Button Clicked')
+    async function on_submit(event) {
+        console.log('Submit Button Clicked');
         if (error) {
             is_payment_gateway_shown = false;
             return;
         }
+        is_payment_gateway_shown = true;
+        // we need to generate a order token here
+        let order_details = {
+            order_id: get_order_id($authStore.user.uid, input_registration_details.event_code), // This is of the format userid-eventcode
+            order_amount: get_event_cost(input_registration_details.event_code), // Needs to confirm prices
+            order_currency: 'INR', // const
+            customer_details: {
+                customer_id: $authStore.user.uid, // Firebase User ID
+                customer_email: details['profile']['email'], // Adhyaaya Support Email
+                customer_phone: details['profile']['mobile_number'], // Check Phone number inside the dashboard
+            },
+        };
 
-        testCashfree.initialiseDropin();
+        dev ? console.log('order_details', order_details) : '';
+        const _order = await fetch('/auth/transactions/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(order_details),
+        });
+        const order = await _order.json();
+        // Recommended to store cf_order_id, order_token, order_status
+        const order_token = order['order_token'];
+
+        const dropConfig = {
+            components: ['order-details', 'card', 'netbanking', 'app', 'upi'],
+            orderToken: order_token,
+            onSuccess: async function (data) {
+                dev ? console.log('PGonSuccess', data) : '';
+                if (data.order && data.order.status == 'PAID') {
+                    //order is paid
+                    // We now generate a firebase db call to actually generate the registration here.
+                    const transform: registrationDetails = {
+                        name: input_registration_details['name'],
+                        email: input_registration_details['email'],
+                        phone: input_registration_details['phone'],
+                        college: input_registration_details['college'],
+                        registration_id: data.order.orderId,
+                        transaction_status: 'UNVERIFIED',
+                        event_code: input_registration_details['event_code'],
+                        course: input_registration_details['year_of_study'],
+                        team: input_registration_details['team_members'],
+                    };
+                    await add_new_user_registration(
+                        app,
+                        auth,
+                        db,
+                        input_registration_details.event_code,
+                        transform,
+                    );
+                    //verify order status by making an API call to your server
+                    // using data.order.orderId
+                    goto(`/auth/transactions/${data.order.orderId}/check_status`);
+                } else {
+                    //order is still active and payment has failed
+                    modal_show(
+                        'We can not process your payment at this time, please try again later.',
+                    );
+                }
+            },
+            onFailure: function (data) {
+                dev ? console.log('PGonFailure', data) : '';
+                modal_show(data.order.errorText);
+            },
+            style: {
+                theme: 'dark', //(or light)
+            },
+        };
+        testCashfree.initialiseDropin(document.getElementById('payment-gateway'), dropConfig);
     }
 
     let error;
@@ -76,6 +156,17 @@
         modal_message = message;
         is_modal_shown = true;
     }
+
+    let input_registration_details = {
+        name: '',
+        email: '',
+        phone: '',
+        college: '',
+        referral_code: '',
+        year_of_study: '',
+        event_code: '',
+        team_members: [],
+    };
 </script>
 
 <Protected />
@@ -84,8 +175,12 @@
         class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pt-0 tw-text-center"
     >
         <div class="main-block tw-pb-40 tw-text-left">
-            <div class="form {is_payment_gateway_shown ? 'tw-hidden' : ''}">
-                <form action="/">
+            <div class="form">
+                <div
+                    id="payment-gateway"
+                    class="{is_payment_gateway_shown ? '' : 'tw-hidden'} tw-w-full"
+                ></div>
+                <form action="/" class=" {is_payment_gateway_shown ? 'tw-hidden' : ''}">
                     <div class="title">
                         <i class="fas fa-pencil-alt"></i>
                         <h2>Registration Form</h2>
@@ -102,6 +197,7 @@
                                 class="fname tw-w-full"
                                 type="text"
                                 name="name"
+                                bind:value="{input_registration_details.name}"
                                 placeholder="Full name"
                             />
                         </div>
@@ -113,7 +209,12 @@
                                 width=""
                                 icon="{baselineAltEmail}"
                             />
-                            <input type="email" placeholder="Email" class="tw-w-full" />
+                            <input
+                                type="email"
+                                bind:value="{input_registration_details.email}"
+                                placeholder="Email"
+                                class="tw-w-full"
+                            />
                         </div>
 
                         <div class="input tw-inline-flex ">
@@ -126,6 +227,7 @@
                             <input
                                 type="tel"
                                 maxlength="10"
+                                bind:value="{input_registration_details.phone}"
                                 placeholder="Phone number"
                                 class="tw-w-full"
                             />
@@ -138,7 +240,12 @@
                                 width=""
                                 icon="{baselineSchool}"
                             />
-                            <input type="text" placeholder="Collage name" class="tw-w-full" />
+                            <input
+                                type="text"
+                                bind:value="{input_registration_details.college}"
+                                placeholder="Collage name"
+                                class="tw-w-full"
+                            />
                         </div>
 
                         <div class="input tw-inline-flex ">
@@ -148,7 +255,12 @@
                                 width=""
                                 icon="{baselineCode}"
                             />
-                            <input type="text" placeholder="Referal Code" class="tw-w-full" />
+                            <input
+                                type="text"
+                                bind:value="{input_registration_details.referral_code}"
+                                placeholder="Referal Code"
+                                class="tw-w-full"
+                            />
                         </div>
 
                         <div class="input tw-inline-flex ">
@@ -158,20 +270,25 @@
                                 width=""
                                 icon="{baselineCalendarViewDay}"
                             />
-                            <input type="text" placeholder="Year of Study" class="tw-w-full" />
+                            <input
+                                type="text"
+                                bind:value="{input_registration_details.year_of_study}"
+                                placeholder="Year of Study"
+                                class="tw-w-full"
+                            />
                         </div>
 
                         <!-- <i class='bx bxs-component'></i> -->
-                        <select>
+                        <select bind:value="{input_registration_details.event_code}">
                             <option value="" class="selected" selected disabled>
                                 Competition / Workshop
                             </option>
                             <option class="option_heading" value disabled>
                                 Non-technical Event
                             </option>
-                            <option value="">Born Psycos</option>
-                            <option value="">MUN AIPPM</option>
-                            <option value="">MUN UNHRC</option>
+                            <option value="BSY">Born Psycos</option>
+                            <option value="MUNA">MUN AIPPM</option>
+                            <option value="MUNU">MUN UNHRC</option>
                             <option value="">Respawn</option>
                             <option value="">Vad-Vivaad</option>
                             <option value="" disabled></option>
@@ -212,7 +329,6 @@
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
                 </div>
             </div>
-            <div id="payment-gateway" class="tw-hidden"></div>
         </div>
         <CAFooter />
     </section>

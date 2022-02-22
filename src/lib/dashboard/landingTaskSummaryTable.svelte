@@ -1,8 +1,9 @@
 <script lang="ts">
-    import type { taskDetails } from '$lib/types/taskDetails';
+    import type { registrationDetails } from '$lib/types/registrationDetails';
+
     import DashboardTaskItem from '$lib/taskview/landingDashboardTaskItem.svelte';
-    export let tasks: { [key: string]: taskDetails } = {};
-    export let profile_tasks;
+    export let registrations: { [key: string]: registrationDetails } = {};
+    //export let profile_tasks;
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import iconNew from '@iconify-icons/ic/baseline-new-label.js';
 </script>
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="tw-block tw-w-full tw-overflow-x-auto ">
-            <table class="tw-table tw-w-full tw-border-collapse tw-items-center tw-bg-transparent">
+            <table class=" tw-w-full tw-border-collapse tw-items-center tw-bg-transparent">
                 <thead>
                     <tr>
                         <th class="tw-bg-opacity-[75%] tw-backdrop-blur">Registration</th>
@@ -42,8 +43,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {#each Object.entries(tasks) as [task_id, task]}
-                        <DashboardTaskItem task="{task}" completed="{task_id in profile_tasks}" />
+                    {#each Object.entries(registrations) as [event_code, registration]}
+                        <DashboardTaskItem registration="{registration}" />
+                    {:else}
+                    
                     {/each}
                 </tbody>
                 <tfoot>

@@ -1,25 +1,35 @@
 <script lang="ts">
     import InfoBadge from '$lib/infoBadge.svelte';
-    import type { taskDetails } from '$lib/types/taskDetails';
+    import type { registrationDetails } from '$lib/types/registrationDetails';
+    import { get_event_date, event_name_mapping } from '$lib/firebase/registrationDetails';
     import WarningBadge from '$lib/warningBadge.svelte';
-    export let task: taskDetails;
-    export let completed = false;
+    export let registration: registrationDetails;
+    //export let completed = false;
+    /*
     let date = new Date(0);
-    date.setTime(task?.end_date * 1000);
+    date.setTime(registration?.end_date * 1000);
     let printable_date =
         date.toLocaleDateString('en-IN', { year: 'numeric', month: '2-digit', day: '2-digit' }) +
         ' ' +
         date.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false });
     console.log('completed', completed);
+    */
 </script>
-
+<a href="/dashboard/registration/{registration.registration_id}/view">
 <tr class="tw-hover tw-text-xs">
-    <th class="tw-bg-opacity-[75%] tw-backdrop-blur">{task.task_name}</th>
-    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">{printable_date}</td>
-    <td class="tw-bg-opacity-[75%] tw-backdrop-blur"><WarningBadge text="{'Not Completed'}" /></td>
+    <th class="tw-bg-opacity-[75%] tw-backdrop-blur">{event_name_mapping[registration.event_code]}</th>
+    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">{get_event_date(registration.event_code)}</td>
     <td class="tw-bg-opacity-[75%] tw-backdrop-blur">
-        <a class="tw-btn tw-btn-info tw-btn-sm" href="/dashboard/registration/{task.task_id}/view">
+        {#if registration.transaction_status === 'PAID'}
+            <InfoBadge text="{'Registered'}" />
+        {:else}
+            <WarningBadge text="{'Payment Failed'}" />
+        {/if}
+    </td>
+    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">
+        <span class="tw-btn tw-btn-info tw-btn-sm" >
             VIEW
-        </a>
+        </span>
     </td>
 </tr>
+</a>

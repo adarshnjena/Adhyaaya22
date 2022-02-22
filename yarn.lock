@@ -949,6 +949,11 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001286, caniuse-lite@^1.0.30001297:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001311.tgz#682ef3f4e617f1a177ad943de59775ed3032e511"
   integrity sha512-mleTFtFKfykEeW34EyfhGIFjGCqzhh38Y0LhdQ9aWF+HorZTtdgKV/1hEE0NlFkG2ubvisPV6l400tlbPys98A==
 
+cashfree-dropjs@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/cashfree-dropjs/-/cashfree-dropjs-1.1.4.tgz#b8837cdc457b079474a5a1295595ac1f0361d13f"
+  integrity sha512-fuVaYqQyjzH1h+w2Ojj/JbmxYA6zoRHTgnxY4Ccz8/gGatQ4KuPhGcTLlwjwCHBAx2RZEmBIBSHZpv2zJRDJpw==
+
 chalk@^2.0.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"

@@ -1,5 +1,5 @@
 <script>
-    import '../../app.scss';
+    import '../../../app.scss';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';
     import roundMenu from '@iconify-icons/ic/round-menu.js';

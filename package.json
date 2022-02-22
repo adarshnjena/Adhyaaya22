@@ -24,12 +24,15 @@
         "@typescript-eslint/eslint-plugin": "^5.10.1",
         "@typescript-eslint/parser": "^5.10.1",
         "autoprefixer": "^10.4.2",
+        "cashfree-dropjs": "^1.1.4",
         "cssnano": "^5.0.16",
         "daisyui": "^1.25.4",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-svelte3": "^3.2.1",
         "firebase": "^9.6.5",
+        "fullpage.js": "^3.1.2",
+        "gsap": "^3.9.1",
         "postcss": "^8.4.5",
         "postcss-font-magician": "^3.0.0",
         "postcss-load-config": "^3.1.1",
@@ -42,9 +45,7 @@
         "tailwind-scrollbar-hide": "^1.1.7",
         "tailwindcss": "^3.0.12",
         "tslib": "^2.3.1",
-        "typescript": "^4.4.3",
-        "fullpage.js": "^3.1.2",
-        "gsap": "^3.9.1"
+        "typescript": "^4.4.3"
     },
     "type": "module",
     "dependencies": {}

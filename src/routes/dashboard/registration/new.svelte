@@ -18,8 +18,29 @@
     import { getAuth } from 'firebase/auth';
     import { onMount } from 'svelte';
 
+    // Cashfree Imports
+    import { cashfreeSandbox } from 'cashfree-dropjs';
+    //use import { cashfreeProd } from 'cashfree-dropjs';
+
+    let testCashfree = new cashfreeSandbox.Cashfree();
+    //let prodCashfree = new cashfreeProd.Cashfree();
+
     let app;
     let auth;
+
+    const dropConfig = {
+        components: ['order-details', 'card', 'netbanking', 'app', 'upi'],
+        orderToken: 'your-order-token',
+        onSuccess: function (data) {
+            //on payment flow complete
+        },
+        onFailure: function (data) {
+            //on failure during payment initiation
+        },
+        style: {
+            theme: 'dark', //(or light)
+        },
+    };
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
     onMount(async () => {
         try {
@@ -35,6 +56,18 @@
         auth = getAuth();
     });
 
+    function on_submit(event) {
+        console.log('Submit Button Clicked')
+        if (error) {
+            is_payment_gateway_shown = false;
+            return;
+        }
+
+        testCashfree.initialiseDropin();
+    }
+
+    let error;
+    let is_payment_gateway_shown = true;
     // modal for errors and stuff;
     let is_modal_shown = false;
     let modal_message = '';
@@ -51,7 +84,7 @@
         class="tw-relative tw-h-full tw-min-h-screen tw-w-full tw-overflow-y-clip tw-pt-0 tw-text-center"
     >
         <div class="main-block tw-pb-40 tw-text-left">
-            <div class="form">
+            <div class="form {is_payment_gateway_shown ? 'tw-hidden' : ''}">
                 <form action="/">
                     <div class="title">
                         <i class="fas fa-pencil-alt"></i>
@@ -163,7 +196,14 @@
                         </select>
                     </div>
 
-                    <button class="submit" on:click|preventDefault="{() => {console.log('FormSubmitEvent')}}" type="submit" href="/">Submit</button>
+                    <button
+                        class="submit"
+                        on:click|preventDefault="{on_submit}"
+                        type="submit"
+                        href="/"
+                    >
+                        Submit
+                    </button>
                 </form>
                 <div class="note">
                     <p>* For faster and safer transactions, prefer UPI.</p>
@@ -172,6 +212,7 @@
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
                 </div>
             </div>
+            <div id="payment-gateway" class="tw-hidden"></div>
         </div>
         <CAFooter />
     </section>

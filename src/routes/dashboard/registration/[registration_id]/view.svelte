@@ -61,7 +61,7 @@ import { get_user_registrations } from '$lib/firebase/registrationDetails';
 
 <Protected />
 <div class="tw-flex tw-min-h-screen tw-justify-center">
-    <div class="tw-mx-auto tw-mt-[2.5rem] tw-w-full tw-px-2 md:tw-w-4/6 md:tw-px-16 lg:tw-w-3/6">
+    <div class="tw-mx-auto tw-mt-[2.5rem] tw-px-2 tw-w-3/4">
         <div class="tw-container tw-w-full">
             <div
                 class="tw-container tw-card-bordered tw-card tw-bg-base-100 tw-bg-opacity-[75%] tw-text-center tw-backdrop-blur"
@@ -72,7 +72,7 @@ import { get_user_registrations } from '$lib/firebase/registrationDetails';
                         <div class="tw-badge tw-badge-secondary tw-mx-2 tw-hidden">NEW</div>
                     </h2>
                     <span class="tw-mx-auto tw-text-justify">
-                        {registration}
+                        {JSON.stringify(registration)}
                     </span>
                 </div>
                 

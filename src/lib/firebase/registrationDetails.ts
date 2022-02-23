@@ -49,7 +49,6 @@ export async function add_new_user_registration(
     const user_doc = await getDoc(ref);
     const _data = user_doc.exists() ? user_doc.data() : {};
     _data[event_code] = registration;
-    debugger;
     await setDoc(ref, _data);
 }
 

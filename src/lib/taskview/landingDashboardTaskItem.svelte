@@ -15,21 +15,34 @@
     console.log('completed', completed);
     */
 </script>
-<a href="/dashboard/registration/{registration.registration_id}/view">
-<tr class="tw-hover tw-text-xs">
-    <th class="tw-bg-opacity-[75%] tw-backdrop-blur">{event_name_mapping[registration.event_code]}</th>
-    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">{get_event_date(registration.event_code)}</td>
-    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">
-        {#if registration.transaction_status === 'PAID'}
-            <InfoBadge text="{'Registered'}" />
-        {:else}
-            <WarningBadge text="{'Payment Failed'}" />
-        {/if}
+
+<tr>
+    <th
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-text-left tw-align-middle tw-text-xs "
+    >
+        {event_name_mapping[registration.event_code]}
+    </th>
+    <td
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
+    >
+        {get_event_date(registration.event_code)}
     </td>
-    <td class="tw-bg-opacity-[75%] tw-backdrop-blur">
-        <span class="tw-btn tw-btn-info tw-btn-sm" >
-            VIEW
-        </span>
+    <td
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
+    >
+        <div class="tw-flex tw-items-center">
+            <span class="tw-mr-2">
+                {#if registration.transaction_status === 'PAID'}
+                    <InfoBadge text="{'Registered'}" />
+                {:else}
+                    <WarningBadge text="{'Payment Failed'}" />
+                {/if}
+            </span>
+        </div>
+    </td>
+    <td
+        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs "
+    >
+        <a class="tw-btn tw-btn-primary tw-btn-sm" href="/dashboard/registration/{registration.registration_id}/view">VIEW</a>
     </td>
 </tr>
-</a>

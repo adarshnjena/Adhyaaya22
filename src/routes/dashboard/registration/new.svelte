@@ -178,7 +178,7 @@ import { get_order_id } from '$lib/cashfree/helpers';
             <div class="form">
                 <div
                     id="payment-gateway"
-                    class="{is_payment_gateway_shown ? '' : 'tw-hidden'} tw-w-full"
+                    class="{is_payment_gateway_shown ? '' : 'tw-hidden'} tw-w-full tw-opacity-100 tw-bg-opacity-100"
                 ></div>
                 <form action="/" class=" {is_payment_gateway_shown ? 'tw-hidden' : ''}">
                     <div class="title">

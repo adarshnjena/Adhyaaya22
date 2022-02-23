@@ -13,19 +13,14 @@
     import { getFirestore } from 'firebase/firestore/lite';
     import authStore from '$lib/auth/authStore';
     import { goto, prefetch } from '$app/navigation';
-    let task: taskDetails = {
-        task_id: '',
-        task_name: '',
-        task_details: '',
-        is_important: false,
-        end_date: 0,
-        requires_proof: false,
-    };
-    let task_id = $page.params['task_id'];
+    import type { registrationDetails } from '$lib/types/registrationDetails';
+import { get_user_registrations } from '$lib/firebase/registrationDetails';
+    let registration: registrationDetails;
+    const [user_id, event_code, timestamp] = $page.params['registration_id'].split('-');
     let app;
     let auth;
     let db;
-    let is_completed = false;
+    //let is_completed = false;
 
     // SUS function to fake the uploads
     function sleep(ms) {
@@ -44,38 +39,24 @@
         dev ? console.log(app) : '';
         auth = getAuth();
         db = getFirestore();
-        let _details = await get_user_details(app, $authStore.user, db);
-        task = await get_task_details(app, db, task_id);
-        is_completed = task_id in _details['tasks'];
+        
+        const registration_data = await get_user_registrations(app, auth, db)
+        registration = registration_data[event_code]
+        dev ? console.log('registration', registration) : '';
+
+        //let _details = await get_user_details(app, $authStore.user, db);
+        //task = await get_task_details(app, db, registration_id);
+        //is_completed = registration_id in _details['tasks'];
     });
 
     let files;
-    let is_uploading = false;
-    let button_text = task.requires_proof ? 'Upload' : 'MARK AS DONE';
-    let button_class = 'btn-secondary';
-    async function on_upload_click() {
-        is_uploading = true;
-        button_text = 'Uploading...';
-        button_class = '';
-        await update_user_task_details(app, $authStore.user, db, task_id);
-        await sleep(2000);
-        is_uploading = false;
-        button_text = '✓ Uploaded';
-        button_class = 'btn-success';
-        prefetch('/dashboard');
-        setTimeout(return_to_init_1, 3000);
-    }
-    async function return_to_init_1() {
-        is_uploading = false;
-        button_text = 'Upload';
-        button_class = 'btn-secondary';
-        //await sleep(500);
-        window.history.back();
-    }
+    //let is_uploading = false;
+    //let button_text = task.requires_proof ? 'Upload' : 'MARK AS DONE';
+    //let button_class = 'btn-secondary';
 </script>
 
 <svelte:head>
-    <title>Registration {$page.params['task_id']}</title>
+    <title>Registration {$page.params['registration_id']}</title>
 </svelte:head>
 
 <Protected />
@@ -87,54 +68,41 @@
             >
                 <div class="tw-card-body">
                     <h2 class="tw-card-title">
-                        {task.task_name}
+                        {registration}
                         <div class="tw-badge tw-badge-secondary tw-mx-2 tw-hidden">NEW</div>
                     </h2>
                     <span class="tw-mx-auto tw-text-justify">
-                        {task.task_details}
+                        {registration}
                     </span>
                 </div>
-                {#if is_completed}
+                
                     <button class="tw-btn-disabled tw-btn-xl tw-btn tw-uppercase">
                         YOU HAVE COMPLETED THIS TASK
                     </button>
-                {:else}
+                
                     <div class="tw-mx-auto tw-mb-16 tw-card-actions">
                         <label
                             for="file-input"
-                            class="tw-btn tw-btn-wide {task.requires_proof
-                                ? ''
-                                : 'tw-hidden'} {files && files[0] ? 'tw-btn-ghost' : ''}"
+                            class="tw-btn tw-btn-wide"
                         >
-                            {files && files[0] ? files[0].name : 'SELECT A FILE'}
-                            <input
+                            SELECT A FILE
+                            <span
                                 id="file-input"
                                 accept="image/avif,image/bmp,image/gif,image/jpeg,image/png,application/pdf,image/tiff,image/webp,image/heic,image/heif,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                                on:change="{() => {
-                                    is_uploading = false;
-                                }}"
-                                bind:files
                                 type="file"
                                 class="hidden"
                             />
                         </label>
                         <button
-                            disabled="{is_uploading}"
-                            on:click="{on_upload_click}"
-                            class="tw-btn tw-uppercase {task.requires_proof
-                                ? files && files[0]
-                                    ? ''
-                                    : 'tw-hidden'
-                                : ''} {is_uploading
-                                ? 'tw-loading tw-btn-disabled'
-                                : ''} {button_class}"
+                            class="tw-btn tw-uppercase"
                         >
-                            {button_text}
                         </button>
                     </div>
-                {/if}
+                
             </div>
         </div>
     </div>
-    <CAFooter />
+    
 </div>
+
+<CAFooter />

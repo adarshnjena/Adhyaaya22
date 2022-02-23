@@ -191,7 +191,7 @@
                                 class="tw-label tw-text-sm {mobile_error ? 'tw-text-error' : ''}"
                                 for="grid-mobile-number"
                             >
-                                {mobile_error ? mobile_error : 'Mobile Number'}
+                                {mobile_error ? mobile_error : 'WhatsApp + Mobile Number'}
                             </label>
                             <input
                                 id="grid-mobile-number"

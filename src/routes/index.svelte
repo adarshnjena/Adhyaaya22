@@ -76,7 +76,7 @@ import { goto } from '$app/navigation';
                 user: user,
                 firebaseControlled: true,
             });
-            !user.emailVerified ? sendEmailVerification(user) : '';
+            !user?.emailVerified ? sendEmailVerification(user) : '';
             // we wait for the dashboard to check and then init the data.
             //user ? init_profile_data(app, auth, getDatabase(app)) : '';
             //user ? goto('/dashboard') : '';
@@ -119,28 +119,28 @@ import { goto } from '$app/navigation';
             <img src="{src}" alt="Showcase" class="tw-min-h-screen tw-w-full" />
             <div class="text-container">
                 <div
-                    class="subtitle {frame_data[image_index]?.line_1[1] ||
+                    class="title {frame_data[image_index]?.line_1[1] ||
                         last_frame.line_1[1] ||
                         'invisible'}"
                 >
                     {frame_data[image_index]?.line_1[0] || last_frame.line_1[0] || ''}
                 </div>
                 <div
-                    class="title {frame_data[image_index]?.line_2[1] ||
+                    class="subtitle {frame_data[image_index]?.line_2[1] ||
                         last_frame.line_2[1] ||
                         'invisible'}"
                 >
                     {frame_data[image_index]?.line_2[0] || last_frame.line_2[0] || ''}
                 </div>
                 <div
-                    class="title {frame_data[image_index]?.line_3[1] ||
+                    class="subtitle {frame_data[image_index]?.line_3[1] ||
                         last_frame.line_3[1] ||
                         'invisible'}"
                 >
-                    {frame_data[image_index]?.line_3[0] || last_frame.line_3[0] || ''}
+                    {@html frame_data[image_index]?.line_3[0] || last_frame.line_3[0] || ''}
                 </div>
                 <div
-                    class="subtitle {frame_data[image_index]?.line_4[1] ||
+                    class="title {frame_data[image_index]?.line_4[1] ||
                         last_frame.line_4[1] ||
                         'invisible'}"
                 >
@@ -210,14 +210,19 @@ import { goto } from '$app/navigation';
         align-items: center;
         top: 0;
         color: white;
+        
+
         .subtitle {
             //opacity: 0;
-            font-size: 30px;
+            //font-size: 30px;
+            @apply tw-text-lg tw-text-justify
+            
         }
         .title {
             //opacity: 0;
             font-size: 80px;
-            margin: -20px 0;
+            @apply tw-text-right;
+            font-family: revampedregular;
         }
     }
     .custom-background {

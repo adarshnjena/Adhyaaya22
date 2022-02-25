@@ -25,7 +25,7 @@
     import { get_user_details } from '$lib/firebase/userDetails';
     import { getFirestore } from 'firebase/firestore/lite';
     import { add_new_user_registration, get_event_cost } from '$lib/firebase/registrationDetails';
-import { get_order_id } from '$lib/cashfree/helpers';
+    import { get_order_id } from '$lib/cashfree/helpers';
     //use import { cashfreeProd } from 'cashfree-dropjs';
 
     let testCashfree = new cashfreeSandbox.Cashfree();
@@ -75,10 +75,11 @@ import { get_order_id } from '$lib/cashfree/helpers';
             return;
         }
         is_payment_gateway_shown = true;
+        const order_amount = 0//get_event_cost(input_registration_details.event_code)
         // we need to generate a order token here
         let order_details = {
             order_id: get_order_id($authStore.user.uid, input_registration_details.event_code), // This is of the format userid-eventcode
-            order_amount: get_event_cost(input_registration_details.event_code), // Needs to confirm prices
+            order_amount: order_amount, // Needs to confirm prices
             order_currency: 'INR', // const
             customer_details: {
                 customer_id: $authStore.user.uid, // Firebase User ID
@@ -88,6 +89,7 @@ import { get_order_id } from '$lib/cashfree/helpers';
         };
 
         dev ? console.log('order_details', order_details) : '';
+        //order_amount == 0 ? 
         const _order = await fetch('/auth/transactions/create', {
             method: 'POST',
             headers: {
@@ -113,7 +115,7 @@ import { get_order_id } from '$lib/cashfree/helpers';
                         phone: input_registration_details['phone'],
                         college: input_registration_details['college'],
                         registration_id: data.order.orderId,
-                        transaction_status: 'UNVERIFIED',
+                        transaction_status: (order_amount == 0 ? 'PAID' : 'UNVERIFIED'),
                         event_code: input_registration_details['event_code'],
                         course: input_registration_details['year_of_study'],
                         team: input_registration_details['team_members'],
@@ -127,6 +129,7 @@ import { get_order_id } from '$lib/cashfree/helpers';
                     );
                     //verify order status by making an API call to your server
                     // using data.order.orderId
+                    
                     goto(`/auth/transactions/${data.order.orderId}/check_status`);
                 } else {
                     //order is still active and payment has failed
@@ -303,7 +306,7 @@ import { get_order_id } from '$lib/cashfree/helpers';
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>Workshop</option>
-                            <option value="">Learn.py</option>
+                            <option value="LPY">Learn.py</option>
                             <option value="">Cad-O-Shop</option>
                             <option value="">Stargaze</option>
                             <option value="">Drone Workshop</option>
@@ -373,7 +376,7 @@ import { get_order_id } from '$lib/cashfree/helpers';
     }
     .main-block {
         //padding: 50px 20px 20px 20px;
-        background: url('images/bg.png') no-repeat center;
+        //background: url('images/bg.png') no-repeat center;
         background-size: cover;
         background-position: center;
         height: 100%;
@@ -459,13 +462,15 @@ import { get_order_id } from '$lib/cashfree/helpers';
         backdrop-filter: blur(30px);
         border: none;
         padding: 450px;
-        margin-left: 50px;
+        //margin-left: 50px;
+        @apply tw-mx-auto
     }
     .option_heading {
         font-weight: bolder;
         font-size: 22px;
         color: #ff2592;
         margin-top: 50px;
+        @apply tw-mx-auto
     }
 
     .submit {

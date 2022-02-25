@@ -14,18 +14,13 @@
     import authStore from '$lib/auth/authStore';
     import { goto, prefetch } from '$app/navigation';
     import type { registrationDetails } from '$lib/types/registrationDetails';
-import { get_user_registrations } from '$lib/firebase/registrationDetails';
+    import { event_name_mapping, get_user_registrations } from '$lib/firebase/registrationDetails';
+    import RegistrationViewItem from '$lib/dashboard/RegistrationViewItem.svelte';
     let registration: registrationDetails;
     const [user_id, event_code, timestamp] = $page.params['registration_id'].split('-');
     let app;
     let auth;
     let db;
-    //let is_completed = false;
-
-    // SUS function to fake the uploads
-    function sleep(ms) {
-        return new Promise((resolve) => setTimeout(resolve, ms));
-    }
 
     onMount(async () => {
         try {
@@ -39,20 +34,16 @@ import { get_user_registrations } from '$lib/firebase/registrationDetails';
         dev ? console.log(app) : '';
         auth = getAuth();
         db = getFirestore();
-        
-        const registration_data = await get_user_registrations(app, auth, db)
-        registration = registration_data[event_code]
+
+        const registration_data = await get_user_registrations(app, auth, db);
+        registration = registration_data[event_code];
+        // @ts-ignore
+        registration = Object.keys(registration).sort().reduce((obj, key) => {
+            obj[key] = registration[key];
+            return obj;
+        }, {})
         dev ? console.log('registration', registration) : '';
-
-        //let _details = await get_user_details(app, $authStore.user, db);
-        //task = await get_task_details(app, db, registration_id);
-        //is_completed = registration_id in _details['tasks'];
     });
-
-    let files;
-    //let is_uploading = false;
-    //let button_text = task.requires_proof ? 'Upload' : 'MARK AS DONE';
-    //let button_class = 'btn-secondary';
 </script>
 
 <svelte:head>
@@ -61,48 +52,47 @@ import { get_user_registrations } from '$lib/firebase/registrationDetails';
 
 <Protected />
 <div class="tw-flex tw-min-h-screen tw-justify-center">
-    <div class="tw-mx-auto tw-mt-[2.5rem] tw-px-2 tw-w-3/4">
+    <div class="tw-mx-auto tw-mt-[2.5rem] tw-w-full tw-px-2 md:tw-w-3/4">
         <div class="tw-container tw-w-full">
             <div
                 class="tw-container tw-card-bordered tw-card tw-bg-base-100 tw-bg-opacity-[75%] tw-text-center tw-backdrop-blur"
             >
                 <div class="tw-card-body">
                     <h2 class="tw-card-title">
-                        {registration}
-                        <div class="tw-badge tw-badge-secondary tw-mx-2 tw-hidden">NEW</div>
+                        Thank You for registering for {event_name_mapping[registration?.event_code]}
+                        !
                     </h2>
-                    <span class="tw-mx-auto tw-text-justify">
-                        {JSON.stringify(registration)}
-                    </span>
+                    <span class="tw-mx-auto tw-mb-10">You may show this page as proof of registration.</span>
+                    <table class="tw-w-full tw-border-collapse tw-items-center tw-bg-transparent">
+                        <thead class="tw-thead-light">
+                            <tr>
+                                <th
+                                    class="tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
+                                >
+                                    Data Point
+                                </th>
+                                <th
+                                    class="tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
+                                >
+                                    Registered Value
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {#if registration}
+                                {#each Object.entries(registration) as [key, value]}
+                                    <RegistrationViewItem key="{key}" value="{value}" />
+                                {/each}
+                            {/if}
+                        </tbody>
+                    </table>
+                {#if registration?.transaction_status != 'PAID'}
+                     <a href="mailto:parapallidev@gmail.com" class="tw-btn tw-btn-primary tw-btn-block tw-mt-10">CONTACT SUPPORT</a>
+                {/if}
                 </div>
-                
-                    <button class="tw-btn-disabled tw-btn-xl tw-btn tw-uppercase">
-                        YOU HAVE COMPLETED THIS TASK
-                    </button>
-                
-                    <div class="tw-mx-auto tw-mb-16 tw-card-actions">
-                        <label
-                            for="file-input"
-                            class="tw-btn tw-btn-wide"
-                        >
-                            SELECT A FILE
-                            <span
-                                id="file-input"
-                                accept="image/avif,image/bmp,image/gif,image/jpeg,image/png,application/pdf,image/tiff,image/webp,image/heic,image/heif,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                                type="file"
-                                class="hidden"
-                            />
-                        </label>
-                        <button
-                            class="tw-btn tw-uppercase"
-                        >
-                        </button>
-                    </div>
-                
             </div>
         </div>
     </div>
-    
 </div>
 
 <CAFooter />

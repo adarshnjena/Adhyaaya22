@@ -16,7 +16,7 @@ for (var i = 0; i < 12; i++) {
 
   gsap.set(b, {
     attr: { id: "b" + i, class: "photoBox pb-col" + column },
-    backgroundImage: "url(./images/" + i + ".jpg)",
+    backgroundImage: "url(/gallery/images/" + i + ".jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     overflow: "hidden",
@@ -48,7 +48,7 @@ for (var i = 0; i < 12; i++) {
 
   gsap.set(b, {
     attr: { id: "b" + i, class: "photoBox pb-col" + column },
-    backgroundImage: "url(./images/" + i + ".jpg)",
+    backgroundImage: "url(/gallery/images/" + i + ".jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     overflow: "hidden",
@@ -80,7 +80,7 @@ for (var i = 0; i < 12; i++) {
 
   gsap.set(b, {
     attr: { id: "b" + i, class: "photoBox pb-col" + column },
-    backgroundImage: "url(./images/" + i + ".jpg)",
+    backgroundImage: "url(/gallery/images/" + i + ".jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     overflow: "hidden",
@@ -112,7 +112,7 @@ for (var i = 0; i < 12; i++) {
 
   gsap.set(b, {
     attr: { id: "b" + i, class: "photoBox pb-col" + column },
-    backgroundImage: "url(./images/" + i + ".jpg)",
+    backgroundImage: "url(/gallery/images/" + i + ".jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     overflow: "hidden",

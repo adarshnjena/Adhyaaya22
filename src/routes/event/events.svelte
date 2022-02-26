@@ -12,16 +12,16 @@
         //Page Scroll
 
         // @ts-ignore Defined using script tag
-        let _fullpage = new fullpage('#fullpage', {
-            sectionsColor: ['#000', '#000'],
-        });
+        //let _fullpage = new fullpage('#fullpage', {
+        //    sectionsColor: ['#000', '#000'],
+        //});
 
         //GSAP Code
         gsap.registerPlugin(MotionPathPlugin);
         let a = function () {
             gsap.set('.m1_stage', { x: '50vw', opacity: 1 });
         };
-        setTimeout(a, 2000);
+        a();
         gsap.timeline({ defaults: { duration: 45 } })
             .from('.main1', { duration: 1, autoAlpha: 0, ease: 'power1.inOut' }, 0)
             .fromTo('.m1_cGroup', { opacity: 0 }, { duration: 0.3, opacity: 1, stagger: -0.1 }, 0)

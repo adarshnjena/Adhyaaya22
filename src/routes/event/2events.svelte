@@ -8,11 +8,11 @@
 
 <svelte:window bind:scrollY />
 
-<!--This was a retarded attempt at trying to convert this code. I still have no exp with gsap+sveltekit check /event/_gallery to see the conversion. Why do they use zepto ?-->
+<!--This was a retarded attempt at trying to convert this code. Broken Click-->
 
 <iframe
-    src="/gallery/index.html"
+    src="/events/index.html"
     class="tw-h-screen tw-w-screen tw-overflow-clip"
-    title="Gallery Page, Uses external GSAP"
+    title="Events Page, Uses external GSAP"
     frameborder="0"
 ></iframe>

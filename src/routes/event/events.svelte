@@ -1,4 +1,5 @@
 <script context="module">
+    export const prerender = true;
 </script>
 
 <script lang="ts">
@@ -359,27 +360,268 @@
                 { rotation: '+= 75', yoyo: true, repeat: -1 },
                 'orbs',
             );
-        return () => {
-            // @ts-ignore Defined using script tag.
-            fullpage_api.destroy('all');
-        };
+        init();
+        //return () => {
+        //    // @ts-ignore Defined using script tag.
+        //    fullpage_api.destroy('all');
+        //};
     });
-    onDestroy(() => {
-        // @ts-ignore Defined using script tag.
-        fullpage_api.destroy('all');
-    });
+    //?Specific events onclick cover code
+    // listing vars here so they're in the global scope
+    var cards,
+        nCards,
+        cover,
+        openContent,
+        openContentText,
+        pageIsOpen = false,
+        openContentImage,
+        closeContent,
+        windowWidth,
+        windowHeight,
+        currentCard;
+
+    // initiate the process
+
+    function init() {
+        resize();
+        selectElements();
+        attachListeners();
+    }
+
+    // select all the elements in the DOM that are going to be used
+    function selectElements() {
+        (cards = document.getElementsByClassName('card')),
+            (nCards = cards.length),
+            (cover = document.getElementById('cover11')),
+            (openContent = document.getElementById('open-content')),
+            (openContentText = document.getElementById('open-content-text')),
+            (openContentImage = document.getElementById('open-content-image'));
+        closeContent = document.getElementById('close-content');
+    }
+
+    /* Attaching three event listeners here:
+  - a click event listener for each card
+  - a click event listener to the close button
+  - a resize event listener on the window
+*/
+    function attachListeners() {
+        for (var i = 0; i < nCards; i++) {
+            attachListenerToCard(i);
+        }
+        closeContent.addEventListener('click', onCloseClick);
+        window.addEventListener('resize', resize);
+    }
+
+    function attachListenerToCard(i) {
+        cards[i].addEventListener('click', function (e) {
+            var card = getCardElement(e.target);
+            onCardClick(card, i);
+        });
+    }
+
+    /* When a card is clicked */
+    function onCardClick(card, i) {
+        // set the current card
+        currentCard = card;
+        // add the 'clicked' class to the card, so it animates out
+        currentCard.className += ' clicked';
+        // animate the card 'cover' after a 500ms delay
+        setTimeout(function () {
+            animateCoverUp(currentCard);
+        }, 500);
+        // animate out the other cards
+        animateOtherCards(currentCard, true);
+        // add the open class to the page content
+        openContent.className += ' open';
+    }
+
+    /*
+     * This effect is created by taking a separate 'cover' div, placing
+     * it in the same position as the clicked card, and animating it to
+     * become the background of the opened 'page'.
+     * It looks like the card itself is animating in to the background,
+     * but doing it this way is more performant (because the cover div is
+     * absolutely positioned and has no children), and there's just less
+     * having to deal with z-index and other elements in the card
+     */
+    let scrollY;
+    function animateCoverUp(card: Element) {
+        // get the position of the clicked card
+        var cardPosition = card.getBoundingClientRect();
+        // get the style of the clicked card
+        var cardStyle = getComputedStyle(card);
+        setCoverPosition(cardPosition);
+        setCoverColor(cardStyle);
+        scaleCoverToFillWindow(cardPosition);
+        // update the content of the opened page
+        openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + paragraphText;
+        openContentImage.src = card.children[1].src;
+        setTimeout(function () {
+            // update the scroll position to 0 (so it is at the top of the 'opened' page)
+            scrollY = 0;
+            // set page to open
+            pageIsOpen = true;
+        }, 300);
+    }
+
+    function animateCoverBack(card) {
+        var cardPosition = card.getBoundingClientRect();
+        // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
+        setCoverPosition(cardPosition);
+        scaleCoverToFillWindow(cardPosition);
+        // animate scale back to the card size and position
+        cover.style.transform =
+            'scaleX(' + 1 + ') scaleY(' + 1 + ') translate3d(' + 0 + 'px, ' + 0 + 'px, 0px)';
+        setTimeout(function () {
+            // set content back to empty
+            openContentText.innerHTML = '';
+            openContentImage.src = '';
+            // style the cover to 0x0 so it is hidden
+            cover.style.width = '0px';
+            cover.style.height = '0px';
+            pageIsOpen = false;
+            // remove the clicked class so the card animates back in
+            currentCard.className = currentCard.className.replace(' clicked', '');
+        }, 301);
+    }
+
+    function setCoverPosition(cardPosition) {
+        // style the cover so it is in exactly the same position as the card
+        cover.style.left = cardPosition.left + 'px';
+        cover.style.top = cardPosition.top + 'px';
+        cover.style.width = cardPosition.width + 'px';
+        cover.style.height = cardPosition.height + 'px';
+    }
+
+    function setCoverColor(cardStyle) {
+        // style the cover to be the same color as the card
+        cover.style.backgroundColor = cardStyle.backgroundColor;
+    }
+
+    function scaleCoverToFillWindow(cardPosition) {
+        // calculate the scale and position for the card to fill the page,
+        var scaleX = windowWidth / cardPosition.width;
+        var scaleY = windowHeight / cardPosition.height;
+        var offsetX = (windowWidth / 2 - cardPosition.width / 2 - cardPosition.left) / scaleX;
+        var offsetY = (windowHeight / 2 - cardPosition.height / 2 - cardPosition.top) / scaleY;
+        // set the transform on the cover - it will animate because of the transition set on it in the CSS
+        cover.style.transform =
+            'scaleX(' +
+            scaleX +
+            ') scaleY(' +
+            scaleY +
+            ') translate3d(' +
+            offsetX +
+            'px, ' +
+            offsetY +
+            'px, 0px)';
+    }
+
+    /* When the close is clicked */
+    function onCloseClick() {
+        // remove the open class so the page content animates out
+        openContent.className = openContent.className.replace(' open', '');
+        // animate the cover back to the original position card and size
+        animateCoverBack(currentCard);
+        // animate in other cards
+        animateOtherCards(currentCard, false);
+    }
+
+    function animateOtherCards(card, out) {
+        var delay = 100;
+        for (var i = 0; i < nCards; i++) {
+            // animate cards on a stagger, 1 each 100ms
+            if (cards[i] === card) continue;
+            if (out) animateOutCard(cards[i], delay);
+            else animateInCard(cards[i], delay);
+            delay += 100;
+        }
+    }
+
+    // animations on individual cards (by adding/removing card names)
+    function animateOutCard(card, delay) {
+        setTimeout(function () {
+            card.className += ' out';
+        }, delay);
+    }
+
+    function animateInCard(card, delay) {
+        setTimeout(function () {
+            card.className = card.className.replace(' out', '');
+        }, delay);
+    }
+
+    // this function searches up the DOM tree until it reaches the card element that has been clicked
+    function getCardElement(el) {
+        if (el.className.indexOf('card ') > -1) return el;
+        else return getCardElement(el.parentElement);
+    }
+
+    // resize function - records the window width and height
+    function resize() {
+        if (pageIsOpen) {
+            // update position of cover
+            var cardPosition = currentCard.getBoundingClientRect();
+            setCoverPosition(cardPosition);
+            // scaleCoverToFillWindow(cardPosition);
+        }
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+    }
+
+    var paragraphText =
+        "<p>Somebody once told me the world is gonna roll me. I ain't the sharpest tool in the shed. She was looking kind of dumb with her finger and her thumb in the shape of an \"L\" on her forehead. Well the years start coming and they don't stop coming. Fed to the rules and I hit the ground running. Didn't make sense not to live for fun. Your brain gets smart but your head gets dumb. So much to do, so much to see. So what's wrong with taking the back streets? You'll never know if you don't go. You'll never shine if you don't glow.</p><p>Hey now, you're an all-star, get your game on, go play. Hey now, you're a rock star, get the show on, get paid. And all that glitters is gold. Only shooting stars break the mold.</p><p>It's a cool place and they say it gets colder. You're bundled up now, wait till you get older. But the meteor men beg to differ. Judging by the hole in the satellite picture. The ice we skate is getting pretty thin. The water's getting warm so you might as well swim. My world's on fire, how about yours? That's the way I like it and I never get bored.</p>";
+
+    //? On Card Navigation Open
+    function cardOpenEvent(i) {
+        cards[i].className += ' clicked';
+        setTimeout(function () {
+            animateCoverUp(cards[i]);
+        }, 500);
+        // animate out the other cards
+        animateOtherCards(cards[i], true);
+        // add the open class to the page content
+        openContent.className += ' open';
+        closeContent.addEventListener('click', function () {
+            openContent.className = openContent.className.replace(' open', '');
+            // animate the cover back to the original position card and size
+            var cardPosition = cards[i].getBoundingClientRect();
+            // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
+            setCoverPosition(cardPosition);
+            scaleCoverToFillWindow(cardPosition);
+            // animate scale back to the card size and position
+            cover.style.transform =
+                'scaleX(' + 1 + ') scaleY(' + 1 + ') translate3d(' + 0 + 'px, ' + 0 + 'px, 0px)';
+            setTimeout(function () {
+                // set content back to empty
+                openContentText.innerHTML = '';
+                openContentImage.src = '';
+                // style the cover to 0x0 so it is hidden
+                cover.style.width = '0px';
+                cover.style.height = '0px';
+                pageIsOpen = false;
+                // remove the clicked class so the card animates back in
+                cards[i].className = cards[i].className.replace(' clicked', '');
+            }, 4000000);
+
+            // animate in other cards
+            animateOtherCards(cards[i], false);
+        });
+    }
 </script>
+
+<svelte:window bind:scrollY />
 
 <svelte:head>
     <title>Event Page</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script
         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MotionPathPlugin.min.js"></script>
-    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
 </svelte:head>
 
-<div id="fullpage">
-    <div class="page section">
+<div id="well" class="well">
+    <!-- Page 1 -- Events Gallaxy -->
+    <div class="page">
         <svg class="main1" width="100%" height="100%">
             <!-- SVG CODE -->
             <defs>
@@ -411,21 +653,17 @@
                 <g class="m1_cGroup">
                     <!-- Respwan -->
                     <g class="m1OrbBlank">
-                        <a href="https://adhyaaya.org" alt="respwan">
+                        <a href="#technical_events" alt="respwan">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
-                            <image xlink:href="/events/respwan.png" width="95" height="95"></image>
+                            <image xlink:href="/img/respwan.png" width="95" height="95"></image>
                         </a>
                     </g>
 
                     <!-- CricBash -->
                     <g class="m1OrbBlank11">
-                        <a href="https://adhyaaya.org" alt="Cricbash">
+                        <a href="#technical_events" alt="Cricbash">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
-                            <image
-                                xlink:href="https://image.flaticon.com/icons/png/512/502/502195.png"
-                                width="65"
-                                height="65"
-                            ></image>
+                            <image xlink:href="/img/cricbash.png" width="65" height="65"></image>
                         </a>
                     </g>
 
@@ -442,8 +680,14 @@
                     <g class="m1Orb orb4b"></g>
 
                     <!-- Avishkar -->
-                    <g class="m1Orb orb4b">
-                        <a href="https://adhyaaya.org">
+                    <a href="#technical_events">
+                        <g
+                            class="m1Orb orb4b"
+                            on:click|preventDefault="{() => {
+                                cardOpenEvent(1);
+                            }}"
+                        >
+                            <!-- <a href="#technical_events"> -->
                             <circle
                                 cx="25"
                                 cy="6"
@@ -452,25 +696,26 @@
                                 stroke-width="3"
                                 fill="#cc971b"
                             ></circle>
-                        </a>
-                        <path
-                            fill="#fff"
-                            opacity="0.7"
-                            d="M 32.039 8.883 L 32.039 0 L 33.633 0 L 33.633 5.355 L 36.123 2.59 L 37.939 2.59 L 35.572 5.303 L 38.045 8.883 L 36.305 8.883 L 34.336 5.971 L 33.633 6.691 L 33.633 8.883 L 32.039 8.883 Z M 24.691 8.883 L 24.691 0.006 L 26.285 0.006 L 26.285 3.199 Q 26.438 2.955 26.783 2.778 A 2.471 2.471 0 0 1 27.044 2.663 A 3.28 3.28 0 0 1 27.932 2.468 A 3.914 3.914 0 0 1 28.254 2.455 A 2.74 2.74 0 0 1 28.832 2.513 Q 29.34 2.622 29.681 2.941 A 1.618 1.618 0 0 1 30.187 3.983 A 2.243 2.243 0 0 1 30.199 4.225 L 30.199 8.883 L 28.605 8.883 L 28.605 4.453 A 1.087 1.087 0 0 0 28.589 4.26 Q 28.554 4.065 28.441 3.946 A 0.842 0.842 0 0 0 28.062 3.717 A 1.011 1.011 0 0 0 28.031 3.709 A 1.958 1.958 0 0 0 27.533 3.645 A 1.689 1.689 0 0 0 26.986 3.738 A 1.911 1.911 0 0 0 26.959 3.747 A 1.284 1.284 0 0 0 26.63 3.919 A 1.145 1.145 0 0 0 26.479 4.052 A 0.691 0.691 0 0 0 26.287 4.498 A 0.914 0.914 0 0 0 26.285 4.559 L 26.285 8.883 L 24.691 8.883 Z M 1.816 8.883 L 0 8.883 L 2.848 0.234 L 5.156 0.234 L 8.039 8.883 L 6.193 8.883 L 5.713 7.236 L 2.314 7.236 L 1.816 8.883 Z M 18.551 8.525 L 18.873 7.441 Q 19.377 7.658 19.931 7.784 A 5.394 5.394 0 0 0 20.454 7.878 A 3.963 3.963 0 0 0 20.947 7.91 A 1.438 1.438 0 0 0 21.185 7.892 Q 21.312 7.87 21.413 7.824 A 0.624 0.624 0 0 0 21.592 7.702 A 0.688 0.688 0 0 0 21.78 7.353 A 1.024 1.024 0 0 0 21.803 7.131 Q 21.803 6.855 21.683 6.7 A 0.545 0.545 0 0 0 21.562 6.588 Q 21.448 6.508 21.27 6.451 L 19.887 6.018 A 2.762 2.762 0 0 1 19.472 5.852 Q 19.258 5.744 19.104 5.608 A 1.221 1.221 0 0 1 18.864 5.326 Q 18.586 4.869 18.586 4.236 A 2.021 2.021 0 0 1 18.654 3.694 A 1.398 1.398 0 0 1 19.222 2.895 Q 19.817 2.483 20.723 2.457 A 4.313 4.313 0 0 1 20.848 2.455 Q 21.656 2.455 22.219 2.625 A 6.6 6.6 0 0 1 22.579 2.745 Q 22.754 2.808 22.899 2.875 A 2.872 2.872 0 0 1 23.121 2.988 L 22.746 3.979 A 1.796 1.796 0 0 0 22.6 3.908 Q 22.457 3.845 22.266 3.785 Q 21.967 3.691 21.63 3.63 Q 21.293 3.568 20.994 3.568 A 2.266 2.266 0 0 0 20.762 3.579 Q 20.53 3.603 20.392 3.68 A 0.449 0.449 0 0 0 20.303 3.744 A 0.578 0.578 0 0 0 20.132 4.058 A 0.856 0.856 0 0 0 20.115 4.23 A 0.715 0.715 0 0 0 20.139 4.42 A 0.591 0.591 0 0 0 20.209 4.579 A 0.438 0.438 0 0 0 20.329 4.703 Q 20.384 4.742 20.457 4.773 A 0.974 0.974 0 0 0 20.543 4.805 L 21.844 5.215 A 3.322 3.322 0 0 1 22.284 5.387 Q 22.735 5.604 22.951 5.918 A 1.643 1.643 0 0 1 23.182 6.432 Q 23.24 6.653 23.256 6.913 A 3.246 3.246 0 0 1 23.262 7.107 A 1.831 1.831 0 0 1 22.717 8.443 A 2.195 2.195 0 0 1 22.699 8.461 A 1.756 1.756 0 0 1 22.021 8.87 Q 21.744 8.964 21.405 8.998 A 3.996 3.996 0 0 1 21.006 9.018 A 8.946 8.946 0 0 1 20.394 8.998 Q 20.091 8.977 19.827 8.934 A 4.763 4.763 0 0 1 19.626 8.897 A 4.304 4.304 0 0 1 18.747 8.619 A 3.9 3.9 0 0 1 18.551 8.525 Z M 40.453 4.4 L 40.453 4.646 L 38.959 4.646 L 38.959 4.459 A 2.218 2.218 0 0 1 39.052 3.801 A 1.751 1.751 0 0 1 39.568 3 A 1.853 1.853 0 0 1 40.176 2.647 Q 40.455 2.545 40.802 2.497 A 4.881 4.881 0 0 1 41.467 2.455 A 5.533 5.533 0 0 1 42.018 2.481 Q 42.3 2.509 42.536 2.569 A 2.269 2.269 0 0 1 42.961 2.719 A 1.892 1.892 0 0 1 43.396 3.001 A 1.509 1.509 0 0 1 43.752 3.46 Q 43.992 3.938 43.992 4.588 L 43.992 7.078 Q 43.992 7.487 44.091 7.626 A 0.228 0.228 0 0 0 44.101 7.638 Q 44.202 7.762 44.468 7.769 A 1.23 1.23 0 0 0 44.502 7.77 L 44.438 8.93 L 44.104 8.93 Q 43.447 8.93 43.084 8.748 A 1.117 1.117 0 0 1 42.551 8.186 A 1.629 1.629 0 0 1 42.261 8.478 Q 42.116 8.593 41.931 8.696 A 3.145 3.145 0 0 1 41.792 8.769 A 2.356 2.356 0 0 1 41.163 8.97 A 3.243 3.243 0 0 1 40.594 9.018 A 2.28 2.28 0 0 1 40.008 8.946 A 1.698 1.698 0 0 1 39.278 8.549 A 1.554 1.554 0 0 1 38.786 7.559 A 2.171 2.171 0 0 1 38.771 7.301 A 1.861 1.861 0 0 1 38.822 6.859 A 1.523 1.523 0 0 1 38.953 6.51 A 1.277 1.277 0 0 1 39.16 6.227 Q 39.337 6.039 39.615 5.868 A 3.648 3.648 0 0 1 39.956 5.685 Q 40.348 5.498 40.911 5.317 A 12.39 12.39 0 0 1 40.992 5.291 A 11.43 11.43 0 0 0 41.374 5.162 Q 41.823 5.001 42.073 4.857 Q 42.422 4.658 42.422 4.33 A 1.024 1.024 0 0 0 42.4 4.111 Q 42.368 3.967 42.292 3.862 A 0.578 0.578 0 0 0 42.196 3.759 A 0.647 0.647 0 0 0 42.004 3.65 Q 41.785 3.568 41.432 3.568 Q 40.834 3.568 40.644 3.803 A 0.833 0.833 0 0 0 40.474 4.173 A 1.172 1.172 0 0 0 40.453 4.4 Z M 10.852 8.883 L 8.613 2.59 L 10.201 2.59 L 11.695 7.324 L 13.172 2.59 L 14.678 2.59 L 12.545 8.883 L 10.852 8.883 Z M 45.932 8.883 L 45.932 2.59 L 47.525 2.59 L 47.525 3.34 Q 47.636 3.146 47.88 2.986 A 1.897 1.897 0 0 1 48.021 2.903 A 3.046 3.046 0 0 1 48.491 2.702 A 3.861 3.861 0 0 1 48.832 2.604 Q 49.289 2.496 49.746 2.496 L 49.711 3.85 Q 49.406 3.867 49.049 3.926 A 5.444 5.444 0 0 0 48.36 4.084 Q 48.058 4.175 47.842 4.305 A 1.602 1.602 0 0 0 47.801 4.33 A 0.889 0.889 0 0 0 47.676 4.426 Q 47.558 4.535 47.525 4.664 L 47.525 8.883 L 45.932 8.883 Z M 15.604 8.883 L 15.604 2.59 L 17.191 2.59 L 17.191 8.883 L 15.604 8.883 Z M 4.043 1.535 L 2.725 5.889 L 5.314 5.889 L 4.043 1.535 Z M 42.422 7.289 L 42.422 5.695 A 1.192 1.192 0 0 1 42.311 5.774 Q 42.161 5.87 41.918 5.979 A 10.927 10.927 0 0 1 41.418 6.189 A 12.944 12.944 0 0 1 41.174 6.281 Q 40.754 6.437 40.566 6.619 A 0.624 0.624 0 0 0 40.488 6.709 A 0.898 0.898 0 0 0 40.347 7.016 A 0.842 0.842 0 0 0 40.324 7.213 Q 40.324 7.594 40.547 7.775 A 0.78 0.78 0 0 0 40.868 7.929 Q 40.987 7.957 41.127 7.957 A 1.299 1.299 0 0 0 41.379 7.93 Q 41.5 7.906 41.635 7.861 A 2.817 2.817 0 0 0 41.813 7.793 A 1.337 1.337 0 0 0 42.252 7.502 A 1.274 1.274 0 0 0 42.422 7.289 Z M 15.592 1.559 L 15.592 0.006 L 17.197 0.006 L 17.197 1.559 L 15.592 1.559 Z"
-                            vector-effect="non-scaling-stroke"
-                        ></path>
-                    </g>
+                            <!-- </a> -->
+                            <path
+                                fill="#fff"
+                                opacity="0.7"
+                                d="M 32.039 8.883 L 32.039 0 L 33.633 0 L 33.633 5.355 L 36.123 2.59 L 37.939 2.59 L 35.572 5.303 L 38.045 8.883 L 36.305 8.883 L 34.336 5.971 L 33.633 6.691 L 33.633 8.883 L 32.039 8.883 Z M 24.691 8.883 L 24.691 0.006 L 26.285 0.006 L 26.285 3.199 Q 26.438 2.955 26.783 2.778 A 2.471 2.471 0 0 1 27.044 2.663 A 3.28 3.28 0 0 1 27.932 2.468 A 3.914 3.914 0 0 1 28.254 2.455 A 2.74 2.74 0 0 1 28.832 2.513 Q 29.34 2.622 29.681 2.941 A 1.618 1.618 0 0 1 30.187 3.983 A 2.243 2.243 0 0 1 30.199 4.225 L 30.199 8.883 L 28.605 8.883 L 28.605 4.453 A 1.087 1.087 0 0 0 28.589 4.26 Q 28.554 4.065 28.441 3.946 A 0.842 0.842 0 0 0 28.062 3.717 A 1.011 1.011 0 0 0 28.031 3.709 A 1.958 1.958 0 0 0 27.533 3.645 A 1.689 1.689 0 0 0 26.986 3.738 A 1.911 1.911 0 0 0 26.959 3.747 A 1.284 1.284 0 0 0 26.63 3.919 A 1.145 1.145 0 0 0 26.479 4.052 A 0.691 0.691 0 0 0 26.287 4.498 A 0.914 0.914 0 0 0 26.285 4.559 L 26.285 8.883 L 24.691 8.883 Z M 1.816 8.883 L 0 8.883 L 2.848 0.234 L 5.156 0.234 L 8.039 8.883 L 6.193 8.883 L 5.713 7.236 L 2.314 7.236 L 1.816 8.883 Z M 18.551 8.525 L 18.873 7.441 Q 19.377 7.658 19.931 7.784 A 5.394 5.394 0 0 0 20.454 7.878 A 3.963 3.963 0 0 0 20.947 7.91 A 1.438 1.438 0 0 0 21.185 7.892 Q 21.312 7.87 21.413 7.824 A 0.624 0.624 0 0 0 21.592 7.702 A 0.688 0.688 0 0 0 21.78 7.353 A 1.024 1.024 0 0 0 21.803 7.131 Q 21.803 6.855 21.683 6.7 A 0.545 0.545 0 0 0 21.562 6.588 Q 21.448 6.508 21.27 6.451 L 19.887 6.018 A 2.762 2.762 0 0 1 19.472 5.852 Q 19.258 5.744 19.104 5.608 A 1.221 1.221 0 0 1 18.864 5.326 Q 18.586 4.869 18.586 4.236 A 2.021 2.021 0 0 1 18.654 3.694 A 1.398 1.398 0 0 1 19.222 2.895 Q 19.817 2.483 20.723 2.457 A 4.313 4.313 0 0 1 20.848 2.455 Q 21.656 2.455 22.219 2.625 A 6.6 6.6 0 0 1 22.579 2.745 Q 22.754 2.808 22.899 2.875 A 2.872 2.872 0 0 1 23.121 2.988 L 22.746 3.979 A 1.796 1.796 0 0 0 22.6 3.908 Q 22.457 3.845 22.266 3.785 Q 21.967 3.691 21.63 3.63 Q 21.293 3.568 20.994 3.568 A 2.266 2.266 0 0 0 20.762 3.579 Q 20.53 3.603 20.392 3.68 A 0.449 0.449 0 0 0 20.303 3.744 A 0.578 0.578 0 0 0 20.132 4.058 A 0.856 0.856 0 0 0 20.115 4.23 A 0.715 0.715 0 0 0 20.139 4.42 A 0.591 0.591 0 0 0 20.209 4.579 A 0.438 0.438 0 0 0 20.329 4.703 Q 20.384 4.742 20.457 4.773 A 0.974 0.974 0 0 0 20.543 4.805 L 21.844 5.215 A 3.322 3.322 0 0 1 22.284 5.387 Q 22.735 5.604 22.951 5.918 A 1.643 1.643 0 0 1 23.182 6.432 Q 23.24 6.653 23.256 6.913 A 3.246 3.246 0 0 1 23.262 7.107 A 1.831 1.831 0 0 1 22.717 8.443 A 2.195 2.195 0 0 1 22.699 8.461 A 1.756 1.756 0 0 1 22.021 8.87 Q 21.744 8.964 21.405 8.998 A 3.996 3.996 0 0 1 21.006 9.018 A 8.946 8.946 0 0 1 20.394 8.998 Q 20.091 8.977 19.827 8.934 A 4.763 4.763 0 0 1 19.626 8.897 A 4.304 4.304 0 0 1 18.747 8.619 A 3.9 3.9 0 0 1 18.551 8.525 Z M 40.453 4.4 L 40.453 4.646 L 38.959 4.646 L 38.959 4.459 A 2.218 2.218 0 0 1 39.052 3.801 A 1.751 1.751 0 0 1 39.568 3 A 1.853 1.853 0 0 1 40.176 2.647 Q 40.455 2.545 40.802 2.497 A 4.881 4.881 0 0 1 41.467 2.455 A 5.533 5.533 0 0 1 42.018 2.481 Q 42.3 2.509 42.536 2.569 A 2.269 2.269 0 0 1 42.961 2.719 A 1.892 1.892 0 0 1 43.396 3.001 A 1.509 1.509 0 0 1 43.752 3.46 Q 43.992 3.938 43.992 4.588 L 43.992 7.078 Q 43.992 7.487 44.091 7.626 A 0.228 0.228 0 0 0 44.101 7.638 Q 44.202 7.762 44.468 7.769 A 1.23 1.23 0 0 0 44.502 7.77 L 44.438 8.93 L 44.104 8.93 Q 43.447 8.93 43.084 8.748 A 1.117 1.117 0 0 1 42.551 8.186 A 1.629 1.629 0 0 1 42.261 8.478 Q 42.116 8.593 41.931 8.696 A 3.145 3.145 0 0 1 41.792 8.769 A 2.356 2.356 0 0 1 41.163 8.97 A 3.243 3.243 0 0 1 40.594 9.018 A 2.28 2.28 0 0 1 40.008 8.946 A 1.698 1.698 0 0 1 39.278 8.549 A 1.554 1.554 0 0 1 38.786 7.559 A 2.171 2.171 0 0 1 38.771 7.301 A 1.861 1.861 0 0 1 38.822 6.859 A 1.523 1.523 0 0 1 38.953 6.51 A 1.277 1.277 0 0 1 39.16 6.227 Q 39.337 6.039 39.615 5.868 A 3.648 3.648 0 0 1 39.956 5.685 Q 40.348 5.498 40.911 5.317 A 12.39 12.39 0 0 1 40.992 5.291 A 11.43 11.43 0 0 0 41.374 5.162 Q 41.823 5.001 42.073 4.857 Q 42.422 4.658 42.422 4.33 A 1.024 1.024 0 0 0 42.4 4.111 Q 42.368 3.967 42.292 3.862 A 0.578 0.578 0 0 0 42.196 3.759 A 0.647 0.647 0 0 0 42.004 3.65 Q 41.785 3.568 41.432 3.568 Q 40.834 3.568 40.644 3.803 A 0.833 0.833 0 0 0 40.474 4.173 A 1.172 1.172 0 0 0 40.453 4.4 Z M 10.852 8.883 L 8.613 2.59 L 10.201 2.59 L 11.695 7.324 L 13.172 2.59 L 14.678 2.59 L 12.545 8.883 L 10.852 8.883 Z M 45.932 8.883 L 45.932 2.59 L 47.525 2.59 L 47.525 3.34 Q 47.636 3.146 47.88 2.986 A 1.897 1.897 0 0 1 48.021 2.903 A 3.046 3.046 0 0 1 48.491 2.702 A 3.861 3.861 0 0 1 48.832 2.604 Q 49.289 2.496 49.746 2.496 L 49.711 3.85 Q 49.406 3.867 49.049 3.926 A 5.444 5.444 0 0 0 48.36 4.084 Q 48.058 4.175 47.842 4.305 A 1.602 1.602 0 0 0 47.801 4.33 A 0.889 0.889 0 0 0 47.676 4.426 Q 47.558 4.535 47.525 4.664 L 47.525 8.883 L 45.932 8.883 Z M 15.604 8.883 L 15.604 2.59 L 17.191 2.59 L 17.191 8.883 L 15.604 8.883 Z M 4.043 1.535 L 2.725 5.889 L 5.314 5.889 L 4.043 1.535 Z M 42.422 7.289 L 42.422 5.695 A 1.192 1.192 0 0 1 42.311 5.774 Q 42.161 5.87 41.918 5.979 A 10.927 10.927 0 0 1 41.418 6.189 A 12.944 12.944 0 0 1 41.174 6.281 Q 40.754 6.437 40.566 6.619 A 0.624 0.624 0 0 0 40.488 6.709 A 0.898 0.898 0 0 0 40.347 7.016 A 0.842 0.842 0 0 0 40.324 7.213 Q 40.324 7.594 40.547 7.775 A 0.78 0.78 0 0 0 40.868 7.929 Q 40.987 7.957 41.127 7.957 A 1.299 1.299 0 0 0 41.379 7.93 Q 41.5 7.906 41.635 7.861 A 2.817 2.817 0 0 0 41.813 7.793 A 1.337 1.337 0 0 0 42.252 7.502 A 1.274 1.274 0 0 0 42.422 7.289 Z M 15.592 1.559 L 15.592 0.006 L 17.197 0.006 L 17.197 1.559 L 15.592 1.559 Z"
+                                vector-effect="non-scaling-stroke"
+                            ></path>
+                        </g>
+                    </a>
 
                     <!-- COMSA Webinar -->
                     <g class="m1Orb orb41">
-                        <a href="https://adhyaaya.org" alt="Comsa Webinar">
-                            <image xlink:href="/events/comsa.png" width="45" height="45"></image>
+                        <a href="#technical_events" alt="Comsa Webinar">
+                            <image xlink:href="/img/comsa.png" width="45" height="45"></image>
                         </a>
                     </g>
 
                     <!-- MUN -->
                     <g class="m1Orb orb4">
-                        <a href="https://adhyaaya.org">
+                        <a href="#technical_events">
                             <circle cx="13.5" cy="5" r="20" fill="#006bca"></circle>
                         </a>
                         <path
@@ -482,9 +727,14 @@
                     </g>
                 </g>
                 <g class="m1_cGroup">
-                    <!-- Caddication -->
-                    <g class="m1OrbBlank">
-                        <a href="https://adhyaaya.org" alt="caddiction">
+                    <!-- Caddiction -->
+                    <g
+                        class="m1OrbBlank"
+                        on:click|preventDefault="{() => {
+                            cardOpenEvent(1);
+                        }}"
+                    >
+                        <a href="#technical_events" alt="caddiction">
                             <circle cx="22" cy="23" r="26" fill="#fff"></circle>
                             <image
                                 xlink:href="https://cdn.iconscout.com/icon/premium/png-256-thumb/settings-587-766948.png"
@@ -506,18 +756,14 @@
 
                     <!-- Trishakti Event -->
                     <g class="m1Orb orb3c">
-                        <a href="https://adhyaaya.org">
-                            <image
-                                xlink:href="/events/trishakti.png"
-                                width="65"
-                                height="65"
-                            ></image>
+                        <a href="#technical_events">
+                            <image xlink:href="/img/trishakti.png" width="65" height="65"></image>
                         </a>
                     </g>
 
                     <!-- Canva Event -->
                     <g class="m1Orb orb3b">
-                        <a href="https://adhyaaya.org" alt="Canva Workshop">
+                        <a href="#technical_events" alt="Canva Workshop">
                             <image
                                 xlink:href="https://pnggrid.com/wp-content/uploads/2021/05/Canva-Logo-Transparent-1024x1024.png"
                                 width="40"
@@ -528,7 +774,7 @@
 
                     <!-- Vaad - Vivad -->
                     <g class="m1Orb orb31">
-                        <a href="https://adhyaaya.org" alt="Vaad-Vivad">
+                        <a href="#technical_events" alt="Vaad-Vivad">
                             <circle
                                 cx="19"
                                 cy="20"
@@ -538,7 +784,7 @@
                                 stroke="#4eab2b"
                             ></circle>
                             <image
-                                xlink:href="/events/Vaad - Vivad.png"
+                                xlink:href="/img/Vaad - Vivad.png"
                                 width="40"
                                 height="40"
                             ></image>
@@ -547,7 +793,7 @@
 
                     <!-- Born-Pyschos -->
                     <g class="m1Orb orb3">
-                        <a href="https://adhyaaya.org" alt="Born-Psychos">
+                        <a href="#technical_events" alt="Born-Psychos">
                             <circle
                                 cx="23"
                                 cy="24"
@@ -557,7 +803,7 @@
                                 stroke="#b9393a"
                             ></circle>
                             <image
-                                xlink:href="/events/born_psychos.png"
+                                xlink:href="/img/born_psychos.png"
                                 width="45"
                                 height="45"
                             ></image>
@@ -567,9 +813,9 @@
                 <g class="m1_cGroup">
                     <!-- Foodoholic -->
                     <g class="m1OrbBlank">
-                        <a href="https://adhyaaya.org" alt="Foodoholic">
+                        <a href="#technical_events" alt="Foodoholic">
                             <circle cx="-10" cy="30" r="0" fill="#653997"></circle>
-                            <image xlink:href="/events/salad.png" width="40" height="40"></image>
+                            <image xlink:href="/img/salad.png" width="40" height="40"></image>
                         </a>
                     </g>
                     <circle
@@ -585,7 +831,7 @@
 
                     <!-- Virtual Placement -->
                     <g class="m1Orb orb21">
-                        <a href="https://adhyaaya.org" alt="Virtual Placement">
+                        <a href="#technical_events" alt="Virtual Placement">
                             <circle
                                 cx="25"
                                 cy="6"
@@ -606,7 +852,7 @@
 
                     <!-- CadoShop -->
                     <g class="m1Orb orb2">
-                        <a href="https://adhyaaya.org" alt="CadoShop">
+                        <a href="#technical_events" alt="CadoShop">
                             <circle
                                 cx="18.5"
                                 cy="5"
@@ -654,14 +900,15 @@
                     ></circle>
 
                     <!-- Codeventure -->
-                    <g class="m1Orb orb11">
-                        <a href="https://adhyaaya.org" alt="codeventure">
+                    <g
+                        class="m1Orb orb11"
+                        on:click|preventDefault="{() => {
+                            cardOpenEvent(2);
+                        }}"
+                    >
+                        <a href="#technical_events" alt="codeventure">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
-                            <image
-                                xlink:href="/events/Codeventure.png"
-                                width="45"
-                                height="45"
-                            ></image>
+                            <image xlink:href="/img/Codeventure.png" width="45" height="45"></image>
                         </a>
                     </g>
 
@@ -687,8 +934,13 @@
                                              c0-0.42,0.01-0.74,0.03-0.97h-0.77c-0.35,0-0.61-0.07-0.77-0.2s-0.24-0.37-0.24-0.69C20.86,6.96,20.91,6.67,21.01,6.4z"
             />
           </g> -->
-                    <g class="m1Orb orb1">
-                        <a href="https://adhyaaya.org" alt="Stargaze">
+                    <g
+                        class="m1Orb orb1"
+                        on:click|preventDefault="{() => {
+                            cardOpenEvent(3);
+                        }}"
+                    >
+                        <a href="#technical_events" alt="Stargaze">
                             <circle cx="18" cy="18" r="20" fill="none" stroke="#653997"></circle>
                             <image
                                 xlink:href="https://freedesignfile.com/upload/2017/08/telescope-icon-vector.png"
@@ -731,12 +983,7 @@
                         opacity="0.6"
                     ></circle>
                     <a href="https://adhyaaya.org">
-                        <image
-                            x="-60"
-                            xlink:href="/events/logo.png"
-                            width="120"
-                            height="120"
-                        ></image>
+                        <image x="-60" xlink:href="/img/logo.png" width="120" height="120"></image>
                     </a>
                 </g>
             </g>
@@ -744,9 +991,10 @@
         <p class="scroll_down">Scroll Down!!</p>
     </div>
 
+    <!-- Page 2 -- All Events -->
     <div class="page section">
-        <svg class="main1" width="100%" height="100%">
-            <!-- SVG CODE -->
+        <!-- SVG CODE for background -->
+        <svg class="main2" width="100%" height="100%">
             <defs>
                 <linearGradient id="grad1" x1="50%" y1="0%" x2="50%" y2="100%">
                     <stop
@@ -769,19 +1017,360 @@
                     ></stop>
                 </linearGradient>
             </defs>
-
             <rect class="m1Bg" fill="url(#grad2)" width="100%" height="100%"></rect>
         </svg>
+
+        <div class="eventscards">
+            <div class="title1">
+                <h1 class="main_heading">Events</h1>
+            </div>
+            <div class="addon">
+                <img src="/img/non tech2.png" class="addonimg" alt="" />
+                <img src="/img/tech2.png" class="addonimg" alt="" />
+                <img src="/img/workshop_.png" class="addonimg" alt="" />
+            </div>
+            <div class="cardss">
+                <div class="card1" id="card1">
+                    <img src="/img/nontech.png" alt="" />
+                    <h3 class="cards_heads">Non-Technical Events</h3>
+                    <p class="card_para">
+                        The events which will make your adrenaline rush, the event that only
+                        sharpest can survive, the events which will bring the leaders in you.
+                    </p>
+                    <a class="registration_page" href="#non_technical_events">Go to Events</a>
+                </div>
+
+                <div class="card2" id="card2">
+                    <img
+                        src="https://lh3.googleusercontent.com/pw/AM-JKLW70PLLMPgwgq4-n1yLmM37c64cmYsWKuV5Do_2Wi8Es9Wz8C6EH618mCLkkaF40FrVRhi0RsxdFWFxTGNoNxMNXL-_B5TAe-GvfiRz9pdmnxflfO_nTBDZfxXbJ62nYIcd3HIie3y08Fip2CYwrznugg=s795-no?authuser=0"
+                        alt=""
+                    />
+                    <h3 class="cards_heads">Technical Events</h3>
+                    <p class="card_para">
+                        Explore the potentials of future technocrats through its national-level tech
+                        events.
+                    </p>
+                    <a class="registration_page" href="#technical_events">Go to Events</a>
+                </div>
+
+                <div class="card3" id="card3">
+                    <img
+                        src="https://lh3.googleusercontent.com/pw/AM-JKLWQOeh4ZxjlD1mIcWjxEfn9GYNCqoWgwcLzm1DuEWKkTi9B-rpz0lLKPZDJ4d9ds3V60lLXIZ2c0mLnLcJ0C_AeZ0TE94KLxKtZ2ilRQlfv4BltZIXuLHYjJYlXQcgU4Vr4vqi6HShHoCAwV0FnYMIUoA=w1193-h795-no?authuser=0"
+                        alt=""
+                    />
+                    <h3 class="cards_heads">Workshops</h3>
+                    <p class="card_para">
+                        Acquire essential skills that will actually add value to your career.
+                    </p>
+                    <a class="registration_page" href="#workshops">Go to Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 -- Technical Events -->
+    <div class="page section" id="technical_events">
+        <!-- SVG CODE for background -->
+        <svg class="main2" width="100%" height="100%">
+            <defs>
+                <linearGradient id="grad1" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop
+                        offset="10%"
+                        style="stop-color: rgb(255, 0, 221); stop-opacity: 0.9"
+                    ></stop>
+                    <stop
+                        offset="99%"
+                        style="stop-color: rgb(0, 89, 255); stop-opacity: 0.1"
+                    ></stop>
+                </linearGradient>
+                <linearGradient id="grad2" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop
+                        offset="25%"
+                        style="stop-color: rgb(0, 238, 255); stop-opacity: 0.1"
+                    ></stop>
+                    <stop
+                        offset="99%"
+                        style="stop-color: rgb(255, 0, 255); stop-opacity: 0.2"
+                    ></stop>
+                </linearGradient>
+            </defs>
+            <rect class="m1Bg" fill="url(#grad2)" width="100%" height="100%"></rect>
+        </svg>
+
+        <div class="technical_event">
+            <div class="title2">
+                <img src="/img/tech2.png" class="addonimg" alt="" />
+                <h1 class="main_heading">Technical Events</h1>
+            </div>
+
+            <div class="container110">
+                <div class="card-column column-0">
+                    <div class="card-color-0 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Avishkar</h2>
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="card-color-2 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Caddiction</h2>
+                        <h3>Explore</h3>
+                    </div>
+                </div>
+                <div class="card-column column-1">
+                    <div class="card-color-1 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Codeventure</h2>
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="card-color-3 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Stargaze</h2>
+                        <h3>Explore</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cover11" class="cover11"></div>
+
+            <div id="open-content" class="open-content tw-text-black">
+                <a href="#" id="close-content" class="close-content">
+                    <span class="x-1"></span>
+                    <span class="x-2"></span>
+                </a>
+                <img id="open-content-image" src="" />
+                <div class="text" id="open-content-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4 -- Non-Technical Events -->
+    <div class="page section" id="non_technical_events">
+        <!-- SVG CODE for background -->
+        <svg class="main2" width="100%" height="100%">
+            <defs>
+                <linearGradient id="grad1" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop
+                        offset="10%"
+                        style="stop-color: rgb(255, 0, 221); stop-opacity: 0.9"
+                    ></stop>
+                    <stop
+                        offset="99%"
+                        style="stop-color: rgb(0, 89, 255); stop-opacity: 0.1"
+                    ></stop>
+                </linearGradient>
+                <linearGradient id="grad2" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop
+                        offset="25%"
+                        style="stop-color: rgb(0, 238, 255); stop-opacity: 0.1"
+                    ></stop>
+                    <stop
+                        offset="99%"
+                        style="stop-color: rgb(255, 0, 255); stop-opacity: 0.2"
+                    ></stop>
+                </linearGradient>
+            </defs>
+            <rect class="m1Bg" fill="url(#grad2)" width="100%" height="100%"></rect>
+        </svg>
+
+        <div class="technical_event">
+            <div class="title2">
+                <img src="/img/tech2.png" class="addonimg" alt="" />
+                <h1 class="main_heading">Non - Technical Events</h1>
+            </div>
+
+            <div class="container110">
+                <div class="card-column column-0">
+                    <div class="card-color-0 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Avishkar</h2>
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="card-color-2 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Caddiction</h2>
+                        <h3>Explore</h3>
+                    </div>
+                </div>
+                <div class="card-column column-1">
+                    <div class="card-color-1 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Codeventure</h2>
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="card-color-3 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Stargaze</h2>
+                        <h3>Explore</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cover11" class="cover11"></div>
+
+            <div id="open-content" class="open-content">
+                <a href="#" id="close-content" class="close-content">
+                    <span class="x-1"></span>
+                    <span class="x-2"></span>
+                </a>
+                <img id="open-content-image" src="" />
+                <div class="text" id="open-content-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5 -- Workshops -->
+    <div class="page section" id="workshops">
+        <!-- SVG CODE for background -->
+        <svg class="main2" width="100%" height="100%">
+            <defs>
+                <linearGradient id="grad1" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop
+                        offset="10%"
+                        style="stop-color: rgb(255, 0, 221); stop-opacity: 0.9"
+                    ></stop>
+                    <stop
+                        offset="99%"
+                        style="stop-color: rgb(0, 89, 255); stop-opacity: 0.1"
+                    ></stop>
+                </linearGradient>
+                <linearGradient id="grad2" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop
+                        offset="25%"
+                        style="stop-color: rgb(0, 238, 255); stop-opacity: 0.1"
+                    ></stop>
+                    <stop
+                        offset="99%"
+                        style="stop-color: rgb(255, 0, 255); stop-opacity: 0.2"
+                    ></stop>
+                </linearGradient>
+            </defs>
+            <rect class="m1Bg" fill="url(#grad2)" width="100%" height="100%"></rect>
+        </svg>
+
+        <div class="technical_event">
+            <div class="title2">
+                <img src="/img/tech2.png" class="addonimg" alt="" />
+                <h1 class="main_heading">Workshops</h1>
+            </div>
+
+            <div class="container110">
+                <div class="card-column column-0">
+                    <div class="card-color-0 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Avishkar</h2>
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="card-color-2 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Caddiction</h2>
+                        <h3>Explore</h3>
+                    </div>
+                </div>
+                <div class="card-column column-1">
+                    <div class="card-color-1 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Codeventure</h2>
+                        <h3>Explore</h3>
+                    </div>
+                    <div class="card-color-3 card">
+                        <div class="border"></div>
+                        <img
+                            src="/img/avishkar.png"
+                            height="180px"
+                            width="150px   "
+                            style="top: -25%"
+                        />
+                        <h2>Stargaze</h2>
+                        <h3>Explore</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cover11" class="cover11 tw-z-50"></div>
+
+            <div id="open-content" class="open-content">
+                <a href="#" id="close-content" class="close-content">
+                    <span class="x-1"></span>
+                    <span class="x-2"></span>
+                </a>
+                <img id="open-content-image" src="" />
+                <div class="text" id="open-content-text"></div>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- JS 
-    
-    -->
-<style lang="scss">
+<style lang="scss" global>
     * {
         box-sizing: border-box;
-        //font-family: Monda;
+        font-family: "Nunito";
+        scroll-behavior: smooth;
     }
 
     :global {
@@ -801,8 +1390,9 @@
     }
 
     .page {
+        position: relative;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         overflow: hidden;
         margin: 0;
     }
@@ -815,5 +1405,495 @@
         margin: 0%;
         font-size: 1.3rem;
         font-weight: 700;
+        z-index: 5;
+    }
+
+    /*********** 3events cards ************/
+    @import url('https://fonts.googleapis.com/css?family=Exo:700');
+    @import url('https://fonts.googleapis.com/css?family=Abel');
+    .eventscards {
+        /* -webkit-transform: perspective(900px);
+  -webkit-transform-style: preserve-3d; */
+        position: relative;
+        z-index: 5;
+    }
+
+    .cardss {
+        -webkit-transform: perspective(1400px);
+        -webkit-transform-style: preserve-3d;
+        position: relative;
+        z-index: 5;
+        display: flex;
+        padding-top: 45px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main2 {
+        position: absolute;
+        z-index: 0;
+    }
+    .title1 {
+        width: 100%;
+        text-align: center;
+    }
+    .title1 h1 {
+        font-size: 50px;
+        font-family: 'revampedregular';
+        font-weight: 100;
+        margin: 0px;
+        padding-top: 80px;
+        color: white;
+        position: relative;
+        text-shadow: 2px 2px 10px aliceblue;
+    }
+    .card1 {
+        text-align: center;
+        position: relative;
+        /* left: 15vw; */
+        width: 300px;
+        height: 400px;
+        margin: 10px;
+        background: linear-gradient(rgb(225, 150, 58), rgb(227, 144, 91));
+        transition: 0.6s;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        transform: rotatex(75deg) translatey(-200px) translatez(-100px);
+        box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .addon {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        padding-top: 60px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .addon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card1:hover {
+        transform: rotatex(0deg);
+        transform: rotatez(0deg);
+        transition: 0.6s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        box-shadow: 0px 10px 20px rgb(225, 150, 58);
+    }
+    .card1 img {
+        transform: translateY(15px);
+        width: 160px;
+        height: 150px;
+    }
+    .cards_heads {
+        font-size: 25px;
+        font-family: 'Nunito', sans-serif;
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 2px rgb(255, 255, 255);
+        transform: translatey(10px);
+    }
+
+    .card_para {
+        font-family: 'Nunito', sans-serif;
+        color: white;
+        text-align: center;
+        width: 250px;
+        margin: 0px;
+        /* transform: translatex(12px); */
+    }
+
+    .card2 {
+        text-align: center;
+        position: relative;
+        /* left: 43vw; */
+        width: 300px;
+        height: 400px;
+        margin: 10px;
+        background: linear-gradient(rgb(93, 94, 170), rgb(93, 66, 103));
+        border-radius: 15px;
+        animation: animate 1s linear infinite;
+        transition: 0.6s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        transform: rotatex(75deg) translatey(-200px) translatez(-100px);
+        box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    .card2:hover {
+        transform: rotatex(0deg);
+        transition: 0.6s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        box-shadow: 0px 10px 20px rgb(93, 94, 170);
+    }
+    .card2 img {
+        transform: translateY(15px);
+        width: 200px;
+        height: 180px;
+    }
+    .card2 h3 {
+        margin: 15px 0px 20px 0px;
+    }
+    .card3 {
+        text-align: center;
+        position: relative;
+        /* right: 15vw; */
+        width: 300px;
+        height: 400px;
+        margin: 10px;
+        background: linear-gradient(#ff5252, #b33939);
+        border-radius: 15px;
+        transition: 0.6s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        transform: rotatex(75deg) translatey(-200px) translatez(-100px);
+        box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    .card3:hover {
+        transform: rotatex(0deg);
+        transition: 0.6s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        box-shadow: 0px 10px 20px #b33939;
+    }
+    .card3 img {
+        transform: translateY(15px);
+        width: 230px;
+        height: 150px;
+    }
+
+    .registration_page {
+        text-decoration: none;
+        border-radius: 15px;
+        color: aliceblue;
+        margin: 20px;
+        background-color: rgb(44, 168, 85);
+        padding: 8px;
+    }
+
+    .registration_page:hover {
+        background-color: aliceblue;
+        color: rgb(192, 38, 102);
+    }
+
+    /**** animating addons ****/
+    .addonimg {
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
+    }
+
+    .addonimg {
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
+    }
+    @-webkit-keyframes mover {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+    @keyframes mover {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /***** Technical Page *****/
+    .title2 {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title2 h1 {
+        font-size: 50px;
+        font-family: 'revampedregular';
+        font-weight: 100;
+        margin: 0px;
+        padding-top: 65px;
+        color: white;
+        position: relative;
+        text-shadow: 2px 2px 10px aliceblue;
+    }
+
+    .title2 img {
+        width: 50px;
+        height: 50px;
+        margin: 65px 30px 0px 30px;
+    }
+
+    /* 
+** Layout, Text & Colors 
+*/
+
+    p {
+        line-height: 1.5;
+    }
+
+    .container110 {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Cards */
+    .card-column {
+        width: 50%;
+        float: left;
+        padding: 4%;
+        box-sizing: border-box;
+    }
+
+    .column-1,
+    .column-0 {
+        padding-top: 30px;
+    }
+
+    .card {
+        width: 250px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        background: #eb5160;
+        color: #fff;
+        cursor: pointer;
+        margin: 60px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .border {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 6px;
+        border: 1px solid #fff;
+        opacity: 0.5;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgb(0, 136, 255);
+    }
+
+    .card h2 {
+        position: relative;
+        padding: 130px 0px 10px 0px;
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+        font-family: "revampedregular";
+        font-weight: 100;
+        text-shadow: 2px 2px 6px rgb(0, 134, 252);
+    }
+    .card h3 {
+        position: relative;
+        padding: 5px 0px 10px 0px;
+        width: 90px;
+        text-align: center;
+        margin: 0px;
+        background-color: #fff;
+        color: #000;
+        margin: 10px 0px 20px 0px;
+        border-radius: 10px;
+    }
+
+    .card h3:hover {
+        background-color: rgb(29, 185, 89);
+        color: #fff;
+    }
+
+    .card > img {
+        position: absolute;
+        top: -6%;
+        left: 22%;
+    }
+
+    .card-color-0 {
+        background-color: #eb5160;
+    }
+
+    .card-color-1 {
+        background-color: #8f3985;
+    }
+
+    .card-color-2 {
+        background-color: #8daa91;
+    }
+
+    .card-color-3 {
+        background-color: #888da7;
+    }
+
+    /* The cover (expanding background) */
+    .cover11 {
+        position: fixed;
+        background: #eb5160;
+        z-index: 100;
+        transform-origin: 50% 50%;
+    }
+
+    /* The open page content */
+    .open-content {
+        width: 100%;
+        z-index: 110;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        height: 100vh;
+    }
+
+    .open-content img {
+        position: relative;
+        width: 40%;
+        margin-left: 3%;
+        margin-top: 20px;
+        z-index: 5;
+    }
+
+    .open-content .text {
+        background: #fff;
+        margin-top: -56%;
+        padding: 60% 5% 5% 5%;
+        width: 80%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        min-height: fit-content;
+    }
+
+    .open-content .text h1,
+    .open-content .text p {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .open-content .text h1 {
+        @apply tw-text-4xl 
+    }
+
+    .close-content {
+        display: block;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .close-content span {
+        background: #222;
+        width: 30px;
+        height: 6px;
+        display: block;
+        position: absolute;
+        top: 14px;
+    }
+
+    .x-1 {
+        transform: rotate(45deg);
+    }
+
+    .x-2 {
+        transform: rotate(-45deg);
+    }
+
+    /* 
+** Transitions
+*/
+
+    :global {
+        .card {
+            transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
+        }
+
+        .border {
+            transition: opacity 200ms linear, transform 200ms ease-out;
+        }
+
+        .card img {
+            transition: opacity 200ms linear 0ms, transform 200ms ease-in 0ms;
+        }
+
+        .card h1 {
+            transform: translate3d(20%, 0px, 0px);
+            transition: opacity 200ms linear 120ms, transform 200ms ease-in 120ms;
+        }
+
+        /* Clicked card */
+        .card.clicked img {
+            transform: translate3d(0px, -40px, 0px);
+            opacity: 0;
+        }
+
+        .card.clicked .border {
+            opacity: 0;
+            transform: scale(1.3);
+        }
+
+        .card.out,
+        .card.out img {
+            transform: translate3d(0px, -40px, 0px);
+            opacity: 0;
+        }
+
+        .card.out h1,
+        .card.clicked h1 {
+            transform: translate3d(20%, -40px, 0px);
+            opacity: 0;
+        }
+
+        .cover11 {
+            transition: transform 300ms ease-in-out;
+        }
+
+        .open-content {
+            transition: opacity 200ms linear 0ms;
+        }
+
+        .open-content.open {
+            opacity: 1;
+            pointer-events: all;
+            transition-delay: 1000ms;
+        }
+
+        /* 
+** Media Queries
+*/
+
+        @media screen and (max-width: 600px) {
+            .card-column {
+                width: 90%;
+            }
+
+            .column-1 {
+                padding-top: 0px;
+            }
+
+            .open-content img {
+                margin-top: 40px;
+            }
+        }
     }
 </style>

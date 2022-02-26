@@ -6,22 +6,30 @@ import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore/lite';
 
 export const event_name_mapping = {
     VPM: 'Virtual Placement',
-    CAD: 'Cadddction',
+    CADMS: 'Cadddction Mechanical Solo',
+    CADMD: 'Cadddction Mechanical Duo',
+    CADCS: 'Cadddction Civil Solo',
+    CADCD: 'Cadddction Civil Duo',
     VAV: 'Vaad Vivad',
-    RNPS: 'Respawn BGMI Squad',
-    RNPT: 'Respawn BGMI TeamDeathMatch',
-    RNVS: 'Respawn Valorant Squad',
-    RNCI: 'Respawn Chess Individual',
-    MUN: 'Model United Nations',
+    RPNBS: 'Respawn BGMI Squad',
+    RPNBT: 'Respawn BGMI TeamDeathMatch',
+    RPNVS: 'Respawn Valorant Squad',
+    RPNCI: 'Respawn Chess Individual',
+    MUNA: 'Model United Nations AIPPM',
+    MUNU: 'Model United Nations UNHRC',
     COV: 'Code Venture',
     CSW: 'CSE Webinar',
     UPG: 'Upgrad',
+    AVK: 'Avishkar',
     TSI: 'Trishakti Interview',
     COS: 'CAD-O-Shop',
     STG: 'StarGaze',
     FOH: 'Foodoholics',
     CCB: 'Cricbash',
-    BSY: 'Bornpsycos',
+    BSYD: 'Bornpsycos Duo',
+    BSYT: 'Bornpsycos Team',
+    // FOR DEV
+    BSY: '[DEV] Bornpsycos'
 };
 
 export async function get_user_registrations(app: FirebaseApp, auth: Auth, db: Firestore) {
@@ -76,5 +84,53 @@ export function get_event_date(event_code) {
 }
 
 export function get_event_cost(event_code) {
-    return 150;
+    switch (event_code) {
+        case "RPNBS":
+            return 160;
+        case "RPNBT":
+            return 80;
+        case "RPNVS":
+            return 150;
+        case "RPNCI":
+            return 50;
+        case "VPM":
+            return 70;
+        case "CADMS":
+            return 60;
+        case "CADMD":
+            return 100;
+        case "CADCS":
+            return 60;
+        case "CADCD":
+            return 100;
+        case "MUNA":
+            return 150;
+        case "MUNU": 
+            return 150;
+        case "VAV":
+            return 50;
+        case 'AVK':
+            return 120;
+        case 'BSYD':
+            return 80;
+        case 'BSYT':
+            return 150;
+        case 'COV':
+            return 0;
+        case 'FOH':
+            return 200;
+        case 'CCB':
+            return 300;
+        case 'STG':
+            return 0;
+        case 'TSI':
+            return 0;
+        case 'CSW':
+            //TODO: CHANGE THIS VALUE FOR CSE WEBINAR
+            return 0;
+        case 'UPG':
+            return 0;
+        default:
+            return 0;
+    }
 }

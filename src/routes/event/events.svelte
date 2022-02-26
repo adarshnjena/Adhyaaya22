@@ -1761,14 +1761,15 @@
         position: absolute;
         opacity: 0;
         pointer-events: none;
-        height: 100vh;
+        min-height: 100vh;
+        height: 2000vh;
+        @apply tw-flex tw-flex-row;
     }
 
     .open-content img {
-        position: relative;
-        width: 40%;
-        margin-left: 3%;
-        margin-top: 20px;
+        //position: relative;
+        width: 20%;
+        @apply tw-ml-auto;
         z-index: 5;
     }
 
@@ -1779,7 +1780,6 @@
         width: 80%;
         margin-left: 5%;
         margin-bottom: 5%;
-        min-height: fit-content;
     }
 
     .open-content .text h1,

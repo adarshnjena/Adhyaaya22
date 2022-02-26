@@ -15,7 +15,7 @@ export interface registrationDetails {
     // supposed to be City, State, Country
     //college_address: string;
     course: string;
-    team: Array<teamMemberDetail>;
+    team: string;
     transaction_status: string;
 }
 

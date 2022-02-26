@@ -9,6 +9,7 @@
     import baselinePhone from '@iconify-icons/ic/baseline-phone.js';
     import baselineCode from '@iconify-icons/ic/baseline-code.js';
     import baselineCalendarViewDay from '@iconify-icons/ic/baseline-calendar-view-day.js';
+    import baselinePeopleAlt from '@iconify-icons/ic/baseline-people-alt.js';
     import Protected from '$lib/auth/Protected.svelte';
     import CAFooter from '$lib/CAFooter.svelte';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
@@ -24,7 +25,7 @@
     import { sample_make_order } from '$lib/cashfree/sample';
     import { get_user_details } from '$lib/firebase/userDetails';
     import { getFirestore } from 'firebase/firestore/lite';
-    import { add_new_user_registration, get_event_cost } from '$lib/firebase/registrationDetails';
+    import { add_new_user_registration, get_event_cost, get_user_registrations } from '$lib/firebase/registrationDetails';
     import { get_order_id } from '$lib/cashfree/helpers';
     //use import { cashfreeProd } from 'cashfree-dropjs';
 
@@ -34,7 +35,8 @@
     let app;
     let auth;
     let db;
-    let details
+    let details;
+    let regs;
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
     onMount(async () => {
         try {
@@ -66,7 +68,33 @@
             details['profile']['state'] +
             '|' +
             details['profile']['country'];
+            
+        regs = await get_user_registrations(app, auth, db);
+        dev ? console.log(regs): ''
     });
+    
+
+
+    async function submit_free(event) {
+        const transform: registrationDetails = {
+            name: input_registration_details['name'],
+            email: input_registration_details['email'],
+            phone: input_registration_details['phone'],
+            college: input_registration_details['college'],
+            registration_id: 'NOT REQUIRED',
+            transaction_status: 'PAID',
+            event_code: input_registration_details['event_code'],
+            course: input_registration_details['year_of_study'],
+            team: input_registration_details['team_members'],
+        };
+        await add_new_user_registration(
+            app,
+            auth,
+            db,
+            input_registration_details.event_code,
+            transform,
+        );
+    }
 
     async function on_submit(event) {
         console.log('Submit Button Clicked');
@@ -74,9 +102,17 @@
             is_payment_gateway_shown = false;
             return;
         }
+        //console.dir(regs)
+        if (Object.keys(regs).includes(input_registration_details.event_code)) {
+            modal_show('You have already registered for this event');
+            return;
+        }
+
         is_payment_gateway_shown = true;
-        const order_amount = 0//get_event_cost(input_registration_details.event_code)
+        const order_amount = get_event_cost(input_registration_details.event_code);
         // we need to generate a order token here
+        order_amount === 0 ? await submit_free(event) : '';
+
         let order_details = {
             order_id: get_order_id($authStore.user.uid, input_registration_details.event_code), // This is of the format userid-eventcode
             order_amount: order_amount, // Needs to confirm prices
@@ -89,7 +125,7 @@
         };
 
         dev ? console.log('order_details', order_details) : '';
-        //order_amount == 0 ? 
+        //order_amount == 0 ?
         const _order = await fetch('/auth/transactions/create', {
             method: 'POST',
             headers: {
@@ -115,7 +151,7 @@
                         phone: input_registration_details['phone'],
                         college: input_registration_details['college'],
                         registration_id: data.order.orderId,
-                        transaction_status: (order_amount == 0 ? 'PAID' : 'UNVERIFIED'),
+                        transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
                         event_code: input_registration_details['event_code'],
                         course: input_registration_details['year_of_study'],
                         team: input_registration_details['team_members'],
@@ -129,7 +165,7 @@
                     );
                     //verify order status by making an API call to your server
                     // using data.order.orderId
-                    
+
                     goto(`/auth/transactions/${data.order.orderId}/check_status`);
                 } else {
                     //order is still active and payment has failed
@@ -168,7 +204,7 @@
         referral_code: '',
         year_of_study: '',
         event_code: '',
-        team_members: [],
+        team_members: '',
     };
 </script>
 
@@ -181,7 +217,9 @@
             <div class="form">
                 <div
                     id="payment-gateway"
-                    class="{is_payment_gateway_shown ? '' : 'tw-hidden'} tw-w-full tw-opacity-100 tw-bg-opacity-100"
+                    class="{is_payment_gateway_shown
+                        ? ''
+                        : 'tw-hidden'} tw-w-full tw-bg-opacity-100 tw-opacity-100"
                 ></div>
                 <form action="/" class=" {is_payment_gateway_shown ? 'tw-hidden' : ''}">
                     <div class="title">
@@ -229,7 +267,6 @@
                             />
                             <input
                                 type="tel"
-                                maxlength="10"
                                 bind:value="{input_registration_details.phone}"
                                 placeholder="Phone number"
                                 class="tw-w-full"
@@ -260,6 +297,8 @@
                             />
                             <input
                                 type="text"
+                                maxlength="7"
+                                minlength="7"
                                 bind:value="{input_registration_details.referral_code}"
                                 placeholder="Referal Code"
                                 class="tw-w-full"
@@ -281,30 +320,54 @@
                             />
                         </div>
 
+                        <div class="input tw-inline-flex ">
+                            <Icon
+                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                height=""
+                                width=""
+                                icon="{baselinePeopleAlt}"
+                            />
+                            <input
+                                type="text"
+                                bind:value="{input_registration_details.team_members}"
+                                placeholder="Member 1 | Member 2 | Member 3 ..."
+                                class="tw-w-full"
+                            />
+                        </div>
+
                         <!-- <i class='bx bxs-component'></i> -->
                         <select bind:value="{input_registration_details.event_code}">
                             <option value="" class="selected" selected disabled>
                                 Competition / Workshop
                             </option>
-                            <option class="option_heading" value disabled>
+                            <option class="option_heading" value="" disabled>
                                 Non-technical Event
                             </option>
-                            <option value="BSY">Born Psycos</option>
-                            <option value="MUNA">MUN AIPPM</option>
-                            <option value="MUNU">MUN UNHRC</option>
-                            <option value="">Respawn</option>
-                            <option value="">Vad-Vivaad</option>
+                            <option value="BSYD">BORNPSYCOS | Duos | ₹80</option>
+                            <option value="BSYT">BORNPSYCOS | Team [4] | ₹150</option>
+                            <option value="MUNA">MUN AIPPM | Solo | ₹150</option>
+                            <option value="MUNU">MUN UNHRC | Solo | ₹150</option>
+                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4] | ₹160</option>
+                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4] | ₹80</option>
+                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5] | ₹150</option>
+                            <option value="RPNCI">RESPAWN CHESS | Solo | ₹50</option>
+                            <option value="VAV">VAAD VIVAD | SOLO | ₹70</option>
+                            <option value="FOH">FOODOHOLICS | Team [4] | ₹200</option>
+                            <option value="CCB">CRICBASH | Team [6] | ₹300</option>
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>
                                 Technical Event
                             </option>
-                            <option value="">Codeventure</option>
-                            <option value="">Avishkar</option>
-                            <option value="">Caddiction</option>
-                            <option value="">Virtual Placement</option>
+                            <option value="COV">CODEVENTURE | SOLO | FREE</option>
+                            <option value="AVK">AVISHKAR | Team [upto 5] | ₹120</option>
+                            <option value="CADCS">CADDICTION CIVIL | Solo | ₹60</option>
+                            <option value="CADCD">CADDICTION CIVIL | Duo | ₹100</option>
+                            <option value="CADMS">CADDICTION MECHANICAL | Solo | ₹60</option>
+                            <option value="CADMD">CADDICTION MECHANICAL | Duo | ₹100</option>
+                            <option value="VPM">VIRTUAL PLACEMENT | Solo | ₹70</option>
                             <option value="" disabled></option>
-
+                            <!--TODO: FINISH THIS-->
                             <option class="option_heading" value="" disabled>Workshop</option>
                             <option value="LPY">Learn.py</option>
                             <option value="">Cad-O-Shop</option>
@@ -326,10 +389,16 @@
                     </button>
                 </form>
                 <div class="note">
+                    <p>* EVENT NAME | TEAM/SOLO | PRICE</p>
                     <p>* For faster and safer transactions, prefer UPI.</p>
 
                     <p>* Any issues regarding registration, try to contact Ankur - 7743891722.</p>
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
+
+                    <p>
+                        * Some Events are Team-Based. Please ensure you have a complete team before
+                        registering.
+                    </p>
                 </div>
             </div>
         </div>
@@ -463,14 +532,14 @@
         border: none;
         padding: 450px;
         //margin-left: 50px;
-        @apply tw-mx-auto
+        @apply tw-mx-auto;
     }
     .option_heading {
         font-weight: bolder;
         font-size: 22px;
         color: #ff2592;
         margin-top: 50px;
-        @apply tw-mx-auto
+        @apply tw-mx-auto;
     }
 
     .submit {
@@ -494,7 +563,8 @@
     .note {
         margin: 20px;
         text-align: center;
-        font-family: 'Trirong', serif;
+        font-family: 'Nunito', sans-serif;
+        //font-family: 'Trirong', serif;
     }
 
     @media (max-width: 1000px) {

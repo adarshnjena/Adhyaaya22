@@ -4,9 +4,9 @@
 // });
 
 //?GSAP Code
-window.onresize = window.onload = function () {
+(function () {
   gsap.set(".m1_stage", { x: "50vw", opacity: 1 });
-};
+})();
 
 gsap
   .timeline({ defaults: { duration: 45 } })

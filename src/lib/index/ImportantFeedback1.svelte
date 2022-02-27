@@ -63,7 +63,7 @@
         border-radius: 30px;
         position: relative;
         z-index: 1;
-        width: 40vw;
+        width: 50vw;
         margin: auto;
         /* margin-top: 20vh; */
     }

@@ -1,14 +1,18 @@
 <script>
     import { onMount } from 'svelte';
-    import { gsap } from 'gsap/dist/gsap.js';
+    import { gsap } from 'gsap';
     //import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import {ScrollTrigger} from 'gsap//dist/ScrollTrigger.js'
+    import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
+    import { browser } from '$app/env';
+
     let scrollY;
     let sponsor_top = 6;
     let b;
     $: {
-        let a = Math.min(scrollY, 100)
-        b = (sponsor_top * (100 - a)) / 100
+        if (browser) {
+            let a = Math.min(scrollY, 100);
+            b = (sponsor_top * (100 - a)) / 100;
+        }
     }
     onMount(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -40,7 +44,7 @@
     });
 </script>
 
-<svelte:window  bind:scrollY="{scrollY}"/>
+<svelte:window bind:scrollY />
 
 <svg class="main1" width="100%" height="100%" style="position: fixed; z-index: -1">
     <defs>
@@ -292,7 +296,7 @@
         }
 
         body {
-            background: #000;
+            /*background: #000;*/
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -303,7 +307,6 @@
         nav .tw-absolute {
             position: sticky;
         }
-
 
         /****** Scroll Bar ******/
         ::-webkit-scrollbar-track {
@@ -478,7 +481,6 @@
     }
 
     .sideCompartment {
-
         width: 18.5rem;
         position: fixed;
         top: var(--mt, 6rem);

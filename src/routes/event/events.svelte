@@ -455,6 +455,7 @@
         scaleCoverToFillWindow(cardPosition);
         // update the content of the opened page
         openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1>' + paragraphText;
+        // @ts-ignore
         openContentImage.src = card.children[1].src;
         setTimeout(function () {
             // update the scroll position to 0 (so it is at the top of the 'opened' page)
@@ -1379,7 +1380,7 @@
             width: 100%;
             height: 100%;
             overflow-x: hidden;
-            background: #000;
+            /*background: #000;*/
             margin: 0%;
         }
         html {

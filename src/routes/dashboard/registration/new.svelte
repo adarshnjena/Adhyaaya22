@@ -94,6 +94,7 @@
             input_registration_details.event_code,
             transform,
         );
+        goto('/dashboard');
     }
 
     async function on_submit(event) {
@@ -397,7 +398,7 @@
 
                     <p>
                         * Some Events are Team-Based. Please ensure you have a complete team before
-                        registering.
+                        registering. Enter Team Members name seperated by comma (,) or vertical seperator (|)
                     </p>
                 </div>
             </div>

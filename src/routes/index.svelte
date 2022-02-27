@@ -223,6 +223,7 @@ import { goto } from '$app/navigation';
             font-size: 80px;
             @apply tw-text-right;
             font-family: revampedregular;
+            text-shadow: 2px 2px 10px rgb(0, 136, 255);
         }
     }
     .custom-background {

@@ -1,25 +1,40 @@
+<center><h1>
+                Testimonials
+            </h1></center>
 <div class="testimonial">
     <div class="pic">
         <img src="/index_feedbacks/1.jpg" alt="Profile for speaker"/>
     </div>
     <div class="testimonial-content">
         <p>
-            GEC Nagpur Model United Nations 2021, was a very memorable conference in my MUN Career.
-            Being able to participate as the delegate of Slovakia (UNHRC) was indeed an amazing
-            experience. The Secretariat, Organizing Committee and the Executive Board Members did an
-            stellar performance to accommodate the needs and requests of the delegates. Further,
-            this conference will always have special place in my heart (not beacause, I won the Best
-            Delegate), but because of the hospitality, it had towards its participants. Last but not
-            the least, I would like to congratulate the team for the amazing display of debate, and
-            diplomacy. Wishing you, all the best for upcoming editions of the Conference. - Mr Domil
-            Antony Johnson Pro Munner, Assistant Director Harvard Model United Nations China and
-            Dubai 2021!
+            GCOE Nagpur Model United Nations 2021, was a very memorable
+                    conference in my MUN Career.
+                    Being able to participate as the delegate of Slovakia
+                    (UNHRC) was indeed an amazing experience. The Secretariat,
+                    Organizing Committee and the Executive Board Members did an
+                    stellar performance to accommodate the needs and requests of
+                    the delegates. Further, this conference will always have
+                    special place in my heart (not beacause, I won the Best
+                    Delegate), but because of the hospitality, it had towards
+                    its participants.
+
+                    Last but not the least, I would like to congratulate the
+                    team for the amazing display of debate, and diplomacy.
+                    Wishing you, all the best for upcoming editions of the
+                    Conference.
+
+                    - Mr Domil Antony Johnson
+                    Pro Munner, Assistant Director Harvard Model United Nations
+                    China and Dubai 2021!
         </p>
     </div>
     <h3 class="testimonial-title">
-        <a href="#">Kelli</a>
-        <small>- Web Developer</small>
-    </h3>
+                <a href="#">Domil Antony Johnson</a>
+                <p style="font-size: smaller;">
+                    Pro Munner, Assistant Director Harvard Model United Nations
+                    China and Dubai 2021!
+                </p>
+            </h3>
 </div>
 
 <style lang="scss">
@@ -32,6 +47,9 @@
     p {
         margin: 0 !important;
     }
+    center h1{
+    padding: 20px;
+}
     a:hover,
     a:focus {
         text-decoration: none !important;
@@ -111,4 +129,9 @@
         letter-spacing: 1px;
         text-transform: capitalize;
     }
+    @media only screen and (max-width: 1200px) {
+    .testimonial{
+        width: 80vw;
+    }
+  }
 </style>

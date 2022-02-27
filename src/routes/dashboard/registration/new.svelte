@@ -81,7 +81,7 @@
             email: input_registration_details['email'],
             phone: input_registration_details['phone'],
             college: input_registration_details['college'],
-            registration_id: 'NOT REQUIRED',
+            registration_id: get_order_id($authStore.user.uid, input_registration_details.event_code),
             transaction_status: 'PAID',
             event_code: input_registration_details['event_code'],
             course: input_registration_details['year_of_study'],

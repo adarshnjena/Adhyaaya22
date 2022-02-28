@@ -8,7 +8,6 @@
     import iconNew from '@iconify-icons/ic/baseline-new-label.js';
 </script>
 
-
 <div class="tw-w-full tw-px-4">
     <div
         class="tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded tw-bg-base-200 tw-bg-opacity-[75%] tw-shadow-lg tw-backdrop-blur"
@@ -29,7 +28,10 @@
                         class="tw-btn tw-btn-secondary tw-btn-sm tw-px-3 tw-py-0 tw-text-xs"
                         type="button"
                     >
-                        <Icon class="tw-hidden xl:tw-block tw-text-2xs xl:tw-text-xs" icon="{iconNew}" />
+                        <Icon
+                            class="tw-text-2xs tw-hidden xl:tw-block xl:tw-text-xs"
+                            icon="{iconNew}"
+                        />
                         NEW Registration
                     </a>
                 </div>

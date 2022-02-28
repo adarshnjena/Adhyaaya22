@@ -27,7 +27,6 @@
         auth = getAuth();
         db = getFirestore();
         let details = await get_user_registrations(app, auth, db);
-        
     });
 </script>
 
@@ -45,14 +44,24 @@
             >
                 <div class="tw-card-body">
                     <h1 class="tw-my-4 tw-text-left tw-text-xl">Verifying Registration Status</h1>
-                    <span class="tw-my-2 tw-text-left tw-text-sm">Your registration has been successsfully completed.</span>
+                    <span class="tw-my-2 tw-text-left tw-text-sm">
+                        Your registration has been successsfully completed.
+                    </span>
                     <hr class="tw-my-2 tw-hidden tw-border-b tw-border-gray-600 " />
                     <span class="tw-text-left"></span>
                     <div class="tw-mt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
-                        <a sveltekit:prefetch href="/dashboard/registrations/{$page.params.id}/view" class="tw-btn-neutral-primary tw-btn">
+                        <a
+                            sveltekit:prefetch
+                            href="/dashboard/registrations/{$page.params.id}/view"
+                            class="tw-btn-neutral-primary tw-btn"
+                        >
                             <span class="tw-inner-text tw-btn">View Reciept</span>
                         </a>
-                        <a sveltekit:prefetch href="/dashboard" class="tw-btn-neutral-primary tw-btn">
+                        <a
+                            sveltekit:prefetch
+                            href="/dashboard"
+                            class="tw-btn-neutral-primary tw-btn"
+                        >
                             <span class="tw-inner-text tw-btn">Return To Dashboard</span>
                         </a>
                     </div>

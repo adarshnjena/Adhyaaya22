@@ -10,7 +10,6 @@
     import MainNavbar from '$lib/MainNavbar.svelte';
 </script>
 
-
 <MainNavbar />
 <div class="tw-relative tw-h-full tw-w-full tw-bg-opacity-0" style="">
     <slot />

@@ -81,7 +81,7 @@
     });
 
     // Function for getting single string of team members.
-    function get_team_members(): teamMemberDetail[]  {
+    function get_team_members(): teamMemberDetail[] {
         let team_mem_names = [];
         let team_mem_numbers = [];
         let team_mem_emails = [];

@@ -91,16 +91,16 @@
     //  User readable names
     function get_readable_provider_name(key: string) {
         switch (key) {
-                case 'github.com':
-                    return 'Github';
-                case 'google.com':
-                    return 'Google';
-                case 'twitter.com':
-                    return 'Twitter';
-                default:
-                    return key;
-            }
+            case 'github.com':
+                return 'Github';
+            case 'google.com':
+                return 'Google';
+            case 'twitter.com':
+                return 'Twitter';
+            default:
+                return key;
         }
+    }
     // function for password show/hide
     let is_password_shown = false;
     function password_toggle(event) {

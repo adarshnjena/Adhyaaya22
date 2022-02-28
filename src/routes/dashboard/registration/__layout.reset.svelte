@@ -7,8 +7,10 @@
     import navbarLogo from '$lib/assets/navbar-logo.png';
     import backgroundImage from '$lib/assets/page-background.png';
     import authStore from '$lib/auth/authStore';
-    let auth_link = ['Register' , '/event/register']
-    $: $authStore.isLoggedIn ? auth_link = ['Dashboard' , '/dashboard'] : auth_link = ['Register' , '/event/register']
+    let auth_link = ['Register', '/event/register'];
+    $: $authStore.isLoggedIn
+        ? (auth_link = ['Dashboard', '/dashboard'])
+        : (auth_link = ['Register', '/event/register']);
 </script>
 
 <PageTransition>

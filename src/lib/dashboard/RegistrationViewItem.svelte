@@ -10,7 +10,7 @@
         }
     }
     function to_title_case(str: string) {
-        str = str.replace("_", " ");
+        str = str.replace('_', ' ');
         return str.replace(/\w\S*/g, function (txt) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         });

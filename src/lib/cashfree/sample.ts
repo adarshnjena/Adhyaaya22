@@ -6,7 +6,7 @@ export const sample_make_order = {
         customer_id: '12345', // Firebase User ID
         customer_email: 'techsupport@cashfree.com', // Adhyaaya Support Email
         customer_phone: '9816512345', // Check Phone number inside the dashboard
-    }, 
+    },
 };
 
 // USE UPI ID FOR TESTING

@@ -29,11 +29,10 @@
             Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
         </p> -->
         <h1>Coming Soon!</h1>
-        <p>
-            We are working hard to bring you the best experience. Stay tuned!
-        </p>
+        <p>We are working hard to bring you the best experience. Stay tuned!</p>
 
-        <button class="tw-hidden"
+        <button
+            class="tw-hidden"
             on:click="{() => {
                 $authentication_message = 'Plese register below';
                 goto('/auth/login');

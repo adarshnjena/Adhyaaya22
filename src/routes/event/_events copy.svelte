@@ -520,7 +520,7 @@
     }
 
     function animateCoverBack(card) {
-        console.log(card)
+        console.log(card);
         var cardPosition = card.getBoundingClientRect();
         // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
         // TODO: Check this out again
@@ -787,9 +787,18 @@
                 <g class="m1_cGroup">
                     <!-- Respwan -->
                     <a href="#non_technical_events" alt="respwan">
-                        <g class="m1OrbBlank" on:click="{() => {cardOpenEvent(4)}}">
+                        <g
+                            class="m1OrbBlank"
+                            on:click="{() => {
+                                cardOpenEvent(4);
+                            }}"
+                        >
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
-                            <image xlink:href="/events/img/respwan.png" width="95" height="95"></image>
+                            <image
+                                xlink:href="/events/img/respwan.png"
+                                width="95"
+                                height="95"
+                            ></image>
                         </g>
                     </a>
 
@@ -797,7 +806,11 @@
                     <g class="m1OrbBlank11">
                         <a href="#technical_events" alt="Cricbash">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
-                            <image xlink:href="/events/img/cricbash.png" width="65" height="65"></image>
+                            <image
+                                xlink:href="/events/img/cricbash.png"
+                                width="65"
+                                height="65"
+                            ></image>
                         </a>
                     </g>
 
@@ -815,7 +828,12 @@
 
                     <!-- Avishkar -->
                     <a href="#technical_events">
-                        <g class="m1Orb orb4b" on:click="{() => {cardOpenEvent(0)}}">
+                        <g
+                            class="m1Orb orb4b"
+                            on:click="{() => {
+                                cardOpenEvent(0);
+                            }}"
+                        >
                             <!-- <a href="#technical_events"> -->
                             <circle
                                 cx="25"
@@ -838,7 +856,11 @@
                     <!-- COMSA Webinar -->
                     <g class="m1Orb orb41">
                         <a href="#technical_events" alt="Comsa Webinar">
-                            <image xlink:href="/events/img/comsa.png" width="45" height="45"></image>
+                            <image
+                                xlink:href="/events/img/comsa.png"
+                                width="45"
+                                height="45"
+                            ></image>
                         </a>
                     </g>
 
@@ -857,7 +879,12 @@
                 </g>
                 <g class="m1_cGroup">
                     <!-- Caddiction -->
-                    <g class="m1OrbBlank" on:click="{() => {cardOpenEvent(1)}}">
+                    <g
+                        class="m1OrbBlank"
+                        on:click="{() => {
+                            cardOpenEvent(1);
+                        }}"
+                    >
                         <a href="#technical_events" alt="caddiction">
                             <circle cx="22" cy="23" r="26" fill="#fff"></circle>
                             <image
@@ -881,7 +908,11 @@
                     <!-- Trishakti Event -->
                     <g class="m1Orb orb3c">
                         <a href="#technical_events">
-                            <image xlink:href="/events/img/trishakti.png" width="65" height="65"></image>
+                            <image
+                                xlink:href="/events/img/trishakti.png"
+                                width="65"
+                                height="65"
+                            ></image>
                         </a>
                     </g>
 
@@ -939,7 +970,11 @@
                     <g class="m1OrbBlank">
                         <a href="#technical_events" alt="Foodoholic">
                             <circle cx="-10" cy="30" r="0" fill="#653997"></circle>
-                            <image xlink:href="/events/img/salad.png" width="40" height="40"></image>
+                            <image
+                                xlink:href="/events/img/salad.png"
+                                width="40"
+                                height="40"
+                            ></image>
                         </a>
                     </g>
                     <circle
@@ -1024,7 +1059,12 @@
                     ></circle>
 
                     <!-- Codeventure -->
-                    <g class="m1Orb orb11" on:click="{() => {cardOpenEvent(2)}}">
+                    <g
+                        class="m1Orb orb11"
+                        on:click="{() => {
+                            cardOpenEvent(2);
+                        }}"
+                    >
                         <a href="#technical_events" alt="codeventure">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
                             <image
@@ -1057,7 +1097,12 @@
                                              c0-0.42,0.01-0.74,0.03-0.97h-0.77c-0.35,0-0.61-0.07-0.77-0.2s-0.24-0.37-0.24-0.69C20.86,6.96,20.91,6.67,21.01,6.4z"
             />
           </g> -->
-                    <g class="m1Orb orb1" on:click="{() => {cardOpenEvent(3)}}">
+                    <g
+                        class="m1Orb orb1"
+                        on:click="{() => {
+                            cardOpenEvent(3);
+                        }}"
+                    >
                         <a href="#technical_events" alt="Stargaze">
                             <circle cx="18" cy="18" r="20" fill="none" stroke="#653997"></circle>
                             <image
@@ -1101,7 +1146,12 @@
                         opacity="0.6"
                     ></circle>
                     <a href="https://adhyaaya.org">
-                        <image x="-60" xlink:href="/events/img/logo.png" width="120" height="120"></image>
+                        <image
+                            x="-60"
+                            xlink:href="/events/img/logo.png"
+                            width="120"
+                            height="120"
+                        ></image>
                     </a>
                 </g>
             </g>

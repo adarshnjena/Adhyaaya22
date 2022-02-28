@@ -17,5 +17,5 @@ export async function post({ request, params }) {
     return {
         status: response.status,
         body: await response.json(),
-    }
+    };
 }

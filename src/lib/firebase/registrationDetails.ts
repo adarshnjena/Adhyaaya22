@@ -29,7 +29,7 @@ export const event_name_mapping = {
     BSYD: 'Bornpsycos Duo',
     BSYT: 'Bornpsycos Team',
     // FOR DEV
-    BSY: '[DEV] Bornpsycos'
+    BSY: '[DEV] Bornpsycos',
 };
 
 export const event_extra_members_mapping = {
@@ -56,7 +56,7 @@ export const event_extra_members_mapping = {
     CCB: 5,
     BSYD: 1,
     BSYT: 3,
-}
+};
 
 export async function get_user_registrations(app: FirebaseApp, auth: Auth, db: Firestore) {
     const user = auth.currentUser;
@@ -86,13 +86,9 @@ export async function add_new_user_registration(
     await setDoc(ref, _data);
 }
 
-export async function verify_transaction(
-    app: FirebaseApp,
-    db: Firestore,
-    transaction_id: string,
-) {
+export async function verify_transaction(app: FirebaseApp, db: Firestore, transaction_id: string) {
     // transaction_id is made up of user_id and event_code
-    const [user_id, event_code, _] = transaction_id.split('-')
+    const [user_id, event_code, _] = transaction_id.split('-');
     //const user_id = _[0];
     //const event_code = _[1];
     const ref = doc(db, `registrations/${user_id}`);
@@ -100,40 +96,40 @@ export async function verify_transaction(
     const _data = user_doc.data();
     _data[event_code].transaction_status = 'PAID';
     await setDoc(ref, _data);
-    const trans_ref = doc(db, `transactions/${user_id}-${event_code}`)
+    const trans_ref = doc(db, `transactions/${user_id}-${event_code}`);
     const __data = _data[event_code];
-    await setDoc(trans_ref, __data)
+    await setDoc(trans_ref, __data);
 }
 
 export function get_event_date(event_code) {
-    return '2022-04-02'
+    return '2022-04-02';
 }
 
 export function get_event_cost(event_code) {
     switch (event_code) {
-        case "RPNBS":
+        case 'RPNBS':
             return 160;
-        case "RPNBT":
+        case 'RPNBT':
             return 80;
-        case "RPNVS":
+        case 'RPNVS':
             return 150;
-        case "RPNCI":
+        case 'RPNCI':
             return 50;
-        case "VPM":
+        case 'VPM':
             return 70;
-        case "CADMS":
+        case 'CADMS':
             return 60;
-        case "CADMD":
+        case 'CADMD':
             return 100;
-        case "CADCS":
+        case 'CADCS':
             return 60;
-        case "CADCD":
+        case 'CADCD':
             return 100;
-        case "MUNA":
+        case 'MUNA':
             return 150;
-        case "MUNU": 
+        case 'MUNU':
             return 150;
-        case "VAV":
+        case 'VAV':
             return 50;
         case 'AVK':
             return 120;

@@ -43,6 +43,11 @@
     <td
         class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs "
     >
-        <a class="tw-btn tw-btn-primary tw-btn-sm" href="/dashboard/registration/{registration.registration_id}/view">VIEW</a>
+        <a
+            class="tw-btn tw-btn-primary tw-btn-sm"
+            href="/dashboard/registration/{registration.registration_id}/view"
+        >
+            VIEW
+        </a>
     </td>
 </tr>

@@ -127,9 +127,7 @@
                             <input
                                 id="grid-username"
                                 type="text"
-                                class=" tw-input tw-w-full {username_error
-                                    ? 'tw-input-error'
-                                    : ''}"
+                                class=" tw-input tw-w-full {username_error ? 'tw-input-error' : ''}"
                                 bind:value="{details.username}"
                                 on:keyup="{username_on_keyup}"
                             />
@@ -196,9 +194,7 @@
                             <input
                                 id="grid-mobile-number"
                                 type="text"
-                                class=" tw-input tw-w-full {mobile_error
-                                    ? 'tw-input-error'
-                                    : ''}"
+                                class=" tw-input tw-w-full {mobile_error ? 'tw-input-error' : ''}"
                                 bind:value="{details.mobile_number}"
                                 on:blur="{mobile_on_blur}"
                             />
@@ -219,7 +215,9 @@
                     </div>
                     <div class="lg:tw-w-12/12 tw-w-full tw-px-4">
                         <div class="tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-address">College Name</label>
+                            <label class="tw-label tw-text-sm" for="grid-address">
+                                College Name
+                            </label>
                             <input
                                 id="grid-address"
                                 type="text"

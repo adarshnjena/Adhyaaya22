@@ -2,20 +2,27 @@
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
     import authStore from './auth/authStore';
-    let auth_link = ['Register' , '/event/register']
-    $: $authStore.isLoggedIn ? auth_link = ['Dashboard' , '/dashboard'] : auth_link = ['Register' , '/event/register']
+    let auth_link = ['Register', '/event/register'];
+    $: $authStore.isLoggedIn
+        ? (auth_link = ['Dashboard', '/dashboard'])
+        : (auth_link = ['Register', '/event/register']);
 </script>
 
 <nav
     class="tw-sticky tw-top-0 tw-z-10 tw-w-full tw-rounded tw-border-gray-200 tw-bg-transparent tw-px-2 tw-py-2.5 sm:tw-px-4"
 >
-    <div class="tw-container tw-mx-auto tw-flex tw-flex-wrap tw-items-center tw-justify-between">
-        <a href="/" class="tw-btn tw-btn-ghost tw-btn-lg tw-ml-1 tw-flex tw-rounded-2xl tw-border">
+    <div
+        class="tw-container tw-mx-auto tw-flex tw-flex-wrap tw-items-center tw-justify-between md:tw-justify-evenly lg:tw-justify-between"
+    >
+        <a
+            href="/"
+            class="tw-btn tw-btn-ghost tw-btn-lg tw-ml-1 tw-flex tw-rounded-2xl tw-border md:tw-hidden lg:tw-inline-flex"
+        >
             <img src="/favicon.png" class="tw-m-2 tw-w-20" alt="adhyaaya-logo" />
         </a>
-        <div class="tw-flex tw-items-center md:tw-order-2">
+        <div class="tw-flex tw-items-center md:tw-order-2 md:tw-hidden">
             <!-- Dropdown menu -->
-            <div class="tw-dropdown-end tw-dropdown tw-visible md:tw-invisible">
+            <div class="tw-dropdown-end tw-dropdown tw-inline-block md:tw-hidden">
                 <div tabindex="0" class="tw-btn tw-btn-ghost tw-m-1">
                     <Icon class="{`tw-h-8 tw-w-8`}" icon="{roundMenu}" />
                 </div>

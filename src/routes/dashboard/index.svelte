@@ -28,7 +28,7 @@
     import _contact from '../../contact.json';
     import { get_random_loading_message } from '$lib/loading';
     import { registrationDetails } from '$lib/types/registrationDetails';
-import { get_user_registrations } from '$lib/firebase/registrationDetails';
+    import { get_user_registrations } from '$lib/firebase/registrationDetails';
 
     let dataPromiseResolve;
     const dataPromise = new Promise((resolve, reject) => {
@@ -87,7 +87,7 @@ import { get_user_registrations } from '$lib/firebase/registrationDetails';
         //profile_tasks = _details['tasks'];
         //tasks = await get_n_task_details(app, db, 5);
         //events = await get_n_event_details(app, db, 5);
-        registrations = await get_user_registrations(app, auth, db)
+        registrations = await get_user_registrations(app, auth, db);
         dataPromiseResolve();
     });
     async function handle_update_click(event) {

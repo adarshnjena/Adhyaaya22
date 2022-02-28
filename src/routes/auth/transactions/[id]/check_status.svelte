@@ -29,7 +29,8 @@
         const _verify = await fetch(`/auth/transactions/${$page.params.id}/verify`);
         const verify = await _verify.json();
         if (verify.order_status == 'PAID') {
-            page_text = 'Payment has been sucessfully recieved. Please view and keep the reciept safely. You may return to dashboard.';
+            page_text =
+                'Payment has been sucessfully recieved. Please view and keep the reciept safely. You may return to dashboard.';
             verify_transaction(app, db, $page.params.id);
         } else {
             page_text =
@@ -56,10 +57,18 @@
                     <hr class="tw-my-2 tw-hidden tw-border-b tw-border-gray-600 " />
                     <span class="tw-text-left"></span>
                     <div class="tw-mt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
-                        <a sveltekit:prefetch href="/dashboard/registration/{$page.params.id}/view" class="tw-btn-neutral-primary tw-btn tw-my-4">
+                        <a
+                            sveltekit:prefetch
+                            href="/dashboard/registration/{$page.params.id}/view"
+                            class="tw-btn-neutral-primary tw-btn tw-my-4"
+                        >
                             <span class="tw-inner-text tw-btn">View Reciept</span>
                         </a>
-                        <a sveltekit:prefetch href="/dashboard" class="tw-btn-neutral-primary tw-btn tw-my-4">
+                        <a
+                            sveltekit:prefetch
+                            href="/dashboard"
+                            class="tw-btn-neutral-primary tw-btn tw-my-4"
+                        >
                             <span class="tw-inner-text tw-btn">Back to Dashboard</span>
                         </a>
                     </div>

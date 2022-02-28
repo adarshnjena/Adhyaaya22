@@ -1,5 +1,5 @@
 <script>
-import { onMount } from "svelte";
+    import { onMount } from 'svelte';
 
     let is_one = true;
     let is_two = false;
@@ -19,10 +19,7 @@ import { onMount } from "svelte";
         is_two = false;
         is_three = true;
     }
-
 </script>
-
-
 
 <svelte:head>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -33,17 +30,32 @@ import { onMount } from "svelte";
         <div class="row">
             <div class="col-lg-6 d-none d-lg-block">
                 <ol class="carousel-indicators tabs">
-                    <li data-target="#carouselExampleIndicators" on:click="{on_one_click}" data-slide-to="0" class="{is_one ? 'active':''}">
+                    <li
+                        data-target="#carouselExampleIndicators"
+                        on:click="{on_one_click}"
+                        data-slide-to="0"
+                        class="{is_one ? 'active' : ''}"
+                    >
                         <figure>
                             <img src="img1.jpeg" class="img-fluid" alt="" />
                         </figure>
                     </li>
-                    <li data-target="#carouselExampleIndicators" on:click="{on_two_click}" data-slide-to="1" class="{is_two ? 'active':''}">
+                    <li
+                        data-target="#carouselExampleIndicators"
+                        on:click="{on_two_click}"
+                        data-slide-to="1"
+                        class="{is_two ? 'active' : ''}"
+                    >
                         <figure>
                             <img src="img2.jpeg" class="img-fluid" alt="" />
                         </figure>
                     </li>
-                    <li data-target="#carouselExampleIndicators" on:click="{on_three_click}" data-slide-to="2" class="{is_three ? 'active':''}">
+                    <li
+                        data-target="#carouselExampleIndicators"
+                        on:click="{on_three_click}"
+                        data-slide-to="2"
+                        class="{is_three ? 'active' : ''}"
+                    >
                         <figure>
                             <img src="img3.jpeg" class="img-fluid" alt="" />
                         </figure>
@@ -133,10 +145,18 @@ import { onMount } from "svelte";
                         <li
                             data-target="#carouselExampleIndicators"
                             data-slide-to="0"
-                            class="{is_one ? 'active':''}"
+                            class="{is_one ? 'active' : ''}"
                         ></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="{is_two ? 'active':''}"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="{is_three ? 'active':''}"></li>
+                        <li
+                            data-target="#carouselExampleIndicators"
+                            data-slide-to="1"
+                            class="{is_two ? 'active' : ''}"
+                        ></li>
+                        <li
+                            data-target="#carouselExampleIndicators"
+                            data-slide-to="2"
+                            class="{is_three ? 'active' : ''}"
+                        ></li>
                     </ol>
                 </div>
             </div>

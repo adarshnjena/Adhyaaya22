@@ -120,7 +120,7 @@
         <div class="content">
             <p class="tw-hidden">This site is best experienced on a 16:9 Monitor.</p>
             <img src="{src}" alt="Showcase" class="tw-min-h-screen tw-w-full" />
-            <div class="text-container {image_index == numberOfImages ? '!tw-hidden':''}">
+            <div class="text-container {image_index == numberOfImages ? '!tw-hidden' : ''}">
                 <div
                     class="title {frame_data[image_index]?.line_1[1] ||
                         last_frame.line_1[1] ||
@@ -147,19 +147,19 @@
                         last_frame.line_4[1] ||
                         'invisible'}"
                 >
-                    {@html  frame_data[image_index]?.line_4[0] || last_frame.line_4[0] || ''}
+                    {@html frame_data[image_index]?.line_4[0] || last_frame.line_4[0] || ''}
                 </div>
             </div>
         </div>
     </div>
     <div
-        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
         <span class="tw-text-white"><Benefits /></span>
     </div>
     <div
         style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
-        class="content-2-bg xl:tw-sticky tw-bg-fixed tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 "
+        class="content-2-bg tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 tw-bg-fixed xl:tw-sticky "
     >
         <!-- svelte-ignore a11y-media-has-caption (This video does not require captions)-->
         <video
@@ -171,18 +171,18 @@
         ></video>
     </div>
     <div
-        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
         <span class="tw-text-white">CONTENT 3</span>
     </div>
     <!-- Feedback Section Start -->
     <div
-        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
-        <span class="tw-text-white tw-mb-8"><ImportantFeedback1 /></span>
+        <span class="tw-mb-8 tw-text-white"><ImportantFeedback1 /></span>
     </div>
     <div
-        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
         <span class="tw-text-white">
             <!-- ADD THE NEW FEED BACK ELEMENT HERE-->
@@ -232,7 +232,7 @@
         .subtitle {
             //opacity: 0;
             //font-size: 30px;
-            @apply tw-text-justify tw-text-lg xl:tw-mx-auto tw-mx-10;
+            @apply tw-mx-10 tw-text-justify tw-text-lg xl:tw-mx-auto;
         }
         .title {
             //opacity: 0;

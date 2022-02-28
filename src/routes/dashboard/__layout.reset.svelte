@@ -40,19 +40,19 @@
                                 class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                             >
                                 <li>
-                                    <a  href="/">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a  href="/event/events">Events</a>
+                                    <a href="/event/events">Events</a>
                                 </li>
                                 <li>
-                                    <a  href="/event/sponsors">Sponsors</a>
+                                    <a href="/event/sponsors">Sponsors</a>
                                 </li>
                                 <li>
-                                    <a  href="/event/gallery">Gallery</a>
+                                    <a href="/event/gallery">Gallery</a>
                                 </li>
                                 <li>
-                                    <a  href="/event/teams">Teams</a>
+                                    <a href="/event/teams">Teams</a>
                                 </li>
                                 <li>
                                     <a

@@ -19,4 +19,3 @@ export async function get({ request, params }) {
     }
     return { status: 200, body: verification_data };
 }
-

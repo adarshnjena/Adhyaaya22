@@ -17,4 +17,3 @@ export interface registrationDetails {
     team: teamMemberDetail[];
     transaction_status: string;
 }
-

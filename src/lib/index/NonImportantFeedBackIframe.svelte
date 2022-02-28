@@ -7,11 +7,10 @@
     });
 </script>
 
-
 <!--This was a retarded attempt at trying to convert this code. Broken Click-->
 
 <iframe
-    src='{`/feedback/nip.html`}'
+    src="{`/feedback/nip.html`}"
     class="tw-min-h-screen tw-w-screen tw-bg-base-200"
     title="Page was written using jQuery, Bootstrap."
     frameborder="0"

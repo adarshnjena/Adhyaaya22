@@ -1124,8 +1124,6 @@
         width: fit-content;
     }
 
-    
-
     div {
         width: 100%;
         height: 100vh;

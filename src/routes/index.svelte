@@ -126,14 +126,14 @@
                         last_frame.line_1[1] ||
                         'invisible'}"
                 >
-                    {frame_data[image_index]?.line_1[0] || last_frame.line_1[0] || ''}
+                    {@html frame_data[image_index]?.line_1[0] || last_frame.line_1[0] || ''}
                 </div>
                 <div
                     class="subtitle {frame_data[image_index]?.line_2[1] ||
                         last_frame.line_2[1] ||
                         'invisible'}"
                 >
-                    {frame_data[image_index]?.line_2[0] || last_frame.line_2[0] || ''}
+                    {@html frame_data[image_index]?.line_2[0] || last_frame.line_2[0] || ''}
                 </div>
                 <div
                     class="subtitle {frame_data[image_index]?.line_3[1] ||
@@ -147,19 +147,19 @@
                         last_frame.line_4[1] ||
                         'invisible'}"
                 >
-                    {frame_data[image_index]?.line_4[0] || last_frame.line_4[0] || ''}
+                    {@html  frame_data[image_index]?.line_4[0] || last_frame.line_4[0] || ''}
                 </div>
             </div>
         </div>
     </div>
     <div
-        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
         <span class="tw-text-white"><Benefits /></span>
     </div>
     <div
         style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
-        class="content-2-bg tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 "
+        class="content-2-bg xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 "
     >
         <!-- svelte-ignore a11y-media-has-caption (This video does not require captions)-->
         <video
@@ -171,18 +171,18 @@
         ></video>
     </div>
     <div
-        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
         <span class="tw-text-white">CONTENT 3</span>
     </div>
     <!-- Feedback Section Start -->
     <div
-        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
         <span class="tw-text-white"><ImportantFeedback1 /></span>
     </div>
     <div
-        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
         <span class="tw-text-white">
             <!-- ADD THE NEW FEED BACK ELEMENT HERE-->
@@ -231,7 +231,7 @@
         .subtitle {
             //opacity: 0;
             //font-size: 30px;
-            @apply tw-text-justify tw-text-lg;
+            @apply tw-text-justify tw-text-lg xl:tw-mx-0 tw-mx-10;
         }
         .title {
             //opacity: 0;

@@ -16,7 +16,7 @@
     import instagramOutline from '@iconify-icons/simple-icons/instagram.js';
 </script>
 
-<div class="trailer-footer tw-sticky tw-z-[160] tw-min-h-screen tw-bg-base-300">
+<div class="trailer-footer xl:tw-sticky tw-z-[160] tw-min-h-screen tw-bg-base-300">
     <div class="adh-trailer">
         <div class="adh-trailer-heading ">
             <h1>Do watch our ADHYAAYA'22 Trailer!</h1>
@@ -1019,11 +1019,12 @@
         padding: 1rem 2rem;
     }
     .trailer-footer {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     /*Injected Styles*/
     h1 {
-        @apply tw-text-3xl;
+        font-family: "revampedregular";
+        @apply tw-text-3xl ;
     }
 </style>

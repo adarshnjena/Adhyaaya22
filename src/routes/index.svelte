@@ -25,6 +25,7 @@
     import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
     import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
     import Benefits from '$lib/index/Benefits.svelte';
+import Timeline from '$lib/index/Timeline.svelte';
 
     let app;
     let auth;
@@ -155,25 +156,12 @@
     <div
         class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
-        <span class="tw-text-white"><Benefits /></span>
+        <span class="tw-text-white tw-opacity"><Benefits /></span>
     </div>
     <div
-        style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
-        class="content-2-bg tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 tw-bg-fixed xl:tw-sticky "
+        class="tw-top-0 tw-z-30 tw-flex tw-min-h-[200vh] tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
-        <!-- svelte-ignore a11y-media-has-caption (This video does not require captions)-->
-        <video
-            src="/city-bg.mp4"
-            autoplay
-            muted
-            loop
-            class="tw-h-screen tw-w-screen tw-object-cover"
-        ></video>
-    </div>
-    <div
-        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
-    >
-        <span class="tw-text-white">CONTENT 3</span>
+        <Timeline />
     </div>
     <!-- Feedback Section Start -->
     <div

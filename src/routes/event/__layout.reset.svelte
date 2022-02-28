@@ -1,6 +1,6 @@
 <script>
     import EventNavbar from './EventNavbar.svelte';
-
+    import "../../app.scss"
     import { onMount } from 'svelte';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';

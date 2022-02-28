@@ -20,10 +20,11 @@
     import Content_2_BG_MOBILE from '$lib/assets/content-2-bg-mobile.jpg';
     import MainNavbar from '$lib/MainNavbar.svelte';
     import MainFooter from '$lib/MainFooter.svelte';
-import { getAuth, onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
-import { goto } from '$app/navigation';
-import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
-import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
+    import { getAuth, onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
+    import { goto } from '$app/navigation';
+    import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
+    import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
+    import Benefits from '$lib/index/benefits.svelte';
 
     let app;
     let auth;
@@ -154,7 +155,7 @@ import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
     <div
         class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
-        <span class="tw-text-white">CONTENT 1</span>
+        <span class="tw-text-white"><Benefits /></span>
     </div>
     <div
         style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
@@ -174,8 +175,8 @@ import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
     >
         <span class="tw-text-white">CONTENT 3</span>
     </div>
-        <!-- Feedback Section Start -->
-        <div
+    <!-- Feedback Section Start -->
+    <div
         class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
         <span class="tw-text-white"><ImportantFeedback1 /></span>
@@ -226,18 +227,16 @@ import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
         align-items: center;
         top: 0;
         color: white;
-        
 
         .subtitle {
             //opacity: 0;
             //font-size: 30px;
-            @apply tw-text-lg tw-text-justify
-            
+            @apply tw-text-justify tw-text-lg;
         }
         .title {
             //opacity: 0;
             font-size: 80px;
-            @apply xl:tw-text-right tw-text-center;
+            @apply tw-text-center xl:tw-text-right;
             font-family: revampedregular;
             text-shadow: 2px 2px 10px rgb(0, 136, 255);
         }

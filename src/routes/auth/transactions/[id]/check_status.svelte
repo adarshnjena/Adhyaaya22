@@ -48,7 +48,7 @@
     <div class="tw-hero-content tw-text-center tw-text-neutral-content">
         <form class="tw-max-w-md">
             <div
-                class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-200 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur"
+                class="tw-card tw-w-96 tw-flex-shrink-0 tw-bg-base-100 tw-bg-opacity-75 tw-shadow-2xl tw-backdrop-blur"
             >
                 <div class="tw-card-body">
                     <h1 class="tw-my-4 tw-text-left tw-text-xl">Verifying Payment Status</h1>
@@ -56,10 +56,10 @@
                     <hr class="tw-my-2 tw-hidden tw-border-b tw-border-gray-600 " />
                     <span class="tw-text-left"></span>
                     <div class="tw-mt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
-                        <a sveltekit:prefetch href="/dashboard/registrations/{$page.params.id}/view" class="tw-btn-neutral-primary tw-btn">
+                        <a sveltekit:prefetch href="/dashboard/registration/{$page.params.id}/view" class="tw-btn-neutral-primary tw-btn tw-my-4">
                             <span class="tw-inner-text tw-btn">View Reciept</span>
                         </a>
-                        <a sveltekit:prefetch href="/dashboard" class="tw-btn-neutral-primary tw-btn">
+                        <a sveltekit:prefetch href="/dashboard" class="tw-btn-neutral-primary tw-btn tw-my-4">
                             <span class="tw-inner-text tw-btn">Back to Dashboard</span>
                         </a>
                     </div>

@@ -120,7 +120,7 @@
         <div class="content">
             <p class="tw-hidden">This site is best experienced on a 16:9 Monitor.</p>
             <img src="{src}" alt="Showcase" class="tw-min-h-screen tw-w-full" />
-            <div class="text-container">
+            <div class="text-container {image_index == numberOfImages ? '!tw-hidden':''}">
                 <div
                     class="title {frame_data[image_index]?.line_1[1] ||
                         last_frame.line_1[1] ||

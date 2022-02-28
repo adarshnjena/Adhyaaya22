@@ -21,12 +21,13 @@
 
     // Cashfree Imports
     import { cashfreeSandbox } from 'cashfree-dropjs';
-    import { registrationDetails } from '$lib/types/registrationDetails';
+    import { registrationDetails, teamMemberDetail } from '$lib/types/registrationDetails';
     import { sample_make_order } from '$lib/cashfree/sample';
     import { get_user_details } from '$lib/firebase/userDetails';
     import { getFirestore } from 'firebase/firestore/lite';
     import {
         add_new_user_registration,
+        event_extra_members_mapping,
         get_event_cost,
         get_user_registrations,
     } from '$lib/firebase/registrationDetails';
@@ -35,7 +36,9 @@
 
     let testCashfree = new cashfreeSandbox.Cashfree();
     //let prodCashfree = new cashfreeProd.Cashfree();
-
+    $: {
+        _team_members = event_extra_members_mapping[input_registration_details.event_code] || 0;
+    }
     let app;
     let auth;
     let db;
@@ -77,6 +80,40 @@
         dev ? console.log(regs) : '';
     });
 
+    // Function for getting single string of team members.
+    function get_team_members(): teamMemberDetail[]  {
+        let team_mem_names = [];
+        let team_mem_numbers = [];
+        let team_mem_emails = [];
+        document
+            .querySelectorAll('.team-member-name-input')
+            .forEach((element: HTMLInputElement) => {
+                team_mem_names.push(element.value);
+            });
+        document
+            .querySelectorAll('.team-member-mobile-input')
+            .forEach((element: HTMLInputElement) => {
+                team_mem_numbers.push(element.value);
+            });
+        document
+            .querySelectorAll('.team-member-email-input')
+            .forEach((element: HTMLInputElement) => {
+                team_mem_emails.push(element.value);
+            });
+        dev ? console.log('team_mem_names', team_mem_names) : '';
+        dev ? console.log('team_mem_numbers', team_mem_numbers) : '';
+        dev ? console.log('team_mem_emails', team_mem_emails) : '';
+        let members = [];
+        for (let i = 0; i < team_mem_names.length; i++) {
+            members.push({
+                name: team_mem_names[i],
+                phone: team_mem_numbers[i],
+                email: team_mem_emails[i],
+            });
+        }
+        return members;
+    }
+
     async function submit_free(event) {
         let order_id = get_order_id($authStore.user.uid, input_registration_details.event_code);
         const transform: registrationDetails = {
@@ -88,7 +125,7 @@
             transaction_status: 'PAID',
             event_code: input_registration_details['event_code'],
             course: input_registration_details['year_of_study'],
-            team: input_registration_details['team_members'],
+            team: get_team_members(),
         };
         await add_new_user_registration(
             app,
@@ -99,11 +136,15 @@
         );
         goto(`/auth/transactions/${order_id}/check_status_free`);
     }
+    let _team_members = 0;
 
     async function on_submit(event) {
         console.log('Submit Button Clicked');
         if (error) {
             is_payment_gateway_shown = false;
+            return;
+        }
+        if (!confirm('Do you want to confirm the registration for this event ?')) {
             return;
         }
         //console.dir(regs)
@@ -158,7 +199,7 @@
                         transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
                         event_code: input_registration_details['event_code'],
                         course: input_registration_details['year_of_study'],
-                        team: input_registration_details['team_members'],
+                        team: get_team_members(),
                     };
                     await add_new_user_registration(
                         app,
@@ -324,21 +365,6 @@
                             />
                         </div>
 
-                        <div class="input tw-inline-flex ">
-                            <Icon
-                                class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
-                                height=""
-                                width=""
-                                icon="{baselinePeopleAlt}"
-                            />
-                            <input
-                                type="text"
-                                bind:value="{input_registration_details.team_members}"
-                                placeholder="Member 1 | Member 2 | Member 3 ..."
-                                class="tw-w-full"
-                            />
-                        </div>
-
                         <!-- <i class='bx bxs-component'></i> -->
                         <select bind:value="{input_registration_details.event_code}">
                             <option value="" class="selected" selected disabled>
@@ -381,6 +407,47 @@
                             <option value="">YouTube Content Creation</option>
                             <option value="" disabled></option>
                         </select>
+                        {#each [...Array(_team_members).keys()] as item}
+                            <div class="input tw-inline-flex ">
+                                <Icon
+                                    class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                    height=""
+                                    width=""
+                                    icon="{baselinePeopleAlt}"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Member {item + 1} Name"
+                                    class="team-member-name-input tw-w-full"
+                                />
+                            </div>
+                            <div class="input tw-inline-flex ">
+                                <Icon
+                                    class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                    height=""
+                                    width=""
+                                    icon="{baselinePhone}"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Member {item + 1} Mobile"
+                                    class="team-member-mobile-input tw-w-full"
+                                />
+                            </div>
+                            <div class="input tw-inline-flex ">
+                                <Icon
+                                    class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
+                                    height=""
+                                    width=""
+                                    icon="{baselineAltEmail}"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Member {item + 1} Email"
+                                    class="team-member-email-input tw-w-full"
+                                />
+                            </div>
+                        {/each}
                     </div>
 
                     <button
@@ -401,8 +468,7 @@
 
                     <p>
                         * Some Events are Team-Based. Please ensure you have a complete team before
-                        registering. Enter Team Members name seperated by comma (,) or vertical
-                        seperator (|)
+                        registering.
                     </p>
                 </div>
             </div>
@@ -460,7 +526,7 @@
         margin: auto;
         display: flex;
         flex-direction: column;
-        opacity: 0.8;
+        /* opacity: 0.8; */
         width: 38rem;
         align-items: center;
         justify-content: center;

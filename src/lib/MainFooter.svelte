@@ -16,7 +16,7 @@
     import instagramOutline from '@iconify-icons/simple-icons/instagram.js';
 </script>
 
-<div class="trailer-footer xl:tw-sticky tw-z-[160] tw-min-h-screen tw-bg-base-300">
+<div class="trailer-footer tw-z-[160] tw-min-h-screen tw-bg-base-300 xl:tw-sticky">
     <div class="adh-trailer">
         <div class="adh-trailer-heading ">
             <h1>Do watch our ADHYAAYA'22 Trailer!</h1>
@@ -1005,7 +1005,11 @@
     }
     .adh-trailer-heading {
         text-align: center;
-        margin: 2rem;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+    }
+    .adh-trailer-heading > h1 {
+        @apply tw-text-4xl;
     }
     .adh-video {
         text-align: center;
@@ -1024,7 +1028,7 @@
 
     /*Injected Styles*/
     h1 {
-        font-family: "revampedregular";
-        @apply tw-text-3xl ;
+        font-family: 'revampedregular';
+        @apply tw-text-3xl;
     }
 </style>

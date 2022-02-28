@@ -23,13 +23,17 @@
 
 <div class="parent-container">
     <div class="container">
-        <h1>only one step away!</h1>
+        <!--<h1>only one step away!</h1>
         <p>
             Click the button below to login/register and associate yourself with the 4th edition of
             Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
+        </p> -->
+        <h1>Coming Soon!</h1>
+        <p>
+            We are working hard to bring you the best experience. Stay tuned!
         </p>
 
-        <button
+        <button class="tw-hidden"
             on:click="{() => {
                 $authentication_message = 'Plese register below';
                 goto('/auth/login');
@@ -70,7 +74,7 @@
 
     div.parent-container {
         height: 100vh;
-        width: 100%;
+        max-width: 100vw;
         background: url('/register_bg.png') no-repeat center;
         background-size: cover;
         background-position: center;

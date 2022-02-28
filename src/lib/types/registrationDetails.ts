@@ -2,7 +2,6 @@ export interface teamMemberDetail {
     name: string;
     email: string;
     phone: string;
-    about: string;
 }
 
 export interface registrationDetails {
@@ -15,7 +14,7 @@ export interface registrationDetails {
     // supposed to be City, State, Country
     //college_address: string;
     course: string;
-    team: string;
+    team: teamMemberDetail[];
     transaction_status: string;
 }
 

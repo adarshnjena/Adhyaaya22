@@ -51,7 +51,9 @@
                                 <li>
                                     <a  href="/event/gallery">Gallery</a>
                                 </li>
-
+                                <li>
+                                    <a  href="/event/teams">Teams</a>
+                                </li>
                                 <li>
                                     <a
                                         href="/auth/logout"

@@ -32,6 +32,32 @@ export const event_name_mapping = {
     BSY: '[DEV] Bornpsycos'
 };
 
+export const event_extra_members_mapping = {
+    VPM: 0,
+    CADMS: 0,
+    CADMD: 1,
+    CADCS: 0,
+    CADCD: 1,
+    VAV: 0,
+    RPNBS: 3,
+    RPNBT: 3,
+    RPNVS: 4,
+    RPNCI: 0,
+    MUNA: 0,
+    MUNU: 0,
+    COV: 0,
+    CSW: 0,
+    UPG: 0,
+    AVK: 4,
+    TSI: 0,
+    // COS: 'CAD-O-Shop',
+    STG: 0,
+    FOH: 3,
+    CCB: 5,
+    BSYD: 1,
+    BSYT: 3,
+}
+
 export async function get_user_registrations(app: FirebaseApp, auth: Auth, db: Firestore) {
     const user = auth.currentUser;
     const user_id = user.uid;

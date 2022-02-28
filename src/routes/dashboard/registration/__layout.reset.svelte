@@ -6,6 +6,9 @@
     import PageTransition from '$lib/PageTransition.svelte';
     import navbarLogo from '$lib/assets/navbar-logo.png';
     import backgroundImage from '$lib/assets/page-background.png';
+    import authStore from '$lib/auth/authStore';
+    let auth_link = ['Register' , '/event/register']
+    $: $authStore.isLoggedIn ? auth_link = ['Dashboard' , '/dashboard'] : auth_link = ['Register' , '/event/register']
 </script>
 
 <PageTransition>
@@ -40,18 +43,29 @@
                                 class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                             >
                                 <li>
-                                    <a  href="/">Home</a>
-                                </li>
-                                <li>
-                                    <a  href="/event/events">Events</a>
-                                </li>
-                                <li>
-                                    <a  href="/event/sponsors">Sponsors</a>
-                                </li>
-                                <li>
-                                    <a  href="/event/gallery">Gallery</a>
+                                    <a
+                                        href="{auth_link[1]}"
+                                        class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
+                                    >
+                                        {auth_link[0]}
+                                    </a>
                                 </li>
 
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/event/events">Events</a>
+                                </li>
+                                <li>
+                                    <a href="/event/sponsors">Sponsors</a>
+                                </li>
+                                <li>
+                                    <a href="/event/gallery">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="/event/teams">Teams</a>
+                                </li>
                                 <li>
                                     <a
                                         href="/auth/logout"

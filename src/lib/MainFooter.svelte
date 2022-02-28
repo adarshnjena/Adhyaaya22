@@ -18,7 +18,7 @@
 
 <div class="trailer-footer tw-z-[160] tw-min-h-screen tw-bg-base-300 xl:tw-sticky">
     <div class="adh-trailer">
-        <div class="adh-trailer-heading ">
+        <div class="adh-trailer-heading !tw-hidden">
             <h1>Do watch our ADHYAAYA'22 Trailer!</h1>
         </div>
         <div class="adh-video tw-flex tw-w-full tw-items-center tw-justify-center tw-text-center">
@@ -1028,7 +1028,7 @@
 
     /*Injected Styles*/
     h1 {
-        font-family: 'revampedregular';
+        font-family: 'Nunito';
         @apply tw-text-3xl;
     }
 </style>

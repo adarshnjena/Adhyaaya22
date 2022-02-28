@@ -7,7 +7,7 @@
 html,
 body {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     overflow-x: hidden;
     background: #000;
     margin: 0%;
@@ -40,7 +40,7 @@ html {
 .page2 {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
     margin: 0;
 }

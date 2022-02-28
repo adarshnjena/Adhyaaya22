@@ -12,7 +12,7 @@
 
 <iframe
     src='{`/feedback/nip.html`}'
-    class="tw-h-screen tw-w-screen tw-overflow-clip tw-bg-base-200"
+    class="tw-min-h-screen tw-w-screen tw-bg-base-200"
     title="Page was written using jQuery, Bootstrap."
     frameborder="0"
 ></iframe>

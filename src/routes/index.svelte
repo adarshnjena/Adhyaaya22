@@ -159,7 +159,7 @@
     </div>
     <div
         style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
-        class="content-2-bg xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 "
+        class="content-2-bg xl:tw-sticky tw-bg-fixed tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-100 tw-bg-opacity-50 "
     >
         <!-- svelte-ignore a11y-media-has-caption (This video does not require captions)-->
         <video
@@ -179,7 +179,7 @@
     <div
         class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
-        <span class="tw-text-white"><ImportantFeedback1 /></span>
+        <span class="tw-text-white tw-mb-8"><ImportantFeedback1 /></span>
     </div>
     <div
         class="xl:tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
@@ -213,13 +213,14 @@
 
         img {
             width: 100%;
+            height: 100vh;
             transform: translate3d(0, 0, 0);
         }
     }
 
     .text-container {
         width: 100%;
-        height: 100%;
+        height: 100vh;
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -231,11 +232,11 @@
         .subtitle {
             //opacity: 0;
             //font-size: 30px;
-            @apply tw-text-justify tw-text-lg xl:tw-mx-0 tw-mx-10;
+            @apply tw-text-justify tw-text-lg xl:tw-mx-auto tw-mx-10;
         }
         .title {
             //opacity: 0;
-            font-size: 80px;
+            font-size: 60px;
             @apply tw-text-center xl:tw-text-right;
             font-family: revampedregular;
             text-shadow: 2px 2px 10px rgb(0, 136, 255);

@@ -7,11 +7,11 @@ const visible_5 = 'tw-opacity-75 tw-translate-y-1';
 const visible_6 = 'tw-opacity-50 tw-translate-y-2';
 const visible_7 = 'tw-opacity-25 tw-translate-y-4';
 // const invisible = ...
-const left = ' tw-mr-[50vw] tw-ml-24';
-const right = ' tw-ml-[50vw] tw-mr-24';
+const left = ' !tw-mr-[50vw] !tw-ml-24';
+const right = ' !tw-ml-[50vw] !tw-mr-24';
 
-const top = ' tw-mb-[30vh]  ';
-const bottom = ' tw-mt-[50vh] ';
+const top = ' !tw-mb-[20vh]  ';
+const bottom = ' !tw-mt-[50vh] ';
 
 
 // Text for the scrolly bits

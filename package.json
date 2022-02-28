@@ -17,6 +17,7 @@
         "@iconify/icons-logos": "^1.1.13",
         "@iconify/svelte": "^2.1.2",
         "@sveltejs/adapter-auto": "next",
+        "@sveltejs/adapter-netlify": "^1.0.0-next.48",
         "@sveltejs/adapter-vercel": "^1.0.0-next.39",
         "@sveltejs/kit": "^1.0.0-next.260",
         "@tailwindcss/forms": "^0.4.0",

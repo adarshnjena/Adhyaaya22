@@ -296,3 +296,4 @@ __pycache__
 .turbo
 .vercel_build_output
 serviceAccountKey.json
+.netlify/**

@@ -24,7 +24,7 @@
     import { goto } from '$app/navigation';
     import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
     import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
-    import Benefits from '$lib/index/benefits.svelte';
+    import Benefits from '$lib/index/Benefits.svelte';
 
     let app;
     let auth;

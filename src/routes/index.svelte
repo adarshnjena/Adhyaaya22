@@ -23,6 +23,7 @@
 import { getAuth, onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
 import { goto } from '$app/navigation';
 import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
+import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
 
     let app;
     let auth;
@@ -153,7 +154,7 @@ import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
     <div
         class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
     >
-        <span class="tw-text-white"><ImportantFeedback1 /></span>
+        <span class="tw-text-white">CONTENT 1</span>
     </div>
     <div
         style="--bg2: url('{isMobile ? Content_2_BG_MOBILE : Content_2_BG_PC}')"
@@ -173,7 +174,21 @@ import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
     >
         <span class="tw-text-white">CONTENT 3</span>
     </div>
-
+        <!-- Feedback Section Start -->
+        <div
+        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+    >
+        <span class="tw-text-white"><ImportantFeedback1 /></span>
+    </div>
+    <div
+        class="tw-sticky tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+    >
+        <span class="tw-text-white">
+            <!-- ADD THE NEW FEED BACK ELEMENT HERE-->
+            <NonImportantFeedBack />
+        </span>
+    </div>
+    <!-- Feedback Section End -->
     <MainFooter />
 </div>
 

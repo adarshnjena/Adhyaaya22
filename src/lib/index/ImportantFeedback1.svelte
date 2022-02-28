@@ -1,4 +1,4 @@
-<center><h1>
+<center><h1 class="tw-text-3xl">
                 Testimonials
             </h1></center>
 <div class="testimonial">

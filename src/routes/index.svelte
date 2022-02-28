@@ -237,7 +237,7 @@ import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
         .title {
             //opacity: 0;
             font-size: 80px;
-            @apply tw-text-right;
+            @apply xl:tw-text-right tw-text-center;
             font-family: revampedregular;
             text-shadow: 2px 2px 10px rgb(0, 136, 255);
         }

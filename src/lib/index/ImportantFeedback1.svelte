@@ -90,7 +90,7 @@
         border-radius: 30px;
         transform: rotate(-7deg);
         z-index: -2;
-        @apply tw-bg-base-100
+        @apply tw-bg-base-100 tw-overflow-clip md:tw-block tw-hidden
     }
     .testimonial .pic {
         //border: 5px solid #f2efe8;

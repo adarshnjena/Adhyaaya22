@@ -1,6 +1,5 @@
 /* Write your global styles here, in PostCSS syntax */
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -111,7 +110,7 @@ body {
     // bottom: -20vh;
     //width: 100%;
     /* margin-right: 200px; */
-  }
+}
 
 .cybr-btn {
     --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
@@ -191,15 +190,14 @@ body {
     line-height: 55px;
     transition: background 0.2s;
     // margin: 40px;
-    
 }
 
 .cybr-btn-edit-pc {
-    @apply tw-mt-12 tw-px-64 tw-text-center tw-py-2;
+    @apply tw-mt-12 tw-px-10 tw-py-2 tw-text-center;
 }
 
 .cybr-btn-edit-mobile {
-    @apply tw-px-10;
+    @apply tw-mt-12 tw-px-10;
 }
 
 .cybr-btn:hover {

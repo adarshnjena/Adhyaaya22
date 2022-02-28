@@ -2,7 +2,7 @@
     <h1 class="tw-text-3xl">Benefits</h1>
     <p>Let's look at the perks of participating in a national level techfest</p>
 </div>
-<div class="wrapper tw-h-screen tw-w-screen">
+<div class="wrapper tw-h-[200vh] tw-min-h-screen tw-w-screen">
     <div class="maincard">
         <div class="card">
             <!-- Back side cards -->

@@ -4,6 +4,7 @@
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
     import navbarLogo from '$lib/assets/navbar-logo.png';
+    // import authStore from ''
 </script>
 
 <nav
@@ -45,9 +46,7 @@
                             </li>
 
                             <li>
-                                <a href="/auth/logout" class="tw-btn tw-btn-error tw-rounded-xl">
-                                    <Icon class="tw-mr-2" icon="{outlineLogout}" /> LOGOUT
-                                </a>
+                                <a href="/dashboard" class="">Dashboard</a>
                             </li>
                         </ul>
                     </div>

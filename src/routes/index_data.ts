@@ -6042,7 +6042,7 @@ export const portrait_frame_data = {
     },
     550: {
         line_1: ['', invisible],
-        line_2: [theme, visible_7],
+        line_2: ['', invisible],
         line_3: ['', invisible],
         line_4: ['', invisible],
     },

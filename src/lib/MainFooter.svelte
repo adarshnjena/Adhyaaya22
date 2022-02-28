@@ -16,7 +16,7 @@
     import instagramOutline from '@iconify-icons/simple-icons/instagram.js';
 </script>
 
-<div class="trailer-footer tw-sticky tw-z-20 tw-min-h-screen tw-bg-base-300">
+<div class="trailer-footer tw-sticky tw-z-[160] tw-min-h-screen tw-bg-base-300">
     <div class="adh-trailer">
         <div class="adh-trailer-heading ">
             <h1>Do watch our ADHYAAYA'22 Trailer!</h1>
@@ -592,7 +592,7 @@
         left: 0;
         height: 100vh;
         width: 100vw;
-        opacity: 0;
+        opacity: 1;
         pointer-events: none;
     }
 
@@ -690,7 +690,7 @@
         }
         .logo img {
             width: 25vw;
-            z-index: 1;
+            z-index: 160;
         }
         #icons {
             width: 22vw;
@@ -761,7 +761,7 @@
     .termspop {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
+        z-index: 160; /* Sit on top */
         left: 0;
         top: 0;
         width: 100%;
@@ -777,7 +777,7 @@
         margin: 5% auto 15% auto;
         border: 1px solid #888;
         width: 80%;
-        z-index: 13;
+        z-index: 180;
     }
     .termspop_content h1 {
         font-size: 2em;
@@ -813,7 +813,7 @@
         margin: 5% auto 15% auto;
         border: 1px solid #888;
         width: 80%;
-        z-index: 13;
+        z-index: 180;
         color: white;
     }
 
@@ -850,7 +850,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        z-index: 13;
+        z-index: 180;
     }
 
     .heading3 {
@@ -916,8 +916,8 @@
         position: absolute;
         bottom: 45%;
         left: 0;
-        opacity: 0;
-        z-index: 2;
+        opacity: 1;
+        z-index: 170;
         transition: all 0.5s ease 0.3s;
     }
     .our-team:hover .social {
@@ -949,7 +949,7 @@
         position: absolute;
         top: 100px;
         left: 0;
-        z-index: -1;
+        z-index: 100;
         transition: all 0.3s ease 0s;
     }
     .our-team .social li a:hover:after {

@@ -63,14 +63,14 @@ body {
 
 .mascot {
   position: absolute;
-  height: 9000px;
+  height: 313rem;
   width: 100px;
   top: 0;
   z-index: 4;
 }
 
 .mascot img {
-  bottom: 10px;
+  bottom: 0.7rem;
   width: 200px;
   display: block;
   position: fixed;
@@ -79,7 +79,6 @@ body {
 /********* Mascot Movement on Scroll END *********/
 
 .marSpon {
-  /* margin-top: 2.813rem; */
   margin-bottom: 2.813rem;
 }
 
@@ -88,25 +87,25 @@ body {
   padding-bottom: 2.813rem;
 }
 
-/********* Glow on "sponsrors" Title *********/
+/********* Glow on "heading" Title *********/
 .glow {
   font-size: 40px;
   font-family: revampedregular;
   color: #fff;
   text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
-      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow:   0 2px 40px #e60073, 0 0 5px rgb(241, 232, 232);
+    
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
-      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow:  0 2px 40px #ff4da6, 0 2px 40px #ff4da6;
+    
   }
 }
 /********* Glow on "sponsrors" Title  END *********/
@@ -165,6 +164,7 @@ body {
 
 }
 
+
 .cage3 {
   display: flex;
   flex-wrap: wrap;
@@ -217,16 +217,50 @@ body {
   box-shadow: 0 0 50px #402cf8;
 }
 
+.wbgP {
+  background-color: rgba(255, 255, 255, 0.952);
+  min-height: 250px;
+  max-height: 400px;
+  height: auto;
+  transition: all 0.3s;
+}
+
+
 .sideCompartment {
   width: 18.5rem;
   position: fixed;
   top: 5.299999999999997rem;
-  background-image: linear-gradient(rgba(15, 15, 15, 0.795) , rgba(48, 23, 56, 0.808)  );
+  background: #161623;
+  background-repeat: repeat-y;
   width: 33rem;
   height: 100%;
   border-radius: 0.6rem;
   padding: 0.25rem;
   margin: 0.25rem;
+}
+
+.sideCompartment::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2c0c42,#b1132d);
+  clip-path: circle(20% at -10% 15%);
+}
+
+.sideCompartment::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#9b0a22,#2c0c42);
+  clip-path: circle(23% at right 65%);
 }
 
 .content{
@@ -238,7 +272,7 @@ body {
 }
 
 .alignSide{
-  margin-left: 15rem;
+  margin-left: 17rem;
 }
 
 .border1{
@@ -248,27 +282,35 @@ body {
   border-width: 0.28rem;
 }
 
+.maxsize{
+  max-width: 23rem;
+  max-height: 23rem;
+  min-height: 7rem;
+  min-width: 7rem;
+}
+
 .glowDark{
   font-size: 40px;
   font-family: revampedregular;
-  color: #fff;
+  color: rgb(241, 232, 232);
   text-align: center;
-  animation: glowDark 1s ease-in-out infinite alternate;
-  animation: glowDark 1s ease-in-out infinite alternate;
-  animation: glowDark 1s ease-in-out infinite alternate;
+  animation: glowDark 1.5s ease-in-out infinite alternate;
+  animation: glowDark 1.5s ease-in-out infinite alternate;
+  animation: glowDark 1.5s ease-in-out infinite alternate;
   padding: 1rem;
 }
-
+/* #0446c2 */
 @keyframes glowDark {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0400e6,
-      0 0 40px #0400e6, 0 0 50px #0400e6, 0 0 60px #0400e6, 0 0 70px #0400e6;
+    text-shadow:   0 2px 40px #0400e6, 0 0 5px rgb(241, 232, 232);
+    
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #0051e6, 0 0 40px #0051e6,
-      0 0 50px #0051e6, 0 0 60px #0051e6, 0 0 70px #0051e6, 0 0 80px #0051e6;
+    text-shadow:  0 2px 40px #0447c2bd, 0 2px 40px #0447c2bd;
+    
   }
 }
+
 
 @media screen and (max-width: 700px) {
   body {
@@ -292,14 +334,45 @@ body {
     align-items: center;
   }
 
+  .glow {
+    font-size: 40px;
+    font-family: revampedregular;
+    color: #fff;
+    text-align: center;
+
+  }
+
   .sideCompartment {
     height: fit-content;
     width: 100%;
     position: relative;
     display: block;
-    background-color: rgba(13, 9, 58, 0.918);
+    background: #161623;
+    background-repeat: repeat-y;
     justify-content: stretch;
-
+    margin-bottom: 1.8rem;
+  }
+  .sideCompartment::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2c0c42c7,#b1132dc0);
+    clip-path: circle(20% at -10% 15%);
+  }
+  .sideCompartment::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#9b0a22bd,#2c0c42bd);
+    clip-path: circle(23% at right 65%);
   }
 
   .alignSide{

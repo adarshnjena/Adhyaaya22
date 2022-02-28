@@ -25,7 +25,11 @@
     import { sample_make_order } from '$lib/cashfree/sample';
     import { get_user_details } from '$lib/firebase/userDetails';
     import { getFirestore } from 'firebase/firestore/lite';
-    import { add_new_user_registration, get_event_cost, get_user_registrations } from '$lib/firebase/registrationDetails';
+    import {
+        add_new_user_registration,
+        get_event_cost,
+        get_user_registrations,
+    } from '$lib/firebase/registrationDetails';
     import { get_order_id } from '$lib/cashfree/helpers';
     //use import { cashfreeProd } from 'cashfree-dropjs';
 
@@ -68,20 +72,19 @@
             details['profile']['state'] +
             '|' +
             details['profile']['country'];
-            
-        regs = await get_user_registrations(app, auth, db);
-        dev ? console.log(regs): ''
-    });
-    
 
+        regs = await get_user_registrations(app, auth, db);
+        dev ? console.log(regs) : '';
+    });
 
     async function submit_free(event) {
+        let order_id = get_order_id($authStore.user.uid, input_registration_details.event_code);
         const transform: registrationDetails = {
             name: input_registration_details['name'],
             email: input_registration_details['email'],
             phone: input_registration_details['phone'],
             college: input_registration_details['college'],
-            registration_id: get_order_id($authStore.user.uid, input_registration_details.event_code),
+            registration_id: order_id,
             transaction_status: 'PAID',
             event_code: input_registration_details['event_code'],
             course: input_registration_details['year_of_study'],
@@ -94,7 +97,7 @@
             input_registration_details.event_code,
             transform,
         );
-        goto('/dashboard');
+        goto(`/auth/transactions/${order_id}/check_status_free`);
     }
 
     async function on_submit(event) {
@@ -344,29 +347,29 @@
                             <option class="option_heading" value="" disabled>
                                 Non-technical Event
                             </option>
-                            <option value="BSYD">BORNPSYCOS | Duos | ₹80</option>
-                            <option value="BSYT">BORNPSYCOS | Team [4] | ₹150</option>
-                            <option value="MUNA">MUN AIPPM | Solo | ₹150</option>
-                            <option value="MUNU">MUN UNHRC | Solo | ₹150</option>
-                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4] | ₹160</option>
-                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4] | ₹80</option>
-                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5] | ₹150</option>
-                            <option value="RPNCI">RESPAWN CHESS | Solo | ₹50</option>
-                            <option value="VAV">VAAD VIVAD | SOLO | ₹70</option>
-                            <option value="FOH">FOODOHOLICS | Team [4] | ₹200</option>
-                            <option value="CCB">CRICBASH | Team [6] | ₹300</option>
+                            <option value="BSYD">BORNPSYCOS | Duos</option>
+                            <option value="BSYT">BORNPSYCOS | Team [4]</option>
+                            <option value="MUNA">MUN AIPPM | Solo</option>
+                            <option value="MUNU">MUN UNHRC | Solo</option>
+                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]</option>
+                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]</option>
+                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]</option>
+                            <option value="RPNCI">RESPAWN CHESS | Solo</option>
+                            <option value="VAV">VAAD VIVAD | SOLO</option>
+                            <option value="FOH">FOODOHOLICS | Team [4]</option>
+                            <option value="CCB">CRICBASH | Team [6]</option>
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>
                                 Technical Event
                             </option>
-                            <option value="COV">CODEVENTURE | SOLO | FREE</option>
-                            <option value="AVK">AVISHKAR | Team [upto 5] | ₹120</option>
-                            <option value="CADCS">CADDICTION CIVIL | Solo | ₹60</option>
-                            <option value="CADCD">CADDICTION CIVIL | Duo | ₹100</option>
-                            <option value="CADMS">CADDICTION MECHANICAL | Solo | ₹60</option>
-                            <option value="CADMD">CADDICTION MECHANICAL | Duo | ₹100</option>
-                            <option value="VPM">VIRTUAL PLACEMENT | Solo | ₹70</option>
+                            <option value="COV">CODEVENTURE | SOLO</option>
+                            <option value="AVK">AVISHKAR | Team [upto 5]</option>
+                            <option value="CADCS">CADDICTION CIVIL | Solo</option>
+                            <option value="CADCD">CADDICTION CIVIL | Duo</option>
+                            <option value="CADMS">CADDICTION MECHANICAL | Solo</option>
+                            <option value="CADMD">CADDICTION MECHANICAL | Duo</option>
+                            <option value="VPM">VIRTUAL PLACEMENT | Solo</option>
                             <option value="" disabled></option>
                             <!--TODO: FINISH THIS-->
                             <option class="option_heading" value="" disabled>Workshop</option>
@@ -398,7 +401,8 @@
 
                     <p>
                         * Some Events are Team-Based. Please ensure you have a complete team before
-                        registering. Enter Team Members name seperated by comma (,) or vertical seperator (|)
+                        registering. Enter Team Members name seperated by comma (,) or vertical
+                        seperator (|)
                     </p>
                 </div>
             </div>

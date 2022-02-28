@@ -136,7 +136,7 @@
                     {@html frame_data[image_index]?.line_2[0] || last_frame.line_2[0] || ''}
                 </div>
                 <div
-                    class="subtitle {frame_data[image_index]?.line_3[1] ||
+                    class="subtitle !tw-mt-10 {frame_data[image_index]?.line_3[1] ||
                         last_frame.line_3[1] ||
                         'invisible'}"
                 >

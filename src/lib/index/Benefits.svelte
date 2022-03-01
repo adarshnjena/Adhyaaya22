@@ -31,7 +31,7 @@
                         <span>;</span>
                     </div>
                         <span>}</span>
-                    </div>
+                    
                     <span>}</span>
                 </code>
             </div>
@@ -69,7 +69,7 @@
                     </div>
                     <span>});</span>
                 </code>
-            </div>
+        </div>
         </div>
 
         <div class="card">
@@ -99,7 +99,6 @@
                         <span>;</span>
                     </div>
                         <span>}</span>
-                    </div>
                     <span>}</span>
                 </code>
             </div>

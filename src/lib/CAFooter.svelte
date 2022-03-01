@@ -5,14 +5,14 @@
             class="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-text-secondary md:tw-justify-between "
         >
             <div class="tw-w-full tw-px-4 md:tw-w-4/12">
-                <div class="tw-py-1 tw-text-center tw-text-sm tw-font-semibold md:tw-text-left">
+                <div class="tw-py-1 tw-text-center tw-text-sm tw-font-semibold">
                     <span class="tw-ml-3">Copyright © 2022</span>
                     <a
                         sveltekit:prefetch
-                        href="/copyright"
+                        href="/"
                         class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white"
                     >
-                        Dev Parapalli | GCOEN
+                        Adhyaaya | GCOEN
                     </a>
                 </div>
             </div>
@@ -22,8 +22,8 @@
                 >
                     <li>
                         <a
-                            href="/"
-                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white"
+                            href="/event/team"
+                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white tw-hidden"
                         >
                             Contact Us
                         </a>
@@ -31,17 +31,9 @@
                     <li>
                         <a
                             href="/"
-                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white"
+                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white tw-hidden"
                         >
-                            About Me
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/"
-                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white"
-                        >
-                            Fork This Project
+                            Learn More
                         </a>
                     </li>
                 </ul>

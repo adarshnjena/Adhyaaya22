@@ -34,13 +34,13 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/event/events">Events</a>
+                        <a href="/events/events">Events</a>
                     </li>
                     <li>
                         <a href="/event/sponsors">Sponsors</a>
                     </li>
                     <li>
-                        <a href="/event/gallery">Gallery</a>
+                        <a href="/events/gallery">Gallery</a>
                     </li>
                     <li>
                         <a href="/event/teams">Teams</a>
@@ -69,7 +69,7 @@
                 </li>
                 <li>
                     <a
-                        href="/event/events"
+                        href="/events/events"
                         class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Events
@@ -85,7 +85,7 @@
                 </li>
                 <li>
                     <a
-                        href="/event/gallery"
+                        href="/events/gallery"
                         class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Gallery
@@ -93,7 +93,7 @@
                 </li>
                 <li>
                     <a
-                        href="/event/gallery"
+                        href="/events/gallery"
                         class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Teams

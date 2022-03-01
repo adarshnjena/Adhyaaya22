@@ -57,13 +57,13 @@
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="/event/events">Events</a>
+                                    <a href="/events/events">Events</a>
                                 </li>
                                 <li>
                                     <a href="/event/sponsors">Sponsors</a>
                                 </li>
                                 <li>
-                                    <a href="/event/gallery">Gallery</a>
+                                    <a href="/events/gallery">Gallery</a>
                                 </li>
                                 <li>
                                     <a href="/event/teams">Teams</a>

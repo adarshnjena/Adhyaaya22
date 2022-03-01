@@ -1,11 +1,15 @@
 <script>
+    import EventNavbar from '../event/EventNavbar.svelte';
+    import '../../app.scss';
     import { onMount } from 'svelte';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
     import navbarLogo from '$lib/assets/navbar-logo.png';
     import CaFooter from '$lib/CAFooter.svelte';
+    import MainNavbar from '$lib/MainNavbar.svelte';
     import authStore from '$lib/auth/authStore';
+
     let auth_link = ['Register', '/event/register'];
     $: $authStore.isLoggedIn
         ? (auth_link = ['Dashboard', '/dashboard'])
@@ -53,12 +57,7 @@
                                 <a href="/event/teams">Teams</a>
                             </li>
                             <li>
-                                <a
-                                    href="{auth_link[1]}"
-                                    class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
-                                >
-                                    {auth_link[0]}
-                                </a>
+                                <a href="{auth_link[1]}">{auth_link[0]}</a>
                             </li>
                         </ul>
                     </div>
@@ -68,3 +67,8 @@
         </div>
     </div>
 </nav>
+<div class="tw-relative tw-h-full tw-w-full tw-bg-opacity-0" style="">
+    <slot />
+</div>
+
+<CaFooter />

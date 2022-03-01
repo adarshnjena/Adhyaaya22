@@ -21,36 +21,15 @@
                 </div>
                 <code>
                     <span class="variable">const</span>
-                    <span class="function">aboutMe</span>
+                    <span class="function">Benefit</span>
                     <span class="operator">=</span>
                     <span>{`{`}</span>
                     <div class="indent">
-                        <span class="property">name</span>
+                        <span class="property">1</span>
                         <span class="operator">:</span>
-                        <span class="string">'Joshua Ward'</span>
-                        <span>,</span>
+                        <span class="string">'Get a chance to compete with students from all over country'</span>
+                        <span>;</span>
                     </div>
-                    <div class="indent">
-                        <span class="property">title</span>
-                        <span class="operator">:</span>
-                        <span class="string">'Sr. UI/UX Developer'</span>
-                        <span>,</span>
-                    </div>
-                    <div class="indent">
-                        <span class="property">contact</span>
-                        <span class="operator">:</span>
-                        <span>{`{`}</span>
-                        <div class="indent">
-                            <span class="property">email</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshua.ward@me.com'</span>
-                            <span>,</span>
-                        </div>
-                        <div class="indent">
-                            <span class="property">website</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshuaward.me'</span>
-                        </div>
                         <span>}</span>
                     </div>
                     <span>}</span>
@@ -74,7 +53,7 @@
                 <code>
                     <span class="variable">This</span>
                     <span>.</span>
-                    <span class="method">is card</span>
+                    <span class="method">is Benefits</span>
                     <span>number</span>
                     <span class="string">'1'</span>
                     <span>,</span>
@@ -110,36 +89,15 @@
                 </div>
                 <code>
                     <span class="variable">const</span>
-                    <span class="function">aboutMe</span>
+                    <span class="function">Benefit</span>
                     <span class="operator">=</span>
                     <span>{`{`}</span>
                     <div class="indent">
-                        <span class="property">name</span>
+                        <span class="property">2</span>
                         <span class="operator">:</span>
-                        <span class="string">'Joshua Ward'</span>
-                        <span>,</span>
+                        <span class="string">'Enhance your skills in the domains of the respective events'</span>
+                        <span>;</span>
                     </div>
-                    <div class="indent">
-                        <span class="property">title</span>
-                        <span class="operator">:</span>
-                        <span class="string">'Sr. UI/UX Developer'</span>
-                        <span>,</span>
-                    </div>
-                    <div class="indent">
-                        <span class="property">contact</span>
-                        <span class="operator">:</span>
-                        <span>{`{`}</span>
-                        <div class="indent">
-                            <span class="property">email</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshua.ward@me.com'</span>
-                            <span>,</span>
-                        </div>
-                        <div class="indent">
-                            <span class="property">website</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshuaward.me'</span>
-                        </div>
                         <span>}</span>
                     </div>
                     <span>}</span>
@@ -163,7 +121,7 @@
                 <code>
                     <span class="variable">This</span>
                     <span>.</span>
-                    <span class="method">is card</span>
+                    <span class="method">is Benefits</span>
                     <span>number</span>
                     <span class="string">'2'</span>
                     <span>,</span>
@@ -199,11 +157,11 @@
                 </div>
                 <code>
                     <span class="variable">const</span>
-                    <span class="function">aboutMe</span>
+                    <span class="function">Benefit</span>
                     <span class="operator">=</span>
                     <span>{`{`}</span>
                     <div class="indent">
-                        <span class="property">name</span>
+                        <span class="property">3</span>
                         <span class="operator">:</span>
                         <span class="string">'Joshua Ward'</span>
                         <span>,</span>
@@ -211,24 +169,9 @@
                     <div class="indent">
                         <span class="property">title</span>
                         <span class="operator">:</span>
-                        <span class="string">'Sr. UI/UX Developer'</span>
-                        <span>,</span>
+                        <span class="string">'Gain knowledge and insights from experts of their respective fields'</span>
+                        <span>;</span>
                     </div>
-                    <div class="indent">
-                        <span class="property">contact</span>
-                        <span class="operator">:</span>
-                        <span>{`{`}</span>
-                        <div class="indent">
-                            <span class="property">email</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshua.ward@me.com'</span>
-                            <span>,</span>
-                        </div>
-                        <div class="indent">
-                            <span class="property">website</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshuaward.me'</span>
-                        </div>
                         <span>}</span>
                     </div>
                     <span>}</span>
@@ -252,7 +195,7 @@
                 <code>
                     <span class="variable">This</span>
                     <span>.</span>
-                    <span class="method">is card</span>
+                    <span class="method">is Benefits</span>
                     <span>number</span>
                     <span class="string">'3'</span>
                     <span>,</span>
@@ -288,36 +231,15 @@
                 </div>
                 <code>
                     <span class="variable">const</span>
-                    <span class="function">aboutMe</span>
+                    <span class="function">Benefit</span>
                     <span class="operator">=</span>
                     <span>{`{`}</span>
                     <div class="indent">
-                        <span class="property">name</span>
+                        <span class="property">4</span>
                         <span class="operator">:</span>
-                        <span class="string">'Joshua Ward'</span>
-                        <span>,</span>
+                        <span class="string">'Get in contact with new people and expand your social network'</span>
+                        <span>;</span>
                     </div>
-                    <div class="indent">
-                        <span class="property">title</span>
-                        <span class="operator">:</span>
-                        <span class="string">'Sr. UI/UX Developer'</span>
-                        <span>,</span>
-                    </div>
-                    <div class="indent">
-                        <span class="property">contact</span>
-                        <span class="operator">:</span>
-                        <span>{`{`}</span>
-                        <div class="indent">
-                            <span class="property">email</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshua.ward@me.com'</span>
-                            <span>,</span>
-                        </div>
-                        <div class="indent">
-                            <span class="property">website</span>
-                            <span class="operator">:</span>
-                            <span class="string">'joshuaward.me'</span>
-                        </div>
                         <span>}</span>
                     </div>
                     <span>}</span>
@@ -340,7 +262,7 @@
                 <code>
                     <span class="variable">This</span>
                     <span>.</span>
-                    <span class="method">is card</span>
+                    <span class="method">is Benefits</span>
                     <span>number</span>
                     <span class="string">'4'</span>
                     <span>,</span>

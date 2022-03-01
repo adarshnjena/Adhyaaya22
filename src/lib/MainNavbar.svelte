@@ -43,7 +43,7 @@
                         <a href="/events/gallery">Gallery</a>
                     </li>
                     <li>
-                        <a href="/events/teams">Teams</a>
+                        <a href="/event/teams">Teams</a>
                     </li>
                     <li>
                         <a href="{auth_link[1]}">{auth_link[0]}</a>
@@ -93,7 +93,7 @@
                 </li>
                 <li>
                     <a
-                        href="/events/teams"
+                        href="/event/teams"
                         class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Teams

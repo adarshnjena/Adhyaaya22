@@ -54,7 +54,7 @@
                                 <a href="/events/gallery">Gallery</a>
                             </li>
                             <li>
-                                <a href="/events/teams">Teams</a>
+                                <a href="/event/teams">Teams</a>
                             </li>
                             <li>
                                 <a href="{auth_link[1]}">{auth_link[0]}</a>

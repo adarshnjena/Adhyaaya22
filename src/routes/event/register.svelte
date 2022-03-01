@@ -18,6 +18,7 @@
         // Now we for sure have an app.
 
         dev ? console.log(app) : '';
+
     });
 </script>
 

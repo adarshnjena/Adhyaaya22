@@ -18,7 +18,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2021/" + i + ".jpeg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2021/" + i + ".jpeg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -50,7 +50,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2020/" + i + ".jpg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2020/" + i + ".jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -82,7 +82,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2019/" + i + ".jpg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2019/" + i + ".jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -114,7 +114,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2018/" + i + ".jpg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2018/" + i + ".jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -148,7 +148,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2021/" + i + ".jpeg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2021/" + i + ".jpeg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -180,7 +180,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2020/" + i + ".jpg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2020/" + i + ".jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -212,7 +212,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2019/" + i + ".jpg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2019/" + i + ".jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",
@@ -244,7 +244,7 @@ for (var i = 0; i < 12; i++) {
 
     gsap.set(b, {
       attr: { id: "b" + i, class: "photoBox pb-col" + column },
-      backgroundImage: "url(./images/Adhyaaya_2018/" + i + ".jpg)",
+      backgroundImage: "url(/gallery/images/Adhyaaya_2018/" + i + ".jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       overflow: "hidden",

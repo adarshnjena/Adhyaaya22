@@ -31,7 +31,7 @@
     let app;
     let auth;
     let innerHeight: number;
-    let scrollY: number; // Number of Pixels scrolled
+    let scrollY: number = 100; // Number of Pixels scrolled
     let container: HTMLDivElement;
     let src;
 

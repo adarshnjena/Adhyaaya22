@@ -22,6 +22,16 @@
     let auth;
     let db;
 
+    const display_fields = [
+        'registration_id',
+        'event_code',
+        "name",
+        "email",
+        "phone",
+        "team", 
+        "transaction_status",
+    ]
+
     onMount(async () => {
         try {
             app = getApp();
@@ -34,14 +44,17 @@
         dev ? console.log(app) : '';
         auth = getAuth();
         db = getFirestore();
-
+        
         const registration_data = await get_user_registrations(app, auth, db);
         registration = registration_data[event_code];
         // @ts-ignore
         registration = Object.keys(registration)
             .sort()
             .reduce((obj, key) => {
-                obj[key] = registration[key];
+                if (display_fields.includes(key)) {
+                    obj[key] = registration[key];
+                }
+                // obj[key] = registration[key] ;
                 return obj;
             }, {});
         dev ? console.log('registration', registration) : '';

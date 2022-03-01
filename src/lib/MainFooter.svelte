@@ -325,19 +325,17 @@
                     <h1 class="r123">ABOUT US</h1>
 
                     <p>
-                        ADHYAAYA 2021 is the fourth iteration of the national level technical
+                        ADHYAAYA 2022 is the fifth iteration of the national level technical
                         symposium of Government College of Engineering, Nagpur. Students from all
-                        over Maharashtra set their keen eyes on Adhyaaya. Last year, more than 3500
+                        over India set their keen eyes on Adhyaaya. Last year, more than 6000
                         budding technocrats from all across India marked their remarkable presence
-                        in Adhyaaya'20. The event consists of various technical, non-technical
+                        in Adhyaaya'21. The event consists of various technical, non-technical
                         segments along with workshops on topics spread all over the diverse scopes
-                        of engineering. We strive to offer a platform for the student community to
+                        of engineering. We strive to offer a platform for the student community to 
                         develop and showcase their skill sets and technical prowess by presenting
                         them events from model presentations, code-hunts to e-sports and technical
                         workshops. Adhyaaya is considered to be a promising technical fest in Nagpur
-                        and an experience to be remembered. So mark your calendars! Adhyaaya 2021
-                        begins this 13th of May 2021. We appreciate your presence and our journey
-                        together.
+                        and an experience to be remembered.
                         <br />
                         <br />
                         <strong>Adhyaaya: A Legacy of Infinite Chapters.</strong>
@@ -363,27 +361,28 @@
                 The Terms and Conditions are as follows :
 
                 <li>
-                    1. All proofs submitted by you should be genuine to the fullest extent of your
-                    knowledge.
+                    1. There is no option of refund of any entry. So, kindly do the registration only when you are confirmed to participate.
                 </li>
                 <li>
-                    2. Certificates will only be provided on successful completion of the tenure.
+                    2. Events are conducted and right to decision is held by the Adhyaaya committee.
                 </li>
                 <li>
-                    3. You are eligible for the certificate and other incentives only if your
-                    profile is complete.
+                    3. Each event has its own rules and regulations that you need to follow. Failing it will lead to disqualification.
                 </li>
                 <li>
-                    4. Adhyaaya, GCOEN holds the right to retract the Ambassadorship from you, or
-                    appoint additional ambassadors if your performance is unsatisfactory or if you
-                    violate any of the aforementioned terms and conditions.
+                    4. The participant once enrolled in a competition cannot unenroll at any point of time under any conditions.
                 </li>
                 <li>
-                    5. Any use, mention or placement of Adhyaaya or GCOE,Nagpur's logo or name
-                    (electronic or physical media) on any advertisement, event, notice, brochure,
-                    mailer or branding material will be done only after written approval from
-                    Adhyaaya and GCOE, Nagpur authorities and as per their norms. This policy
-                    applies in perpetuity.
+                    5. Verification of each and every participant will be done, so provide the correct information to avoid inconvenience.
+                </li>
+                <li>
+                    6. The organizers will not be responsible for any network lag or disconnectivity issues. Participants have to manage the issues by themselves.
+                </li>
+                <li>
+                    7. A confirmation mail will be sent on the provided Email ID after you register for an event containing the Unique Id. Kindly check for the same in the spam folder, if not received.
+                </li>
+                <li>
+                    8. In case of any mishaps, disputes and third party issues Adhyaaya will not be responsible for the same.
                 </li>
             </ol>
             <button value="close" class="close" on:click|preventDefault="{_termspop}">Close</button>
@@ -409,7 +408,7 @@
                     of Adhyaaya.
                 </li>
                 <li>
-                    3. Like any other website, Adhyaya’21 uses ‘cookies’. These cookies are used to
+                    3. Like any other website, Adhyaya’22 uses ‘cookies’. These cookies are used to
                     store information including visitors’ preferences, and the pages on the website
                     that the visitor accessed or visited. The information is used to optimize the
                     users’ experience by customizing our web page content based on visitors’ browser

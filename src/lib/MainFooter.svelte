@@ -120,7 +120,7 @@
                                     Contact info
                                 </a>
                             </li>
-                            <li><a href="/event/teams">Teams</a></li>
+                            <li><a href="/events/teams">Teams</a></li>
                         </ul>
                     </div>
 

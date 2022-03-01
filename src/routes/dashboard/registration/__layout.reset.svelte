@@ -66,7 +66,7 @@
                                     <a href="/events/gallery">Gallery</a>
                                 </li>
                                 <li>
-                                    <a href="/event/teams">Teams</a>
+                                    <a href="/events/teams">Teams</a>
                                 </li>
                                 <li>
                                     <a

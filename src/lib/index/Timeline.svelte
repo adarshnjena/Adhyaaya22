@@ -38,7 +38,7 @@ import { browser } from '$app/env';
 
 <svelte:window />
 
-<div class="wrapper tw-h-screen tw-w-screen tw-bg-base-300">
+<div class="wrapper tw-min-h-screen tw-w-screen tw-bg-base-300">
 <section class="timeline tw-pt-20">
     <ul>
         <li>

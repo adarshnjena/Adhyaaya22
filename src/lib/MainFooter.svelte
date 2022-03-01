@@ -382,7 +382,16 @@
                     7. A confirmation mail will be sent on the provided Email ID after you register for an event containing the Unique Id. Kindly check for the same in the spam folder, if not received.
                 </li>
                 <li>
-                    8. In case of any mishaps, disputes and third party issues Adhyaaya will not be responsible for the same.
+                    8. Accomodation and traveling wont' be provided by Adhyaaya.
+                </li>       
+                <li>
+                    9. Double Vaccination is mandatory for participating in the offline events. Social distancing and covid measures have to be taken seriously if proven otherwise Adhyaaya Committee wont' be responsible. 
+                </li>
+                <li>
+                    10. Covid positive participants are entiled to inform the board about the infection before hand else harsh measure will be taken. In the duration of three days of Adhyaaya'22 if the participants get infected they are entiled to inform it to the committee, where Adhyaaya wont' be answerable.
+                </li>
+                <li>
+                    11. In case of any mishaps, disputes and third party issues Adhyaaya will not be responsible for the same.
                 </li>
             </ol>
             <button value="close" class="close" on:click|preventDefault="{_termspop}">Close</button>
@@ -408,7 +417,7 @@
                     of Adhyaaya.
                 </li>
                 <li>
-                    3. Like any other website, Adhyaya’22 uses ‘cookies’. These cookies are used to
+                    3. Like any other website, Adhyaaya’22 uses ‘cookies’. These cookies are used to
                     store information including visitors’ preferences, and the pages on the website
                     that the visitor accessed or visited. The information is used to optimize the
                     users’ experience by customizing our web page content based on visitors’ browser

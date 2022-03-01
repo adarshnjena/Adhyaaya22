@@ -20,7 +20,7 @@
                     <hr class="tw-my-2 tw-hidden tw-border-b tw-border-gray-600 " />
                     <h2 class="tw-text-left">Please try to sign-in again</h2>
                     <div class="tw-mt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
-                        <a href="/" class="tw-btn-neutral-primary tw-btn">
+                        <a sveltekit:prefetch href="/" class="tw-btn-neutral-primary tw-btn">
                             <span class="tw-inner-text tw-btn">Back to Home</span>
                         </a>
                     </div>

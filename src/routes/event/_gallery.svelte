@@ -774,7 +774,7 @@
         quae, ad eius.
     </p>
     <div class="card-container">
-        <a href="#main4">
+        <a sveltekit:prefetch href="#main4">
             <div
                 class="card"
                 style="
@@ -787,7 +787,7 @@
             ></div>
         </a>
 
-        <a href="#main3">
+        <a sveltekit:prefetch href="#main3">
             <div
                 class="card"
                 style="
@@ -800,7 +800,7 @@
             ></div>
         </a>
 
-        <a href="#main2">
+        <a sveltekit:prefetch href="#main2">
             <div
                 class="card"
                 style="
@@ -813,7 +813,7 @@
             ></div>
         </a>
 
-        <a href="#main">
+        <a sveltekit:prefetch href="#main">
             <div
                 class="card"
                 style="
@@ -827,7 +827,7 @@
         </a>
     </div>
     <div class="all-buttons">
-        <a href="#main">
+        <a sveltekit:prefetch href="#main">
             <button class="cybr-btn">
                 2021
                 <span aria-hidden>_</span>
@@ -835,7 +835,7 @@
                 <span aria-hidden class="cybr-btn__tag">R25</span>
             </button>
         </a>
-        <a href="#main2">
+        <a sveltekit:prefetch href="#main2">
             <button class="cybr-btn">
                 2020
                 <span aria-hidden>_</span>
@@ -843,7 +843,7 @@
                 <span aria-hidden class="cybr-btn__tag">R25</span>
             </button>
         </a>
-        <a href="#main3">
+        <a sveltekit:prefetch href="#main3">
             <button class="cybr-btn">
                 2019
                 <span aria-hidden>_</span>
@@ -851,7 +851,7 @@
                 <span aria-hidden class="cybr-btn__tag">R25</span>
             </button>
         </a>
-        <a href="#main4">
+        <a sveltekit:prefetch href="#main4">
             <button class="cybr-btn">
                 2018
                 <span aria-hidden>_</span>

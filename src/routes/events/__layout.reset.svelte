@@ -22,7 +22,7 @@
     <div
         class="tw-mx-auto tw-flex tw-w-11/12 tw-flex-wrap tw-items-center tw-justify-between tw-px-4"
     >
-        <a class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
+        <a sveltekit:prefetch class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
             <figure>
                 <img aria-hidden="true" class="tw-h-10" src="{navbarLogo}" alt="Adhyaaya Logo" />
             </figure>
@@ -42,22 +42,22 @@
                             class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                         >
                             <li>
-                                <a href="/">Home</a>
+                                <a sveltekit:prefetch href="/">Home</a>
                             </li>
                             <li>
-                                <a href="/events/events">Events</a>
+                                <a sveltekit:prefetch href="/events/events">Events</a>
                             </li>
                             <li>
-                                <a href="/event/sponsors">Sponsors</a>
+                                <a sveltekit:prefetch href="/event/sponsors">Sponsors</a>
                             </li>
                             <li>
-                                <a href="/events/gallery">Gallery</a>
+                                <a sveltekit:prefetch href="/events/gallery">Gallery</a>
                             </li>
                             <li>
-                                <a href="/event/teams">Teams</a>
+                                <a sveltekit:prefetch href="/event/teams">Teams</a>
                             </li>
                             <li>
-                                <a href="{auth_link[1]}">{auth_link[0]}</a>
+                                <a sveltekit:prefetch href="{auth_link[1]}">{auth_link[0]}</a>
                             </li>
                         </ul>
                     </div>

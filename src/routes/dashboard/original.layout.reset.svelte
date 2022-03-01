@@ -15,7 +15,7 @@
         <div
             class="tw-mx-auto tw-flex tw-w-11/12 tw-flex-wrap tw-items-center tw-justify-between tw-px-4"
         >
-            <a class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
+            <a sveltekit:prefetch class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
                 <figure>
                     <img
                         aria-hidden="true"
@@ -40,12 +40,12 @@
                                 class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                             >
                                 <li>
-                                    <a sveltekit:prefetch href="/dashboard" class="tw-rounded-xl">
+                                    <a sveltekit:prefetch  href="/dashboard" class="tw-rounded-xl">
                                         Dashboard
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/dashboard/tasks" class="tw-rounded-xl">
+                                    <a sveltekit:prefetch href="/dashboard/tasks" class="tw-rounded-xl">
                                         View All Tasks
                                     </a>
                                 </li>

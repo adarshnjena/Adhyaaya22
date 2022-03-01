@@ -26,7 +26,7 @@
             <WarningBadge text="{'Not Completed'}" />
         </td>
         <td class="tw-backdrop-blur tw-bg-opacity-[75%]">
-            <a class="tw-btn tw-btn-info tw-btn-sm" href="/dashboard/tasks/{task.task_id}/taskview">
+            <a sveltekit:prefetch class="tw-btn tw-btn-info tw-btn-sm" href="/dashboard/tasks/{task.task_id}/taskview">
                 VIEW
             </a>
         </td>

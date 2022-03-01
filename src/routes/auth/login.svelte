@@ -510,7 +510,7 @@
                     <div class="tw-relative tw-mt-6 tw-flex tw-flex-wrap">
                         <!-- Registration is closed except for special links. -->
                         <div class="tw-hidden tw-w-1/2 tw-text-right">
-                            <a href="/auth/register" class="tw-text-blue-200">
+                            <a sveltekit:prefetch href="/auth/register" class="tw-text-blue-200">
                                 <small>Create new account</small>
                             </a>
                         </div>

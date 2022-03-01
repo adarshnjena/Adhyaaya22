@@ -226,17 +226,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href=""><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href=""><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -253,17 +253,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -282,17 +282,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -309,17 +309,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -337,17 +337,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -367,17 +367,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -394,17 +394,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -423,17 +423,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -450,17 +450,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -478,17 +478,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -508,17 +508,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -535,17 +535,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -564,17 +564,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -591,17 +591,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -617,7 +617,7 @@
         <div class="lg:tw-w-4/6 md:tw-w-4/6 tw-m-auto tw-w-11/12">
             <ul class="tw-mb-0 tw-list-none tw-pt-3 tw-pb-4 tw-flex tw-flex-row tw-flex-wrap">
                 <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
-                    <a  
+                    <a sveltekit:prefetch  
                         href="/"
                         class="tw-text-xs tw-font-bold tw-uppercase tw-block tw-rounded tw-bg-pink-600 tw-px-5 tw-py-3 tw-leading-normal tw-text-white tw-shadow-lg"
                         on:click|preventDefault="{(e) => changeAtiveTab2(e,'tab-profile2')}"
@@ -666,17 +666,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -693,17 +693,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -722,17 +722,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -749,17 +749,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -780,17 +780,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -807,17 +807,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -836,17 +836,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -863,17 +863,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -891,17 +891,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -921,17 +921,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -948,17 +948,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -977,17 +977,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                                 <div
@@ -1004,17 +1004,17 @@
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                     </button>
                                     <button
                                         class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                     >
-                                        <a href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -1032,17 +1032,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -1086,17 +1086,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                             <div
@@ -1113,17 +1113,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -1142,17 +1142,17 @@
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
                                 </button>
                                 <button
                                     class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
                                 >
-                                    <a href="#"><i class="bx bxl-gmail"></i></a>
+                                    <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>

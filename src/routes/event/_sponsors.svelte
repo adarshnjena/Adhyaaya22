@@ -139,7 +139,7 @@
                 <div class="cage3">
                     <div class="cage2">
                         <div class="cage1 wbg">
-                            <a href="https://www.upgrad.com/" target="_blank">
+                            <a sveltekit:prefetch href="https://www.upgrad.com/" target="_blank">
                                 <img src="/sponsors/Upgrad.jpg" alt="Upgrad" class="image" />
                             </a>
                         </div>

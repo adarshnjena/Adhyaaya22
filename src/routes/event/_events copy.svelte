@@ -491,7 +491,7 @@
             '<p>' +
             card.children[4].textContent +
             '</p>' +
-            "<a href='#'>Register</a>";
+            "<a sveltekit:prefetch href='#'>Register</a>";
         openContentImage.src = card.children[1].src;
         openContentText2.innerHTML =
             '<h1>' +
@@ -500,7 +500,7 @@
             '<p>' +
             card.children[4].textContent +
             '</p>' +
-            "<a href='#'>Register</a>";
+            "<a sveltekit:prefetch href='#'>Register</a>";
         openContentImage2.src = card.children[1].src;
         openContentText3.innerHTML =
             '<h1>' +
@@ -509,7 +509,7 @@
             '<p>' +
             card.children[4].textContent +
             '</p>' +
-            "<a href='#'>Register</a>";
+            "<a sveltekit:prefetch href='#'>Register</a>";
         openContentImage3.src = card.children[1].src;
         setTimeout(function () {
             // update the scroll position to 0 (so it is at the top of the 'opened' page)
@@ -786,7 +786,7 @@
             <g class="m1_stage" opacity="0">
                 <g class="m1_cGroup">
                     <!-- Respwan -->
-                    <a href="#non_technical_events" alt="respwan">
+                    <a sveltekit:prefetch href="#non_technical_events" alt="respwan">
                         <g
                             class="m1OrbBlank"
                             on:click="{() => {
@@ -804,7 +804,7 @@
 
                     <!-- CricBash -->
                     <g class="m1OrbBlank11">
-                        <a href="#technical_events" alt="Cricbash">
+                        <a sveltekit:prefetch href="#technical_events" alt="Cricbash">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
                             <image
                                 xlink:href="/events/img/cricbash.png"
@@ -827,14 +827,14 @@
                     <g class="m1Orb orb4b"></g>
 
                     <!-- Avishkar -->
-                    <a href="#technical_events">
+                    <a sveltekit:prefetch href="#technical_events">
                         <g
                             class="m1Orb orb4b"
                             on:click="{() => {
                                 cardOpenEvent(0);
                             }}"
                         >
-                            <!-- <a href="#technical_events"> -->
+                            <!-- <a sveltekit:prefetch href="#technical_events"> -->
                             <circle
                                 cx="25"
                                 cy="6"
@@ -855,7 +855,7 @@
 
                     <!-- COMSA Webinar -->
                     <g class="m1Orb orb41">
-                        <a href="#technical_events" alt="Comsa Webinar">
+                        <a sveltekit:prefetch href="#technical_events" alt="Comsa Webinar">
                             <image
                                 xlink:href="/events/img/comsa.png"
                                 width="45"
@@ -866,7 +866,7 @@
 
                     <!-- MUN -->
                     <g class="m1Orb orb4">
-                        <a href="#technical_events">
+                        <a sveltekit:prefetch href="#technical_events">
                             <circle cx="13.5" cy="5" r="20" fill="#006bca"></circle>
                         </a>
                         <path
@@ -885,7 +885,7 @@
                             cardOpenEvent(1);
                         }}"
                     >
-                        <a href="#technical_events" alt="caddiction">
+                        <a sveltekit:prefetch href="#technical_events" alt="caddiction">
                             <circle cx="22" cy="23" r="26" fill="#fff"></circle>
                             <image
                                 xlink:href="https://cdn.iconscout.com/icon/premium/png-256-thumb/settings-587-766948.png"
@@ -907,7 +907,7 @@
 
                     <!-- Trishakti Event -->
                     <g class="m1Orb orb3c">
-                        <a href="#technical_events">
+                        <a sveltekit:prefetch href="#technical_events">
                             <image
                                 xlink:href="/events/img/trishakti.png"
                                 width="65"
@@ -918,7 +918,7 @@
 
                     <!-- Canva Event -->
                     <g class="m1Orb orb3b">
-                        <a href="#technical_events" alt="Canva Workshop">
+                        <a sveltekit:prefetch href="#technical_events" alt="Canva Workshop">
                             <image
                                 xlink:href="https://pnggrid.com/wp-content/uploads/2021/05/Canva-Logo-Transparent-1024x1024.png"
                                 width="40"
@@ -929,7 +929,7 @@
 
                     <!-- Vaad - Vivad -->
                     <g class="m1Orb orb31">
-                        <a href="#technical_events" alt="Vaad-Vivad">
+                        <a sveltekit:prefetch href="#technical_events" alt="Vaad-Vivad">
                             <circle
                                 cx="19"
                                 cy="20"
@@ -948,7 +948,7 @@
 
                     <!-- Born-Pyschos -->
                     <g class="m1Orb orb3">
-                        <a href="#technical_events" alt="Born-Psychos">
+                        <a sveltekit:prefetch href="#technical_events" alt="Born-Psychos">
                             <circle
                                 cx="23"
                                 cy="24"
@@ -968,7 +968,7 @@
                 <g class="m1_cGroup">
                     <!-- Foodoholic -->
                     <g class="m1OrbBlank">
-                        <a href="#technical_events" alt="Foodoholic">
+                        <a sveltekit:prefetch href="#technical_events" alt="Foodoholic">
                             <circle cx="-10" cy="30" r="0" fill="#653997"></circle>
                             <image
                                 xlink:href="/events/img/salad.png"
@@ -990,7 +990,7 @@
 
                     <!-- Virtual Placement -->
                     <g class="m1Orb orb21">
-                        <a href="#technical_events" alt="Virtual Placement">
+                        <a sveltekit:prefetch href="#technical_events" alt="Virtual Placement">
                             <circle
                                 cx="25"
                                 cy="6"
@@ -1011,7 +1011,7 @@
 
                     <!-- CadoShop -->
                     <g class="m1Orb orb2">
-                        <a href="#technical_events" alt="CadoShop">
+                        <a sveltekit:prefetch href="#technical_events" alt="CadoShop">
                             <circle
                                 cx="18.5"
                                 cy="5"
@@ -1065,7 +1065,7 @@
                             cardOpenEvent(2);
                         }}"
                     >
-                        <a href="#technical_events" alt="codeventure">
+                        <a sveltekit:prefetch href="#technical_events" alt="codeventure">
                             <circle cx="0" cy="50" r="0" fill="#1290ff"></circle>
                             <image
                                 xlink:href="/events/img/Codeventure.png"
@@ -1103,7 +1103,7 @@
                             cardOpenEvent(3);
                         }}"
                     >
-                        <a href="#technical_events" alt="Stargaze">
+                        <a sveltekit:prefetch href="#technical_events" alt="Stargaze">
                             <circle cx="18" cy="18" r="20" fill="none" stroke="#653997"></circle>
                             <image
                                 xlink:href="https://freedesignfile.com/upload/2017/08/telescope-icon-vector.png"
@@ -1145,7 +1145,7 @@
                         fill="#161623"
                         opacity="0.6"
                     ></circle>
-                    <a href="https://adhyaaya.org">
+                    <a sveltekit:prefetch href="https://adhyaaya.org">
                         <image
                             x="-60"
                             xlink:href="/events/img/logo.png"
@@ -1205,7 +1205,7 @@
                         The events which will make your adrenaline rush, the event that only
                         sharpest can survive, the events which will bring the leaders in you.
                     </p>
-                    <a class="registration_page" href="#non_technical_events">Go to Events</a>
+                    <a sveltekit:prefetch class="registration_page" href="#non_technical_events">Go to Events</a>
                 </div>
 
                 <div class="card2" id="card2">
@@ -1218,7 +1218,7 @@
                         Explore the potentials of future technocrats through its national-level tech
                         events.
                     </p>
-                    <a class="registration_page" href="#technical_events">Go to Events</a>
+                    <a sveltekit:prefetch class="registration_page" href="#technical_events">Go to Events</a>
                 </div>
 
                 <div class="card3" id="card3">
@@ -1230,7 +1230,7 @@
                     <p class="card_para">
                         Acquire essential skills that will actually add value to your career.
                     </p>
-                    <a class="registration_page" href="#workshops">Go to Events</a>
+                    <a sveltekit:prefetch class="registration_page" href="#workshops">Go to Events</a>
                 </div>
             </div>
         </div>
@@ -1368,7 +1368,7 @@
             <div id="cover11" class="cover11"></div>
 
             <div id="open-content" class="open-content">
-                <a href="#" id="close-content" class="close-content">
+                <a sveltekit:prefetch href="#" id="close-content" class="close-content">
                     <span class="x-1"></span>
                     <span class="x-2"></span>
                 </a>
@@ -1563,7 +1563,7 @@
             <div id="cover12" class="cover12"></div>
 
             <div id="open-content2" class="open-content2">
-                <a href="#" id="close-content2" class="close-content2">
+                <a sveltekit:prefetch href="#" id="close-content2" class="close-content2">
                     <span class="x-1"></span>
                     <span class="x-2"></span>
                 </a>
@@ -1735,7 +1735,7 @@
             <div id="cover13" class="cover13"></div>
 
             <div id="open-content3" class="open-content3">
-                <a href="#" id="close-content3" class="close-content3">
+                <a sveltekit:prefetch href="#" id="close-content3" class="close-content3">
                     <span class="x-1"></span>
                     <span class="x-2"></span>
                 </a>

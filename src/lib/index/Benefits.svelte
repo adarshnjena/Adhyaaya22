@@ -19,7 +19,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">const</span>
                     <span class="function">Benefit</span>
                     <span class="operator">=</span>
@@ -32,7 +32,6 @@
                     </div>
                         <span>}</span>
                     
-                    <span>}</span>
                 </code>
             </div>
 
@@ -87,7 +86,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">const</span>
                     <span class="function">Benefit</span>
                     <span class="operator">=</span>
@@ -117,7 +116,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">This</span>
                     <span>.</span>
                     <span class="method">is Benefits</span>
@@ -154,7 +153,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">const</span>
                     <span class="function">Benefit</span>
                     <span class="operator">=</span>
@@ -190,7 +189,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">This</span>
                     <span>.</span>
                     <span class="method">is Benefits</span>
@@ -227,7 +226,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">const</span>
                     <span class="function">Benefit</span>
                     <span class="operator">=</span>
@@ -256,7 +255,7 @@
                     <div>8</div>
                     <div>9</div>
                 </div>
-                <code>
+                <code class="tw-ml-10">
                     <span class="variable">This</span>
                     <span>.</span>
                     <span class="method">is Benefits</span>
@@ -530,16 +529,3 @@
         }
     }
 </style>
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete

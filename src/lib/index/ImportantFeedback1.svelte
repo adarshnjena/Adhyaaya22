@@ -18,7 +18,7 @@
         </p>
     </div>
     <h3 class="testimonial-title">
-        <a href="#">Domil Antony Johnson</a>
+        <a sveltekit:prefetch href="#">Domil Antony Johnson</a>
         <p style="font-size: smaller;">
             Pro Munner, Assistant Director Harvard Model United Nations China and Dubai 2021!
         </p>

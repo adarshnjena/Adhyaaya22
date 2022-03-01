@@ -115,7 +115,7 @@
                 This is a private portal for Adhyaaya '22 Campus Ambassadors. Please proceed to
                 login.
             </p>
-            <a href="/auth/login" sveltekit:prefetch class="btn-primary btn">
+            <a sveltekit:prefetch href="/auth/login" class="btn-primary btn">
                 <Icon class="mr-2" icon="{roundLogin}" />Login
             </a>
         </div>

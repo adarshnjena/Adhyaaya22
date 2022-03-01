@@ -47,7 +47,7 @@
 
             <div class="footer-contact-two w-screen" id="icons-two">
                 <div class="mail-two">
-                    <a class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
+                    <a sveltekit:prefetch class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
                         <Icon class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5" icon="{emailOutline}" />
                         <p>Have a question ?</p>
                     </a>
@@ -116,11 +116,11 @@
                         </h1>
                         <ul>
                             <li>
-                                <a href="#" class="button" on:click|preventDefault="{termspop4}">
+                                <a sveltekit:prefetch href="#" class="button" on:click|preventDefault="{termspop4}">
                                     Contact info
                                 </a>
                             </li>
-                            <li><a href="/event/teams">Teams</a></li>
+                            <li><a sveltekit:prefetch href="/event/teams">Teams</a></li>
                         </ul>
                     </div>
 
@@ -141,7 +141,7 @@
                                     About Us
                                 </a>
                             </li>
-                            <li><a href="https://www.gcoen.ac.in/" target="_blank">GCOEN</a></li>
+                            <li><a sveltekit:prefetch href="https://www.gcoen.ac.in/" target="_blank">GCOEN</a></li>
                         </ul>
                     </div>
 
@@ -153,12 +153,12 @@
 
                         <ul>
                             <li>
-                                <a href="#" class="button" on:click|preventDefault="{termspop}">
+                                <a sveltekit:prefetch href="#" class="button" on:click|preventDefault="{termspop}">
                                     Terms & Conditions
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="button" on:click|preventDefault="{termspop2}">
+                                <a sveltekit:prefetch href="#" class="button" on:click|preventDefault="{termspop2}">
                                     Privacy Policy
                                 </a>
                             </li>
@@ -169,7 +169,7 @@
 
                     <div class="footer-contact text-sm" id="icons">
                         <div class="mail" id="transform-icon">
-                            <a class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
+                            <a sveltekit:prefetch class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
                                 <Icon
                                     class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5"
                                     icon="{emailOutline}"
@@ -263,13 +263,13 @@
                                     <strong>Ujjwal Gupta</strong>
                                     <p>CSE Co-ordinator</p>
                                     <p>
-                                        <a href="mailto:usgupta@gcoen.ac.in">
+                                        <a sveltekit:prefetch href="mailto:usgupta@gcoen.ac.in">
                                             <i class="fa">&#xf0e0;</i>
                                             Mail here
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="tel:+7020138347">
+                                        <a sveltekit:prefetch href="tel:+7020138347">
                                             <i class="fa">&#xf095;</i>
                                             +91 7020138347
                                         </a>
@@ -280,13 +280,13 @@
                                     <strong>Yash Bhagat</strong>
                                     <p>Civil Co-ordinator</p>
                                     <p>
-                                        <a href="mailto:vednande10@gmail.com">
+                                        <a sveltekit:prefetch href="mailto:vednande10@gmail.com">
                                             <i class="fa">&#xf0e0;</i>
                                             Mail here
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="tel:+9075022332">
+                                        <a sveltekit:prefetch href="tel:+9075022332">
                                             <i class="fa">&#xf095;</i>
                                             +91 9075022332
                                         </a>

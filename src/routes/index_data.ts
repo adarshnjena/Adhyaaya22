@@ -23,11 +23,11 @@ const events_mobile =
 const theme_mobile =
     'Revamped and rejuvenated; Presenting the official theme of Adhyaaya ‘22 <br /><span class="index_highlighted_text">‘Cyber-neon Vista’</span>.';
 // TODO: Add cyber button
-// const events_btn = '<a href="/events/events" class="all-buttons cybr-btn cybr-btn-edit-pc">EXPLORE →</a>';
+// const events_btn = '<a sveltekit:prefetch href="/events/events" class="all-buttons cybr-btn cybr-btn-edit-pc">EXPLORE →</a>';
 const events_btn =
-    '<a href="/events/events" class="cybr-btn cybr-btn-edit-pc">EXPLORE →<span aria-hidden>_</span><span aria-hidden class="cybr-btn__glitch">EVENTS ?</span><span aria-hidden class="cybr-btn__tag">R25</span></a>';
+    '<a sveltekit:prefetch href="/events/events" class="cybr-btn cybr-btn-edit-pc">EXPLORE →<span aria-hidden>_</span><span aria-hidden class="cybr-btn__glitch">EVENTS ?</span><span aria-hidden class="cybr-btn__tag">R25</span></a>';
 const events_btn_mobile =
-    '<a href="/events/events" class="cybr-btn cybr-btn-edit-mobile">EXPLORE →<span aria-hidden>_</span><span aria-hidden class="cybr-btn__glitch">EVENTS ?</span><span aria-hidden class="cybr-btn__tag">R25</span></a>';
+    '<a sveltekit:prefetch href="/events/events" class="cybr-btn cybr-btn-edit-mobile">EXPLORE →<span aria-hidden>_</span><span aria-hidden class="cybr-btn__glitch">EVENTS ?</span><span aria-hidden class="cybr-btn__tag">R25</span></a>';
 const theme = `Revamping and upgrading Adhyaaya to a new level this year, we’ve also made sure we stick to the roots as well. Presenting the official theme of Adhyaaya ‘22 <span class="index_highlighted_text">‘Cyber-neon Vista’</span>. Between the binary digits and neon lights, there lies our world packed with technology and top notch innovation. Now it’s time for us to set our foot in the technocity of Adhyaaya, with loads of energy allied with what's to come!`;
 
 /* 

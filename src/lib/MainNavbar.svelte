@@ -93,7 +93,7 @@
                 </li>
                 <li>
                     <a
-                        href="/events/gallery"
+                        href="/events/teams"
                         class="tw-block tw-bg-transparent tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-400 tw-transition-colors tw-duration-150 hover:tw-text-white"
                     >
                         Teams

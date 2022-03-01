@@ -39,31 +39,13 @@ import { browser } from '$app/env';
 <svelte:window />
 
 <div class="wrapper tw-h-screen tw-w-screen tw-bg-base-300">
-<section class="timeline tw-pt-20">
+<section class="timeline">
     <ul>
         <li>
-            <div class="caprogram">
-                <time>8th Feb</time>
-                <div class="discovery">
-                    <h1>CA-Program Begins</h1>
-                    <p></p>
-                </div>
-            </div>
-        </li>
-        <li>
             <div>
-                <time>2nd March</time>
+                <time>1905</time>
                 <div class="discovery">
-                    <h1>Registration Starts</h1>
-                    <p></p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>1900</time>
-                <div class="discovery">
-                    <h1>Inauguration Ceremony</h1>
+                    <h1>Day 2</h1>
                     <p></p>
                 </div>
             </div>
@@ -72,7 +54,16 @@ import { browser } from '$app/env';
             <div>
                 <time>1905</time>
                 <div class="discovery">
-                    <h1>Day 1</h1>
+                    <h1>Day 3</h1>
+                    <p></p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <time>1942</time>
+                <div class="discovery">
+                    <h1>Valedictory</h1>
                     <p></p>
                 </div>
             </div>
@@ -81,7 +72,7 @@ import { browser } from '$app/env';
 </section>
 </div>
 <style style="scss">
-    *,
+*,
     *::before,
     *::after {
         margin: 0;

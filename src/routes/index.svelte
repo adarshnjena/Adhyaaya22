@@ -25,7 +25,8 @@
     import ImportantFeedback1 from '$lib/index/ImportantFeedback1.svelte';
     import NonImportantFeedBack from '$lib/index/NonImportantFeedBackIframe.svelte';
     import Benefits from '$lib/index/Benefits.svelte';
-import Timeline from '$lib/index/Timeline.svelte';
+    import Timeline from '$lib/index/Timeline.svelte';
+    import Timeline2 from '$lib/index/Timeline2.svelte';
 
     let app;
     let auth;
@@ -156,12 +157,19 @@ import Timeline from '$lib/index/Timeline.svelte';
     <div
         class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
-        <span class="tw-text-white tw-opacity"><Benefits /></span>
+        <span class="tw-opacity tw-text-white"><Benefits /></span>
     </div>
     <div
-        class="tw-top-0 tw-z-30 tw-flex tw-min-h-[200vh] tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300"
+        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
         <Timeline />
+        
+    </div>
+    <div
+        class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
+    >
+        <Timeline2 />
+        
     </div>
     <!-- Feedback Section Start -->
     <div

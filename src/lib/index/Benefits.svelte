@@ -1,4 +1,4 @@
-<div class="wrapper tw-min-h-screen tw-w-screen tw-pb-8 tw-pt-8">
+ <div class="wrapper tw-min-h-screen tw-w-screen tw-pb-8 tw-pt-8">
     <div class="header-benefit">
         <h1 class="tw-text-3xl">Benefits</h1>
         <p>Let's look at the perks of participating in a national level techfest</p>
@@ -172,7 +172,6 @@
                         <span>;</span>
                     </div>
                         <span>}</span>
-                    </div>
                     <span>}</span>
                 </code>
             </div>
@@ -240,7 +239,6 @@
                         <span>;</span>
                     </div>
                         <span>}</span>
-                    </div>
                     <span>}</span>
                 </code>
             </div>
@@ -300,7 +298,6 @@
             overflow-x: hidden;
         }
     }
-
     .wrapper {
         position: relative;
         width: 100vw;
@@ -329,19 +326,16 @@
         background: linear-gradient(#2196f3, #e91e63);
         clip-path: circle(10% at 5% 20%);
     }
-
     @media screen and (max-width: 700px) {
         .wrapper::after {
             clip-path: circle(10% at -2% 35%);
         }
     }
-
     code,
     .card .line-numbers {
         font-family: 'Lucida Console', Monaco, monospace;
         font-size: 14px;
     }
-
     .header-benefit {
         color: #fff;
         margin: 0 20px 20px 20px;
@@ -361,7 +355,6 @@
         text-align: center;
         font-size: 1.3rem;
     }
-
     .maincard {
         justify-content: center;
         display: grid;
@@ -485,7 +478,6 @@
     .card .boolean {
         color: #4dd0e1;
     }
-
     @media screen and (max-width: 1056px) {
         /* .maincard{
       transition: all 0.5s;
@@ -501,7 +493,6 @@
             transition: all 0.5s;
         }
     }
-
     @media screen and (max-width: 556px) {
         /* .maincard{
       transition: all 0.5s;
@@ -528,16 +519,27 @@
             width: 45vw;
         }
     }
-
     @media screen and (max-width: 425px) {
         code {
             font-size: 12px;
         }
     }
-
     @media screen and (max-width: 250px) {
         code {
             font-size: 11.5px;
         }
     }
 </style>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete

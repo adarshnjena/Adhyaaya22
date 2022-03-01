@@ -71,4 +71,4 @@
     <slot />
 </div>
 
-<CaFooter />
+<!--<CaFooter />-->

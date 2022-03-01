@@ -156,6 +156,14 @@ body {
     font-family: petch;
     text-align: left;
     padding: 2rem;
+    z-index: 32;
+    margin-top: 3.6rem;
+}
+/* Added Margins for mobile and normal view, prevents obstruction */
+@media (max-width: 786px) {
+    .txt {
+        margin-top: 0;
+    }
 }
 
 .cage3 {
@@ -228,7 +236,9 @@ body {
     height: 100%;
     border-radius: 0.6rem;
     padding: 0.25rem;
-    margin: 0.25rem;
+    /* margin: 0.25rem; */
+    margin-top: 0rem;
+    padding-top: 2rem;
 }
 
 .sideCompartment::before {

@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    let scrollY = 0;
+    let scrollY = 84;
     onMount(() => {
         scrollY = 84;
     });

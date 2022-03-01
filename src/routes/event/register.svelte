@@ -6,6 +6,7 @@
     import { goto } from '$app/navigation';
     import { authentication_message } from '$lib/messageStore';
     let app;
+    let scrollY=84;
     // Init firebase and generate the required app.
     onMount(() => {
         try {
@@ -18,9 +19,11 @@
         // Now we for sure have an app.
 
         dev ? console.log(app) : '';
-
+        scrollY = 84;
     });
 </script>
+
+<svelte:window bind:scrollY />
 
 <div class="parent-container">
     <div class="container">

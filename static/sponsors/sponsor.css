@@ -88,7 +88,8 @@ body {
 /********* Glow on "heading" Title *********/
 .glow {
     font-size: 40px;
-    font-family: revampedregular;
+    font-family: Nato;
+    font-weight: 700;
     color: #fff;
     text-align: center;
     animation: glow 1.5s ease-in-out infinite alternate;
@@ -283,6 +284,7 @@ body {
 .glowDark {
     font-size: 40px;
     font-family: revampedregular;
+    font-weight: 100;
     color: rgb(241, 232, 232);
     text-align: center;
     animation: glowDark 1.5s ease-in-out infinite alternate;

@@ -475,7 +475,7 @@ function animateCoverUp(card, i) {
         '<p>' +
         card.children[4].textContent +
         '</p>' +
-        "<a href='#'>Register</a>";
+        "<a href='/event/register'>Register</a>";
     openContentImage.src = card.children[1].src;
     openContentText2.innerHTML =
         '<h1>' +
@@ -484,7 +484,7 @@ function animateCoverUp(card, i) {
         '<p>' +
         card.children[4].textContent +
         '</p>' +
-        "<a href='#'>Register</a>";
+        "<a href='/event/register'>Register</a>";
     openContentImage2.src = card.children[1].src;
     openContentText3.innerHTML =
         '<h1>' +
@@ -493,7 +493,7 @@ function animateCoverUp(card, i) {
         '<p>' +
         card.children[4].textContent +
         '</p>' +
-        "<a href='#'>Register</a>";
+        "<a href='/event/register'>Register</a>";
     openContentImage3.src = card.children[1].src;
     setTimeout(function () {
         // update the scroll position to 0 (so it is at the top of the 'opened' page)

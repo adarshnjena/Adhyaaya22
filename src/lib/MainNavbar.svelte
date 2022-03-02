@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import roundMenu from '@iconify-icons/ic/round-menu.js';
     import authStore from './auth/authStore';
@@ -6,6 +6,23 @@
     $: $authStore.isLoggedIn
         ? (auth_link = ['Dashboard', '/dashboard'])
         : (auth_link = ['Register', '/event/register']);
+        
+    import roundClose from '@iconify-icons/ic/round-close.js';
+    let dd_icon = roundMenu;
+    function _on_dropdown_click(event: Event) {
+        let dropdown = document.getElementById('dropdown');
+        let dropdown_btn = document.getElementById('dropdown-btn');
+        // Toggles opening the dropdown
+        let is_open = dropdown.classList.toggle('tw-dropdown-open');
+        if (is_open) {
+            dd_icon = roundClose;
+        } else {
+            dd_icon = roundMenu;
+        }
+        // Defocouses the element to make the dropdown close regardless
+        // @ts-ignore
+        document.activeElement.blur();
+    }
 </script>
 
 <nav
@@ -22,9 +39,9 @@
         </a>
         <div class="tw-flex tw-items-center md:tw-order-2 md:tw-hidden">
             <!-- Dropdown menu -->
-            <div class="tw-dropdown-end tw-dropdown tw-inline-block md:tw-hidden">
-                <div tabindex="0" class="tw-btn tw-btn-ghost tw-m-1">
-                    <Icon class="{`tw-h-8 tw-w-8`}" icon="{roundMenu}" />
+            <div id="dropdown" class="tw-dropdown-end tw-dropdown tw-inline-block md:tw-hidden">
+                <div id="dropdown-btn" on:click="{_on_dropdown_click}" tabindex="0" class="tw-btn tw-btn-ghost tw-m-1">
+                    <Icon class="{`tw-h-8 tw-w-8`}" icon="{dd_icon}" />
                 </div>
                 <ul
                     tabindex="0"

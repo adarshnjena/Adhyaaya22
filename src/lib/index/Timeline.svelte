@@ -68,7 +68,7 @@ import { browser } from '$app/env';
                 </div>
             </div>
         </li>
-<!--         <li>
+        <li>
             <div>
                 <time>24th March</time>
                 <div class="discovery">
@@ -76,7 +76,7 @@ import { browser } from '$app/env';
                     <p></p>
                 </div>
             </div>
-        </li> -->
+        </li> 
     </ul>
 </section>
 </div>

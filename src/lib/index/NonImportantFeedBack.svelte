@@ -117,15 +117,7 @@
                         <div class="carousel-item active">
                             <div class="quote-wrapper">
                                 <p>
-                                    Hii my name is snehashish Mohanty , 6 months before my friend
-                                    sidharth informed me about this extraordinary program (aadhyaya)
-                                    that u have been conducting from past 3,4 years. I was so
-                                    excited to join by seeing such versatile people and bunch of
-                                    knowledge that they share through this platform, and I'm very
-                                    happy to let u know I also participated in many events and
-                                    experienced lot of things to utilise for my growth. I
-                                    congratulate ur team and my friend for putting such efforts to
-                                    bring out this excellence.
+                                    I came to know about Adhyaaya through my friend. I was immediately fascinated about it, that it has been conducted so efficiently since past 4 years. I was very excited to involve myself here with a bunch of talented people and gain valuable knowledge that they share through this platform. I can gladly say that participation in Adhyaaya has helped in my personal growth greatly.  I would like to congratulate the team for successfully turning this dream of an event into reality.
                                 </p>
                                 <div class="quote-wrapper_img">
                                     <div>

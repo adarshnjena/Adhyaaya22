@@ -7,10 +7,10 @@
     let scrollY = 0;
     onMount(() => {
         //scrollY = 84;
-        window.onmessage = (e) => {
-            dev ? console.log(e.data.toString().split(':')[1]) : '';
-            goto(e.data.toString().split(':')[1]);
-        };
+        // window.onmessage = (e) => {
+        //     dev ? console.log(e.data.toString().split(':')[1]) : '';
+        //     goto(e.data.toString().split(':')[1]);
+        // };
     });
 </script>
 

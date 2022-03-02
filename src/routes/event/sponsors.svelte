@@ -11,10 +11,10 @@ onMount(() => {
     scrollY = 84;
     //document.getElementsByTagName('iframe')[0].scrollIntoView();
     console.log(scrollY);
-    window.onmessage = (e) => {
-        dev ? console.log(e.data.toString().split(':')[1]) : '';
-        goto(e.data.toString().split(':')[1]);
-    };
+    // window.onmessage = (e) => {
+    //     dev ? console.log(e.data.toString().split(':')[1]) : '';
+    //     goto(e.data.toString().split(':')[1]);
+    // };
     tick().then(() => {
         window.scrollY = 84;
     })

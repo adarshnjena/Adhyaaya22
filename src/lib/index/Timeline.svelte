@@ -52,7 +52,7 @@ import { browser } from '$app/env';
         </li>
         <li>
             <div>
-                <time>2nd March</time>
+                <time></time>
                 <div class="discovery">
                     <h1>Registration Starts</h1>
                     <p></p>
@@ -61,7 +61,7 @@ import { browser } from '$app/env';
         </li>
         <li>
             <div>
-                <time>24th March</time>
+                <time></time>
                 <div class="discovery">
                     <h1>Inauguration Ceremony</h1>
                     <p></p>
@@ -70,7 +70,7 @@ import { browser } from '$app/env';
         </li>
         <li>
             <div>
-                <time>24th March</time>
+                <time></time>
                 <div class="discovery">
                     <h1>Day 1</h1>
                     <p></p>

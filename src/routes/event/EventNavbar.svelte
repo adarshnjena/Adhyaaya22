@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import outlineLogout from '@iconify-icons/ic/outline-logout.js';

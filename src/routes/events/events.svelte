@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte';
-    let scrollY = 0;
+    let scrollY = 84;
     onMount(() => {
-        //scrollY = 84;
+        scrollY = 84;
     });
 </script>
 

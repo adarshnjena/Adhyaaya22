@@ -8,17 +8,17 @@ DATA = """
             "registration_id": "DU1ZrX0rAncEYwLyWlwqgdEfjqA2-COV-1645969638818",
             "team": "",
             "transaction_status": "PAID",
-            "email": "parapallidev@gmail.com",
+            "email": "adhyaaya.gcoen@gmail.com",
             "college": "Government College of Engineering|Khapri|Nagpur|Maharashtra|India",
-            "phone": "+91879150182"
+            "phone": "XXXXXXXXXXX"
         },
         "RPNBT": {
             "transaction_status": "PAID",
-            "email": "parapallidev@gmail.com",
+            "email": "adhyaaya.gcoen@gmail.com",
             "college": "Government College of Engineering|Khapri|Nagpur|Maharashtra|India",
             "event_code": "RPNBT",
             "course": "adadad",
-            "phone": "+91879150182",
+            "phone": "XXXXXXXXXXX",
             "registration_id": "DU1ZrX0rAncEYwLyWlwqgdEfjqA2-RPNBT-1646074425858",
             "team": [
                 {
@@ -41,7 +41,7 @@ DATA = """
         },
         "BSYD": {
             "college": "Government College of Engineering|Khapri|Nagpur|Maharashtra|India",
-            "phone": "+91879150182",
+            "phone": "XXXXXXXXXXX",
             "event_code": "BSYD",
             "name": "Devansh Parapalli",
             "course": "afafafa",
@@ -54,7 +54,7 @@ DATA = """
                     "name": "afafafa"
                 }
             ],
-            "email": "parapallidev@gmail.com"
+            "email": "adhyaaya.gcoen@gmail.com"
         }
     }
 }

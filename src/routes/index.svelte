@@ -31,7 +31,7 @@
     let app;
     let auth;
     let innerHeight: number;
-    let scrollY: number = 100; // Number of Pixels scrolled
+    let scrollY: number; // Number of Pixels scrolled
     let container: HTMLDivElement;
     let src;
 
@@ -63,7 +63,7 @@
         //@ts-ignore
         //fullpage_api.destroy('all');
         // Sets up the scroll to the top of the page.
-        scrollY = 100;
+        scrollY = 84;
         try {
             app = getApp();
         } catch (error) {
@@ -86,6 +86,9 @@
             //user ? init_profile_data(app, auth, getDatabase(app)) : '';
             //user ? goto('/dashboard') : '';
         });
+        return () => {
+            scrollY = 84;
+        }
     });
 
     const invisible = 'tw-invisible';

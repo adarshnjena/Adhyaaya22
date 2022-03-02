@@ -1,9 +1,17 @@
 <script>
     import { onMount } from 'svelte';
     //let scrollY = 0;
+    import { dev } from '$app/env';
+
+    import { goto } from '$app/navigation';
+
+    //let scrollY = 84;
     onMount(() => {
-        // Disabled Scroll thingy
-        //scrollY = 100;
+        //scrollY = 84;
+        // window.onmessage = (e) => {
+        //     dev ? console.log(e.data.toString().split(':')[1]) : '';
+        //     goto(e.data.toString().split(':')[1]);
+        // };
     });
 </script>
 

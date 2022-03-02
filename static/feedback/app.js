@@ -60,3 +60,26 @@ document.querySelector(document).ready(function () {
       .prepend("0");
   });
 }); */
+
+function interceptClickEvent(e) {
+  var href;
+  var target = e.target || e.srcElement;
+  if (target.tagName === 'A') {
+      href = target.getAttribute('href');
+
+      //put your logic here...
+      if (href.indexOf('#') != 0) {
+          window.top.postMessage(`navigate:${href}`, '*');
+         //tell the browser not to respond to the link click
+         e.preventDefault();
+      }
+  }
+}
+
+
+//listen for link click events at the document level
+if (document.addEventListener) {
+  document.addEventListener('click', interceptClickEvent);
+} else if (document.attachEvent) {
+  document.attachEvent('onclick', interceptClickEvent);
+}

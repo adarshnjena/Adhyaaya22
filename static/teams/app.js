@@ -48,3 +48,27 @@ function changeAtiveTab2(event, tabID) {
   document.getElementById(tabID).classList.remove("hidden");
   document.getElementById(tabID).classList.add("block");
 }
+
+// function interceptClickEvent(e) {
+//   var href;
+//   var target = e.target || e.srcElement;
+//   console.log('click', e)
+//   if (target.tagName === 'a') {
+//       href = target.getAttribute('href');
+//       console.log(href);
+//       //put your logic here...
+//       if (href.indexOf('#') != 0) {
+//           window.top.postMessage(`navigate:${href}`, '*');
+//          //tell the browser not to respond to the link click
+//          e.preventDefault();
+//       }
+//   }
+// }
+
+
+// //listen for link click events at the document level
+// if (document.addEventListener) {
+//   document.addEventListener('click', interceptClickEvent);
+// } else if (document.attachEvent) {
+//   document.attachEvent('onclick', interceptClickEvent);
+// }

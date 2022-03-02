@@ -50,7 +50,7 @@
             <ul class="tw-ml-auto tw-flex tw-list-none tw-flex-row tw-self-end">
                 <li class="tw-flex tw-items-center">
                     <div id="dropdown" class="tw-dropdown-end tw-dropdown">
-                        <div id="dropdown-btn" tabindex="0" class="tw-btn-outline tw-btn tw-btn-ghost tw-m-1">
+                        <div id="dropdown-btn" on:click="{_on_dropdown_click}" tabindex="0" class="tw-btn-outline tw-btn tw-btn-ghost tw-m-1">
                             <Icon class="tw-h-10 tw-w-10" icon="{dd_icon}" />
                         </div>
                         <ul

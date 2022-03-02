@@ -5,10 +5,12 @@
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { goto } from '$app/navigation';
     import { authentication_message } from '$lib/messageStore';
+import { page } from '$app/stores';
     let app;
-    let scrollY=84;
+    let scrollY;
     // Init firebase and generate the required app.
     onMount(() => {
+        scrollY = 84;
         try {
             app = getApp();
         } catch (error) {
@@ -19,7 +21,7 @@
         // Now we for sure have an app.
 
         dev ? console.log(app) : '';
-        scrollY = 84;
+        
     });
 </script>
 

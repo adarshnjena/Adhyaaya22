@@ -62,7 +62,55 @@
                     {#each Object.entries(registrations) as [event_code, registration]}
                         <DashboardTaskItem registration="{registration}" />
                     {:else}
-                        <!--Enter This element-->
+                        <tr>
+                            <th
+                                class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-text-left tw-align-middle tw-text-xs "
+                            >
+                                Use the below form to fill in the details first. You may then proceed for a new registration using the button above.
+                            </th>
+                            <td
+                                class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
+                            >
+                                You may even register at the event.
+                            </td>
+                            <td
+                                class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
+                            >
+                                <div class="tw-flex tw-items-center">
+                                    <span class="tw-mr-2">
+                                        <div class="tw-badge tw-badge-info">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                aria-hidden="true"
+                                                role="img"
+                                                class="tw-mr-1"
+                                                width="1em"
+                                                height="1em"
+                                                preserveAspectRatio="xMidYMid meet"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1-8h-2V7h2v2z"
+                                                    fill="currentColor"
+                                                ></path>
+                                            </svg>
+                                            Information
+                                        </div>
+                                    </span>
+                                </div>
+                            </td>
+                            <td
+                                class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs "
+                            >
+                                <span
+                                    class="tw-btn tw-btn-primary tw-btn-sm tw-hidden"
+                                    
+                                >
+                                    
+                                </span>
+                            </td>
+                        </tr>
                     {/each}
                 </tbody>
             </table>

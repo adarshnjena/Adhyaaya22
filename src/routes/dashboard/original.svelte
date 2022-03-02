@@ -22,9 +22,9 @@
     import type { contactDetails } from '$lib/types/contactDetails';
     import { get_user_details, set_initial_user_details } from '$lib/firebase/userDetails';
     import type { taskDetails } from '$lib/types/taskDetails';
-    import { get_n_task_details } from '$lib/firebase/taskDetails';
+    // import { get_n_task_details } from '$lib/firebase/taskDetails';
     import { eventDetails } from '$lib/types/eventDetails';
-    import { get_n_event_details } from '$lib/firebase/eventDetails';
+    // import { get_n_event_details } from '$lib/firebase/eventDetails';
     import _contact from '../../contact.json';
     import { get_random_loading_message } from '$lib/loading';
 
@@ -83,8 +83,8 @@
         // TODO: Finish the contact details
         // Get 5 important, future tasks.
         profile_tasks = _details['tasks'];
-        tasks = await get_n_task_details(app, db, 5);
-        events = await get_n_event_details(app, db, 5);
+        //tasks = await get_n_task_details(app, db, 5);
+        //events = await get_n_event_details(app, db, 5);
         dataPromiseResolve();
     });
     async function handle_update_click(event) {

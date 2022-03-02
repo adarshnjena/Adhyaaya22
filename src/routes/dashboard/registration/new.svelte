@@ -32,10 +32,12 @@
         get_user_registrations,
     } from '$lib/firebase/registrationDetails';
     import { get_order_id } from '$lib/cashfree/helpers';
-    //use import { cashfreeProd } from 'cashfree-dropjs';
+    import { cashfreeProd } from 'cashfree-dropjs';
 
-    let testCashfree = new cashfreeSandbox.Cashfree();
-    //let prodCashfree = new cashfreeProd.Cashfree();
+    //let cashfree = new cashfreeSandbox.Cashfree();
+    // TODO: Complete CashFree Integration.
+    let cashfree = new cashfreeSandbox.Cashfree();
+    // let cashfree = dev ? new cashfreeSandbox.Cashfree() : new cashfreeProd.Cashfree();
     $: {
         _team_members = event_extra_members_mapping[input_registration_details.event_code] || 0;
     }
@@ -215,7 +217,7 @@
                 } else {
                     //order is still active and payment has failed
                     modal_show(
-                        'We can not process your payment at this time, please try again later.',
+                        'Payment Failed. We can not process your payment at this time, please try again later. If the issue persists, please contact support.',
                     );
                 }
             },
@@ -227,7 +229,7 @@
                 theme: 'dark', //(or light)
             },
         };
-        testCashfree.initialiseDropin(document.getElementById('payment-gateway'), dropConfig);
+        cashfree.initialiseDropin(document.getElementById('payment-gateway'), dropConfig);
     }
 
     let error;

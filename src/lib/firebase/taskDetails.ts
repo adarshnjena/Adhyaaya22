@@ -12,7 +12,7 @@ import {
     limit,
 } from 'firebase/firestore/lite';
 
-export async function get_all_task_details(
+async function get_all_task_details(
     app: FirebaseApp,
     database: Firestore,
 ): Promise<{ [key: string]: taskDetails }> {
@@ -28,7 +28,7 @@ export async function get_all_task_details(
     return data;
 }
 
-export async function get_n_task_details(
+async function get_n_task_details(
     app: FirebaseApp,
     database: Firestore,
     n: number,
@@ -51,7 +51,7 @@ export async function get_n_task_details(
     return data;
 }
 
-export async function get_task_details(
+async function get_task_details(
     app: FirebaseApp,
     database: Firestore,
     task_id: string,

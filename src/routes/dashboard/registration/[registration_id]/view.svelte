@@ -3,7 +3,7 @@
     import Protected from '$lib/auth/Protected.svelte';
     import CAFooter from '$lib/CAFooter.svelte';
     import type { taskDetails } from '$lib/types/taskDetails';
-    import { get_task_details } from '$lib/firebase/taskDetails';
+    // import { get_task_details } from '$lib/firebase/taskDetails';
     import { get_user_details, update_user_task_details } from '$lib/firebase/userDetails';
     import { onMount } from 'svelte';
     import { getApp, initializeApp } from 'firebase/app';
@@ -105,12 +105,20 @@
                     </table>
                     {#if registration?.transaction_status != 'PAID'}
                         <a
-                            href="mailto:parapallidev@gmail.com"
+                            href="mailto:adhyaaya.gcoen@gmail.com"
                             class="tw-btn tw-btn-primary tw-btn-block tw-mt-10"
                         >
                             CONTACT SUPPORT
                         </a>
                     {/if}
+                    
+                        <a
+                            href="/dashboard"
+                            class="tw-btn tw-btn-block tw-mt-10"
+                        >
+                            RETURN TO DASHBOARD
+                        </a>
+                    
                 </div>
             </div>
         </div>

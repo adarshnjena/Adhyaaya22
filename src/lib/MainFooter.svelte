@@ -10,6 +10,7 @@
 
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
     import emailOutline from '@iconify-icons/ic/email.js';
+    import phoneOutline from '@iconify-icons/ic/phone.js';
     import youtubeOutline from '@iconify-icons/simple-icons/youtube.js';
     import twitterOutline from '@iconify-icons/simple-icons/twitter.js';
     import linkedinOutline from '@iconify-icons/simple-icons/linkedin.js';
@@ -49,7 +50,7 @@
                 <div class="mail-two">
                     <a sveltekit:prefetch class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
                         <Icon class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5" icon="{emailOutline}" />
-                        <p>Have a question ?</p>
+                        <p>Enquire here</p>
                     </a>
                 </div>
                 <div class="yt-two">
@@ -59,7 +60,7 @@
                         target="_blank"
                     >
                         <Icon class="mr-3 w-6 h-6" icon="{youtubeOutline}" />
-                        <p>Watch us on YouTube</p>
+                        <p>Subscribe us</p>
                     </a>
                 </div>
                 <div class="twitter-two">
@@ -69,7 +70,7 @@
                         target="_blank"
                     >
                         <Icon class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5" icon="{twitterOutline}" />
-                        <p>Follow us on Twitter</p>
+                        <p>Follow us on twitter</p>
                     </a>
                 </div>
                 <div class="linkedin-two">
@@ -79,7 +80,7 @@
                         target="_blank"
                     >
                         <Icon class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5" icon="{linkedinOutline}" />
-                        <p>Join us on LinkedIn</p>
+                        <p>Connect us on LinkedIn</p>
                     </a>
                 </div>
                 <div class="insta-two">
@@ -173,7 +174,7 @@
                                 <Icon
                                     class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5"
                                     icon="{emailOutline}"
-                                /> Have a question ?
+                                /> Enquire here
                             </a>
                         </div>
                         <div class="yt" id="transform-icon">
@@ -185,7 +186,7 @@
                                 <Icon
                                     class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5"
                                     icon="{youtubeOutline}"
-                                /> Watch us on YouTube
+                                /> Subscribe us
                             </a>
                         </div>
                         <div class="twitter" id="transform-icon">
@@ -197,7 +198,7 @@
                                 <Icon
                                     class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5"
                                     icon="{twitterOutline}"
-                                /> Follow us on Twitter
+                                /> Follow us on twitter
                             </a>
                         </div>
                         <div class="linkedin" id="transform-icon">
@@ -209,7 +210,7 @@
                                 <Icon
                                     class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5"
                                     icon="{linkedinOutline}"
-                                /> Join us on LinkedIn
+                                /> Connect us on LinkedIn
                             </a>
                         </div>
                         <div class="insta" id="transform-icon">
@@ -264,13 +265,13 @@
                                     <p>CSE Co-ordinator</p>
                                     <p>
                                         <a sveltekit:prefetch href="mailto:usgupta@gcoen.ac.in">
-                                            <i class="fa">&#xf0e0;</i>
+                                            <Icon icon="{emailOutline}" />
                                             Mail here
                                         </a>
                                     </p>
                                     <p>
                                         <a sveltekit:prefetch href="tel:+7020138347">
-                                            <i class="fa">&#xf095;</i>
+                                            <Icon icon="{phoneOutline}" />
                                             +91 7020138347
                                         </a>
                                     </p>
@@ -281,13 +282,13 @@
                                     <p>Civil Co-ordinator</p>
                                     <p>
                                         <a sveltekit:prefetch href="mailto:vednande10@gmail.com">
-                                            <i class="fa">&#xf0e0;</i>
+                                            <Icon icon="{emailOutline}" />
                                             Mail here
                                         </a>
                                     </p>
                                     <p>
                                         <a sveltekit:prefetch href="tel:+9075022332">
-                                            <i class="fa">&#xf095;</i>
+                                            <Icon icon="{phoneOutline}" />
                                             +91 9075022332
                                         </a>
                                     </p>

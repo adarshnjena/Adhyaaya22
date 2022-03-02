@@ -3,7 +3,7 @@
     import authStore from '$lib/auth/authStore';
     import Protected from '$lib/auth/Protected.svelte';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
-    import { get_all_task_details } from '$lib/firebase/taskDetails';
+    // import { get_all_task_details } from '$lib/firebase/taskDetails';
     import { get_user_details } from '$lib/firebase/userDetails';
 
     import CompactTaskItem from '$lib/taskview/CompactTaskItem.svelte';
@@ -32,7 +32,7 @@
         db = getFirestore();
         let _details = await get_user_details(app, $authStore.user, db);
         details = _details['tasks'];
-        tasks = await get_all_task_details(app, db);
+        // tasks = await get_all_task_details(app, db);
     });
 </script>
 

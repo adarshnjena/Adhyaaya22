@@ -3,7 +3,7 @@
     import Protected from '$lib/auth/Protected.svelte';
     import CAFooter from '$lib/CAFooter.svelte';
     import type { taskDetails } from '$lib/types/taskDetails';
-    import { get_task_details } from '$lib/firebase/taskDetails';
+    // import { get_task_details } from '$lib/firebase/taskDetails';
     import { get_user_details, update_user_task_details } from '$lib/firebase/userDetails';
     import { onMount } from 'svelte';
     import { getApp, initializeApp } from 'firebase/app';
@@ -45,7 +45,7 @@
         auth = getAuth();
         db = getFirestore();
         let _details = await get_user_details(app, $authStore.user, db);
-        task = await get_task_details(app, db, task_id);
+        // task = await get_task_details(app, db, task_id);
         is_completed = task_id in _details['tasks'];
     });
 

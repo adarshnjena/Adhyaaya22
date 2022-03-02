@@ -1,12 +1,10 @@
 const config = {
-    apiKey: 'AIzaSyCfTBElsvRPcD1LNorBPdaIjovj6M7gYKc',
-    authDomain: 'adhyaaya-staging-dev.firebaseapp.com',
-    databaseURL: 'https://adhyaaya-staging-dev-default-rtdb.asia-southeast1.firebasedatabase.app',
-    projectId: 'adhyaaya-staging-dev',
-    storageBucket: 'adhyaaya-staging-dev.appspot.com',
-    messagingSenderId: '898908208057',
-    appId: '1:898908208057:web:519f0ce4f4982f1966d468',
-    measurementId: 'G-8P49FHZBTB',
+    apiKey: 'AIzaSyDSOZjNvay47TSnLmn720famAV7c1Dk2gg',
+    authDomain: 'adhyaaya2022.firebaseapp.com',
+    projectId: 'adhyaaya2022',
+    storageBucket: 'adhyaaya2022.appspot.com',
+    messagingSenderId: '159750784870',
+    appId: '1:159750784870:web:c24768f60341abff1e2aa7',
 };
 
 export default config;

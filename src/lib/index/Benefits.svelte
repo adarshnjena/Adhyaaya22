@@ -161,12 +161,6 @@
                     <div class="indent">
                         <span class="property">3</span>
                         <span class="operator">:</span>
-                        <span class="string">'Joshua Ward'</span>
-                        <span>,</span>
-                    </div>
-                    <div class="indent">
-                        <span class="property">title</span>
-                        <span class="operator">:</span>
                         <span class="string">'Gain knowledge and insights from experts of their respective fields'</span>
                         <span>;</span>
                     </div>

@@ -5,16 +5,7 @@
     </div>
     <div class="testimonial-content">
         <p>
-            GCOE Nagpur Model United Nations 2021, was a very memorable conference in my MUN Career.
-            Being able to participate as the delegate of Slovakia (UNHRC) was indeed an amazing
-            experience. The Secretariat, Organizing Committee and the Executive Board Members did an
-            stellar performance to accommodate the needs and requests of the delegates. Further,
-            this conference will always have special place in my heart (not beacause, I won the Best
-            Delegate), but because of the hospitality, it had towards its participants. Last but not
-            the least, I would like to congratulate the team for the amazing display of debate, and
-            diplomacy. Wishing you, all the best for upcoming editions of the Conference. - Mr Domil
-            Antony Johnson Pro Munner, Assistant Director Harvard Model United Nations China and
-            Dubai 2021!
+            GCOE Nagpur MUN 2021, was a very special and memorable conference in my career. Being able to participate as a delegate in UNHRC was an amazing experience. The team did a stellar job to cater to the needs of the participants. I would like to congratulate the team for the amazing display. Wishing team Adhyaaya all the best for upcoming editions of the Conference.
         </p>
     </div>
     <h3 class="testimonial-title">

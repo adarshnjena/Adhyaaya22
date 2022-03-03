@@ -22,7 +22,7 @@
 <!--This was a retarded attempt at trying to convert this code. Broken Click-->
 
 <iframe
-    src="/events/index.html"
+    src="/events/_index.html"
     class="tw-h-screen tw-w-screen tw-overflow-clip"
     title="Events Page, Uses external GSAP"
     frameborder="0"

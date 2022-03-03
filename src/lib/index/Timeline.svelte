@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+<!--             <li>
                 <div>
                     <time>26th March</time>
                     <div class="discovery">
@@ -75,7 +75,7 @@
                         <p></p>
                     </div>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </section>
 </div>

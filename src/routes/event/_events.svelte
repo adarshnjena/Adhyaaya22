@@ -520,7 +520,7 @@
     }
 
     function animateCoverBack(card) {
-        console.log(card);
+        //console.log(card);
         var cardPosition = card.getBoundingClientRect();
         // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
         // TODO: Check this out again

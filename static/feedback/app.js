@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
         element.textContent = '0' + (key + 1).toString();
     });
 });
-console.log('PSO');
 /*
 document.querySelector(document).ready(function () {
   document.querySelector(".testimonial .indicators li").click(function () {

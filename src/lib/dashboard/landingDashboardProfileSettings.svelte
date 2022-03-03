@@ -65,7 +65,7 @@
     let is_updating = false;
     export let handle_update_click;
     async function on_update_click(event) {
-        console.log('on_update_click', event);
+        dev ? console.log('on_update_click', event) : '';
         if (!mobile_error) {
             is_updating = true;
             button_text = 'Updating...';

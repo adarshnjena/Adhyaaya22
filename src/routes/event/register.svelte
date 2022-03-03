@@ -11,6 +11,8 @@
     // Init firebase and generate the required app.
     onMount(() => {
         scrollY = 84;
+        window.scrollY = 84
+        window.scrollTo(0, 84);
         try {
             app = getApp();
         } catch (error) {
@@ -26,10 +28,10 @@
 
 <svelte:window bind:scrollY />
 
-<div class="parent-container">
+<div class="parent-container tw-min-h-screen tw-sticky">
     <div class="container">
         <h1>only one step away!</h1>
-        <p>
+        <p class="tw-text-base md:tw-text-2xl">
             Click the button below to login/register and associate yourself with the 4th edition of
             Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
         </p>
@@ -78,7 +80,7 @@
     }
 
     div.parent-container {
-        height: 100vh;
+        min-height: 100vh;
         max-width: 100vw;
         background: url('/register_bg.png') no-repeat center;
         background-size: cover;
@@ -118,7 +120,7 @@
     }
 
     p {
-        font-size: 25px;
+        // font-size: 25px;
         /* font-family: 'Open Sans', sans-serif; */
         font-family: 'Poppins', sans-serif;
     }

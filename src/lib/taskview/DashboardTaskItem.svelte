@@ -1,4 +1,6 @@
 <script lang="ts">
+import { dev } from '$app/env';
+
     import InfoBadge from '$lib/infoBadge.svelte';
     import type { taskDetails } from '$lib/types/taskDetails';
     import WarningBadge from '$lib/warningBadge.svelte';
@@ -10,7 +12,7 @@
         date.toLocaleDateString('en-IN', { year: 'numeric', month: '2-digit', day: '2-digit' }) +
         ' ' +
         date.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false });
-    console.log('completed', completed);
+    dev ? console.log('completed', completed);
 </script>
 
 <tr class="tw-hover tw-text-xs">

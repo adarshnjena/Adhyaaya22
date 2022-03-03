@@ -60,7 +60,7 @@
 
     function on_video_click_handler(event) {
         dev ? console.log(event) : '';
-        console.log(currentTime, scrollY);
+        dev ? console.log(currentTime, scrollY) : '';
         // Use this function to accurately redirect the user to the correct page.
     }
 </script>

@@ -1,3 +1,4 @@
+import { dev } from '$app/env';
 import type { profileDetails } from '$lib/types/profileDetails';
 import type { FirebaseApp } from '@firebase/app';
 import type { UserInfo } from 'firebase/auth';
@@ -50,7 +51,7 @@ export async function update_user_details(
     db: Firestore,
     data,
 ): Promise<void> {
-    console.log(db);
+    dev ? console.log(db) : '';
     const profile_ref = doc(db, `/users/${user.uid}`);
     const _data = {
         profile: data,

@@ -131,7 +131,7 @@
     let _team_members = 0;
 
     async function on_submit(event) {
-        console.log('Submit Button Clicked');
+        dev ? console.log('Submit Button Clicked'): '';
         if (error) {
             is_payment_gateway_shown = false;
             return;

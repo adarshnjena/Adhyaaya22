@@ -36,7 +36,7 @@
 
     //let cashfree = new cashfreeSandbox.Cashfree();
     let cashfree = new cashfreeProd.Cashfree();
-    
+
     let app;
     let auth;
     let db;
@@ -129,7 +129,7 @@
     let _team_members = 0;
 
     async function on_submit(event) {
-        dev ? console.log('Submit Button Clicked'): '';
+        dev ? console.log('Submit Button Clicked') : '';
         if (error) {
             is_payment_gateway_shown = false;
             return;
@@ -250,24 +250,41 @@
         if (_team_members === 0) {
             return;
         }
-        let _input = Number(window.prompt(`Enter Number of Additional Members (Max ${_team_members.toString()}): `, _team_members.toString()));
+        let _input = Number(
+            window.prompt(
+                `Enter Number of Additional Members (Max ${_team_members.toString()}): `,
+                _team_members.toString(),
+            ),
+        );
         if (_input == null) {
             _team_members = event_extra_members_mapping[event.target.value] || 0;
         }
         if (isNaN(_input)) {
-            _input = Number(window.prompt('Please enter a valid number: ', _team_members.toString()))
+            _input = Number(
+                window.prompt('Please enter a valid number: ', _team_members.toString()),
+            );
             _team_members = _input;
         }
         if (_input < 0) {
-            _input = Number(window.prompt('Please enter a valid number: ', _team_members.toString()))
+            _input = Number(
+                window.prompt('Please enter a valid number: ', _team_members.toString()),
+            );
             _team_members = _input;
         }
         if (_input > _team_members) {
-            _input = Number(window.prompt(`Maximum number of extra participants is ${_team_members.toString()}: `, _team_members.toString()))
+            _input = Number(
+                window.prompt(
+                    `Maximum number of extra participants is ${_team_members.toString()}: `,
+                    _team_members.toString(),
+                ),
+            );
             _team_members = _input;
         }
         try {
-        _team_members = Math.min(Number(_input), event_extra_members_mapping[event.target.value]);
+            _team_members = Math.min(
+                Number(_input),
+                event_extra_members_mapping[event.target.value],
+            );
         } catch (e) {
             _team_members = event_extra_members_mapping[event.target.value];
         }
@@ -387,7 +404,10 @@
                         </div>
 
                         <!-- <i class='bx bxs-component'></i> -->
-                        <select on:change="{on_value_select}" bind:value="{input_registration_details.event_code}">
+                        <select
+                            on:change="{on_value_select}"
+                            bind:value="{input_registration_details.event_code}"
+                        >
                             <option value="" class="selected" selected disabled>
                                 Competition / Workshop
                             </option>
@@ -412,7 +432,7 @@
                             <option value="RPNCI" disabled>
                                 [COMING SOON] RESPAWN CHESS | Solo
                             </option>
-                            <option value="VAV">[COMING SOON] VAAD VIVAD | SOLO</option>
+                            <option value="VAV" disabled>[COMING SOON] VAAD VIVAD | SOLO</option>
                             <option value="FOH" disabled>
                                 [COMING SOON] FOODOHOLICS | Team [4]
                             </option>

@@ -51,7 +51,7 @@
             </li>
             <li>
                 <div>
-                    <time></time>
+                    <time>4th March</time>
                     <div class="discovery">
                         <h1>Registration Starts</h1>
                         <p></p>
@@ -60,7 +60,7 @@
             </li>
             <li>
                 <div>
-                    <time></time>
+                    <time>25th March</time>
                     <div class="discovery">
                         <h1>Inauguration Ceremony</h1>
                         <p></p>
@@ -69,7 +69,7 @@
             </li>
             <li>
                 <div>
-                    <time></time>
+                    <time>26th March</time>
                     <div class="discovery">
                         <h1>Day 1</h1>
                         <p></p>

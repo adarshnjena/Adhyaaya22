@@ -32,7 +32,7 @@
     <div class="container">
         <h1>only one step away!</h1>
         <p class="tw-text-base md:tw-text-2xl">
-            Click the button below to login/register and associate yourself with the 4th edition of
+            Click the button below to login/register and associate yourself with the 5th edition of
             Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
         </p>
         <!--

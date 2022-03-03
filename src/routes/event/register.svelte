@@ -7,7 +7,7 @@
     import { authentication_message } from '$lib/messageStore';
 import { page } from '$app/stores';
     let app;
-    let scrollY;
+    let scrollY = 0;
     // Init firebase and generate the required app.
     onMount(() => {
         scrollY = 84;
@@ -29,16 +29,17 @@ import { page } from '$app/stores';
 
 <div class="parent-container">
     <div class="container">
-        <!--<h1>only one step away!</h1>
+        <h1>only one step away!</h1>
         <p>
             Click the button below to login/register and associate yourself with the 4th edition of
             Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
-        </p> -->
+        </p> 
+        <!--
         <h1>Coming Soon!</h1>
         <p>We are working hard to bring you the best experience. Stay tuned!</p>
-
+            -->
         <button
-            class="tw-hidden"
+            class=""
             on:click="{() => {
                 $authentication_message = 'Plese register below';
                 goto('/auth/login');

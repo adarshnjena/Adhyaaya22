@@ -15,6 +15,6 @@ import { onMount } from "svelte";
 
 
     onMount(() => {
-        goto('/events/events/');
+        goto('/events/events/', {replaceState: true});
     })
 </script>

@@ -36,8 +36,9 @@
 
     //let cashfree = new cashfreeSandbox.Cashfree();
     // TODO: Complete CashFree Integration.
-    let cashfree = new cashfreeSandbox.Cashfree();
-    // let cashfree = dev ? new cashfreeSandbox.Cashfree() : new cashfreeProd.Cashfree();
+    //let cashfree = new cashfreeSandbox.Cashfree();
+    //let cashfree = dev ? new cashfreeSandbox.Cashfree() : new cashfreeProd.Cashfree();
+    let cashfree = new cashfreeProd.Cashfree();
     $: {
         _team_members = event_extra_members_mapping[input_registration_details.event_code] || 0;
     }
@@ -125,6 +126,7 @@
             college: input_registration_details['college'],
             registration_id: order_id,
             transaction_status: 'PAID',
+            refferal_code: input_registration_details['referral_code'],
             event_code: input_registration_details['event_code'],
             course: input_registration_details['year_of_study'],
             team: get_team_members(),
@@ -166,6 +168,7 @@
             order_currency: 'INR', // const
             customer_details: {
                 customer_id: $authStore.user.uid, // Firebase User ID
+                customer_name: input_registration_details['name'],
                 customer_email: details['profile']['email'], // Adhyaaya Support Email
                 customer_phone: details['profile']['mobile_number'], // Check Phone number inside the dashboard
             },
@@ -197,6 +200,7 @@
                         email: input_registration_details['email'],
                         phone: input_registration_details['phone'],
                         college: input_registration_details['college'],
+                        refferal_code: input_registration_details['referral_code'],
                         registration_id: data.order.orderId,
                         transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
                         event_code: input_registration_details['event_code'],
@@ -375,39 +379,38 @@
                             <option class="option_heading" value="" disabled>
                                 Non-technical Event
                             </option>
-                            <option value="BSYD">BORNPSYCOS | Duos</option>
-                            <option value="BSYT">BORNPSYCOS | Team [4]</option>
-                            <option value="MUNA">MUN AIPPM | Solo</option>
-                            <option value="MUNU">MUN UNHRC | Solo</option>
-                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]</option>
-                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]</option>
-                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]</option>
-                            <option value="RPNCI">RESPAWN CHESS | Solo</option>
-                            <option value="VAV">VAAD VIVAD | SOLO</option>
-                            <option value="FOH">FOODOHOLICS | Team [4]</option>
-                            <option value="CCB">CRICBASH | Team [6]</option>
+                            <option value="BSYD" disabled>[COMING SOON] BORNPSYCOS | Duos</option>
+                            <option value="BSYT" disabled>[COMING SOON] BORNPSYCOS | Team [4]</option>
+                            <option value="MUNA" disabled>[COMING SOON] MUN AIPPM | Solo</option>
+                            <option value="MUNU" disabled >[COMING SOON] MUN UNHRC | Solo</option>
+                            <option value="RPNBS"disabled >[COMING SOON] RESPAWN BGMI SQUAD | Team [4]</option>
+                            <option value="RPNBT" disabled>[COMING SOON] RESPAWN BGMI TDM | Team [4]</option>
+                            <option value="RPNVS" disabled>[COMING SOON] RESPAWN VALORANT SQUAD | Team [5]</option>
+                            <option value="RPNCI" disabled>[COMING SOON] RESPAWN CHESS | Solo</option>
+                            <option value="VAV" disabled>[COMING SOON] VAAD VIVAD | SOLO</option>
+                            <option value="FOH" disabled>[COMING SOON] FOODOHOLICS | Team [4]</option>
+                            <option value="CCB" disabled>[COMING SOON] CRICBASH | Team [6]</option>
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>
                                 Technical Event
                             </option>
-                            <option value="COV">CODEVENTURE | SOLO</option>
+                            <option value="COV"disabled>[COMING SOON] CODEVENTURE | SOLO</option>
                             <option value="AVK">AVISHKAR | Team [upto 5]</option>
-                            <option value="CADCS">CADDICTION CIVIL | Solo</option>
-                            <option value="CADCD">CADDICTION CIVIL | Duo</option>
-                            <option value="CADMS">CADDICTION MECHANICAL | Solo</option>
-                            <option value="CADMD">CADDICTION MECHANICAL | Duo</option>
-                            <option value="VPM">VIRTUAL PLACEMENT | Solo</option>
+                            <option value="CADCS" disabled>[COMING SOON] CADDICTION CIVIL | Solo</option>
+                            <option value="CADCD" disabled>[COMING SOON] CADDICTION CIVIL | Duo</option>
+                            <option value="CADMS" disabled>[COMING SOON] CADDICTION MECHANICAL | Solo</option>
+                            <option value="CADMD" disabled>[COMING SOON] CADDICTION MECHANICAL | Duo</option>
+                            <option value="VPM" disabled>[COMING SOON] VIRTUAL PLACEMENT | Solo</option>
                             <option value="" disabled></option>
-                            <!--TODO: FINISH THIS-->
                             <option class="option_heading" value="" disabled>Workshop</option>
-                            <option value="LPY">Learn.py</option>
-                            <option value="">Cad-O-Shop</option>
-                            <option value="">Stargaze</option>
-                            <option value="">Drone Workshop</option>
-                            <option value="">Stock Market Investion</option>
-                            <option value="">YouTube Content Creation</option>
+                            <option value="CSW" disabled>[COMING SOON] SPECTRUM | Solo</option>
+                            <option value="COS" disabled>[COMING SOON] CAD-O-SHOP | Solo</option>
+                            <option value="STG" disabled>[COMING SOON] STARGAZE | Solo</option>
+                            <option value="TSI" disabled>[COMING SOON] JIGYASA | Solo</option>
+                            <option value="UPG" disabled>[COMING SOON] UPGRAD | Solo</option>
                             <option value="" disabled></option>
+                            
                         </select>
                         {#each [...Array(_team_members).keys()] as item}
                             <div class="input tw-inline-flex ">
@@ -465,7 +468,8 @@
                     <p>* EVENT NAME | TEAM/SOLO | PRICE</p>
                     <p>* For faster and safer transactions, prefer UPI.</p>
 
-                    <p>* Any issues regarding registration, try to contact Ankur - 7743891722.</p>
+                    <p>* Any issues regarding registration, try to contact Siddhant - 8669066319 or Adharsh - 7620426119</p>
+                    <p>* or contact on WhatsApp; Devansh Parapalli - 8793150182</p>
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
 
                     <p>

@@ -92,7 +92,7 @@ if COLLLECTION_NAME != 'registrations':
 
 print('[INFO] Writing CSV Document...')
 with open(CSV_EXPORT_FILE, "w") as f:
-    f.write("registration_id,event_code,name,email,phone,college,course,transaction_status,TEAM?\n")
+    f.write("registration_id,event_code,refferal_code,name,email,phone,college,course,transaction_status,TEAM?\n")
     for user_id, user_registrations in k.items():
         # print(key) # This is user_id,
         # print(value) # This is a dict of all the registrations
@@ -101,11 +101,11 @@ with open(CSV_EXPORT_FILE, "w") as f:
             # this is registration item
             # print(e_key, e_value)
             file_string = ""
-            file_string += f"{registration['registration_id']},{event_code},{registration['name']},{registration['email']},{registration['phone']},{registration['college']},{registration['course']},{registration['transaction_status']},{'TEAM LEADER'}\n"
+            file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{registration['name']},{registration['email']},{registration['phone']},{registration['college']},{registration['course']},{registration['transaction_status']},{'TEAM LEADER'}\n"
             for team_member in registration['team']:
                 if isinstance(team_member, str):
-                    file_string += f"{registration['registration_id']},{event_code},{team_member},{team_member},{team_member},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
+                    file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member},{team_member},{team_member},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
                     continue
-                file_string += f"{registration['registration_id']},{event_code},{team_member['name']},{team_member['email']},{team_member['phone']},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
+                file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member['name']},{team_member['email']},{team_member['phone']},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
             f.write(file_string)
 print('[INFO] Finished Writing CSV Document')

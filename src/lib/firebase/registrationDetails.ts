@@ -18,19 +18,71 @@ export const event_name_mapping = {
     MUNA: 'Model United Nations AIPPM',
     MUNU: 'Model United Nations UNHRC',
     COV: 'Code Venture',
-    CSW: 'CSE Webinar',
+    CSW: 'Spectrum',
     UPG: 'Upgrad',
     AVK: 'Avishkar',
-    TSI: 'Trishakti Interview',
+    TSI: 'Jigyasa',
     COS: 'CAD-O-Shop',
     STG: 'StarGaze',
     FOH: 'Foodoholics',
     CCB: 'Cricbash',
     BSYD: 'Bornpsycos Duo',
     BSYT: 'Bornpsycos Team',
-    // FOR DEV
-    BSY: '[DEV] Bornpsycos',
 };
+
+export function get_event_cost(event_code) {
+    switch (event_code) {
+        case 'RPNBS':
+            return 160;
+        case 'RPNBT':
+            return 80;
+        case 'RPNVS':
+            return 150;
+        case 'RPNCI':
+            return 50;
+        case 'VPM':
+            return 70;
+        case 'CADMS':
+            return 60;
+        case 'CADMD':
+            return 100;
+        case 'CADCS':
+            return 60;
+        case 'CADCD':
+            return 100;
+        case 'MUNA':
+            return 150;
+        case 'MUNU':
+            return 150;
+        case 'VAV':
+            return 50;
+        case 'AVK':
+            return 150;
+        case 'BSYD':
+            return 80;
+        case 'BSYT':
+            return 150;
+        case 'COV':
+            return 0;
+        case 'FOH':
+            return 200;
+        case 'CCB':
+            return 300;
+        case 'STG':
+            return 0;
+        case 'TSI':
+            return 0;
+        case 'CSW':
+            // Spectrum
+            return 0;
+        case 'UPG':
+            return 0;
+        case 'COS':
+            return 0;
+        default:
+            return 0;
+    }
+}
 
 export const event_extra_members_mapping = {
     VPM: 0,
@@ -50,7 +102,7 @@ export const event_extra_members_mapping = {
     UPG: 0,
     AVK: 4,
     TSI: 0,
-    // COS: 'CAD-O-Shop',
+    COS: 0,
     STG: 0,
     FOH: 3,
     CCB: 5,
@@ -105,54 +157,4 @@ export function get_event_date(event_code) {
     return '2022-04-02';
 }
 
-export function get_event_cost(event_code) {
-    switch (event_code) {
-        case 'RPNBS':
-            return 160;
-        case 'RPNBT':
-            return 80;
-        case 'RPNVS':
-            return 150;
-        case 'RPNCI':
-            return 50;
-        case 'VPM':
-            return 70;
-        case 'CADMS':
-            return 60;
-        case 'CADMD':
-            return 100;
-        case 'CADCS':
-            return 60;
-        case 'CADCD':
-            return 100;
-        case 'MUNA':
-            return 150;
-        case 'MUNU':
-            return 150;
-        case 'VAV':
-            return 50;
-        case 'AVK':
-            return 120;
-        case 'BSYD':
-            return 80;
-        case 'BSYT':
-            return 150;
-        case 'COV':
-            return 0;
-        case 'FOH':
-            return 200;
-        case 'CCB':
-            return 300;
-        case 'STG':
-            return 0;
-        case 'TSI':
-            return 0;
-        case 'CSW':
-            //TODO: CHANGE THIS VALUE FOR CSE WEBINAR
-            return 0;
-        case 'UPG':
-            return 0;
-        default:
-            return 0;
-    }
-}
+

@@ -104,6 +104,10 @@
                         </tbody>
                     </table>
                     {#if registration?.transaction_status != 'PAID'}
+                        <p>* Contacts:</p>
+                        <p>Siddhant Patil : +91 8669066319 [Call + WhatsApp]</p>
+                        <p>Adarsh Jena : +91 7620426119 [Call + WhatsApp]</p>
+                        <p>Devansh Parapalli : +91 8793150182 [WhatsApp only]</p>
                         <a
                             href="mailto:adhyaaya.gcoen@gmail.com"
                             class="tw-btn tw-btn-primary tw-btn-block tw-mt-10"

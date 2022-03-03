@@ -96,6 +96,8 @@
         //profile_tasks = _details['tasks'];
         dev ? console.log('updated_details', details) : '';
     }
+
+    
 </script>
 
 <svelte:head>
@@ -108,22 +110,7 @@
         <div class="tw-w-full">
             <!--Stats Row-->
             <div class="tw-mt-4 tw-flex tw-flex-wrap tw-justify-between">
-                <!--
-                <SimpleStat
-                    title="Tasks Completed"
-                    value="345"
-                    positive="{true}"
-                    subtitle=""
-                    icon="{tasksCompletedIcon}"
-                />
-                <SimpleStat
-                    title="Tasks Remaining"
-                    value="345"
-                    positive="{false}"
-                    subtitle=""
-                    icon="{tasksNotCompletedIcon}"
-                />
-                -->
+                <a sveltekit:prefetch href="/dashboard/registration/new" class="tw-btn tw-btn-primary tw-mx-auto tw-btn-xl tw-h-[5rem] tw-px-[5rem] tw-text-3xl">{!!details.address ? 'REGISTER NOW!' : 'FILL IN DETAILS BELOW'}</a>
             </div>
             <!-- Level 0 -->
             <!-- Level 1 -->

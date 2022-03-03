@@ -13,6 +13,7 @@ export interface registrationDetails {
     college: string;
     // supposed to be City, State, Country
     //college_address: string;
+    refferal_code: string;
     course: string;
     team: teamMemberDetail[];
     transaction_status: string;

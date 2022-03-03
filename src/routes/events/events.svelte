@@ -6,7 +6,7 @@
     import { onMount } from 'svelte';
     let scrollY = 84;
     onMount(() => {
-        scrollY = 84;
+        //scrollY = 84;
         window.onmessage = (e) => {
             dev ? console.log(e.data.toString().split(':')[1]) : '';
             if (e.data.toString().includes('%22') || e.data.toString().includes('"')) {

@@ -1,4 +1,4 @@
- <div class="wrapper tw-min-h-screen tw-w-screen tw-pb-8 tw-pt-8">
+<div class="wrapper tw-min-h-screen tw-w-screen tw-pb-8 tw-pt-8">
     <div class="header-benefit">
         <h1 class="tw-text-3xl">Benefits</h1>
         <p>Let's look at the perks of participating in a national level techfest</p>
@@ -27,11 +27,12 @@
                     <div class="indent">
                         <span class="property">1</span>
                         <span class="operator">:</span>
-                        <span class="string">'Get a chance to compete with students from all over country'</span>
+                        <span class="string">
+                            'Get a chance to compete with students from all over country'
+                        </span>
                         <span>;</span>
                     </div>
-                        <span>}</span>
-                    
+                    <span>}</span>
                 </code>
             </div>
 
@@ -68,7 +69,7 @@
                     </div>
                     <span>});</span>
                 </code>
-        </div>
+            </div>
         </div>
 
         <div class="card">
@@ -94,10 +95,12 @@
                     <div class="indent">
                         <span class="property">2</span>
                         <span class="operator">:</span>
-                        <span class="string">'Enhance your skills in the domains of the respective events'</span>
+                        <span class="string">
+                            'Enhance your skills in the domains of the respective events'
+                        </span>
                         <span>;</span>
                     </div>
-                        <span>}</span>
+                    <span>}</span>
                     <span>}</span>
                 </code>
             </div>
@@ -161,10 +164,12 @@
                     <div class="indent">
                         <span class="property">3</span>
                         <span class="operator">:</span>
-                        <span class="string">'Gain knowledge and insights from experts of their respective fields'</span>
+                        <span class="string">
+                            'Gain knowledge and insights from experts of their respective fields'
+                        </span>
                         <span>;</span>
                     </div>
-                        <span>}</span>
+                    <span>}</span>
                     <span>}</span>
                 </code>
             </div>
@@ -228,10 +233,12 @@
                     <div class="indent">
                         <span class="property">4</span>
                         <span class="operator">:</span>
-                        <span class="string">'Get in contact with new people and expand your social network'</span>
+                        <span class="string">
+                            'Get in contact with new people and expand your social network'
+                        </span>
                         <span>;</span>
                     </div>
-                        <span>}</span>
+                    <span>}</span>
                     <span>}</span>
                 </code>
             </div>

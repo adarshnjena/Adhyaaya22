@@ -1,1 +1,1 @@
-### Adhyaaya'22 Website 
+### Adhyaaya'22 Website

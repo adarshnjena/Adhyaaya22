@@ -1,78 +1,78 @@
 <script>
-import { browser } from '$app/env';
+    import { browser } from '$app/env';
 
     import { onMount } from 'svelte';
-    
+
     let items;
     function callbackFunc() {
-            for (var i = 0; i < items.length; i++) {
-                if (isElementInViewport(items[i])) {
-                    if (!items[i].classList.contains('in-view')) {
-                        items[i].classList.add('in-view');
-                    }
-                } else if (items[i].classList.contains('in-view')) {
-                    items[i].classList.remove('in-view');
+        for (var i = 0; i < items.length; i++) {
+            if (isElementInViewport(items[i])) {
+                if (!items[i].classList.contains('in-view')) {
+                    items[i].classList.add('in-view');
                 }
+            } else if (items[i].classList.contains('in-view')) {
+                items[i].classList.remove('in-view');
             }
         }
+    }
 
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
     onMount(() => {
         items = document.querySelectorAll('.timeline li');
-        items.forEach(item => {
+        items.forEach((item) => {
             item.classList.add('in-view');
         });
         //window.addEventListener('load', callbackFunc);
         //window.addEventListener('scroll', callbackFunc);
     });
-
 </script>
 
 <svelte:window />
 
 <div class="wrapper tw-h-screen tw-w-screen tw-bg-base-300">
-<section class="timeline">
-    <ul>
-        <li>
-            <div>
-                <time></time>
-                <div class="discovery">
-                    <h1>Day 2</h1>
-                    <p></p>
+    <section class="timeline">
+        <ul>
+            <li>
+                <div>
+                    <time></time>
+                    <div class="discovery">
+                        <h1>Day 2</h1>
+                        <p></p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <div>
-                <time></time>
-                <div class="discovery">
-                    <h1>Day 3</h1>
-                    <p></p>
+            </li>
+            <li>
+                <div>
+                    <time></time>
+                    <div class="discovery">
+                        <h1>Day 3</h1>
+                        <p></p>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            <div>
-                <time></time>
-                <div class="discovery">
-                    <h1>Valedictory</h1>
-                    <p></p>
+            </li>
+            <li>
+                <div>
+                    <time></time>
+                    <div class="discovery">
+                        <h1>Valedictory</h1>
+                        <p></p>
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-</section>
+            </li>
+        </ul>
+    </section>
 </div>
+
 <style style="scss">
-*,
+    *,
     *::before,
     *::after {
         margin: 0;
@@ -122,7 +122,7 @@ import { browser } from '$app/env';
         border-radius: 5px;
         display: flex;
         align-items: center;
-        @apply tw-bg-base-200
+        @apply tw-bg-base-200;
     }
     .timeline ul li div time {
         position: absolute;
@@ -150,7 +150,6 @@ import { browser } from '$app/env';
     .timeline ul li div .discovery {
         margin-right: 10px;
         @apply tw-bg-base-100 tw-text-white;
-
     }
     .timeline ul li:nth-of-type(odd) > div {
         left: 45px;

@@ -48,7 +48,11 @@
 
             <div class="footer-contact-two w-screen" id="icons-two">
                 <div class="mail-two">
-                    <a sveltekit:prefetch class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
+                    <a
+                        sveltekit:prefetch
+                        class="tw-inline-flex"
+                        href="mailto:adhyaaya.gcoen@gmail.com"
+                    >
                         <Icon class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5" icon="{emailOutline}" />
                         <p>Enquire here</p>
                     </a>
@@ -117,7 +121,12 @@
                         </h1>
                         <ul>
                             <li>
-                                <a sveltekit:prefetch href="#" class="button" on:click|preventDefault="{termspop4}">
+                                <a
+                                    sveltekit:prefetch
+                                    href="#"
+                                    class="button"
+                                    on:click|preventDefault="{termspop4}"
+                                >
                                     Contact info
                                 </a>
                             </li>
@@ -142,7 +151,15 @@
                                     About Us
                                 </a>
                             </li>
-                            <li><a sveltekit:prefetch href="https://www.gcoen.ac.in/" target="_blank">GCOEN</a></li>
+                            <li>
+                                <a
+                                    sveltekit:prefetch
+                                    href="https://www.gcoen.ac.in/"
+                                    target="_blank"
+                                >
+                                    GCOEN
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -154,12 +171,22 @@
 
                         <ul>
                             <li>
-                                <a sveltekit:prefetch href="#" class="button" on:click|preventDefault="{termspop}">
+                                <a
+                                    sveltekit:prefetch
+                                    href="#"
+                                    class="button"
+                                    on:click|preventDefault="{termspop}"
+                                >
                                     Terms & Conditions
                                 </a>
                             </li>
                             <li>
-                                <a sveltekit:prefetch href="#" class="button" on:click|preventDefault="{termspop2}">
+                                <a
+                                    sveltekit:prefetch
+                                    href="#"
+                                    class="button"
+                                    on:click|preventDefault="{termspop2}"
+                                >
                                     Privacy Policy
                                 </a>
                             </li>
@@ -170,7 +197,11 @@
 
                     <div class="footer-contact text-sm" id="icons">
                         <div class="mail" id="transform-icon">
-                            <a sveltekit:prefetch class="tw-inline-flex" href="mailto:adhyaaya.gcoen@gmail.com">
+                            <a
+                                sveltekit:prefetch
+                                class="tw-inline-flex"
+                                href="mailto:adhyaaya.gcoen@gmail.com"
+                            >
                                 <Icon
                                     class="tw-my-auto tw-mr-3 tw-h-5 tw-w-5"
                                     icon="{emailOutline}"
@@ -332,7 +363,7 @@
                         budding technocrats from all across India marked their remarkable presence
                         in Adhyaaya'21. The event consists of various technical, non-technical
                         segments along with workshops on topics spread all over the diverse scopes
-                        of engineering. We strive to offer a platform for the student community to 
+                        of engineering. We strive to offer a platform for the student community to
                         develop and showcase their skill sets and technical prowess by presenting
                         them events from model presentations, code-hunts to e-sports and technical
                         workshops. Adhyaaya is considered to be a promising technical fest in Nagpur
@@ -362,37 +393,48 @@
                 The Terms and Conditions are as follows :
 
                 <li>
-                    1. There is no option of refund of any entry. So, kindly do the registration only when you are confirmed to participate.
+                    1. There is no option of refund of any entry. So, kindly do the registration
+                    only when you are confirmed to participate.
                 </li>
                 <li>
                     2. Events are conducted and right to decision is held by the Adhyaaya committee.
                 </li>
                 <li>
-                    3. Each event has its own rules and regulations that you need to follow. Failing it will lead to disqualification.
+                    3. Each event has its own rules and regulations that you need to follow. Failing
+                    it will lead to disqualification.
                 </li>
                 <li>
-                    4. The participant once enrolled in a competition cannot unenroll at any point of time under any conditions.
+                    4. The participant once enrolled in a competition cannot unenroll at any point
+                    of time under any conditions.
                 </li>
                 <li>
-                    5. Verification of each and every participant will be done, so provide the correct information to avoid inconvenience.
+                    5. Verification of each and every participant will be done, so provide the
+                    correct information to avoid inconvenience.
                 </li>
                 <li>
-                    6. The organizers will not be responsible for any network lag or disconnectivity issues. Participants have to manage the issues by themselves.
+                    6. The organizers will not be responsible for any network lag or disconnectivity
+                    issues. Participants have to manage the issues by themselves.
                 </li>
                 <li>
-                    7. A confirmation mail will be sent on the provided Email ID after you register for an event containing the Unique Id. Kindly check for the same in the spam folder, if not received.
+                    7. A confirmation mail will be sent on the provided Email ID after you register
+                    for an event containing the Unique Id. Kindly check for the same in the spam
+                    folder, if not received.
+                </li>
+                <li>8. Accomodation and traveling wont' be provided by Adhyaaya.</li>
+                <li>
+                    9. Double Vaccination is mandatory for participating in the offline events.
+                    Social distancing and covid measures have to be taken seriously if proven
+                    otherwise Adhyaaya Committee wont' be responsible.
                 </li>
                 <li>
-                    8. Accomodation and traveling wont' be provided by Adhyaaya.
-                </li>       
-                <li>
-                    9. Double Vaccination is mandatory for participating in the offline events. Social distancing and covid measures have to be taken seriously if proven otherwise Adhyaaya Committee wont' be responsible. 
+                    10. Covid positive participants are entiled to inform the board about the
+                    infection before hand else harsh measure will be taken. In the duration of three
+                    days of Adhyaaya'22 if the participants get infected they are entiled to inform
+                    it to the committee, where Adhyaaya wont' be answerable.
                 </li>
                 <li>
-                    10. Covid positive participants are entiled to inform the board about the infection before hand else harsh measure will be taken. In the duration of three days of Adhyaaya'22 if the participants get infected they are entiled to inform it to the committee, where Adhyaaya wont' be answerable.
-                </li>
-                <li>
-                    11. In case of any mishaps, disputes and third party issues Adhyaaya will not be responsible for the same.
+                    11. In case of any mishaps, disputes and third party issues Adhyaaya will not be
+                    responsible for the same.
                 </li>
             </ol>
             <button value="close" class="close" on:click|preventDefault="{_termspop}">Close</button>

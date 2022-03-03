@@ -6,7 +6,7 @@
     import PageTransition from '$lib/PageTransition.svelte';
     import navbarLogo from '$lib/assets/navbar-logo.png';
     import backgroundImage from '$lib/assets/page-background.png';
-    
+
     import roundClose from '@iconify-icons/ic/round-close.js';
     let dd_icon = roundMenu;
     function _on_dropdown_click(event: Event) {

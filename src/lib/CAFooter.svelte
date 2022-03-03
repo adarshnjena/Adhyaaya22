@@ -23,7 +23,7 @@
                     <li>
                         <a
                             href="/event/team"
-                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white tw-hidden"
+                            class="tw-btn tw-btn-ghost tw-btn-sm tw-hidden tw-normal-case hover:tw-text-white"
                         >
                             Contact Us
                         </a>
@@ -31,7 +31,7 @@
                     <li>
                         <a
                             href="/"
-                            class="tw-btn tw-btn-ghost tw-btn-sm tw-normal-case hover:tw-text-white tw-hidden"
+                            class="tw-btn tw-btn-ghost tw-btn-sm tw-hidden tw-normal-case hover:tw-text-white"
                         >
                             Learn More
                         </a>

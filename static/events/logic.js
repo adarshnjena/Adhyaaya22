@@ -744,7 +744,6 @@ function cardOpenEvent(i) {
     window.addEventListener('resize', resize);
 }
 
-
 function interceptClickEvent(e) {
     var href;
     var target = e.target || e.srcElement;
@@ -754,12 +753,11 @@ function interceptClickEvent(e) {
         //put your logic here...
         if (href.indexOf('#') != 0) {
             window.top.postMessage(`navigate:${href}`, '*');
-           //tell the browser not to respond to the link click
-           e.preventDefault();
+            //tell the browser not to respond to the link click
+            e.preventDefault();
         }
     }
 }
-
 
 //listen for link click events at the document level
 if (document.addEventListener) {

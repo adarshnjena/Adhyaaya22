@@ -25,12 +25,12 @@
     const display_fields = [
         'registration_id',
         'event_code',
-        "name",
-        "email",
-        "phone",
-        "team", 
-        "transaction_status",
-    ]
+        'name',
+        'email',
+        'phone',
+        'team',
+        'transaction_status',
+    ];
 
     onMount(async () => {
         try {
@@ -44,7 +44,7 @@
         dev ? console.log(app) : '';
         auth = getAuth();
         db = getFirestore();
-        
+
         const registration_data = await get_user_registrations(app, auth, db);
         registration = registration_data[event_code];
         // @ts-ignore
@@ -80,22 +80,24 @@
                     <span class="tw-mx-auto tw-mb-10">
                         You may show this page as proof of registration.
                     </span>
-                    <table class="tw-w-full tw-border-collapse tw-items-center tw-bg-transparent">
-                        <thead class="tw-thead-light">
+                    <table
+                        class="tw-w-full tw-border-collapse tw-items-center tw-overflow-auto tw-bg-transparent"
+                    >
+                        <thead class="tw-thead-light tw-overflow-auto">
                             <tr>
                                 <th
-                                    class="tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
+                                    class="tw-overflow-auto tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
                                 >
                                     Data Point
                                 </th>
                                 <th
-                                    class="tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
+                                    class="tw-overflow-auto tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
                                 >
                                     Registered Value
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="tw-overflow-auto">
                             {#if registration}
                                 {#each Object.entries(registration) as [key, value]}
                                     <RegistrationViewItem key="{key}" value="{value}" />
@@ -115,14 +117,10 @@
                             CONTACT SUPPORT
                         </a>
                     {/if}
-                    
-                        <a
-                            href="/dashboard"
-                            class="tw-btn tw-btn-block tw-mt-10"
-                        >
-                            RETURN TO DASHBOARD
-                        </a>
-                    
+
+                    <a href="/dashboard" class="tw-btn tw-btn-block tw-mt-10">
+                        RETURN TO DASHBOARD
+                    </a>
                 </div>
             </div>
         </div>

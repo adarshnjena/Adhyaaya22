@@ -5,7 +5,7 @@
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { goto } from '$app/navigation';
     import { authentication_message } from '$lib/messageStore';
-import { page } from '$app/stores';
+    import { page } from '$app/stores';
     let app;
     let scrollY = 0;
     // Init firebase and generate the required app.
@@ -21,7 +21,6 @@ import { page } from '$app/stores';
         // Now we for sure have an app.
 
         dev ? console.log(app) : '';
-        
     });
 </script>
 
@@ -33,7 +32,7 @@ import { page } from '$app/stores';
         <p>
             Click the button below to login/register and associate yourself with the 4th edition of
             Adhyaaya, GCOE Nagpur. Who knows, you might even get rewards!
-        </p> 
+        </p>
         <!--
         <h1>Coming Soon!</h1>
         <p>We are working hard to bring you the best experience. Stay tuned!</p>

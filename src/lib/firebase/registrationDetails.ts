@@ -156,5 +156,3 @@ export async function verify_transaction(app: FirebaseApp, db: Firestore, transa
 export function get_event_date(event_code) {
     return '2022-04-02';
 }
-
-

@@ -175,48 +175,50 @@
 </main>
 <div>
     <div class="tw-flex tw-flex-wrap" id="tabs-id">
-        <div class="md:tw-w-tw-w-4/6 tw-m-auto tw-w-11/12 lg:tw-tw-w-4/6">
-            <ul class="tw-flex-wrap tw-tw-mb-0 tw-flex tw-tw-list-none tw-flex-row tw-tw-pt-3 tw-tw-pb-4">
-                <li class="-tw-mb-px tw-tw-mr-2 tw-flex-auto tw-text-center last:tw-tw-mr-0">
+        <div class="md:tw-w-tw-w-4/6 lg:tw-tw-w-4/6 tw-m-auto tw-w-11/12">
+            <ul
+                class="tw-tw-mb-0 tw-tw-list-none tw-tw-pt-3 tw-tw-pb-4 tw-flex tw-flex-row tw-flex-wrap"
+            >
+                <li class="tw-tw-mr-2 last:tw-tw-mr-0 -tw-mb-px tw-flex-auto tw-text-center">
                     <a
                         class="tw-block tw-rounded tw-bg-pink-600 tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-white tw-shadow-lg"
                         onclick="changeAtiveTab(event,'tab-profile')"
                     >
-                        <i class="fas fa-space-shuttle tw-text-base tw-mr-1"></i>
+                        <i class="fas fa-space-shuttle tw-mr-1 tw-text-base"></i>
                         Advisors
                     </a>
                 </li>
-                <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
+                <li class="-tw-mb-px tw-mr-2 tw-flex-auto tw-text-center last:tw-mr-0">
                     <a
-                        class="tw-text-xs tw-font-bold tw-uppercase tw-text-pink-600 tw-bg-white tw-block tw-rounded tw-px-5 tw-py-3 tw-leading-normal tw-shadow-lg"
+                        class="tw-block tw-rounded tw-bg-white tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-pink-600 tw-shadow-lg"
                         onclick="changeAtiveTab(event,'tab-settings')"
                     >
-                        <i class="fas fa-cog tw-text-base tw-mr-1"></i>
+                        <i class="fas fa-cog tw-mr-1 tw-text-base"></i>
                         Coordinator
                     </a>
                 </li>
-                <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
+                <li class="-tw-mb-px tw-mr-2 tw-flex-auto tw-text-center last:tw-mr-0">
                     <a
-                        class="tw-text-xs tw-font-bold tw-uppercase tw-text-pink-600 tw-bg-white tw-block tw-rounded tw-px-5 tw-py-3 tw-leading-normal tw-shadow-lg"
+                        class="tw-block tw-rounded tw-bg-white tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-pink-600 tw-shadow-lg"
                         onclick="changeAtiveTab(event,'tab-options')"
                     >
-                        <i class="fas fa-briefcase tw-text-base tw-mr-1"></i>
+                        <i class="fas fa-briefcase tw-mr-1 tw-text-base"></i>
                         Technical
                     </a>
                 </li>
             </ul>
             <div
-                class="tw-relative tw-min-w-0 tw-break-words tw-bg-neutral-900 tw-w-full tw-mb-6 tw-flex tw-flex-col tw-rounded"
+                class="tw-bg-neutral-900 tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded"
             >
-                <div class="tw-px-4 tw-flex-auto tw-py-5">
+                <div class="tw-flex-auto tw-px-4 tw-py-5">
                     <div class="tab-content tab-space">
                         <div class="tw-block" id="tab-profile">
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Ashutosh_Rokade.png"
                                         alt="product designer"
                                     />
@@ -224,26 +226,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href=""><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Pranay_Tupkar.png"
                                         alt="product designer"
                                     />
@@ -251,28 +259,34 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Nirant_Wankhede.png"
                                         alt="product designer"
                                     />
@@ -280,26 +294,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Mitali_Potode.png"
                                         alt="product designer"
                                     />
@@ -307,27 +327,33 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Nirupam_Khadatkar.png"
                                     alt="product designer"
                                 />
@@ -335,29 +361,31 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
                         <div class="tw-hidden" id="tab-settings">
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto bg-cover bg-center tw-rounded-full tw-shadow-lg"
+                                        class="bg-cover bg-center tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Ujjwal Gupta.png"
                                         alt="product designer"
                                     />
@@ -365,26 +393,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto bg-cover bg-center tw-rounded-full tw-shadow-lg"
+                                        class="bg-cover bg-center tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Arya Mahashabde.png"
                                         alt="product designer"
                                     />
@@ -392,28 +426,34 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Laksh_Bahl.png"
                                         alt="product designer"
                                     />
@@ -421,26 +461,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Nikhil_Deshpande.png"
                                         alt="product designer"
                                     />
@@ -448,27 +494,33 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Reyansh Bhagat.png"
                                     alt="product designer"
                                 />
@@ -476,29 +528,31 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
                         <div class="tw-hidden" id="tab-options">
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Siddhant Patil 2.png"
                                         alt="product designer"
                                     />
@@ -506,26 +560,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/ansool-removebg-preview.png"
                                         alt="product designer"
                                     />
@@ -533,28 +593,34 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                                         alt="product designer"
                                     />
@@ -562,26 +628,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                                         alt="product designer"
                                     />
@@ -589,19 +661,25 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
@@ -614,49 +692,50 @@
 </div>
 <div>
     <div class="tw-flex tw-flex-wrap" id="tabs-id2">
-        <div class="lg:tw-w-4/6 md:tw-w-4/6 tw-m-auto tw-w-11/12">
-            <ul class="tw-mb-0 tw-list-none tw-pt-3 tw-pb-4 tw-flex tw-flex-row tw-flex-wrap">
-                <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
-                    <a sveltekit:prefetch  
+        <div class="tw-m-auto tw-w-11/12 md:tw-w-4/6 lg:tw-w-4/6">
+            <ul class="tw-mb-0 tw-flex tw-list-none tw-flex-row tw-flex-wrap tw-pt-3 tw-pb-4">
+                <li class="-tw-mb-px tw-mr-2 tw-flex-auto tw-text-center last:tw-mr-0">
+                    <a
+                        sveltekit:prefetch
                         href="/"
-                        class="tw-text-xs tw-font-bold tw-uppercase tw-block tw-rounded tw-bg-pink-600 tw-px-5 tw-py-3 tw-leading-normal tw-text-white tw-shadow-lg"
-                        on:click|preventDefault="{(e) => changeAtiveTab2(e,'tab-profile2')}"
+                        class="tw-block tw-rounded tw-bg-pink-600 tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-white tw-shadow-lg"
+                        on:click|preventDefault="{(e) => changeAtiveTab2(e, 'tab-profile2')}"
                     >
-                        <i class="fas fa-space-shuttle tw-text-base tw-mr-1"></i>
+                        <i class="fas fa-space-shuttle tw-mr-1 tw-text-base"></i>
                         Sponsorship
                     </a>
                 </li>
-                <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
+                <li class="-tw-mb-px tw-mr-2 tw-flex-auto tw-text-center last:tw-mr-0">
                     <a
-                        class="tw-text-xs tw-font-bold tw-uppercase tw-text-pink-600 tw-bg-white tw-block tw-rounded tw-px-5 tw-py-3 tw-leading-normal tw-shadow-lg"
+                        class="tw-block tw-rounded tw-bg-white tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-pink-600 tw-shadow-lg"
                         onclick="changeAtiveTab2(event,'tab-settings2')"
                     >
-                        <i class="fas fa-cog tw-text-base tw-mr-1"></i>
+                        <i class="fas fa-cog tw-mr-1 tw-text-base"></i>
                         Publicity
                     </a>
                 </li>
-                <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
+                <li class="-tw-mb-px tw-mr-2 tw-flex-auto tw-text-center last:tw-mr-0">
                     <a
-                        class="tw-text-xs tw-font-bold tw-uppercase tw-text-pink-600 tw-bg-white tw-block tw-rounded tw-px-5 tw-py-3 tw-leading-normal tw-shadow-lg"
+                        class="tw-block tw-rounded tw-bg-white tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-pink-600 tw-shadow-lg"
                         onclick="changeAtiveTab2(event,'tab-options2')"
                     >
-                        <i class="fas fa-briefcase tw-text-base tw-mr-1"></i>
+                        <i class="fas fa-briefcase tw-mr-1 tw-text-base"></i>
                         Organization
                     </a>
                 </li>
             </ul>
             <div
-                class="tw-relative tw-min-w-0 tw-break-words tw-bg-white tw-w-full tw-mb-6 tw-bg-neutral-900 tw-flex tw-flex-col tw-rounded tw-shadow-lg"
+                class="tw-bg-neutral-900 tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded tw-bg-white tw-shadow-lg"
             >
-                <div class="tw-px-4 tw-flex-auto tw-py-5">
+                <div class="tw-flex-auto tw-px-4 tw-py-5">
                     <div class="tab-content tab-content2 tab-space">
                         <div class="tw-block" id="tab-profile2">
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Kiran Anand.png"
                                         alt="product designer"
                                     />
@@ -664,26 +743,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Om Yerpude.png"
                                         alt="product designer"
                                     />
@@ -691,28 +776,34 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Rohit Gu"
                                         alt="product designer"
                                     />
@@ -720,26 +811,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Bhavika Khode.png"
                                         alt="product designer"
                                     />
@@ -747,30 +844,36 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="tw-hidden" id="tab-settings2">
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Ved Nande....png"
                                         alt="product designer"
                                     />
@@ -778,26 +881,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Sakshi Mahajan.png"
                                         alt="product designer"
                                     />
@@ -805,28 +914,34 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Sumeet Bawankar.png"
                                         alt="product designer"
                                     />
@@ -834,26 +949,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Saurabh Yadav......png"
                                         alt="product designer"
                                     />
@@ -861,27 +982,33 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Anshika mendhe.png"
                                     alt="product designer"
                                 />
@@ -889,29 +1016,31 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
                         <div class="tw-hidden" id="tab-options2">
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Aman Rai.png"
                                         alt="product designer"
                                     />
@@ -919,26 +1048,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Ipsha Bhalsagar.....png"
                                         alt="product designer"
                                     />
@@ -946,28 +1081,34 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
-                            <div class="md:tw-justify-between md:tw-flex">
+                            <div class="md:tw-flex md:tw-justify-between">
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Ankita Sakharkar.png"
                                         alt="product designer"
                                     />
@@ -975,26 +1116,32 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                                 <div
-                                    class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                    class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                                 >
                                     <img
-                                        class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                        class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                         src="/teams/image/Kaushik Maske.png"
                                         alt="product designer"
                                     />
@@ -1002,27 +1149,33 @@
                                     <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
                                     </button>
                                     <button
-                                        class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                        class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                     >
-                                        <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
+                                        <a sveltekit:prefetch href="#">
+                                            <i class="bx bxl-gmail"></i>
+                                        </a>
                                     </button>
                                 </div>
                             </div>
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Purvi Mahalle....png"
                                     alt="product designer"
                                 />
@@ -1030,17 +1183,19 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
@@ -1054,29 +1209,29 @@
 </div>
 
 <div class="tw-flex tw-flex-wrap" id="tabs-id2">
-    <div class="lg:tw-w-4/6 md:w-tw-w-4/6 tw-m-auto tw-w-11/12">
-        <ul class="tw-mb-0 tw-list-none tw-pt-3 tw-pb-4 tw-flex tw-flex-row tw-flex-wrap">
-            <li class="-tw-mb-px tw-mr-2 last:tw-mr-0 tw-text-center tw-flex-auto">
+    <div class="md:w-tw-w-4/6 tw-m-auto tw-w-11/12 lg:tw-w-4/6">
+        <ul class="tw-mb-0 tw-flex tw-list-none tw-flex-row tw-flex-wrap tw-pt-3 tw-pb-4">
+            <li class="-tw-mb-px tw-mr-2 tw-flex-auto tw-text-center last:tw-mr-0">
                 <a
-                    class="tw-text-xs tw-font-bold tw-uppercase tw-block tw-rounded tw-bg-pink-600 tw-px-5 tw-py-3 tw-leading-normal tw-text-white tw-shadow-lg"
+                    class="tw-block tw-rounded tw-bg-pink-600 tw-px-5 tw-py-3 tw-text-xs tw-font-bold tw-uppercase tw-leading-normal tw-text-white tw-shadow-lg"
                 >
-                    <i class="fas fa-space-shuttle tw-text-base tw-mr-1"></i>
+                    <i class="fas fa-space-shuttle tw-mr-1 tw-text-base"></i>
                     Accounting
                 </a>
             </li>
         </ul>
         <div
-            class="tw-relative tw-min-w-0 tw-break-words tw-bg-white tw-w-full tw-mb-6 tw-bg-neutral-900 tw-flex tw-flex-col tw-rounded tw-shadow-lg"
+            class="tw-bg-neutral-900 tw-relative tw-mb-6 tw-flex tw-w-full tw-min-w-0 tw-flex-col tw-break-words tw-rounded tw-bg-white tw-shadow-lg"
         >
-            <div class="tw-px-4 tw-flex-auto tw-py-5">
+            <div class="tw-flex-auto tw-px-4 tw-py-5">
                 <div class="tab-content tab-content2 tab-space">
                     <div class="tw-block" id="tab-profile2">
-                        <div class="md:tw-justify-between md:tw-flex">
+                        <div class="md:tw-flex md:tw-justify-between">
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Harnoor Tuli.png"
                                     alt="product designer"
                                 />
@@ -1084,26 +1239,28 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Piyush Dahake.png"
                                     alt="product designer"
                                 />
@@ -1111,28 +1268,30 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                             </div>
                         </div>
-                        <div class="md:tw-justify-between md:tw-flex">
+                        <div class="md:tw-flex md:tw-justify-between">
                             <div
-                                class="tw-bg-white tw-font-semibold tw-text-center tw-border tw-p-10 tw-max-w-xs tw-mt-10 tw-m-auto tw-rounded-3xl tw-shadow-lg"
+                                class="tw-m-auto tw-mt-10 tw-max-w-xs tw-rounded-3xl tw-border tw-bg-white tw-p-10 tw-text-center tw-font-semibold tw-shadow-lg"
                             >
                                 <img
-                                    class="tw-mb-3 tw-w-32 tw-h-32 tw-mx-auto tw-rounded-full tw-shadow-lg"
+                                    class="tw-mx-auto tw-mb-3 tw-h-32 tw-w-32 tw-rounded-full tw-shadow-lg"
                                     src="/teams/image/Anshika mendhe.png"
                                     alt="product designer"
                                 />
@@ -1140,17 +1299,19 @@
                                 <h3 class="tw-text-sm tw-text-gray-400">Creative Director</h3>
 
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
-                                    <a sveltekit:prefetch href="#"><i class="bx bxl-linkedin"></i></a>
+                                    <a sveltekit:prefetch href="#">
+                                        <i class="bx bxl-linkedin"></i>
+                                    </a>
                                 </button>
                                 <button
-                                    class="tw-bg-indigo-600 tw-px-3 tw-py-2 tw-mt-8 tw-text-gray-100 tw-font-semibold tw-uppercase tw-tracking-wide tw-rounded-3xl"
+                                    class="tw-mt-8 tw-rounded-3xl tw-bg-indigo-600 tw-px-3 tw-py-2 tw-font-semibold tw-uppercase tw-tracking-wide tw-text-gray-100"
                                 >
                                     <a sveltekit:prefetch href="#"><i class="bx bxl-gmail"></i></a>
                                 </button>
@@ -1165,7 +1326,7 @@
 
 <style lang="scss">
     @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap');
-    
+
     * {
         padding: 0;
         margin: 0;

@@ -35,9 +35,6 @@
     import { cashfreeProd } from 'cashfree-dropjs';
 
     //let cashfree = new cashfreeSandbox.Cashfree();
-    // TODO: Complete CashFree Integration.
-    //let cashfree = new cashfreeSandbox.Cashfree();
-    //let cashfree = dev ? new cashfreeSandbox.Cashfree() : new cashfreeProd.Cashfree();
     let cashfree = new cashfreeProd.Cashfree();
     $: {
         _team_members = event_extra_members_mapping[input_registration_details.event_code] || 0;
@@ -68,16 +65,7 @@
             details['profile']['first_name'] + ' ' + details['profile']['last_name'];
         input_registration_details['email'] = details['profile']['email'];
         input_registration_details['phone'] = details['profile']['mobile_number'];
-        input_registration_details['college'] =
-            details['profile']['address'] +
-            '|' +
-            details['profile']['locality'] +
-            '|' +
-            details['profile']['city'] +
-            '|' +
-            details['profile']['state'] +
-            '|' +
-            details['profile']['country'];
+        input_registration_details['college'] = details['profile']['address'];
 
         regs = await get_user_registrations(app, auth, db);
         dev ? console.log(regs) : '';
@@ -380,28 +368,50 @@
                                 Non-technical Event
                             </option>
                             <option value="BSYD" disabled>[COMING SOON] BORNPSYCOS | Duos</option>
-                            <option value="BSYT" disabled>[COMING SOON] BORNPSYCOS | Team [4]</option>
+                            <option value="BSYT" disabled>
+                                [COMING SOON] BORNPSYCOS | Team [4]
+                            </option>
                             <option value="MUNA" disabled>[COMING SOON] MUN AIPPM | Solo</option>
-                            <option value="MUNU" disabled >[COMING SOON] MUN UNHRC | Solo</option>
-                            <option value="RPNBS"disabled >[COMING SOON] RESPAWN BGMI SQUAD | Team [4]</option>
-                            <option value="RPNBT" disabled>[COMING SOON] RESPAWN BGMI TDM | Team [4]</option>
-                            <option value="RPNVS" disabled>[COMING SOON] RESPAWN VALORANT SQUAD | Team [5]</option>
-                            <option value="RPNCI" disabled>[COMING SOON] RESPAWN CHESS | Solo</option>
-                            <option value="VAV" disabled>[COMING SOON] VAAD VIVAD | SOLO</option>
-                            <option value="FOH" disabled>[COMING SOON] FOODOHOLICS | Team [4]</option>
+                            <option value="MUNU" disabled>[COMING SOON] MUN UNHRC | Solo</option>
+                            <option value="RPNBS" disabled>
+                                [COMING SOON] RESPAWN BGMI SQUAD | Team [4]
+                            </option>
+                            <option value="RPNBT" disabled>
+                                [COMING SOON] RESPAWN BGMI TDM | Team [4]
+                            </option>
+                            <option value="RPNVS" disabled>
+                                [COMING SOON] RESPAWN VALORANT SQUAD | Team [5]
+                            </option>
+                            <option value="RPNCI" disabled>
+                                [COMING SOON] RESPAWN CHESS | Solo
+                            </option>
+                            <option value="VAV">[COMING SOON] VAAD VIVAD | SOLO</option>
+                            <option value="FOH" disabled>
+                                [COMING SOON] FOODOHOLICS | Team [4]
+                            </option>
                             <option value="CCB" disabled>[COMING SOON] CRICBASH | Team [6]</option>
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>
                                 Technical Event
                             </option>
-                            <option value="COV"disabled>[COMING SOON] CODEVENTURE | SOLO</option>
+                            <option value="COV" disabled>[COMING SOON] CODEVENTURE | SOLO</option>
                             <option value="AVK">AVISHKAR | Team [upto 5]</option>
-                            <option value="CADCS" disabled>[COMING SOON] CADDICTION CIVIL | Solo</option>
-                            <option value="CADCD" disabled>[COMING SOON] CADDICTION CIVIL | Duo</option>
-                            <option value="CADMS" disabled>[COMING SOON] CADDICTION MECHANICAL | Solo</option>
-                            <option value="CADMD" disabled>[COMING SOON] CADDICTION MECHANICAL | Duo</option>
-                            <option value="VPM" disabled>[COMING SOON] VIRTUAL PLACEMENT | Solo</option>
+                            <option value="CADCS" disabled>
+                                [COMING SOON] CADDICTION CIVIL | Solo
+                            </option>
+                            <option value="CADCD" disabled>
+                                [COMING SOON] CADDICTION CIVIL | Duo
+                            </option>
+                            <option value="CADMS" disabled>
+                                [COMING SOON] CADDICTION MECHANICAL | Solo
+                            </option>
+                            <option value="CADMD" disabled>
+                                [COMING SOON] CADDICTION MECHANICAL | Duo
+                            </option>
+                            <option value="VPM" disabled>
+                                [COMING SOON] VIRTUAL PLACEMENT | Solo
+                            </option>
                             <option value="" disabled></option>
                             <option class="option_heading" value="" disabled>Workshop</option>
                             <option value="CSW" disabled>[COMING SOON] SPECTRUM | Solo</option>
@@ -410,7 +420,6 @@
                             <option value="TSI" disabled>[COMING SOON] JIGYASA | Solo</option>
                             <option value="UPG" disabled>[COMING SOON] UPGRAD | Solo</option>
                             <option value="" disabled></option>
-                            
                         </select>
                         {#each [...Array(_team_members).keys()] as item}
                             <div class="input tw-inline-flex ">
@@ -468,7 +477,10 @@
                     <p>* EVENT NAME | TEAM/SOLO | PRICE</p>
                     <p>* For faster and safer transactions, prefer UPI.</p>
 
-                    <p>* Any issues regarding registration, try to contact Siddhant - 8669066319 or Adharsh - 7620426119</p>
+                    <p>
+                        * Any issues regarding registration, try to contact Siddhant - 8669066319 or
+                        Adharsh - 7620426119
+                    </p>
                     <p>* or contact on WhatsApp; Devansh Parapalli - 8793150182</p>
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
 

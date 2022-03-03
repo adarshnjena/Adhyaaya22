@@ -5,7 +5,11 @@
     </div>
     <div class="testimonial-content">
         <p>
-            GCOE Nagpur MUN 2021, was a very special and memorable conference in my career. Being able to participate as a delegate in UNHRC was an amazing experience. The team did a stellar job to cater to the needs of the participants. I would like to congratulate the team for the amazing display. Wishing team Adhyaaya all the best for upcoming editions of the Conference.
+            GCOE Nagpur MUN 2021, was a very special and memorable conference in my career. Being
+            able to participate as a delegate in UNHRC was an amazing experience. The team did a
+            stellar job to cater to the needs of the participants. I would like to congratulate the
+            team for the amazing display. Wishing team Adhyaaya all the best for upcoming editions
+            of the Conference.
         </p>
     </div>
     <h3 class="testimonial-title">

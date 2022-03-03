@@ -88,7 +88,7 @@
         });
         return () => {
             scrollY = 84;
-        }
+        };
     });
 
     const invisible = 'tw-invisible';
@@ -166,13 +166,11 @@
         class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
         <Timeline />
-        
     </div>
     <div
         class="tw-top-0 tw-flex tw-min-h-screen tw-snap-start tw-snap-always tw-flex-col tw-items-center tw-justify-center tw-bg-base-300 xl:tw-sticky"
     >
         <Timeline2 />
-        
     </div>
     <!-- Feedback Section Start -->
     <div

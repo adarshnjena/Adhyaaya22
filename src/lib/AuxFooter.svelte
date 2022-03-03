@@ -36,54 +36,36 @@
                     </h2>
                     <nav class="list-none mb-10">
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">First Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                First Link
+                            </a>
                         </li>
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Second Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Second Link
+                            </a>
                         </li>
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Third Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Third Link
+                            </a>
                         </li>
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Fourth Link</a>
-                        </li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
-                        CATEGORIES
-                    </h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">First Link</a>
-                        </li>
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Second Link</a>
-                        </li>
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Third Link</a>
-                        </li>
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Fourth Link</a>
-                        </li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
-                        CATEGORIES
-                    </h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">First Link</a>
-                        </li>
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Second Link</a>
-                        </li>
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Third Link</a>
-                        </li>
-                        <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Fourth Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Fourth Link
+                            </a>
                         </li>
                     </nav>
                 </div>
@@ -93,16 +75,114 @@
                     </h2>
                     <nav class="list-none mb-10">
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">First Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                First Link
+                            </a>
                         </li>
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Second Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Second Link
+                            </a>
                         </li>
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Third Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Third Link
+                            </a>
                         </li>
                         <li>
-                            <a sveltekit:prefetch class="btn-xs btn-ghost hover:text-base-content btn">Fourth Link</a>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Fourth Link
+                            </a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
+                        CATEGORIES
+                    </h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                First Link
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Second Link
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Third Link
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Fourth Link
+                            </a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">
+                        CATEGORIES
+                    </h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                First Link
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Second Link
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Third Link
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                sveltekit:prefetch
+                                class="btn-xs btn-ghost hover:text-base-content btn"
+                            >
+                                Fourth Link
+                            </a>
                         </li>
                     </nav>
                 </div>

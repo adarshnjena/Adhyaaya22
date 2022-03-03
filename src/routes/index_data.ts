@@ -15,7 +15,7 @@ const bottom = ' !tw-mt-[50vh] ';
 
 // Text for the scrolly bits
 const intro_to_asu = 'Meet ASU-77';
-const intro_to_asu_mobile = 'Meet <br /> ASU-77'
+const intro_to_asu_mobile = 'Meet <br /> ASU-77';
 const events =
     'Owing to the great success last year, Adhyaaya is back, even bigger and better with a new enthusiasm. We are extremely excited to bring you a plethora of events ranging from competitive coding, designing workshop, elocution, Model United Nations, e-sports and a lot more. Providing you the perfect platform to prove and even develop yourselves. So are you ready? Because we sure are!';
 const events_mobile =

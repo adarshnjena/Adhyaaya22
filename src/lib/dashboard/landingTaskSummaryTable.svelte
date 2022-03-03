@@ -66,7 +66,8 @@
                             <th
                                 class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-text-left tw-align-middle tw-text-xs "
                             >
-                                Use the below form to fill in the details first. You may then proceed for a new registration using the button above.
+                                Use the below form to fill in the details first. You may then
+                                proceed for a new registration using the button above.
                             </th>
                             <td
                                 class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs"
@@ -103,12 +104,7 @@
                             <td
                                 class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-align-middle tw-text-xs "
                             >
-                                <span
-                                    class="tw-btn tw-btn-primary tw-btn-sm tw-hidden"
-                                    
-                                >
-                                    
-                                </span>
+                                <span class="tw-btn tw-btn-primary tw-btn-sm tw-hidden"></span>
                             </td>
                         </tr>
                     {/each}

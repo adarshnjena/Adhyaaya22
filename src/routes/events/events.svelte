@@ -9,7 +9,7 @@
         scrollY = 84;
         window.onmessage = (e) => {
             dev ? console.log(e.data.toString().split(':')[1]) : '';
-            if (e.data.toString().includes('%22') || e.data.toString().includes('"')){
+            if (e.data.toString().includes('%22') || e.data.toString().includes('"')) {
                 return;
             }
             goto(e.data.toString().split(':')[1]);

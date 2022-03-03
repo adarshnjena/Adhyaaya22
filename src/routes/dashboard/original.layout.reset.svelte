@@ -31,7 +31,12 @@
         <div
             class="tw-mx-auto tw-flex tw-w-11/12 tw-flex-wrap tw-items-center tw-justify-between tw-px-4"
         >
-            <a sveltekit:prefetch class="tw-btn tw-btn-ghost tw-mr-8" href="/" aria-label="home-link">
+            <a
+                sveltekit:prefetch
+                class="tw-btn tw-btn-ghost tw-mr-8"
+                href="/"
+                aria-label="home-link"
+            >
                 <figure>
                     <img
                         aria-hidden="true"
@@ -48,7 +53,11 @@
                 <ul class="tw-ml-auto tw-flex tw-list-none tw-flex-row tw-self-end">
                     <li class="tw-flex tw-items-center">
                         <div id="dropdown" class="tw-dropdown-end tw-dropdown">
-                            <div id="dropdown-btn" tabindex="0" class="tw-btn-outline tw-btn tw-btn-ghost tw-m-1">
+                            <div
+                                id="dropdown-btn"
+                                tabindex="0"
+                                class="tw-btn-outline tw-btn tw-btn-ghost tw-m-1"
+                            >
                                 <Icon class="tw-h-10 tw-w-10" icon="{dd_icon}" />
                             </div>
                             <ul
@@ -56,12 +65,16 @@
                                 class="tw-dropdown-content tw-menu tw-rounded-box tw-w-52 tw-bg-base-100 tw-p-2 tw-shadow"
                             >
                                 <li>
-                                    <a sveltekit:prefetch  href="/dashboard" class="tw-rounded-xl">
+                                    <a sveltekit:prefetch href="/dashboard" class="tw-rounded-xl">
                                         Dashboard
                                     </a>
                                 </li>
                                 <li>
-                                    <a sveltekit:prefetch href="/dashboard/tasks" class="tw-rounded-xl">
+                                    <a
+                                        sveltekit:prefetch
+                                        href="/dashboard/tasks"
+                                        class="tw-rounded-xl"
+                                    >
                                         View All Tasks
                                     </a>
                                 </li>

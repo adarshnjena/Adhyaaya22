@@ -1205,7 +1205,9 @@
                         The events which will make your adrenaline rush, the event that only
                         sharpest can survive, the events which will bring the leaders in you.
                     </p>
-                    <a sveltekit:prefetch class="registration_page" href="#non_technical_events">Go to Events</a>
+                    <a sveltekit:prefetch class="registration_page" href="#non_technical_events">
+                        Go to Events
+                    </a>
                 </div>
 
                 <div class="card2" id="card2">
@@ -1218,7 +1220,9 @@
                         Explore the potentials of future technocrats through its national-level tech
                         events.
                     </p>
-                    <a sveltekit:prefetch class="registration_page" href="#technical_events">Go to Events</a>
+                    <a sveltekit:prefetch class="registration_page" href="#technical_events">
+                        Go to Events
+                    </a>
                 </div>
 
                 <div class="card3" id="card3">
@@ -1230,7 +1234,9 @@
                     <p class="card_para">
                         Acquire essential skills that will actually add value to your career.
                     </p>
-                    <a sveltekit:prefetch class="registration_page" href="#workshops">Go to Events</a>
+                    <a sveltekit:prefetch class="registration_page" href="#workshops">
+                        Go to Events
+                    </a>
                 </div>
             </div>
         </div>

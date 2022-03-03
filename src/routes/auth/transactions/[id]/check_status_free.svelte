@@ -13,6 +13,10 @@
     let auth;
     let db;
     let details;
+    let dataPromiseResolve;
+    let dataPromise = new Promise((resolve) => {
+        dataPromiseResolve = resolve;
+    });
     onMount(async () => {
         try {
             app = getApp();
@@ -27,6 +31,7 @@
         auth = getAuth();
         db = getFirestore();
         let details = await get_user_registrations(app, auth, db);
+        dataPromiseResolve(details);
     });
 </script>
 
@@ -50,20 +55,22 @@
                     <hr class="tw-my-2 tw-hidden tw-border-b tw-border-gray-600 " />
                     <span class="tw-text-left"></span>
                     <div class="tw-mt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
-                        <a
-                            sveltekit:prefetch
-                            href="/dashboard/registrations/{$page.params.id}/view"
-                            class="tw-btn-neutral-primary tw-btn"
-                        >
-                            <span class="tw-inner-text tw-btn">View Reciept</span>
-                        </a>
-                        <a
-                            sveltekit:prefetch
-                            href="/dashboard"
-                            class="tw-btn-neutral-primary tw-btn"
-                        >
-                            <span class="tw-inner-text tw-btn">Return To Dashboard</span>
-                        </a>
+                        {#await dataPromise then value}
+                            <a
+                                sveltekit:prefetch
+                                href="/dashboard/registration/{$page.params.id}/view"
+                                class="tw-btn-neutral-primary tw-btn"
+                            >
+                                <span class="tw-inner-text tw-btn">View Reciept</span>
+                            </a>
+                            <a
+                                sveltekit:prefetch
+                                href="/dashboard"
+                                class="tw-btn-neutral-primary tw-btn"
+                            >
+                                <span class="tw-inner-text tw-btn">Return To Dashboard</span>
+                            </a>
+                        {/await}
                     </div>
                 </div>
             </div>

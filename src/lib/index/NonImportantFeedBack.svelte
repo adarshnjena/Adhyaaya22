@@ -117,7 +117,14 @@
                         <div class="carousel-item active">
                             <div class="quote-wrapper">
                                 <p>
-                                    I came to know about Adhyaaya through my friend. I was immediately fascinated about it, that it has been conducted so efficiently since past 4 years. I was very excited to involve myself here with a bunch of talented people and gain valuable knowledge that they share through this platform. I can gladly say that participation in Adhyaaya has helped in my personal growth greatly.  I would like to congratulate the team for successfully turning this dream of an event into reality.
+                                    I came to know about Adhyaaya through my friend. I was
+                                    immediately fascinated about it, that it has been conducted so
+                                    efficiently since past 4 years. I was very excited to involve
+                                    myself here with a bunch of talented people and gain valuable
+                                    knowledge that they share through this platform. I can gladly
+                                    say that participation in Adhyaaya has helped in my personal
+                                    growth greatly. I would like to congratulate the team for
+                                    successfully turning this dream of an event into reality.
                                 </p>
                                 <div class="quote-wrapper_img">
                                     <div>

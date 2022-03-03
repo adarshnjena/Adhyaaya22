@@ -754,7 +754,8 @@ function interceptClickEvent(e) {
         if (href.indexOf('#') != 0) {
             window.top.postMessage(`navigate:${href}`, '*');
             //tell the browser not to respond to the link click
-            e.preventDefault();
+            //e.preventDefault();
+            // we will respond to the transfer anyway.
         }
     }
 }

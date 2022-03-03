@@ -36,9 +36,7 @@
 
     //let cashfree = new cashfreeSandbox.Cashfree();
     let cashfree = new cashfreeProd.Cashfree();
-    $: {
-        _team_members = event_extra_members_mapping[input_registration_details.event_code] || 0;
-    }
+    
     let app;
     let auth;
     let db;
@@ -245,6 +243,35 @@
         event_code: '',
         team_members: '',
     };
+
+    function on_value_select(event) {
+        // console.log(event, event.target.value, event_extra_members_mapping[input_registration_details.event_code],);
+        _team_members = event_extra_members_mapping[event.target.value] || 0;
+        if (_team_members === 0) {
+            return;
+        }
+        let _input = Number(window.prompt(`Enter Number of Additional Members (Max ${_team_members.toString()}): `, _team_members.toString()));
+        if (_input == null) {
+            _team_members = event_extra_members_mapping[event.target.value] || 0;
+        }
+        if (isNaN(_input)) {
+            _input = Number(window.prompt('Please enter a valid number: ', _team_members.toString()))
+            _team_members = _input;
+        }
+        if (_input < 0) {
+            _input = Number(window.prompt('Please enter a valid number: ', _team_members.toString()))
+            _team_members = _input;
+        }
+        if (_input > _team_members) {
+            _input = Number(window.prompt(`Maximum number of extra participants is ${_team_members.toString()}: `, _team_members.toString()))
+            _team_members = _input;
+        }
+        try {
+        _team_members = Math.min(Number(_input), event_extra_members_mapping[event.target.value]);
+        } catch (e) {
+            _team_members = event_extra_members_mapping[event.target.value];
+        }
+    }
 </script>
 
 <Protected />
@@ -360,7 +387,7 @@
                         </div>
 
                         <!-- <i class='bx bxs-component'></i> -->
-                        <select bind:value="{input_registration_details.event_code}">
+                        <select on:change="{on_value_select}" bind:value="{input_registration_details.event_code}">
                             <option value="" class="selected" selected disabled>
                                 Competition / Workshop
                             </option>

@@ -261,24 +261,33 @@
                     </div>
                 </div>
 
-                <h6
-                    class=" tw-mt-4 tw-rounded-t-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-pl-4 tw-pt-3 tw-pb-6 tw-text-sm tw-font-bold tw-uppercase tw-text-gray-400 tw-backdrop-blur"
-                >
-                    About Me
-                </h6>
                 <div
                     class="tw-flex tw-flex-wrap tw-rounded-b-lg tw-bg-base-300 tw-bg-opacity-[75%] tw-backdrop-blur"
                 >
                     <div class="lg:tw-w-12/12 tw-w-full tw-px-4">
                         <div class="tw-form-control tw-relative tw-mb-3 tw-w-full">
-                            <label class="tw-label tw-text-sm" for="grid-about-me">About me</label>
+                            <label class="tw-label !tw-hidden tw-text-sm" for="grid-about-me">
+                                About me
+                            </label>
                             <textarea
                                 id="grid-about-me"
                                 type="text"
-                                class="tw-textarea-ghost tw-textarea tw-h-24"
+                                class="tw-textarea-ghost tw-textarea !tw-hidden tw-h-24"
                                 rows="4"
                                 bind:value="{details.bio}"
                             ></textarea>
+                            <button
+                                class="tw-btn {button_status} tw-btn-xl tw-mt-4 {username_error
+                                    ? 'tw-btn-disabled'
+                                    : ''}
+                                    {mobile_error ? 'tw-btn-disabled' : ''} 
+                                    {is_updating ? 'tw-btn-disabled tw-loading' : ''}"
+                                disabled="{!!is_updating || !!mobile_error || !!username_error}"
+                                on:click="{on_update_click}"
+                                type="button"
+                            >
+                                {button_text}
+                            </button>
                         </div>
                     </div>
                 </div>

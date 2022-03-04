@@ -12,24 +12,26 @@
     function to_title_case(str: string) {
         str = str.replace('_', ' ');
         return str.replace(/\w\S*/g, function (txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
         });
     }
+    
 </script>
 
 <tr>
     <th
-        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-text-left tw-align-middle tw-text-xs "
+        class="tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-2 tw-px-2 tw-text-left tw-align-middle tw-text-xs "
     >
         {to_title_case(key)}
     </th>
     <td
-        class="tw-whitespace-nowrap tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-4 tw-px-6 tw-text-left tw-align-middle tw-text-xs"
+        class="tw-break-all tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-2 tw-px-2 tw-text-left tw-align-middle tw-text-xs"
     >
         {#if typeof value === 'object'}
-            {@html _value}
+            
+            {@html _value || 'Not Required'}
         {:else}
-            {value}
+            {value || 'Not Provided'}
         {/if}
     </td>
 </tr>

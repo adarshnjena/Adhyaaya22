@@ -456,8 +456,8 @@
                             <option value="CADMD" disabled>
                                 [COMING SOON] CADDICTION MECHANICAL | Duo
                             </option>
-                            <option value="VPM" disabled>
-                                [COMING SOON] VIRTUAL PLACEMENT | Solo
+                            <option value="VPM">
+                                VIRTUAL PLACEMENT | Solo
                             </option>
                             <option value="" disabled></option>
                             <option class="option_heading" value="" disabled>Workshop</option>

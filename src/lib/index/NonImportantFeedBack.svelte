@@ -95,14 +95,7 @@
                         <div class="carousel-item">
                             <div class="quote-wrapper">
                                 <p>
-                                    I am glad to provide the feedback for adhyaaya .My overall
-                                    experience for all the events i had participated was really
-                                    amazing.I have learned a lot from maximum events and from much
-                                    active peaple I met through.Few events like MUN gave us the real
-                                    life experience of being a part of an international
-                                    organisation.I truly appreciate the hardwork which was done by
-                                    the students of GCOEN.Also i am looking forward to participate
-                                    and interact in many more events. Thank you so much.
+                                    My overall experience for all the events I had participated was really amazing.I have learned a lot from the events as well as the people I met through them.Few events like MUN gave us the experience of being a part of an international organisation.I truly appreciate the efforts taken by the team. I look to participate in more future events.
                                 </p>
                                 <div class="quote-wrapper_img">
                                     <div>
@@ -117,14 +110,7 @@
                         <div class="carousel-item active">
                             <div class="quote-wrapper">
                                 <p>
-                                    I came to know about Adhyaaya through my friend. I was
-                                    immediately fascinated about it, that it has been conducted so
-                                    efficiently since past 4 years. I was very excited to involve
-                                    myself here with a bunch of talented people and gain valuable
-                                    knowledge that they share through this platform. I can gladly
-                                    say that participation in Adhyaaya has helped in my personal
-                                    growth greatly. I would like to congratulate the team for
-                                    successfully turning this dream of an event into reality.
+                                    I came to know about Adhyaaya through my friend. I was immediately fascinated about it, that it has been conducted so efficiently since past 4 years. I was very excited to involve myself here with a bunch of talented people and gain valuable knowledge that they share through this platform. I can gladly say that participation in Adhyaaya has helped in my personal growth greatly.  I would like to congratulate the team for successfully turning this dream of an event into reality.
                                 </p>
                                 <div class="quote-wrapper_img">
                                     <div>

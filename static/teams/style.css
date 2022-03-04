@@ -10,10 +10,10 @@ body {
     line-height: 1.6;
     background-color: black;
 }
-.team {
+  .team{
     font-size: 8vh;
-    height: 100vh;
-    margin-bottom: 20vh;
+    height: 93vh;
+    margin-bottom: 12vh;
     color: white;
     text-shadow: 2px 2px 10px rgb(0, 136, 255);
     font-family: revampedregular;
@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: center;  
 }
 .head-1 {
     position: absolute;

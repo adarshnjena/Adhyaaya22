@@ -42,7 +42,7 @@
         <ul>
             <li>
                 <div>
-                    <time></time>
+                    <time>26th March</time>
                     <div class="discovery">
                         <h1>Day 2</h1>
                         <p></p>
@@ -51,7 +51,7 @@
             </li>
             <li>
                 <div>
-                    <time></time>
+                    <time>27th March</time>
                     <div class="discovery">
                         <h1>Day 3</h1>
                         <p></p>
@@ -60,7 +60,7 @@
             </li>
             <li>
                 <div>
-                    <time></time>
+                    <time>27th March</time>
                     <div class="discovery">
                         <h1>Valedictory</h1>
                         <p></p>

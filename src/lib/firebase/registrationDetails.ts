@@ -15,15 +15,16 @@ export const event_name_mapping = {
     RPNBT: 'Respawn BGMI TeamDeathMatch',
     RPNVS: 'Respawn Valorant Squad',
     RPNCI: 'Respawn Chess Individual',
-    MUNA: 'Model United Nations AIPPM',
-    MUNU: 'Model United Nations UNHRC',
+    MUNA: 'Model United Nations DISEC',
+    MUNU: 'Model United Nations Lok Sabha',
     COV: 'Code Venture',
     CSW: 'Spectrum',
     UPG: 'Upgrad',
     AVK: 'Avishkar',
     TSI: 'Jigyasa',
     COS: 'CAD-O-Shop',
-    STG: 'StarGaze',
+    STG: 'StarGaze Offline',
+    STGF: 'StarGaze Online',
     FOH: 'Foodoholics',
     CCB: 'Cricbash',
     BSYD: 'Bornpsycos Duo',
@@ -70,6 +71,8 @@ export function get_event_cost(event_code) {
             return 360;
         case 'STG':
             return 60;
+        case 'STGF':
+            return 0;
         case 'TSI':
             return 0;
         case 'CSW':
@@ -104,6 +107,7 @@ export const event_extra_members_mapping = {
     TSI: 0,
     COS: 0,
     STG: 0,
+    STGF: 0,
     FOH: 3,
     CCB: 5,
     BSYD: 1,
@@ -194,6 +198,8 @@ export function get_event_date(event_code) {
         case 'CCB':
             return '25/26-03-2022';
         case 'STG':
+            return '25/26-03-2022';
+        case 'STGF':
             return '25/26-03-2022';
         case 'TSI':
                //Jigyasa

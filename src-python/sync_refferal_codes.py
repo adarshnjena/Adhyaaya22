@@ -4,6 +4,7 @@ from dateutil.parser import parse
 import firebase_admin
 from firebase_admin import credentials
 import pathlib
+from time import time
 
 this_folder = pathlib.Path(__file__).parent.absolute()
 parent_folder = this_folder.parent
@@ -30,7 +31,7 @@ print('[INFO] Cloning Registrations...')
 
 regs = {}
 print('[INFO] Writing JSON Document...')
-with open(parent_folder / f'main_registrations.json', 'w') as f:
+with open(parent_folder / f'main_registrations-{int(float(time())*100)}.json', 'w') as f:
     print('[INFO] Fetching Registrations...')
     snapshots = list(main_client.collection('registrations').get())
     print('[INFO] Registraions Fetched')
@@ -43,7 +44,7 @@ print('[INFO] Finished Writing JSON Document')
 
 trans = {}
 print('[INFO] Writing JSON Document...')
-with open(parent_folder / 'main_transactions.json', 'w') as f:
+with open(parent_folder / f'main_transactions-{int(float(time())*100)}.json', 'w') as f:
     print('[INFO] Fetching Transactions...')
     snapshots = list(main_client.collection('transactions').get())
     print('[INFO] Transactions Fetched')
@@ -78,7 +79,7 @@ batch = ca_client.batch()
 
 for code, count in ca_codes.items():
     iter_ref = ca_client.collection('ca_code').document(code)
-    batch.set(iter_ref, {'number_of_regis': count})
+    batch.update(iter_ref, {'number_of_regis': count})
     print(code, count)
 
 

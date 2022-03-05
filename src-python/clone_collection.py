@@ -3,6 +3,7 @@
 from firebase_admin import firestore
 import json
 from dateutil.parser import parse
+from time import time
 import firebase_admin
 from firebase_admin import credentials
 import pathlib
@@ -15,8 +16,8 @@ parent_folder = this_folder.parent
 # Replace this value with the collection you would like to clone
 COLLLECTION_NAME = 'registrations'
 
-JSON_EXPORT_FILE = parent_folder / f'{COLLLECTION_NAME}.json'
-CSV_EXPORT_FILE = parent_folder / f'{COLLLECTION_NAME}.csv'
+JSON_EXPORT_FILE = parent_folder / f'{COLLLECTION_NAME}-{int(float(time())*100)}.json'
+CSV_EXPORT_FILE = parent_folder / f'{COLLLECTION_NAME}-{int(float(time())*100)}.csv'
 # This is a service account for firebase.
 # You will need to download and save this file next to this script before running the script.
 # To generate a private key file for your service account:

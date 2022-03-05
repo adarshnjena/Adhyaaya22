@@ -297,3 +297,4 @@ __pycache__
 .vercel_build_output
 serviceAccountKey.json
 .netlify/**
+serviceAccountKeyCA.json

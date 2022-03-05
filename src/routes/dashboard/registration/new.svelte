@@ -417,8 +417,8 @@
                             <option value="BSYD">BORNPSYCOS | Duos</option>
                             <option value="BSYT">BORNPSYCOS | Team [4]
                             </option>
-                            <option value="MUNA">MUN AIPPM | Solo</option>
-                            <option value="MUNU">MUN UNHRC | Solo</option>
+                            <option value="MUNA">MUN DISEC | Solo</option>
+                            <option value="MUNU">MUN Lok Sabha | Solo</option>
                             <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]
                             </option>
                             <option value="RPNBT">RESPAWN BGMI TDM | Team [4]

@@ -414,58 +414,48 @@
                             <option class="option_heading" value="" disabled>
                                 Non-technical Event
                             </option>
-                            <option value="BSYD" disabled>[COMING SOON] BORNPSYCOS | Duos</option>
-                            <option value="BSYT" disabled>
-                                [COMING SOON] BORNPSYCOS | Team [4]
+                            <option value="BSYD">BORNPSYCOS | Duos</option>
+                            <option value="BSYT">BORNPSYCOS | Team [4]
                             </option>
-                            <option value="MUNA" disabled>[COMING SOON] MUN AIPPM | Solo</option>
-                            <option value="MUNU" disabled>[COMING SOON] MUN UNHRC | Solo</option>
-                            <option value="RPNBS" disabled>
-                                [COMING SOON] RESPAWN BGMI SQUAD | Team [4]
+                            <option value="MUNA">MUN AIPPM | Solo</option>
+                            <option value="MUNU">MUN UNHRC | Solo</option>
+                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]
                             </option>
-                            <option value="RPNBT" disabled>
-                                [COMING SOON] RESPAWN BGMI TDM | Team [4]
+                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]
                             </option>
-                            <option value="RPNVS" disabled>
-                                [COMING SOON] RESPAWN VALORANT SQUAD | Team [5]
+                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]
                             </option>
-                            <option value="RPNCI" disabled>
-                                [COMING SOON] RESPAWN CHESS | Solo
+                            <option value="RPNCI">RESPAWN CHESS | Solo
                             </option>
-                            <option value="VAV" disabled>[COMING SOON] VAAD VIVAD | SOLO</option>
-                            <option value="FOH" disabled>
-                                [COMING SOON] FOODOHOLICS | Team [4]
+                            <option value="VAV">VAAD VIVAD | SOLO</option>
+                            <option value="FOH">FOODOHOLICS | Team [4]
                             </option>
-                            <option value="CCB" disabled>[COMING SOON] CRICBASH | Team [6]</option>
+                            <option value="CCB">CRICBASH | Team [6]</option>
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>
                                 Technical Event
                             </option>
-                            <option value="COV" disabled>[COMING SOON] CODEVENTURE | SOLO</option>
+                            <option value="COV">CODEVENTURE | SOLO</option>
                             <option value="AVK">AVISHKAR | Team [upto 5]</option>
-                            <option value="CADCS" disabled>
-                                [COMING SOON] CADDICTION CIVIL | Solo
+                            <option value="CADCS">CADDICTION CIVIL | Solo
                             </option>
-                            <option value="CADCD" disabled>
-                                [COMING SOON] CADDICTION CIVIL | Duo
+                            <option value="CADCD">CADDICTION CIVIL | Duo
                             </option>
-                            <option value="CADMS" disabled>
-                                [COMING SOON] CADDICTION MECHANICAL | Solo
+                            <option value="CADMS">CADDICTION MECHANICAL | Solo
                             </option>
-                            <option value="CADMD" disabled>
-                                [COMING SOON] CADDICTION MECHANICAL | Duo
+                            <option value="CADMD">CADDICTION MECHANICAL | Duo
                             </option>
                             <option value="VPM">
                                 VIRTUAL PLACEMENT | Solo
                             </option>
                             <option value="" disabled></option>
                             <option class="option_heading" value="" disabled>Workshop</option>
-                            <option value="CSW" disabled>[COMING SOON] SPECTRUM | Solo</option>
-                            <option value="COS" disabled>[COMING SOON] CAD-O-SHOP | Solo</option>
-                            <option value="STG" disabled>[COMING SOON] STARGAZE | Solo</option>
-                            <option value="TSI" disabled>[COMING SOON] JIGYASA | Solo</option>
-                            <option value="UPG" disabled>[COMING SOON] UPGRAD | Solo</option>
+                            <option value="CSW">SPECTRUM | Solo</option>
+                            <option value="COS">CAD-O-SHOP | Solo</option>
+                            <option value="STG">STARGAZE | Solo</option>
+                            <option value="TSI">JIGYASA | Solo</option>
+                            <option value="UPG">UPGRAD | Solo</option>
                             <option value="" disabled></option>
                         </select>
                         {#each [...Array(_team_members).keys()] as item}

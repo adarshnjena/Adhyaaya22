@@ -453,9 +453,10 @@
                             <option class="option_heading" value="" disabled>Workshop</option>
                             <option value="CSW">SPECTRUM | Solo</option>
                             <option value="COS">CAD-O-SHOP | Solo</option>
-                            <option value="STG">STARGAZE | Solo</option>
+                            <option value="STG">STARGAZE (Offline) | Solo</option>
+                            <option value="STGF">STARGAZE (Online) | Solo</option>
                             <option value="TSI">JIGYASA | Solo</option>
-                            <option value="UPG">UPGRAD | Solo</option>
+                            <option value="UPG">CAMPUS BRIDGE | Solo</option>
                             <option value="" disabled></option>
                         </select>
                         {#each [...Array(_team_members).keys()] as item}

@@ -69,7 +69,7 @@ export function get_event_cost(event_code) {
         case 'CCB':
             return 360;
         case 'STG':
-            return 0;
+            return 60;
         case 'TSI':
             return 0;
         case 'CSW':

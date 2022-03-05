@@ -154,5 +154,59 @@ export async function verify_transaction(app: FirebaseApp, db: Firestore, transa
 }
 
 export function get_event_date(event_code) {
-    return '2022-04-02';
+       switch (event_code) {
+        case 'RPNBS':
+            return '25-03-2022';
+        case 'RPNBT':
+            return '25-03-2022';
+        case 'RPNVS':
+            return '26-03-2022';
+        case 'RPNCI':
+            return '25-03-2022';
+        case 'VPM':
+            return '25/26-03-2022';
+        case 'CADMS':
+            return '26-03-2022';
+        case 'CADMD':
+            return '26-03-2022';
+        case 'CADCS':
+            return '26-03-2022';
+        case 'CADCD':
+            return '26-03-2022';
+        case 'MUNA':
+               //DISEC
+            return '26/27-03-2022';
+        case 'MUNU':
+               //Lok Sabha
+            return '26/27-03-2022';
+        case 'VAV':
+            return '26/27-03-2022';
+        case 'AVK':
+            return '25-03-2022';
+        case 'BSYD':
+            return '27-03-2022';
+        case 'BSYT':
+            return '27-03-2022';
+        case 'COV':
+            return '27-03-2022';
+        case 'FOH':
+            return '26-03-2022';
+        case 'CCB':
+            return '25/26-03-2022';
+        case 'STG':
+            return '25/26-03-2022';
+        case 'TSI':
+               //Jigyasa
+            return '25-03-2022';
+        case 'CSW':
+            // Spectrum
+            return '26-03-2022';
+        case 'UPG':
+               //Campus Bridge
+            return 'Stay tuned';
+        case 'COS':
+            return '25-03-2022';
+        default:
+            return 0;
+    }
 }

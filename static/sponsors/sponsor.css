@@ -229,18 +229,17 @@ body {
 
 
 .sideCompartment {
-  width: 18.5rem;
-  position: fixed;
-  top: 5.299999999999997rem;
-  background: #161623;
-  background-repeat: repeat-y;
-  width: 33rem;
-  height: 100%;
-  border-radius: 0.6rem;
-  padding: 0.25rem;
-  margin: 0.25rem;
+    width: 18.5rem;
+    position: fixed;
+    /* top: 5.299999999999997rem; */
+    background: #161623;
+    background-repeat: repeat-y;
+    width: 33rem;
+    height: 100%;
+    border-radius: 0.6rem;
+    padding: 0.25rem;
+    margin: 0.25rem;
 }
-
 .sideCompartment::before{
   content: '';
   position: absolute;

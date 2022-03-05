@@ -51,9 +51,9 @@ export function get_event_cost(event_code) {
         case 'CADCD':
             return 100;
         case 'MUNA':
-            return 150;
+            return 700;
         case 'MUNU':
-            return 150;
+            return 700;
         case 'VAV':
             return 50;
         case 'AVK':
@@ -67,7 +67,7 @@ export function get_event_cost(event_code) {
         case 'FOH':
             return 200;
         case 'CCB':
-            return 300;
+            return 360;
         case 'STG':
             return 0;
         case 'TSI':

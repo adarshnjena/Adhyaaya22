@@ -16,7 +16,7 @@ main_cred = credentials.Certificate(FIREBASE_SA_KEY)
 main_app = firebase_admin.initialize_app(main_cred, name='MAIN')
 
 print('[INFO] Authenticating CA...')
-ca_cred = credentials.Certificate(FIREBASE_SA_KEY)
+ca_cred = credentials.Certificate(FIREBASE_CA_SA_KEY)
 ca_app = firebase_admin.initialize_app(ca_cred, name='CA')
 
 print('[INFO] Instantiating Client MAIN')
@@ -72,4 +72,19 @@ for user_id, user_registrations in regs.items():
             else:
                 ca_codes[registration['refferal_code']] += 1
 
-print(json.dumps(ca_codes, indent=4))
+print('[INFO] WRITING TO DB')
+batch = ca_client.batch()
+
+
+for code, count in ca_codes.items():
+    iter_ref = ca_client.collection('ca_code').document(code)
+    batch.set(iter_ref, {'number_of_regis': count})
+    print(code, count)
+
+
+batch.commit()
+
+
+# TEST CONDITION FOR CA CODE
+#ca_client.collection('ca_code').document('CA_CODE_1').set({'number_of_regis': 1})
+# print(json.dumps(ca_codes, indent=4))

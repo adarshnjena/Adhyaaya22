@@ -392,7 +392,7 @@
                             <input
                                 type="text"
                                 bind:value="{input_registration_details.college}"
-                                placeholder="Collage name"
+                                placeholder="College name"
                                 class="tw-w-full"
                             />
                         </div>

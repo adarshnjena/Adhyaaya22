@@ -134,7 +134,16 @@
             is_payment_gateway_shown = false;
             return;
         }
-        if (!confirm('Do you want to confirm the registration for this event ?')) {
+        if (input_registration_details.referral_code == '') {
+            alert('Please enter a refferal code.');
+            return;
+        }
+        if (input_registration_details.referral_code.length != 7) {
+            alert('Please enter a valid 7 charecter refferal code.');
+            return;
+        }
+        if (input_registration_details.event_code == '' || input_registration_details.event_code == undefined || input_registration_details.event_code == null) {
+            alert('Please select a event.');
             return;
         }
         //console.dir(regs)
@@ -147,6 +156,14 @@
         const order_amount = get_event_cost(input_registration_details.event_code);
         // we need to generate a order token here
         order_amount === 0 ? await submit_free(event) : '';
+
+        let response = !confirm(`Do you want to confirm the registration for this event ? Cost: ${order_amount} ₹`)
+        if (response) {
+            dev ? console.log(response): ''
+            is_payment_gateway_shown = false;
+            return;
+            
+        }
 
         let order_details = {
             order_id: get_order_id($authStore.user.uid, input_registration_details.event_code), // This is of the format userid-eventcode
@@ -289,6 +306,15 @@
             _team_members = event_extra_members_mapping[event.target.value];
         }
     }
+
+    function on_refferal_code_blur(event) {
+        if (event.target.value == '') {
+            alert('Please enter a refferal code.')
+        }
+        if (event.target.value.length != 7) {
+            alert('Please enter a valid refferal code.')
+        }
+    }
 </script>
 
 <Protected />
@@ -371,7 +397,7 @@
                             />
                         </div>
 
-                        <div class="input tw-inline-flex ">
+                        <div class="input tw-inline-flex !tw-mb-2">
                             <Icon
                                 class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
                                 height=""
@@ -382,11 +408,14 @@
                                 type="text"
                                 maxlength="7"
                                 minlength="7"
+                                required
                                 bind:value="{input_registration_details.referral_code}"
                                 placeholder="Referal Code"
                                 class="tw-w-full"
                             />
+                            
                         </div>
+                        <p class="tw-w-full !tw-mb-9">* Don't have a referral code? Try: 0000000</p>
 
                         <div class="input tw-inline-flex ">
                             <Icon
@@ -511,7 +540,8 @@
                     </button>
                 </form>
                 <div class="note">
-                    <p>* EVENT NAME | TEAM/SOLO | PRICE</p>
+                    <p>* EVENT NAME | TEAM/SOLO </p>
+                    
                     <p>* For faster and safer transactions, prefer UPI.</p>
 
                     <p>

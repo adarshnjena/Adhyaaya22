@@ -87,6 +87,10 @@ export const event_name_mapping = {
 };
 """
 
+
+def escape(string: str):
+    return '"' + string + '"'
+
 if COLLLECTION_NAME != 'registrations':
     print('[ERR3] No definitions found for this collection. Exiting...')
     exit(3)
@@ -102,7 +106,7 @@ with open(CSV_EXPORT_FILE, "w") as f:
             # this is registration item
             # print(e_key, e_value)
             file_string = ""
-            file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{registration['name']},{registration['email']},{registration['phone']},{registration['college']},{registration['course']},{registration['transaction_status']},{'TEAM LEADER'}\n"
+            file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{registration['name']},{registration['email']},{registration['phone']},{escape(registration['college'])},{escape(registration['course'])},{registration['transaction_status']},{'TEAM LEADER'}\n"
             for team_member in registration['team']:
                 if isinstance(team_member, str):
                     file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member},{team_member},{team_member},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"

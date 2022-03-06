@@ -298,3 +298,7 @@ __pycache__
 serviceAccountKey.json
 .netlify/**
 serviceAccountKeyCA.json
+
+# output files for the csv generators.
+/*.json
+/*.csv

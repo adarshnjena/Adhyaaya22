@@ -20,6 +20,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>Adhyaaya '22</title>
+</svelte:head>
+
 <svelte:window bind:scrollY />
 
 <!--This was a retarded attempt at trying to convert this code. Broken Click-->

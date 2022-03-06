@@ -7,7 +7,7 @@ from time import time
 import firebase_admin
 from firebase_admin import credentials
 import pathlib
-import re
+
 
 this_folder = pathlib.Path(__file__).parent.absolute()
 parent_folder = this_folder.parent
@@ -88,12 +88,17 @@ export const event_name_mapping = {
 };
 """
 
-REGEX = re.compile('[\n\r\t]')
-
-def escape(string: str):
+import re
+REGEX = re.compile('[\n\r\t,]')
+def escape(string):
     if isinstance(string, str):
-        return '"' + REGEX.sub('_', string) + '"'
-    return '"' + str(string) + '"'
+        a = REGEX.sub('_', string)
+    else:
+        a = str(string)
+    a = a.encode('ascii', 'ignore')
+    a = a.decode()
+    return a
+
 
 
 if COLLLECTION_NAME != 'registrations':

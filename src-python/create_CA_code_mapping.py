@@ -8,7 +8,6 @@ from time import time
 import firebase_admin
 from firebase_admin import credentials
 import pathlib
-import re
 
 this_folder = pathlib.Path(__file__).parent.absolute()
 parent_folder = this_folder.parent
@@ -20,16 +19,25 @@ ca_cred = credentials.Certificate(FIREBASE_CA_SA_KEY)
 ca_app = firebase_admin.initialize_app(ca_cred, name='CA')
 
 
+## TODO: REMOVE FOR ACTUAL THINGY
+def time(): 
+    return 1111
+
+
 ca_client = firestore.client(ca_app)
 
 
-REGEX = re.compile('[\n\r\t]')
-
-
-def escape(string: str):
+import re
+REGEX = re.compile('[\n\r\t,]')
+def escape(string):
     if isinstance(string, str):
-        return '"' + REGEX.sub('_', string) + '"'
-    return '"' + str(string) + '"'
+        a = REGEX.sub('_', string)
+    else:
+        a = str(string)
+    a = a.encode('ascii', 'ignore')
+    a = a.decode()
+    return a
+
 
 
 

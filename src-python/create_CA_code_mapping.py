@@ -19,11 +19,6 @@ ca_cred = credentials.Certificate(FIREBASE_CA_SA_KEY)
 ca_app = firebase_admin.initialize_app(ca_cred, name='CA')
 
 
-## TODO: REMOVE FOR ACTUAL THINGY
-def time(): 
-    return 1111
-
-
 ca_client = firestore.client(ca_app)
 
 

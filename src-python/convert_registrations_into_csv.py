@@ -107,7 +107,7 @@ EXPORT_FILE = parent_folder / 'registrations.csv'
 import json
 
 data = json.loads(DATA)
-with open(EXPORT_FILE, "w") as f:
+with open(EXPORT_FILE, "w", encoding="utf-8") as f:
     f.write("registration_id,event_code,name,email,phone,college,course,transaction_status,TEAM?\n")
     for user_id, user_registrations in data.items():
         # print(key) # This is user_id,

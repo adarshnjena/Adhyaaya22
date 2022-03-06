@@ -7,6 +7,7 @@ from time import time
 import firebase_admin
 from firebase_admin import credentials
 import pathlib
+import re
 
 this_folder = pathlib.Path(__file__).parent.absolute()
 parent_folder = this_folder.parent
@@ -45,7 +46,7 @@ client = firestore.client()
 
 k = {}
 print('[INFO] Writing JSON Document...')
-with open(JSON_EXPORT_FILE, 'w') as f:
+with open(JSON_EXPORT_FILE, 'w', encoding="utf-8") as f:
     print('[INFO] Fetching Registrations...')
     snapshots = list(client.collection('registrations').get())
     print('[INFO] Registraions Fetched')
@@ -87,16 +88,20 @@ export const event_name_mapping = {
 };
 """
 
+REGEX = re.compile('[\n\r\t]')
 
 def escape(string: str):
-    return '"' + string + '"'
+    if isinstance(string, str):
+        return '"' + REGEX.sub('_', string) + '"'
+    return '"' + str(string) + '"'
+
 
 if COLLLECTION_NAME != 'registrations':
     print('[ERR3] No definitions found for this collection. Exiting...')
     exit(3)
 
 print('[INFO] Writing CSV Document...')
-with open(CSV_EXPORT_FILE, "w") as f:
+with open(CSV_EXPORT_FILE, "w", encoding="utf-8") as f:
     f.write("registration_id,event_code,refferal_code,name,email,phone,college,course,transaction_status,TEAM?\n")
     for user_id, user_registrations in k.items():
         # print(key) # This is user_id,

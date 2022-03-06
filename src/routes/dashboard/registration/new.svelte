@@ -410,7 +410,7 @@
                                 minlength="7"
                                 required
                                 bind:value="{input_registration_details.referral_code}"
-                                placeholder="Referal Code"
+                                placeholder="Referral Code"
                                 class="tw-w-full"
                             />
                             

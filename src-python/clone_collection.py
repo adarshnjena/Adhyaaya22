@@ -12,7 +12,6 @@ import pathlib
 this_folder = pathlib.Path(__file__).parent.absolute()
 parent_folder = this_folder.parent
 
-
 ##### USER CONFIG SECTION #####
 # Replace this value with the collection you would like to clone
 COLLLECTION_NAME = 'registrations'
@@ -106,15 +105,26 @@ if COLLLECTION_NAME != 'registrations':
     exit(3)
 
 print('[INFO] Writing CSV Document...')
-with open(CSV_EXPORT_FILE, "w", encoding="utf-8") as f:
-    f.write("registration_id,event_code,refferal_code,name,email,phone,college,course,transaction_status,TEAM?\n")
-    for user_id, user_registrations in k.items():
+regs = {}
+for user_id, user_registrations in k.items():
         # print(key) # This is user_id,
         # print(value) # This is a dict of all the registrations
+    for event_code, registration in user_registrations.items():
+        # print(key) # This is event_code,
+        # print(value) # This is the registration
+        if event_code not in regs:
+            regs[event_code] = []
+        regs[event_code].append(registration)
 
-        for event_code, registration in user_registrations.items():
-            # this is registration item
-            # print(e_key, e_value)
+
+
+
+with open(CSV_EXPORT_FILE, "w", encoding="utf-8") as f:
+    f.write("registration_id,event_code,refferal_code,name,email,phone,college,course,transaction_status,TEAM?\n")
+    for event_code, registrations in sorted(regs.items(), key=lambda x: x[0]):
+        # this is registration item
+        # print(e_key, e_value)
+        for registration in registrations:
             file_string = ""
             file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{registration['name']},{registration['email']},{registration['phone']},{escape(registration['college'])},{escape(registration['course'])},{registration['transaction_status']},{'TEAM LEADER'}\n"
             for team_member in registration['team']:
@@ -124,3 +134,5 @@ with open(CSV_EXPORT_FILE, "w", encoding="utf-8") as f:
                 file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member['name']},{team_member['email']},{team_member['phone']},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
             f.write(file_string)
 print('[INFO] Finished Writing CSV Document')
+
+

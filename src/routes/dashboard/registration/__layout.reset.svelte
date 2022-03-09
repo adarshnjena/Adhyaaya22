@@ -111,7 +111,7 @@
     </nav>
 
     <div
-        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 "
+        class="tw-relative tw-h-full tw-w-full tw-bg-base-300 tw-pt-32 print:!tw-bg-none"
         style="background-image: url({backgroundImage});"
     >
         <slot />

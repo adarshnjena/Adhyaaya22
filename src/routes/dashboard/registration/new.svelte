@@ -139,7 +139,7 @@
             return;
         }
         if (input_registration_details.referral_code.length != 7) {
-            alert('Please enter a valid 7 charecter refferal code.');
+            alert('Please enter a valid 7 char. refferal code.');
             return;
         }
         if (input_registration_details.event_code == '' || input_registration_details.event_code == undefined || input_registration_details.event_code == null) {
@@ -547,10 +547,9 @@
                     <p>* For faster and safer transactions, prefer UPI.</p>
 
                     <p>
-                        * Any issues regarding registration, try to contact Siddhant - 8669066319 or
-                        Adharsh - 7620426119
+                        * Any issues regarding registration, try to contact <br /> Siddhant - 8669066319 or
+                        <br /> Adharsh - 7620426119 or <br /> Devansh - 8793150182
                     </p>
-                    <p>* or contact on WhatsApp; Devansh Parapalli - 8793150182</p>
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
 
                     <p>

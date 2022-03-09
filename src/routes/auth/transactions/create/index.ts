@@ -1,10 +1,13 @@
+import { dev } from "$app/env";
+
 const client_id = import.meta.env.VITE_CASHFREE_CLIENT_ID.toString();
 const client_secret = import.meta.env.VITE_CASHFREE_CLIENT_SECRET.toString();
 
 export async function post({ request, params }) {
     // we will post data to the server to make this request
     //console.log(await request.json())
-    const response = await fetch(`https://api.cashfree.com/pg/orders`, {
+    const url = dev ? 'https://sandbox.cashfree.com/pg/orders':'https://api.cashfree.com/pg/orders'
+    const response = await fetch(`${url}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,10 +1,13 @@
+import { dev } from "$app/env";
+
 const client_id = import.meta.env.VITE_CASHFREE_CLIENT_ID.toString();
 const client_secret = import.meta.env.VITE_CASHFREE_CLIENT_SECRET.toString();
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get({ request, params }) {
     // `params.id` comes from [id].js
-    const _verification_data = await fetch(`https://api.cashfree.com/pg/orders/${params.id}`, {
+    const url = dev ? "https://sandbox.cashfree.com/pg/orders/":'https://api.cashfree.com/pg/orders/'
+    const _verification_data = await fetch(`${url}${params.id}`, {
         headers: {
             'Content-Type': 'application/json',
             'x-api-version': '2022-01-01',

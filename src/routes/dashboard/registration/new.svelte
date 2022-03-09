@@ -35,7 +35,7 @@
     import { cashfreeProd } from 'cashfree-dropjs';
 
     //let cashfree = new cashfreeSandbox.Cashfree();
-    let cashfree = new cashfreeProd.Cashfree();
+    let cashfree = dev ? new cashfreeSandbox.Cashfree() : new cashfreeProd.Cashfree();
 
     let app;
     let auth;
@@ -164,9 +164,9 @@
             return;
             
         }
-
+        const order_id = get_order_id($authStore.user.uid, input_registration_details.event_code)
         let order_details = {
-            order_id: get_order_id($authStore.user.uid, input_registration_details.event_code), // This is of the format userid-eventcode
+            order_id: order_id, // This is of the format userid-eventcode
             order_amount: order_amount, // Needs to confirm prices
             order_currency: 'INR', // const
             customer_details: {
@@ -176,6 +176,27 @@
                 customer_phone: details['profile']['mobile_number'], // Check Phone number inside the dashboard
             },
         };
+
+        // We now generate a firebase db call to actually generate the registration here.
+        const transform: registrationDetails = {
+                        name: input_registration_details['name'],
+                        email: input_registration_details['email'],
+                        phone: input_registration_details['phone'],
+                        college: input_registration_details['college'],
+                        refferal_code: input_registration_details['referral_code'],
+                        registration_id: order_id,
+                        transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
+                        event_code: input_registration_details['event_code'],
+                        course: input_registration_details['year_of_study'],
+                        team: get_team_members(),
+                    };
+                    await add_new_user_registration(
+                        app,
+                        auth,
+                        db,
+                        input_registration_details.event_code,
+                        transform,
+                    );
 
         dev ? console.log('order_details', order_details) : '';
         //order_amount == 0 ?
@@ -197,26 +218,6 @@
                 dev ? console.log('PGonSuccess', data) : '';
                 if (data.order && data.order.status == 'PAID') {
                     //order is paid
-                    // We now generate a firebase db call to actually generate the registration here.
-                    const transform: registrationDetails = {
-                        name: input_registration_details['name'],
-                        email: input_registration_details['email'],
-                        phone: input_registration_details['phone'],
-                        college: input_registration_details['college'],
-                        refferal_code: input_registration_details['referral_code'],
-                        registration_id: data.order.orderId,
-                        transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
-                        event_code: input_registration_details['event_code'],
-                        course: input_registration_details['year_of_study'],
-                        team: get_team_members(),
-                    };
-                    await add_new_user_registration(
-                        app,
-                        auth,
-                        db,
-                        input_registration_details.event_code,
-                        transform,
-                    );
                     //verify order status by making an API call to your server
                     // using data.order.orderId
 

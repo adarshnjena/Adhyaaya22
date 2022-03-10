@@ -128,10 +128,11 @@ with open(CSV_EXPORT_FILE, "w", encoding="utf-8") as f:
             file_string = ""
             file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{registration['name']},{registration['email']},{registration['phone']},{escape(registration['college'])},{escape(registration['course'])},{registration['transaction_status']},{'TEAM LEADER'}\n"
             for team_member in registration['team']:
-                if isinstance(team_member, str):
-                    file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member},{team_member},{team_member},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
-                    continue
-                file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member['name']},{team_member['email']},{team_member['phone']},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
+                pass
+                # if isinstance(team_member, str):
+                    # file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member},{team_member},{team_member},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
+                    # continue
+                # file_string += f"{registration['registration_id']},{event_code},{registration['refferal_code']},{team_member['name']},{team_member['email']},{team_member['phone']},{'Not Required'},{'Not Required'},{registration['transaction_status']},{'TEAM MEMBER'}\n"
             f.write(file_string)
 print('[INFO] Finished Writing CSV Document')
 

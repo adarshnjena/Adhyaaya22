@@ -113,7 +113,7 @@
                     href="/dashboard/registration/new"
                     class="tw-btn-xl tw-btn tw-btn-primary tw-mx-auto tw-pt-6 tw-pb-14 tw-text-3xl"
                 >
-                    {!!details.address ? 'REGISTER NOW!' : 'FILL IN DETAILS BELOW'}
+                    REGISTER NOW!
                 </a>
             </div>
             <!-- Level 0 -->

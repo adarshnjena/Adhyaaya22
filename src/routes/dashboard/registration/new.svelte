@@ -312,7 +312,7 @@
         if (event.target.value == '') {
             alert('Please enter a refferal code.')
         }
-        if (event.target.value.length != 7) {
+        if (event.target.value.length != 7 || event.target.value.length != 5) {
             alert('Please enter a valid refferal code.')
         }
     }

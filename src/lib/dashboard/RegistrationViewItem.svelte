@@ -25,7 +25,7 @@
         {to_title_case(key)}
     </th>
     <td
-        class="tw-break-all tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-2 print:tw-py-1 tw-px-2  tw-text-left tw-align-middle tw-text-xs"
+                class="tw-break-all tw-border-t-0 tw-border-l-0 tw-border-r-0 tw-p-2 print:tw-py-1 tw-px-2  tw-text-left tw-align-middle tw-text-xs"
     >
         {#if typeof value === 'object'}
             

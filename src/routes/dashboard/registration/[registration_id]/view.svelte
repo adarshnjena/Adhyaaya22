@@ -66,8 +66,8 @@
 </svelte:head>
 
 <Protected />
-<div class="tw-flex tw-min-h-screen print:tw-h-fit print:tw-min-h-0 tw-justify-center">
-    <div class="tw-mx-auto tw-mt-[2.5rem] tw-w-full tw-px-2 md:tw-w-3/4 print:tw-mt-0">
+<div class="tw-flex tw-min-h-screen tw-justify-center print:tw-h-fit print:tw-min-h-0">
+    <div class="tw-mx-auto tw-mt-[2.5rem] tw-w-full tw-px-2 print:tw-mt-0 md:tw-w-3/4">
         <div class="tw-container tw-w-full">
             <div
                 class="tw-container tw-card-bordered tw-card tw-bg-base-100 tw-bg-opacity-[75%] tw-text-center tw-backdrop-blur print:tw-bg-white print:tw-text-black"
@@ -86,12 +86,12 @@
                         <thead class="tw-thead-light tw-overflow-auto">
                             <tr>
                                 <th
-                                    class="tw-overflow-auto tw-whitespace-nowrap tw-px-6 tw-py-3 print:tw-py-1 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
+                                    class="tw-overflow-auto tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase print:tw-py-1"
                                 >
                                     Data Point
                                 </th>
                                 <th
-                                    class="tw-overflow-auto tw-whitespace-nowrap tw-px-6 tw-py-3 print:tw-py-1 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase"
+                                    class="tw-overflow-auto tw-whitespace-nowrap tw-px-6 tw-py-3 tw-text-left tw-align-middle tw-text-xs tw-font-semibold tw-uppercase print:tw-py-1"
                                 >
                                     Registered Value
                                 </th>
@@ -107,24 +107,26 @@
                     </table>
                     {#if registration?.transaction_status != 'PAID'}
                         <div class="print:tw-hidden">
-                    <p>* Contacts:</p>
-                        <p>Siddhant Patil : +91 8669066319</p>
-                        <p>Adarsh Jena : +91 7620426119</p>
-                        <p>Devansh Parapalli : +91 8793150182</p>
-                        <a
-                            href="mailto:adhyaaya.gcoen@gmail.com"
-                            class="tw-btn tw-btn-primary tw-btn-block tw-mt-10"
-                        >
-                            CONTACT SUPPORT
-                        </a>
-                    </div>
+                            <p>* Contacts:</p>
+                            <p>Siddhant Patil : +91 8669066319</p>
+                            <p>Adarsh Jena : +91 7620426119</p>
+                            <p>Devansh Parapalli : +91 8793150182</p>
+                            <a
+                                href="mailto:adhyaaya.gcoen@gmail.com"
+                                class="tw-btn tw-btn-primary tw-btn-block tw-mt-10"
+                            >
+                                CONTACT SUPPORT
+                            </a>
+                        </div>
                     {/if}
-                    <span on:click="{() => {
-                        print();
-                    }}" class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden">
+                    <span
+                        on:click="{() => {
+                            print();
+                        }}"
+                        class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden"
+                    >
                         PRINT RECIEPT
                     </span>
-
                     <a href="/dashboard" class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden">
                         RETURN TO DASHBOARD
                     </a>

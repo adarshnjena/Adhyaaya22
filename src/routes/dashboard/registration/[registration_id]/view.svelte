@@ -107,6 +107,14 @@
                     </table>
                     {#if registration?.transaction_status != 'PAID'}
                         <div class="print:tw-hidden">
+                            <a
+                                href="/auth/transactions/{$page.params[
+                                    'registration_id'
+                                ]}/check_status"
+                                class="tw-btn tw-btn-block tw-mt-10 tw-mb-4 print:tw-hidden"
+                            >
+                                RECHECK PAYMENT STATUS
+                            </a>
                             <p>* Contacts:</p>
                             <p>Siddhant Patil : +91 8669066319</p>
                             <p>Adarsh Jena : +91 7620426119</p>
@@ -119,14 +127,17 @@
                             </a>
                         </div>
                     {/if}
+                    {#if registration?.transaction_status == 'PAID'}
                     <span
-                        on:click="{() => {
-                            window.print();
-                        }}"
-                        class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden"
-                    >
-                        PRINT RECIEPT
-                    </span>
+                    on:click="{() => {
+                        window.print();
+                    }}"
+                    class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden"
+                >
+                    PRINT RECIEPT
+                </span>
+                    {/if}
+
                     <a href="/dashboard" class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden">
                         RETURN TO DASHBOARD
                     </a>

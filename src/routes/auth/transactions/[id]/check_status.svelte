@@ -13,6 +13,7 @@
     let auth;
     let db;
     let details;
+    let verify
     let dataPromiseResolve;
     let dataPromise = new Promise((resolve) => {
         dataPromiseResolve = resolve;
@@ -31,14 +32,14 @@
         auth = getAuth();
         db = getFirestore();
         const _verify = await fetch(`/auth/transactions/${$page.params.id}/verify`);
-        const verify = await _verify.json();
-        if (verify.order_status == 'PAID') {
+        verify = await _verify.json();
+        if (verify?.order_status == 'PAID') {
             page_text =
                 'Payment has been sucessfully recieved. Please view and keep the reciept safely. You may return to dashboard.';
             verify_transaction(app, db, $page.params.id);
         } else {
             page_text =
-                'Payment has not be successfully recieved. Please try again. Deductions, if any, will be refunded. Please contact support if the issue persists';
+                'Payment has not been successfully recieved. Please try again. Please contact support if the issue persists';
         }
         dataPromiseResolve(verify);
     });
@@ -63,13 +64,15 @@
                     <span class="tw-text-left"></span>
                     <div class="tw-mt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
                         {#await dataPromise then value}
-                            <a
-                                sveltekit:prefetch
-                                href="/dashboard/registration/{$page.params.id}/view"
-                                class="tw-btn-neutral-primary tw-btn"
-                            >
-                                <span class="tw-inner-text tw-btn">View Reciept</span>
-                            </a>
+                        {#if verify?.order_status == 'PAID'}
+                        <a
+                        sveltekit:prefetch
+                        href="/dashboard/registration/{$page.params.id}/view"
+                        class="tw-btn-neutral-primary tw-btn tw-mb-4"
+                    >
+                        <span class="tw-inner-text tw-btn">View Reciept</span>
+                    </a>
+                        {/if}
                             <a
                                 sveltekit:prefetch
                                 href="/dashboard"

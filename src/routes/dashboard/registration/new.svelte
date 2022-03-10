@@ -458,7 +458,7 @@
                             <option value="RPNCI">RESPAWN CHESS | Solo
                             </option>
                             <option value="VAV">VAAD VIVAD | SOLO</option>
-                            <option value="FOH">FOODOHOLICS | Team [4]
+                            <option value="FOH" disabled>FOODOHOLICS | Team [4] | CLOSED
                             </option>
                             <option value="CCB">CRICBASH | Team [6]</option>
                             <option value="" disabled></option>
@@ -542,6 +542,7 @@
                     </button>
                 </form>
                 <div class="note">
+                    <p class="tw-font-black tw-text-xl">* You have to press pay after selecting the icons for QR or a UPI app</p>
                     <p>* EVENT NAME | TEAM/SOLO </p>
                     
                     <p>* For faster and safer transactions, prefer UPI.</p>

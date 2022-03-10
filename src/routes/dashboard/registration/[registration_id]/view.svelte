@@ -121,7 +121,7 @@
                     {/if}
                     <span
                         on:click="{() => {
-                            print();
+                            window.print();
                         }}"
                         class="tw-btn tw-btn-block tw-mt-10 print:tw-hidden"
                     >

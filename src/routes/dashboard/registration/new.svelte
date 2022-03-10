@@ -144,7 +144,7 @@
             return;
         }
         //console.dir(regs)
-        if (Object.keys(regs).includes(input_registration_details.event_code)) {
+        if (Object.keys(regs ?? {}).includes(input_registration_details.event_code)) {
             modal_show('You have already registered for this event');
             return;
         }

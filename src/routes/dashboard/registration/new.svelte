@@ -130,10 +130,7 @@
 
     async function on_submit(event) {
         dev ? console.log('Submit Button Clicked') : '';
-        if (error) {
-            is_payment_gateway_shown = false;
-            return;
-        }
+
         if (input_registration_details.referral_code == '') {
             alert('Please enter a refferal code.');
             return;
@@ -308,14 +305,6 @@
         }
     }
 
-    function on_refferal_code_blur(event) {
-        if (event.target.value == '') {
-            alert('Please enter a refferal code.')
-        }
-        if (event.target.value.length != 7 || event.target.value.length != 5) {
-            alert('Please enter a valid refferal code.')
-        }
-    }
 </script>
 
 <Protected />

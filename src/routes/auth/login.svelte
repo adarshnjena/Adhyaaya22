@@ -74,7 +74,7 @@
             //!user?.emailVerified ? sendEmailVerification(user) : '';
             // we wait for the dashboard to check and then init the data.
             //user ? init_profile_data(app, auth, getDatabase(app)) : '';
-            user ? goto('/dashboard') : '';
+            user ? goto('/dashboard/registration/new') : '';
         });
         if (result && result.user) {
             // User is signed in.

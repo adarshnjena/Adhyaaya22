@@ -47,7 +47,7 @@ k = {}
 print('[INFO] Writing JSON Document...')
 with open(JSON_EXPORT_FILE, 'w', encoding="utf-8") as f:
     print('[INFO] Fetching Registrations...')
-    snapshots = list(client.collection('registrations').get())
+    snapshots = list(client.collection(COLLLECTION_NAME).get())
     print('[INFO] Registraions Fetched')
     for snapshot in snapshots:
         k[snapshot.id] = snapshot.to_dict()

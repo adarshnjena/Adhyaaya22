@@ -24,7 +24,7 @@
     import { cashfreeSandbox } from 'cashfree-dropjs';
     import { registrationDetails, teamMemberDetail } from '$lib/types/registrationDetails';
     import { sample_make_order } from '$lib/cashfree/sample';
-    import { get_user_details } from '$lib/firebase/userDetails';
+    import { get_user_details, set_initial_user_details } from '$lib/firebase/userDetails';
     import { getFirestore } from 'firebase/firestore/lite';
     import {
         add_new_user_registration,
@@ -43,7 +43,7 @@
     let db;
     let details;
     let regs;
-    
+    let registrations
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
     onMount(async () => {
         try {
@@ -55,9 +55,29 @@
         }
         // Now we for sure have an app.
         dev ? console.log(app) : '';
-        // Redirect Handler, used when the user is authenticated.
+        // get and assemble details about the user, Into a details object, then get the contact assigned to them.
         auth = getAuth();
         db = getFirestore();
+        // Get the user's profile details.
+
+        let _details = await get_user_details(app, $authStore.user, db);
+        if (!_details) {
+            await set_initial_user_details(app, $authStore.user, db, auth.currentUser.displayName);
+            _details = await get_user_details(app, $authStore.user, db);
+            details = _details['profile'];
+            dev ? console.log('!details', details) : '';
+        } else {
+            details = _details['profile'];
+            dev ? console.log('details', _details) : '';
+        }
+        // If the user has no profile details, then set them up.
+        // Get the current contact details.
+        // TODO: Finish the contact details
+        // Get 5 important, future tasks.
+        //profile_tasks = _details['tasks'];
+        //tasks = await get_n_task_details(app, db, 5);
+        //events = await get_n_event_details(app, db, 5);
+        registrations = await get_user_registrations(app, auth, db);
         is_payment_gateway_shown = false;
         details = await get_user_details(app, $authStore.user, db);
         dev ? console.log('Registration: details', details) : '';

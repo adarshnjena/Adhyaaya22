@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    // import { dev } from '$app/env';
+    const dev = true;
     import { goto, prefetch } from '$app/navigation';
     import authStore from '$lib/auth/authStore';
     import Icon from '@iconify/svelte/dist/OfflineIcon.svelte';
@@ -42,6 +43,7 @@
     let db;
     let details;
     let regs;
+    
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
     onMount(async () => {
         try {

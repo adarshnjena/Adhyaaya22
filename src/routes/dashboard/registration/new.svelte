@@ -1,5 +1,5 @@
 <script lang="ts">
-    // const dev = true;
+    import {dev as _dev} from '$app/env'
     const dev = true;
     import { goto, prefetch } from '$app/navigation';
     import authStore from '$lib/auth/authStore';
@@ -36,7 +36,7 @@
     import { cashfreeProd } from 'cashfree-dropjs';
 
     //let cashfree = new cashfreeSandbox.Cashfree();
-    let cashfree = cashfreeProd.Cashfree();
+    let cashfree = _dev ? new cashfreeSandbox.Cashfree() : new cashfreeProd.Cashfree();
 
     let app;
     let auth;

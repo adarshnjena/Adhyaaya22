@@ -191,8 +191,8 @@
             customer_details: {
                 customer_id: $authStore.user.uid, // Firebase User ID
                 customer_name: input_registration_details['name'],
-                customer_email: details['profile']['email'], // Adhyaaya Support Email
-                customer_phone: details['profile']['mobile_number'], // Check Phone number inside the dashboard
+                customer_email: input_registration_details['email'], // Adhyaaya Support Email
+                customer_phone: input_registration_details['phone'], // Check Phone number inside the dashboard
             },
         };
 

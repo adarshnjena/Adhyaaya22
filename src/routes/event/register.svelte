@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { dev } from '$app/env';
+    const dev = true;
     import { getApp, initializeApp } from 'firebase/app';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { goto } from '$app/navigation';

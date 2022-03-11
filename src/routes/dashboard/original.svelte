@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    const dev = true;
     import authStore from '$lib/auth/authStore';
     import Protected from '$lib/auth/Protected.svelte';
     import AccountLinking from '$lib/dashboard/AccountLinking.svelte';

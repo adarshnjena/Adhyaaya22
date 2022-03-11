@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    const dev = true;
     import { goto } from '$app/navigation';
     import { page } from '$app/stores';
     import backgroundImage from '$lib/assets/page-background.png';

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    const dev = true;
     import type { profileDetails } from '$lib/types/profileDetails';
     import type { FirebaseApp } from 'firebase/app';
     //import type { Auth } from 'firebase/auth';

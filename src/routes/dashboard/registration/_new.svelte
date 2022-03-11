@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    const dev = true;
     import { goto, prefetch } from '$app/navigation';
     import authStore from '$lib/auth/authStore';
     import Protected from '$lib/auth/Protected.svelte';

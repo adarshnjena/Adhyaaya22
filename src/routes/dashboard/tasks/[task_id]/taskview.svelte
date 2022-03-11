@@ -8,7 +8,7 @@
     import { onMount } from 'svelte';
     import { getApp, initializeApp } from 'firebase/app';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
-    import { dev } from '$app/env';
+    const dev = true;
     import { getAuth } from 'firebase/auth';
     import { getFirestore } from 'firebase/firestore/lite';
     import authStore from '$lib/auth/authStore';

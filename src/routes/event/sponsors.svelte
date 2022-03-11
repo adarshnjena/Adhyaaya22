@@ -1,5 +1,5 @@
 <script>
-    import { dev } from '$app/env';
+    const dev = true;
 
     import { goto } from '$app/navigation';
 

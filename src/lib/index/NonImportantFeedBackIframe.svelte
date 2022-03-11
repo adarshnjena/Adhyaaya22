@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     //let scrollY = 0;
-    import { dev } from '$app/env';
+    const dev = true;
 
     import { goto } from '$app/navigation';
 

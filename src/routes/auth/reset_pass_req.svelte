@@ -1,5 +1,5 @@
 <script>
-    import { dev } from '$app/env';
+    const dev = true;
     import { goto, prefetch } from '$app/navigation';
     import backgroundImage from '$lib/assets/page-background.png';
     import firebaseConfig from '$lib/firebase/firebaseConfig';

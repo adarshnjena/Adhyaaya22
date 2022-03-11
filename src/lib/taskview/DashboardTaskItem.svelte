@@ -1,5 +1,5 @@
 <script lang="ts">
-import { dev } from '$app/env';
+const dev = true;
 
     import InfoBadge from '$lib/infoBadge.svelte';
     import type { taskDetails } from '$lib/types/taskDetails';

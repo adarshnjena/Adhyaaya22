@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    const dev = true;
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { getApp, initializeApp } from 'firebase/app';
     import { fetchSignInMethodsForEmail, getAuth } from 'firebase/auth';

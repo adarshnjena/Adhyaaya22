@@ -4,7 +4,7 @@
     import { page } from '$app/stores';
     import { get_user_registrations, verify_transaction } from '$lib/firebase/registrationDetails';
     import { getApp, initializeApp } from 'firebase/app';
-    import { dev } from '$app/env';
+    const dev = true;
     import firebaseConfig from '$lib/firebase/firebaseConfig';
     import { getAuth } from 'firebase/auth';
     import { getFirestore } from 'firebase/firestore/lite';

@@ -13,7 +13,7 @@
     import { onMount } from 'svelte';
     import { getApp, initializeApp } from 'firebase/app';
     import firebaseConfig from '$lib/firebase/firebaseConfig';
-    import { dev } from '$app/env';
+    const dev = true;
     import { goto, prefetch } from '$app/navigation';
     let providerid = $page.url.searchParams.get('provider');
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { dev } from '$app/env';
+    const dev = true;
     import { goto, prefetch } from '$app/navigation';
     import backgroundImage from '$lib/assets/page-background.png';
     import authStore from '$lib/auth/authStore';

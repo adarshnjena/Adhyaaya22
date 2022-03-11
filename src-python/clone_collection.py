@@ -14,7 +14,7 @@ parent_folder = this_folder.parent
 
 ##### USER CONFIG SECTION #####
 # Replace this value with the collection you would like to clone
-COLLLECTION_NAME = 'registrations'
+COLLLECTION_NAME = 'users'
 
 JSON_EXPORT_FILE = parent_folder / f'{COLLLECTION_NAME}-{int(float(time())*100)}.json'
 CSV_EXPORT_FILE = parent_folder / f'{COLLLECTION_NAME}-{int(float(time())*100)}.csv'

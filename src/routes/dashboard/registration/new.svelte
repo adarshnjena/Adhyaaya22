@@ -125,6 +125,20 @@
         return members;
     }
 
+    function get_phone(phone: string): string {
+        let phone_number = phone.replace(/\D/g, '');
+        if (phone_number.length === 10) {
+            return '+91' + phone_number;
+        } else if (phone_number.length === 14) {
+            // 00918793150182
+            return phone_number;
+        } else if (phone_number.length === 11) {
+            return '+91' + phone_number.slice(1);
+        } else {
+            return phone_number;
+        }
+    }
+
     async function submit_free(event) {
         let order_id = get_order_id($authStore.user.uid, input_registration_details.event_code);
         const transform: registrationDetails = {
@@ -188,7 +202,7 @@
                 customer_id: $authStore.user.uid, // Firebase User ID
                 customer_name: input_registration_details['name'],
                 customer_email: input_registration_details['email'], // Adhyaaya Support Email
-                customer_phone: input_registration_details['phone'], // Check Phone number inside the dashboard
+                customer_phone: get_phone(input_registration_details['phone']), // Check Phone number inside the dashboard
             },
         };
 
@@ -223,6 +237,11 @@
             body: JSON.stringify(order_details),
         });
         const order = await _order.json();
+        if (!_order.ok) {
+            alert(order.message);
+            is_payment_gateway_shown = false;
+            return;
+        }
         // Recommended to store cf_order_id, order_token, order_status
         const order_token = order['order_token'];
 

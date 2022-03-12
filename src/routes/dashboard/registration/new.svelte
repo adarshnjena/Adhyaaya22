@@ -166,10 +166,6 @@
             return;
         }
         //console.dir(regs)
-        if (Object.keys(regs ?? {}).includes(input_registration_details.event_code)) {
-            modal_show('You have already registered for this event');
-            return;
-        }
 
         is_payment_gateway_shown = true;
         const order_amount = get_event_cost(input_registration_details.event_code);

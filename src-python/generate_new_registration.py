@@ -22,11 +22,18 @@ app = firebase_admin.initialize_app(cred)
 print('[INFO] Instantiating Client')
 client = firestore.client()
 
-registration_ref = client.collection('registrations').document(input("UserID:"))
+registration_ref = client.collection('registrations').document('<USERID>')
+
+
+
+EVENT_CODE = "CCB"
+# JSON DOC
+REGISTRATION = {}
+
+
+
 
 registration_ref.set({
-    input('EVENTCODE:') : {
-        
-    }
+    f'{EVENT_CODE}': REGISTRATION
 }, merge=True)
 

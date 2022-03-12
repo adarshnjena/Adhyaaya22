@@ -56,6 +56,22 @@ with open(parent_folder / f'main_transactions-{int(float(time())*100)}.json', 'w
 print('[INFO] Finished Writing JSON Document')
 
 
+def is_free(code: str):
+    if code == 'COV':
+        return True
+    if code == 'STGF':
+        return True
+    if code == 'TSI':
+        return True
+    if code == 'CSW':
+        return True
+    if code == 'UPG':
+        return True
+    if code == 'COS':
+        return True
+    return False
+
+
 # At this point, k contains all the registrations.
 # parse the json file and get all counts of ca_codes
 ca_codes = {}
@@ -70,9 +86,10 @@ with open(parent_folder / f'ca_codes-{int(float(time())*100)}.json', 'w') as f:
                 # update the count for that specific refferal code.
                 # if the refferal code is not in the dict, add it.
                 if registration['refferal_code'] not in ca_codes:
-                    ca_codes[registration['refferal_code']] = 1
+                    ca_codes[registration['refferal_code']] = 0 if is_free(event_code) else 1
+                    continue
                 else:
-                    ca_codes[registration['refferal_code']] += 1
+                    ca_codes[registration['refferal_code']] += 0 if is_free(event_code) else 1
     f.write(json.dumps(ca_codes, indent=4))
 
 print('[INFO] WRITING TO DB')

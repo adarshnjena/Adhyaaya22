@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {dev as _dev} from '$app/env'
+    import { dev as _dev } from '$app/env';
     const dev = true;
     import { goto, prefetch } from '$app/navigation';
     import authStore from '$lib/auth/authStore';
@@ -43,7 +43,7 @@
     let db;
     let details;
     let regs;
-    let registrations
+    let registrations;
     // onMount contains the return redirect result function, The rest of the logic is within a on_signin function.
     onMount(async () => {
         try {
@@ -175,7 +175,11 @@
             alert('Please enter a valid 7 char. refferal code.');
             return;
         }
-        if (input_registration_details.event_code == '' || input_registration_details.event_code == undefined || input_registration_details.event_code == null) {
+        if (
+            input_registration_details.event_code == '' ||
+            input_registration_details.event_code == undefined ||
+            input_registration_details.event_code == null
+        ) {
             alert('Please select a event.');
             return;
         }
@@ -186,14 +190,15 @@
         // we need to generate a order token here
         order_amount === 0 ? await submit_free(event) : '';
 
-        let response = !confirm(`Do you want to confirm the registration for this event ? Cost: ${order_amount} ₹`)
+        let response = !confirm(
+            `Do you want to confirm the registration for this event ? Cost: ${order_amount} ₹`,
+        );
         if (response) {
-            dev ? console.log(response): ''
+            dev ? console.log(response) : '';
             is_payment_gateway_shown = false;
             return;
-            
         }
-        const order_id = get_order_id($authStore.user.uid, input_registration_details.event_code)
+        const order_id = get_order_id($authStore.user.uid, input_registration_details.event_code);
         let order_details = {
             order_id: order_id, // This is of the format userid-eventcode
             order_amount: order_amount, // Needs to confirm prices
@@ -208,24 +213,24 @@
 
         // We now generate a firebase db call to actually generate the registration here.
         const transform: registrationDetails = {
-                        name: input_registration_details['name'],
-                        email: input_registration_details['email'],
-                        phone: input_registration_details['phone'],
-                        college: input_registration_details['college'],
-                        refferal_code: input_registration_details['referral_code'],
-                        registration_id: order_id,
-                        transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
-                        event_code: input_registration_details['event_code'],
-                        course: input_registration_details['year_of_study'],
-                        team: get_team_members(),
-                    };
-                    await add_new_user_registration(
-                        app,
-                        auth,
-                        db,
-                        input_registration_details.event_code,
-                        transform,
-                    );
+            name: input_registration_details['name'],
+            email: input_registration_details['email'],
+            phone: input_registration_details['phone'],
+            college: input_registration_details['college'],
+            refferal_code: input_registration_details['referral_code'],
+            registration_id: order_id,
+            transaction_status: order_amount == 0 ? 'PAID' : 'UNVERIFIED',
+            event_code: input_registration_details['event_code'],
+            course: input_registration_details['year_of_study'],
+            team: get_team_members(),
+        };
+        await add_new_user_registration(
+            app,
+            auth,
+            db,
+            input_registration_details.event_code,
+            transform,
+        );
 
         dev ? console.log('order_details', order_details) : '';
         //order_amount == 0 ?
@@ -341,7 +346,6 @@
             _team_members = event_extra_members_mapping[event.target.value];
         }
     }
-
 </script>
 
 <Protected />
@@ -424,7 +428,7 @@
                             />
                         </div>
 
-                        <div class="input tw-inline-flex !tw-mb-2">
+                        <div class="input !tw-mb-2 tw-inline-flex">
                             <Icon
                                 class="tw-h-8 tw-w-8 tw-self-center tw-text-[aqua]"
                                 height=""
@@ -440,9 +444,8 @@
                                 placeholder="Referral Code"
                                 class="tw-w-full"
                             />
-                            
                         </div>
-                        <p class="tw-w-full !tw-mb-9">* Don't have a referral code? Try: 0000000</p>
+                        <p class="!tw-mb-9 tw-w-full">* Don't have a referral code? Try: 0000000</p>
 
                         <div class="input tw-inline-flex ">
                             <Icon
@@ -471,22 +474,16 @@
                                 Non-technical Event
                             </option>
                             <option value="BSYD">BORNPSYCOS | Duos</option>
-                            <option value="BSYT">BORNPSYCOS | Team [4]
-                            </option>
+                            <option value="BSYT">BORNPSYCOS | Team [4]</option>
                             <option value="MUNA">MUN DISEC | Solo</option>
                             <option value="MUNU">MUN Lok Sabha | Solo</option>
-                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]
-                            </option>
-                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]
-                            </option>
-                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]
-                            </option>
-                            <option value="RPNCI">RESPAWN CHESS | Solo
-                            </option>
+                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]</option>
+                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]</option>
+                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]</option>
+                            <option value="RPNCI">RESPAWN CHESS | Solo</option>
                             <option value="VAV">VAAD VIVAD | SOLO</option>
-                            <option value="FOH" disabled>FOODOHOLICS | Team [4] | CLOSED
-                            </option>
-                            <option value="CCB">CRICBASH | Team [6]</option>
+                            <option value="FOH" disabled>FOODOHOLICS | Team [4] | CLOSED</option>
+                            <option value="CCB" disabled>CRICBASH | Team [6] | CLOSED</option>
                             <option value="" disabled></option>
 
                             <option class="option_heading" value="" disabled>
@@ -494,17 +491,11 @@
                             </option>
                             <option value="COV">CODEVENTURE | SOLO</option>
                             <option value="AVK">AVISHKAR | Team [upto 5]</option>
-                            <option value="CADCS">CADDICTION CIVIL | Solo
-                            </option>
-                            <option value="CADCD">CADDICTION CIVIL | Duo
-                            </option>
-                            <option value="CADMS">CADDICTION MECHANICAL | Solo
-                            </option>
-                            <option value="CADMD">CADDICTION MECHANICAL | Duo
-                            </option>
-                            <option value="VPM">
-                                VIRTUAL PLACEMENT | Solo
-                            </option>
+                            <option value="CADCS">CADDICTION CIVIL | Solo</option>
+                            <option value="CADCD">CADDICTION CIVIL | Duo</option>
+                            <option value="CADMS">CADDICTION MECHANICAL | Solo</option>
+                            <option value="CADMD">CADDICTION MECHANICAL | Duo</option>
+                            <option value="VPM">VIRTUAL PLACEMENT | Solo</option>
                             <option value="" disabled></option>
                             <option class="option_heading" value="" disabled>Workshop</option>
                             <option value="CSW">SPECTRUM | Solo</option>
@@ -568,14 +559,20 @@
                     </button>
                 </form>
                 <div class="note">
-                    <p class="tw-font-black tw-text-xl">* You have to press pay after selecting the icons for QR or a UPI app</p>
-                    <p>* EVENT NAME | TEAM/SOLO </p>
-                    
+                    <p class="tw-text-xl tw-font-black">
+                        * You have to press pay after selecting the icons for QR or a UPI app
+                    </p>
+                    <p>* EVENT NAME | TEAM/SOLO</p>
+
                     <p>* For faster and safer transactions, prefer UPI.</p>
 
                     <p>
-                        * Any issues regarding registration, try to contact <br /> Siddhant - 8669066319 or
-                        <br /> Adharsh - 7620426119 or <br /> Devansh - 8793150182
+                        * Any issues regarding registration, try to contact <br />
+                        Siddhant - 8669066319 or
+                        <br />
+                        Adharsh - 7620426119 or
+                        <br />
+                         Devansh - 8793150182
                     </p>
                     <p>* In case of paid events you will receive a mail within 24 hours.</p>
 

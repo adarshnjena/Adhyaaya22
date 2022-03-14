@@ -480,7 +480,7 @@ function animateCoverUp(card, i) {
   scaleCoverToFillWindow(cardPosition, i);
   // update the content of the opened page
   openContentText.innerHTML =
-    "<h1>" +
+       "<h1>" +
     card.children[2].textContent +
     "</h1>" +
     "<h3>" +
@@ -503,15 +503,17 @@ function animateCoverUp(card, i) {
     "</p>" +
     "<p>" +
     "</br>" +
+    "<div>" +
     "<a href='/event/register'>Register</a>" +
     "<a " +
     card.children[10].textContent +
     " >" +
     "More Info</a>" +
+    "</div>" +
     "</p>";
   openContentImage.src = card.children[1].src;
   openContentText2.innerHTML =
-    "<h1>" +
+        "<h1>" +
     card.children[2].textContent +
     "</h1>" +
     "<h3>" +
@@ -534,15 +536,17 @@ function animateCoverUp(card, i) {
     "</p>" +
     "<p>" +
     "</br>" +
+    "<div>" +
     "<a href='/event/register'>Register</a>" +
     "<a " +
     card.children[10].textContent +
     " >" +
     "More Info</a>" +
+    "</div>" +
     "</p>";
   openContentImage2.src = card.children[1].src;
   openContentText3.innerHTML =
-    "<h1>" +
+       "<h1>" +
     card.children[2].textContent +
     "</h1>" +
     "<h3>" +
@@ -565,11 +569,14 @@ function animateCoverUp(card, i) {
     "</p>" +
     "<p>" +
     "</br>" +
+    "<div>" +
     "<a href='/event/register'>Register</a>" +
     "<a " +
     card.children[10].textContent +
     " >" +
     "More Info</a>" +
+    "</div>" +
+    "</p>";+
     "</p>";
   openContentImage3.src = card.children[1].src;
   setTimeout(function () {

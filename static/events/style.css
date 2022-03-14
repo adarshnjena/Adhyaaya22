@@ -1068,3 +1068,16 @@ p {
     left: calc(100% / 2 - 108px);
   }
 }
+@media screen and (max-width: 370px) {
+.open-content .text div{
+  display: flex;
+  flex-direction: column;
+}
+.open-content .text div a{
+  margin: 0;
+  text-align: center;
+  margin-top: 10px;
+  margin-left:20px;
+  max-width: max-content;
+}
+}

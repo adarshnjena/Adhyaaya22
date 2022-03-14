@@ -67,7 +67,7 @@
                         <span class="boolean">true</span>
                         <span>;</span>
                     </div>
-                    <span>});</span>
+                    <span>};</span>
                 </code>
             </div>
         </div>
@@ -100,7 +100,6 @@
                         </span>
                         <span>;</span>
                     </div>
-                    <span>}</span>
                     <span>}</span>
                 </code>
             </div>
@@ -136,7 +135,7 @@
                         <span class="boolean">true</span>
                         <span>;</span>
                     </div>
-                    <span>});</span>
+                    <span>};</span>
                 </code>
             </div>
         </div>
@@ -169,7 +168,6 @@
                         </span>
                         <span>;</span>
                     </div>
-                    <span>}</span>
                     <span>}</span>
                 </code>
             </div>
@@ -205,7 +203,7 @@
                         <span class="boolean">true</span>
                         <span>;</span>
                     </div>
-                    <span>});</span>
+                    <span>};</span>
                 </code>
             </div>
         </div>
@@ -238,7 +236,6 @@
                         </span>
                         <span>;</span>
                     </div>
-                    <span>}</span>
                     <span>}</span>
                 </code>
             </div>
@@ -273,7 +270,7 @@
                         <span class="boolean">true</span>
                         <span>;</span>
                     </div>
-                    <span>});</span>
+                    <span>};</span>
                 </code>
             </div>
         </div>

@@ -479,7 +479,7 @@
                             <option value="MUNU" disabled>MUN Lok Sabha | Solo | CLOSED</option>
                             <option value="RPNBS" disabled>RESPAWN BGMI SQUAD | Team [4] | CLOSED</option>
                             <option value="RPNBT" disabled>RESPAWN BGMI TDM | Team [4] | CLOSED</option>
-                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]</option>
+                            <option value="RPNVS" disabled>RESPAWN VALORANT SQUAD | Team [5] | CLOSED</option>
                             <option value="RPNCI">RESPAWN CHESS | Solo</option>
                             <option value="VAV">VAAD VIVAD | SOLO</option>
                             <option value="FOH" disabled>FOODOHOLICS | Team [4] | CLOSED</option>

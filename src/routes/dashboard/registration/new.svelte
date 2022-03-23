@@ -477,8 +477,8 @@
                             <option value="BSYT">BORNPSYCOS | Team [4]</option>
                             <option value="MUNA">MUN DISEC | Solo</option>
                             <option value="MUNU">MUN Lok Sabha | Solo</option>
-                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]</option>
-                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]</option>
+                            <option value="RPNBS" disabled>RESPAWN BGMI SQUAD | Team [4]</option>
+                            <option value="RPNBT" disabled>RESPAWN BGMI TDM | Team [4]</option>
                             <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]</option>
                             <option value="RPNCI">RESPAWN CHESS | Solo</option>
                             <option value="VAV">VAAD VIVAD | SOLO</option>

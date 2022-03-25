@@ -473,15 +473,15 @@
                             <option class="option_heading" value="" disabled>
                                 Non-technical Event
                             </option>
-                            <option value="BSYD">BORNPSYCOS | Duos</option>
-                            <option value="BSYT">BORNPSYCOS | Team [4]</option>
-                            <option value="MUNA">MUN DISEC | Solo</option>
-                            <option value="MUNU">MUN Lok Sabha | Solo</option>
-                            <option value="RPNBS">RESPAWN BGMI SQUAD | Team [4]</option>
-                            <option value="RPNBT">RESPAWN BGMI TDM | Team [4]</option>
-                            <option value="RPNVS">RESPAWN VALORANT SQUAD | Team [5]</option>
-                            <option value="RPNCI">RESPAWN CHESS | Solo</option>
-                            <option value="VAV">VAAD VIVAD | SOLO</option>
+                            <option value="BSYD" disabled>BORNPSYCOS | Duos | CLOSED</option>
+                            <option value="BSYT" disabled>BORNPSYCOS | Team [4] | CLOSED</option>
+                            <option value="MUNA" disabled>MUN DISEC | Solo | CLOSED</option>
+                            <option value="MUNU" disabled>MUN Lok Sabha | Solo | CLOSED</option>
+                            <option value="RPNBS" disabled>RESPAWN BGMI SQUAD | Team [4] | CLOSED</option>
+                            <option value="RPNBT" disabled>RESPAWN BGMI TDM | Team [4] | CLOSED</option>
+                            <option value="RPNVS" disabled>RESPAWN VALORANT SQUAD | Team [5] | CLOSED</option>
+                            <option value="RPNCI" disabled>RESPAWN CHESS | Solo | CLOSED</option>
+                            <option value="VAV" disabled>VAAD VIVAD | SOLO | CLOSED</option>
                             <option value="FOH" disabled>FOODOHOLICS | Team [4] | CLOSED</option>
                             <option value="CCB" disabled>CRICBASH | Team [6] | CLOSED</option>
                             <option value="" disabled></option>
@@ -490,18 +490,18 @@
                                 Technical Event
                             </option>
                             <option value="COV">CODEVENTURE | SOLO</option>
-                            <option value="AVK">AVISHKAR | Team [upto 5]</option>
-                            <option value="CADCS">CADDICTION CIVIL | Solo</option>
-                            <option value="CADCD">CADDICTION CIVIL | Duo</option>
-                            <option value="CADMS">CADDICTION MECHANICAL | Solo</option>
-                            <option value="CADMD">CADDICTION MECHANICAL | Duo</option>
-                            <option value="VPM">VIRTUAL PLACEMENT | Solo</option>
+                            <option value="AVK" disabled>AVISHKAR | Team [upto 5] | CLOSED</option>
+                            <option value="CADCS" disabled>CADDICTION CIVIL | Solo | CLOSED</option>
+                            <option value="CADCD" disabled>CADDICTION CIVIL | Duo | CLOSED</option>
+                            <option value="CADMS" disabled>CADDICTION MECHANICAL | Solo | CLOSED</option>
+                            <option value="CADMD" disabled>CADDICTION MECHANICAL | Duo | CLOSED</option>
+                            <option value="VPM" disabled>VIRTUAL PLACEMENT | Solo | CLOSED</option>
                             <option value="" disabled></option>
                             <option class="option_heading" value="" disabled>Workshop</option>
                             <option value="CSW">SPECTRUM | Solo</option>
                             <option value="COS">CAD-O-SHOP | Solo</option>
-                            <option value="STG">STARGAZE (Offline) | Solo</option>
-                            <option value="STGF">STARGAZE (Online) | Solo</option>
+                            <option value="STG" disabled>STARGAZE (Offline) | Solo | CLOSED</option>
+                            <option value="STGF" disabled>STARGAZE (Online) | Solo | CLOSED</option>
                             <option value="TSI">JIGYASA | Solo</option>
                             <option value="UPG">CAMPUS BRIDGE | Solo</option>
                             <option value="" disabled></option>

@@ -473,8 +473,8 @@
                             <option class="option_heading" value="" disabled>
                                 Non-technical Event
                             </option>
-                            <option value="BSYD" disabled>BORNPSYCOS | Duos | CLOSED</option>
-                            <option value="BSYT" disabled>BORNPSYCOS | Team [4] | CLOSED</option>
+                            <option value="BSYD">BORNPSYCOS | Duos</option>
+                            <option value="BSYT">BORNPSYCOS | Team [4]</option>
                             <option value="MUNA" disabled>MUN DISEC | Solo | CLOSED</option>
                             <option value="MUNU" disabled>MUN Lok Sabha | Solo | CLOSED</option>
                             <option value="RPNBS" disabled>RESPAWN BGMI SQUAD | Team [4] | CLOSED</option>
